@@ -65,13 +65,29 @@ h1,h2,h3,h4 { line-height: 1.25; font-weight: 600; }
 .section-header h2 { font-size: 1.5rem; }
 .see-all { font-size: .85rem; color: var(--accent); font-weight: 500; }
 
+/* STATS STRIP */
+.stats-strip { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 28px 24px; }
+.stats-inner { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
+.stat-item { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 40px; }
+.stat-num { font-size: 2rem; font-weight: 700; color: var(--accent); line-height: 1; letter-spacing: -.02em; }
+.stat-label { font-size: .72rem; color: var(--fg2); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.stat-div { width: 1px; height: 40px; background: var(--border); }
+@media(max-width:600px) { .stat-item { padding: 8px 20px; } .stat-div { display: none; } }
+
+/* SECTION LABEL */
+.section-label { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+
 /* HIGHLIGHTS */
-.highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-.highlight-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; transition: border-color .2s, transform .2s; }
+.highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+.highlight-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px 22px; display: flex; flex-direction: column; gap: 8px; transition: border-color .2s, transform .2s; position: relative; overflow: hidden; }
 .highlight-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-.highlight-icon { font-size: 2rem; margin-bottom: 12px; }
-.highlight-card h3 { font-size: 1rem; margin-bottom: 8px; }
-.highlight-card p { color: var(--fg2); font-size: .88rem; }
+.highlight-accent-line { --al-color: var(--accent); width: 36px; height: 3px; background: var(--al-color); border-radius: 99px; margin-bottom: 4px; }
+.highlight-cat { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--fg2); }
+.highlight-card h3 { font-size: .97rem; font-weight: 700; color: var(--fg); margin: 0; line-height: 1.35; }
+.highlight-card p { color: var(--fg2); font-size: .84rem; line-height: 1.65; margin: 0; flex: 1; }
+.highlight-link { font-size: .78rem; font-weight: 600; color: var(--accent); margin-top: 4px; opacity: .8; transition: opacity .2s; }
+.highlight-link:hover { opacity: 1; text-decoration: none; }
+.highlight-icon { display: none; }
 
 /* PUBLICATIONS */
 .pub-list { display: flex; flex-direction: column; gap: 16px; }
@@ -234,9 +250,8 @@ h1,h2,h3,h4 { line-height: 1.25; font-weight: 600; }
 .ri-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(272px, 1fr)); gap: 1.2rem; margin-bottom: 3rem; }
 .ri-card { background: var(--bg2); border: 1px solid var(--bg3); border-radius: var(--radius); padding: 1.5rem 1.4rem 1.3rem; cursor: pointer; display: flex; flex-direction: column; gap: .6rem; transition: transform .2s, border-color .2s, box-shadow .2s; }
 .ri-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 36px rgba(79,142,247,.18); }
-.ri-card-top { display: flex; align-items: center; justify-content: space-between; }
-.ri-icon { font-size: 1.9rem; line-height: 1; }
-.ri-num { font-size: .7rem; font-weight: 700; color: var(--accent2); letter-spacing: .1em; text-transform: uppercase; background: var(--bg3); padding: .2rem .5rem; border-radius: 6px; }
+.ri-card-meta { margin-bottom: .2rem; }
+.ri-num { display: inline-block; font-size: .68rem; font-weight: 700; color: var(--accent); letter-spacing: .12em; text-transform: uppercase; background: rgba(79,142,247,.1); border: 1px solid rgba(79,142,247,.25); padding: .18rem .55rem; border-radius: 6px; }
 .ri-card h3 { font-size: 1rem; font-weight: 700; color: var(--fg); margin: 0; }
 .ri-card > p { font-size: .83rem; color: var(--fg2); line-height: 1.65; margin: 0; flex: 1; }
 .ri-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .2rem; }

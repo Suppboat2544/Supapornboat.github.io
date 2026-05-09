@@ -23,7 +23,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <div class="page-hero page-hero-sm">
     <div class="container">
       <h1>Research Interests</h1>
@@ -34,27 +33,25 @@
   <section class="section">
     <div class="container">
 
-      <!-- INTRO -->
       <div class="ri-intro-block">
         <p>My work sits at the intersection of <strong>environmental engineering</strong>, <strong>computational chemistry</strong>, and <strong>deep learning</strong>. I build models and pipelines that help us understand how pollutants transform, persist, and interact in complex environmental systems.</p>
-        <p class="ri-collab-note">🤝 I am actively open to new collaborations. Click any research card to learn more and reach out.</p>
+        <p class="ri-collab-note">I am actively open to new collaborations — click any topic to learn more and reach out.</p>
       </div>
 
-      <!-- TOPIC FILTER TAGS -->
-      <div class="ri-filters" id="riFilters">
-        <button class="ri-filter active" data-filter="all">All</button>
+      <!-- FILTER BAR -->
+      <div class="ri-filters">
+        <button class="ri-filter active" data-filter="all">All Topics</button>
         <button class="ri-filter" data-filter="ml">Machine Learning</button>
         <button class="ri-filter" data-filter="env">Environmental</button>
         <button class="ri-filter" data-filter="chem">Chemoinformatics</button>
         <button class="ri-filter" data-filter="bio">Bioinformatics</button>
       </div>
 
-      <!-- CARDS GRID -->
+      <!-- CARDS -->
       <div class="ri-grid" id="riGrid">
 
         <div class="ri-card" data-tags="env chem ml" onclick="openModal('m01')">
-          <div class="ri-card-top">
-            <span class="ri-icon">🧪</span>
+          <div class="ri-card-meta">
             <span class="ri-num">01</span>
           </div>
           <h3>DOM Transformation</h3>
@@ -68,12 +65,11 @@
         </div>
 
         <div class="ri-card" data-tags="ml env chem" onclick="openModal('m02')">
-          <div class="ri-card-top">
-            <span class="ri-icon">🔬</span>
+          <div class="ri-card-meta">
             <span class="ri-num">02</span>
           </div>
           <h3>Biotransformation Modeling</h3>
-          <p>Multigenerational toxicity prediction using Graph Neural Networks and Graph Transformers for pollutant risk assessment.</p>
+          <p>Multigenerational toxicity prediction using Graph Neural Networks and Graph Transformers for environmental pollutant risk assessment.</p>
           <div class="ri-tags">
             <span class="ri-tag">GNN</span>
             <span class="ri-tag">Toxicology</span>
@@ -83,27 +79,25 @@
         </div>
 
         <div class="ri-card" data-tags="chem env" onclick="openModal('m03')">
-          <div class="ri-card-top">
-            <span class="ri-icon">📡</span>
+          <div class="ri-card-meta">
             <span class="ri-num">03</span>
           </div>
           <h3>MS1 Formula Assignment</h3>
-          <p>Computational pipelines for molecular formula assignment and unknown compound identification from HR-MS1 data.</p>
+          <p>Computational pipelines for molecular formula assignment and unknown compound identification from high-resolution MS1 mass spectrometry data.</p>
           <div class="ri-tags">
             <span class="ri-tag">Mass Spectrometry</span>
-            <span class="ri-tag">PFAS</span>
             <span class="ri-tag">Non-target Screening</span>
+            <span class="ri-tag">Environmental Analysis</span>
           </div>
           <span class="ri-cta">Explore &amp; collaborate →</span>
         </div>
 
         <div class="ri-card" data-tags="ml env" onclick="openModal('m04')">
-          <div class="ri-card-top">
-            <span class="ri-icon">⚡</span>
+          <div class="ri-card-meta">
             <span class="ri-num">04</span>
           </div>
           <h3>Kinetic Deep Learning</h3>
-          <p>Physics-Informed Neural Networks and hybrid GNNs for predicting chemical persistence and kinetic rate constants.</p>
+          <p>Physics-Informed Neural Networks and hybrid GNN architectures for predicting chemical persistence and kinetic rate constants.</p>
           <div class="ri-tags">
             <span class="ri-tag">PINN</span>
             <span class="ri-tag">Oceanography</span>
@@ -113,12 +107,11 @@
         </div>
 
         <div class="ri-card" data-tags="ml bio chem" onclick="openModal('m05')">
-          <div class="ri-card-top">
-            <span class="ri-icon">🗂️</span>
+          <div class="ri-card-meta">
             <span class="ri-num">05</span>
           </div>
           <h3>High-Dimensional Clustering</h3>
-          <p>Advanced clustering — hierarchical DBSCAN, UMAP, graph-partitioning — applied to large-scale molecular and sequence data.</p>
+          <p>Advanced clustering algorithms — hierarchical DBSCAN, UMAP, graph-partitioning — applied to large-scale molecular, enzyme, and chemical datasets.</p>
           <div class="ri-tags">
             <span class="ri-tag">DBSCAN</span>
             <span class="ri-tag">UMAP</span>
@@ -128,8 +121,7 @@
         </div>
 
         <div class="ri-card" data-tags="bio ml" onclick="openModal('m06')">
-          <div class="ri-card-top">
-            <span class="ri-icon">🌊</span>
+          <div class="ri-card-meta">
             <span class="ri-num">06</span>
           </div>
           <h3>Marine Enzyme Discovery</h3>
@@ -143,31 +135,15 @@
         </div>
 
         <div class="ri-card" data-tags="ml chem" onclick="openModal('m07')">
-          <div class="ri-card-top">
-            <span class="ri-icon">��</span>
+          <div class="ri-card-meta">
             <span class="ri-num">07</span>
           </div>
           <h3>Generative Molecular Models</h3>
-          <p>Property-conditioned VAE + GAT + GRU-SELFIES models for exploring chemical spaces in environmental and pharma contexts.</p>
+          <p>Property-conditioned VAE + GAT + GRU-SELFIES models for exploring chemical spaces relevant to environmental and pharmaceutical applications.</p>
           <div class="ri-tags">
             <span class="ri-tag">VAE</span>
             <span class="ri-tag">SELFIES</span>
             <span class="ri-tag">Chemical Space</span>
-          </div>
-          <span class="ri-cta">Explore &amp; collaborate →</span>
-        </div>
-
-        <div class="ri-card" data-tags="env chem" onclick="openModal('m08')">
-          <div class="ri-card-top">
-            <span class="ri-icon">💧</span>
-            <span class="ri-num">08</span>
-          </div>
-          <h3>PFAS &amp; Emerging Contaminants</h3>
-          <p>Identifying PFAS transformation products using mass difference networks and high-throughput non-target screening.</p>
-          <div class="ri-tags">
-            <span class="ri-tag">PFAS</span>
-            <span class="ri-tag">Water Quality</span>
-            <span class="ri-tag">Non-target Analysis</span>
           </div>
           <span class="ri-cta">Explore &amp; collaborate →</span>
         </div>
@@ -191,13 +167,12 @@
     </div>
   </section>
 
-  <!-- ══════════ MODALS ══════════ -->
+  <!-- ══ MODALS ══ -->
 
   <div class="ri-modal-overlay" id="m01" onclick="closeModalOverlay(event,this)">
     <div class="ri-modal-box">
       <button class="ri-modal-close" aria-label="Close">✕</button>
       <div class="ri-modal-header">
-        <span class="ri-modal-icon">🧪</span>
         <div>
           <p class="ri-modal-num">Topic 01</p>
           <h2>DOM Transformation</h2>
@@ -224,7 +199,6 @@
     <div class="ri-modal-box">
       <button class="ri-modal-close" aria-label="Close">✕</button>
       <div class="ri-modal-header">
-        <span class="ri-modal-icon">🔬</span>
         <div>
           <p class="ri-modal-num">Topic 02</p>
           <h2>Biotransformation Modeling</h2>
@@ -252,24 +226,23 @@
     <div class="ri-modal-box">
       <button class="ri-modal-close" aria-label="Close">✕</button>
       <div class="ri-modal-header">
-        <span class="ri-modal-icon">📡</span>
         <div>
           <p class="ri-modal-num">Topic 03</p>
           <h2>MS1 Formula Assignment</h2>
         </div>
       </div>
       <div class="ri-modal-tags">
-        <span class="ri-tag">Mass Spectrometry</span><span class="ri-tag">PFAS</span><span class="ri-tag">Non-target Screening</span>
+        <span class="ri-tag">Mass Spectrometry</span><span class="ri-tag">Non-target Screening</span><span class="ri-tag">Environmental Analysis</span>
       </div>
       <div class="ri-modal-body">
-        <p>Non-target screening of complex environmental samples generates vast molecular signals — accurately assigning formulas and identifying unknowns is a major bottleneck.</p>
+        <p>Non-target screening of complex environmental samples generates vast numbers of molecular signals — accurately assigning molecular formulas and identifying unknown compounds is a major bottleneck.</p>
         <ul>
-          <li>Computational pipelines for molecular formula assignment from HR-MS1 data</li>
-          <li>Mass difference network algorithms for automated PFAS transformation product identification</li>
+          <li>Computational pipelines for accurate molecular formula assignment from HR-MS1 data</li>
+          <li>Mass difference network algorithms for automated transformation product identification</li>
           <li>High-throughput profiling integrating spectral matching and chemical space refinement</li>
-          <li>Applied to marine DOM, freshwater, and PFAS-contaminated samples</li>
+          <li>Applied to marine DOM, freshwater, and contaminated water samples</li>
         </ul>
-        <p class="ri-collab-interest"><strong>Collaboration interest:</strong> Environmental analytical chemistry, non-target screening datasets, PFAS research, water quality monitoring.</p>
+        <p class="ri-collab-interest"><strong>Collaboration interest:</strong> Environmental analytical chemistry, non-target screening datasets, water quality monitoring.</p>
       </div>
       <a href="mailto:suppaporn.2544@gmail.com?subject=Collaboration%20Inquiry%3A%20MS1%20Formula%20Assignment" class="collab-btn-lg">✉ Contact for collaboration</a>
     </div>
@@ -279,7 +252,6 @@
     <div class="ri-modal-box">
       <button class="ri-modal-close" aria-label="Close">✕</button>
       <div class="ri-modal-header">
-        <span class="ri-modal-icon">⚡</span>
         <div>
           <p class="ri-modal-num">Topic 04</p>
           <h2>Kinetic Deep Learning</h2>
@@ -307,7 +279,6 @@
     <div class="ri-modal-box">
       <button class="ri-modal-close" aria-label="Close">✕</button>
       <div class="ri-modal-header">
-        <span class="ri-modal-icon">🗂️</span>
         <div>
           <p class="ri-modal-num">Topic 05</p>
           <h2>High-Dimensional Clustering</h2>
@@ -336,7 +307,6 @@
     <div class="ri-modal-box">
       <button class="ri-modal-close" aria-label="Close">✕</button>
       <div class="ri-modal-header">
-        <span class="ri-modal-icon">🌊</span>
         <div>
           <p class="ri-modal-num">Topic 06</p>
           <h2>Marine Enzyme Discovery</h2>
@@ -364,7 +334,6 @@
     <div class="ri-modal-box">
       <button class="ri-modal-close" aria-label="Close">✕</button>
       <div class="ri-modal-header">
-        <span class="ri-modal-icon">🧬</span>
         <div>
           <p class="ri-modal-num">Topic 07</p>
           <h2>Generative Molecular Models</h2>
@@ -388,34 +357,6 @@
     </div>
   </div>
 
-  <div class="ri-modal-overlay" id="m08" onclick="closeModalOverlay(event,this)">
-    <div class="ri-modal-box">
-      <button class="ri-modal-close" aria-label="Close">✕</button>
-      <div class="ri-modal-header">
-        <span class="ri-modal-icon">💧</span>
-        <div>
-          <p class="ri-modal-num">Topic 08</p>
-          <h2>PFAS &amp; Emerging Contaminants</h2>
-        </div>
-      </div>
-      <div class="ri-modal-tags">
-        <span class="ri-tag">PFAS</span><span class="ri-tag">Water Quality</span><span class="ri-tag">Non-target Analysis</span>
-      </div>
-      <div class="ri-modal-body">
-        <p>Per- and polyfluoroalkyl substances (PFAS) are persistent pollutants of global concern. Identifying transformation products and understanding their fate is critical for water safety.</p>
-        <ul>
-          <li>Mass difference network algorithm for automated transformation product identification</li>
-          <li>High-throughput non-target screening of PFAS in water samples</li>
-          <li>Published in <strong>Water Research</strong>: <a href="https://doi.org/10.1016/j.watres.2025.123645" target="_blank" rel="noopener">doi:10.1016/j.watres.2025.123645</a> — 13 citations</li>
-          <li>Integration with GNN-based toxicity prediction for risk prioritization</li>
-          <li>JST-funded research collaboration with LLNL (2024–2025)</li>
-        </ul>
-        <p class="ri-collab-interest"><strong>Collaboration interest:</strong> PFAS monitoring, water treatment, non-target analysis, regulatory toxicology.</p>
-      </div>
-      <a href="mailto:suppaporn.2544@gmail.com?subject=Collaboration%20Inquiry%3A%20PFAS%20Research" class="collab-btn-lg">✉ Contact for collaboration</a>
-    </div>
-  </div>
-
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© 2026 Supaporn Klabklaydee · Institute of Science Tokyo</p>
@@ -429,50 +370,33 @@
 
   <script src="main.js"></script>
   <script>
-    // Filter buttons
     document.querySelectorAll('.ri-filter').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.ri-filter').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const filter = btn.dataset.filter;
         document.querySelectorAll('.ri-card').forEach(card => {
-          if (filter === 'all' || card.dataset.tags.includes(filter)) {
-            card.style.display = '';
-            card.style.animation = 'fadeUp .35s ease both';
-          } else {
-            card.style.display = 'none';
-          }
+          const show = filter === 'all' || card.dataset.tags.includes(filter);
+          card.style.display = show ? '' : 'none';
         });
       });
     });
-
-    // Modal open
     function openModal(id) {
-      const m = document.getElementById(id);
-      m.classList.add('open');
+      document.getElementById(id).classList.add('open');
       document.body.style.overflow = 'hidden';
     }
-
-    // Close on overlay click
     function closeModalOverlay(e, overlay) {
       if (e.target === overlay) closeModal(overlay);
     }
-
-    // Close by X button
     document.querySelectorAll('.ri-modal-close').forEach(btn => {
       btn.addEventListener('click', () => closeModal(btn.closest('.ri-modal-overlay')));
     });
-
     function closeModal(el) {
       el.classList.remove('open');
       document.body.style.overflow = '';
     }
-
-    // Escape key
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.ri-modal-overlay.open').forEach(m => closeModal(m));
-      }
+      if (e.key === 'Escape') document.querySelectorAll('.ri-modal-overlay.open').forEach(closeModal);
     });
   </script>
 </body>
