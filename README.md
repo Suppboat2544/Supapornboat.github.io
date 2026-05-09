@@ -1,24 +1,63 @@
-# githubio-site
+# Supaporn Klabklaydee — Personal Academic Website
 
-Minimal GitHub Pages-ready static site scaffold.
+Personal academic site for **Supaporn Klabklaydee (Boat)**, Ph.D. student in Civil and Environmental Engineering at the [Institute of Science Tokyo](https://www.isct.ac.jp/en).
 
-How it works:
+🌐 **Live site:** https://suppboat2544.github.io/Supapornboat.github.io/
 
-- Author content in `src/` (HTML, CSS, assets).
-- Run `npm run build` to copy `src/` -> `docs/` (GitHub Pages serves `docs/` on the `main` branch).
-- Run `npm run serve` to locally serve the generated `docs/` at http://localhost:8080
+---
 
-Files created:
+## About
 
-- `src/` - source files (index, about, styles)
-- `scripts/` - tiny Node scripts for build/clean/serve
-- `docs/` - generated output after `npm run build`
+This site showcases Boat's research, publications, and projects in computational environmental science, with a focus on:
 
-Publish on GitHub Pages:
+- Graph Neural Networks for toxicity prediction & biotransformation modeling
+- PFAS analysis and transformation product identification
+- Dissolved Organic Matter (DOM) chemical space refinement
+- Kinetic deep learning models for environmental persistence
+- Clustering techniques in high-dimensional chemical/biological datasets
+- Marine carbon cycling and enzyme discovery
 
-1. Create a repo named `yourusername.github.io` and push this project to `main`.
-2. GitHub Pages will serve files from the `docs/` folder by default.
+---
 
-Notes:
-- This scaffold intentionally has no external build dependencies so it works without npm installs.
-- If you prefer Jekyll/Hugo/Eleventy, tell me and I can scaffold that instead.
+## Pages
+
+| Page | Description |
+|---|---|
+| [Home](src/index.html) | Hero, research highlights, recent publications |
+| [About](src/about.html) | Full CV — bio, education, awards, internships, research experience |
+| [Publications](src/publications.html) | Peer-reviewed papers and preprints |
+| [Projects](src/projects.html) | Open-source GitHub projects |
+
+---
+
+## Tech Stack
+
+- Pure static HTML / CSS / JS — zero runtime dependencies
+- Dark theme with CSS custom properties
+- Google Fonts (Inter)
+- Deployed via **GitHub Actions** → `docs/` folder → GitHub Pages
+
+---
+
+## Development
+
+Edit source files in `src/`, then sync to `docs/` and push:
+
+```bash
+cp src/about.html docs/about.html
+cp src/styles.css docs/styles.css
+# ... repeat for other changed files
+git add -A && git commit -m "your message" && git push
+```
+
+GitHub Actions will automatically deploy from the `docs/` folder on the `main` branch.
+
+---
+
+## Contact
+
+- ✉️ klabklaydee.s.aa@m.titech.ac.jp
+- ✉️ suppaporn.2544@gmail.com
+- 🔗 [LinkedIn](https://www.linkedin.com/in/supaporn-klabklaydee-1a43401b6)
+- 🔗 [ORCID](https://orcid.org/0009-0000-9747-711X)
+- 🔗 [GitHub](https://github.com/Suppboat2544)
