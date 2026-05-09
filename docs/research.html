@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Research Interests · Supaporn Klabklaydee</title>
+  <title>Research · Supaporn Klabklaydee</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -23,90 +23,153 @@
     </div>
   </nav>
 
+  <!-- HERO -->
   <div class="page-hero page-hero-sm">
     <div class="container">
       <h1>Research Interests</h1>
-      <p class="page-hero-sub">Click any topic to explore details and open a collaboration inquiry.</p>
+      <p class="page-hero-sub">Computational Environmental Science · Machine Learning · Molecular Discovery</p>
     </div>
   </div>
 
   <section class="section">
     <div class="container">
 
-      <p class="ri-intro">My research sits at the intersection of <strong>computational chemistry</strong>, <strong>environmental engineering</strong>, and <strong>machine learning</strong>. I am actively open to collaborations — click any card below to read more and get in touch.</p>
+      <!-- INTRO -->
+      <div class="ri-intro-block">
+        <p>My work sits at the intersection of <strong>environmental engineering</strong>, <strong>computational chemistry</strong>, and <strong>deep learning</strong>. I build models and pipelines that help us understand how pollutants transform, persist, and interact in complex environmental systems.</p>
+        <p class="ri-collab-note">🤝 I am actively open to new collaborations. Click any research card to learn more and reach out.</p>
+      </div>
 
-      <div class="ri-grid">
+      <!-- TOPIC FILTER TAGS -->
+      <div class="ri-filters" id="riFilters">
+        <button class="ri-filter active" data-filter="all">All</button>
+        <button class="ri-filter" data-filter="ml">Machine Learning</button>
+        <button class="ri-filter" data-filter="env">Environmental</button>
+        <button class="ri-filter" data-filter="chem">Chemoinformatics</button>
+        <button class="ri-filter" data-filter="bio">Bioinformatics</button>
+      </div>
 
-        <!-- 01 -->
-        <div class="ri-card" onclick="openModal('m01')">
-          <div class="ri-icon">🧪</div>
-          <div class="ri-num">01</div>
+      <!-- CARDS GRID -->
+      <div class="ri-grid" id="riGrid">
+
+        <div class="ri-card" data-tags="env chem ml" onclick="openModal('m01')">
+          <div class="ri-card-top">
+            <span class="ri-icon">🧪</span>
+            <span class="ri-num">01</span>
+          </div>
           <h3>DOM Transformation</h3>
-          <p>Decoding the structural complexity of dissolved organic matter in aquatic environments using high-resolution mass spectrometry and generative models.</p>
-          <span class="ri-cta">Learn more &amp; collaborate →</span>
+          <p>Decoding dissolved organic matter structural complexity in aquatic environments using HR-MS/MS and generative models.</p>
+          <div class="ri-tags">
+            <span class="ri-tag">Generative AI</span>
+            <span class="ri-tag">Mass Spectrometry</span>
+            <span class="ri-tag">Marine Chemistry</span>
+          </div>
+          <span class="ri-cta">Explore &amp; collaborate →</span>
         </div>
 
-        <!-- 02 -->
-        <div class="ri-card" onclick="openModal('m02')">
-          <div class="ri-icon">🔬</div>
-          <div class="ri-num">02</div>
+        <div class="ri-card" data-tags="ml env chem" onclick="openModal('m02')">
+          <div class="ri-card-top">
+            <span class="ri-icon">🔬</span>
+            <span class="ri-num">02</span>
+          </div>
           <h3>Biotransformation Modeling</h3>
-          <p>Multigenerational biotransformation prediction using Graph Neural Networks and Graph Transformers for environmental pollutant risk assessment.</p>
-          <span class="ri-cta">Learn more &amp; collaborate →</span>
+          <p>Multigenerational toxicity prediction using Graph Neural Networks and Graph Transformers for pollutant risk assessment.</p>
+          <div class="ri-tags">
+            <span class="ri-tag">GNN</span>
+            <span class="ri-tag">Toxicology</span>
+            <span class="ri-tag">Graph Transformer</span>
+          </div>
+          <span class="ri-cta">Explore &amp; collaborate →</span>
         </div>
 
-        <!-- 03 -->
-        <div class="ri-card" onclick="openModal('m03')">
-          <div class="ri-icon">📡</div>
-          <div class="ri-num">03</div>
+        <div class="ri-card" data-tags="chem env" onclick="openModal('m03')">
+          <div class="ri-card-top">
+            <span class="ri-icon">📡</span>
+            <span class="ri-num">03</span>
+          </div>
           <h3>MS1 Formula Assignment</h3>
-          <p>Computational pipelines for molecular formula assignment and unknown compound identification from high-resolution MS1 mass spectrometry data.</p>
-          <span class="ri-cta">Learn more &amp; collaborate →</span>
+          <p>Computational pipelines for molecular formula assignment and unknown compound identification from HR-MS1 data.</p>
+          <div class="ri-tags">
+            <span class="ri-tag">Mass Spectrometry</span>
+            <span class="ri-tag">PFAS</span>
+            <span class="ri-tag">Non-target Screening</span>
+          </div>
+          <span class="ri-cta">Explore &amp; collaborate →</span>
         </div>
 
-        <!-- 04 -->
-        <div class="ri-card" onclick="openModal('m04')">
-          <div class="ri-icon">⚡</div>
-          <div class="ri-num">04</div>
+        <div class="ri-card" data-tags="ml env" onclick="openModal('m04')">
+          <div class="ri-card-top">
+            <span class="ri-icon">⚡</span>
+            <span class="ri-num">04</span>
+          </div>
           <h3>Kinetic Deep Learning</h3>
-          <p>Physics-Informed Neural Networks and hybrid GNN architectures for predicting kinetic rate constants and chemical persistence across ocean depths.</p>
-          <span class="ri-cta">Learn more &amp; collaborate →</span>
+          <p>Physics-Informed Neural Networks and hybrid GNNs for predicting chemical persistence and kinetic rate constants.</p>
+          <div class="ri-tags">
+            <span class="ri-tag">PINN</span>
+            <span class="ri-tag">Oceanography</span>
+            <span class="ri-tag">Half-life Prediction</span>
+          </div>
+          <span class="ri-cta">Explore &amp; collaborate →</span>
         </div>
 
-        <!-- 05 -->
-        <div class="ri-card" onclick="openModal('m05')">
-          <div class="ri-icon">🗂️</div>
-          <div class="ri-num">05</div>
-          <h3>Clustering in High-Dimensional Datasets</h3>
-          <p>Advanced clustering algorithms — hierarchical DBSCAN, UMAP, graph-partitioning — applied to large-scale molecular, enzyme, and chemical datasets.</p>
-          <span class="ri-cta">Learn more &amp; collaborate →</span>
+        <div class="ri-card" data-tags="ml bio chem" onclick="openModal('m05')">
+          <div class="ri-card-top">
+            <span class="ri-icon">🗂️</span>
+            <span class="ri-num">05</span>
+          </div>
+          <h3>High-Dimensional Clustering</h3>
+          <p>Advanced clustering — hierarchical DBSCAN, UMAP, graph-partitioning — applied to large-scale molecular and sequence data.</p>
+          <div class="ri-tags">
+            <span class="ri-tag">DBSCAN</span>
+            <span class="ri-tag">UMAP</span>
+            <span class="ri-tag">Dimensionality Reduction</span>
+          </div>
+          <span class="ri-cta">Explore &amp; collaborate →</span>
         </div>
 
-        <!-- 06 -->
-        <div class="ri-card" onclick="openModal('m06')">
-          <div class="ri-icon">🌊</div>
-          <div class="ri-num">06</div>
+        <div class="ri-card" data-tags="bio ml" onclick="openModal('m06')">
+          <div class="ri-card-top">
+            <span class="ri-icon">🌊</span>
+            <span class="ri-num">06</span>
+          </div>
           <h3>Marine Enzyme Discovery</h3>
-          <p>Large-scale discovery of novel marine enzymes using protein language models (ESM-2), k-mer features, and deep clustering of 1.29M sequences.</p>
-          <span class="ri-cta">Learn more &amp; collaborate →</span>
+          <p>Large-scale discovery of novel marine enzymes using ESM-2 protein language models and deep clustering of 1.29M sequences.</p>
+          <div class="ri-tags">
+            <span class="ri-tag">ESM-2</span>
+            <span class="ri-tag">Protein LM</span>
+            <span class="ri-tag">Marine Carbon</span>
+          </div>
+          <span class="ri-cta">Explore &amp; collaborate →</span>
         </div>
 
-        <!-- 07 -->
-        <div class="ri-card" onclick="openModal('m07')">
-          <div class="ri-icon">🧬</div>
-          <div class="ri-num">07</div>
+        <div class="ri-card" data-tags="ml chem" onclick="openModal('m07')">
+          <div class="ri-card-top">
+            <span class="ri-icon">��</span>
+            <span class="ri-num">07</span>
+          </div>
           <h3>Generative Molecular Models</h3>
-          <p>Property-conditioned generative models (VAE + GAT + GRU-SELFIES) for exploring chemical spaces relevant to environmental and pharmaceutical applications.</p>
-          <span class="ri-cta">Learn more &amp; collaborate →</span>
+          <p>Property-conditioned VAE + GAT + GRU-SELFIES models for exploring chemical spaces in environmental and pharma contexts.</p>
+          <div class="ri-tags">
+            <span class="ri-tag">VAE</span>
+            <span class="ri-tag">SELFIES</span>
+            <span class="ri-tag">Chemical Space</span>
+          </div>
+          <span class="ri-cta">Explore &amp; collaborate →</span>
         </div>
 
-        <!-- 08 -->
-        <div class="ri-card" onclick="openModal('m08')">
-          <div class="ri-icon">💧</div>
-          <div class="ri-num">08</div>
+        <div class="ri-card" data-tags="env chem" onclick="openModal('m08')">
+          <div class="ri-card-top">
+            <span class="ri-icon">💧</span>
+            <span class="ri-num">08</span>
+          </div>
           <h3>PFAS &amp; Emerging Contaminants</h3>
-          <p>Identification and tracking of PFAS transformation products using mass difference network algorithms and high-throughput non-target analysis.</p>
-          <span class="ri-cta">Learn more &amp; collaborate →</span>
+          <p>Identifying PFAS transformation products using mass difference networks and high-throughput non-target screening.</p>
+          <div class="ri-tags">
+            <span class="ri-tag">PFAS</span>
+            <span class="ri-tag">Water Quality</span>
+            <span class="ri-tag">Non-target Analysis</span>
+          </div>
+          <span class="ri-cta">Explore &amp; collaborate →</span>
         </div>
 
       </div><!-- /ri-grid -->
@@ -116,11 +179,11 @@
         <div class="collab-banner-inner">
           <div>
             <h3>Open to Collaboration</h3>
-            <p>If any of these topics align with your work — whether you're in academia, industry, or a research institute — I'd love to connect. I'm especially interested in joint projects involving large environmental datasets, molecular discovery, or AI-driven chemical analysis.</p>
+            <p>Whether you're in academia, industry, or a research institute — if any of these topics align with your work, I'd love to connect. I'm especially interested in joint projects involving large environmental datasets, molecular discovery, or AI-driven chemical analysis.</p>
           </div>
           <div class="collab-banner-links">
-            <a href="mailto:suppaporn.2544@gmail.com" class="btn-primary">✉ Email me</a>
-            <a href="https://www.linkedin.com/in/supaporn-klabklaydee-1a43401b6" target="_blank" rel="noopener" class="btn-secondary">LinkedIn →</a>
+            <a href="mailto:suppaporn.2544@gmail.com" class="ri-btn-primary">✉ Email me</a>
+            <a href="https://www.linkedin.com/in/supaporn-klabklaydee-1a43401b6" target="_blank" rel="noopener" class="ri-btn-secondary">LinkedIn →</a>
           </div>
         </div>
       </div>
@@ -128,113 +191,160 @@
     </div>
   </section>
 
-  <!-- ── MODALS ── -->
+  <!-- ══════════ MODALS ══════════ -->
 
-  <div class="ri-modal-overlay" id="m01" onclick="closeModal(event,this)">
+  <div class="ri-modal-overlay" id="m01" onclick="closeModalOverlay(event,this)">
     <div class="ri-modal-box">
-      <button class="ri-modal-close" onclick="document.getElementById('m01').classList.remove('open')">✕</button>
-      <div class="ri-modal-icon">🧪</div>
-      <h2>DOM Transformation</h2>
+      <button class="ri-modal-close" aria-label="Close">✕</button>
+      <div class="ri-modal-header">
+        <span class="ri-modal-icon">🧪</span>
+        <div>
+          <p class="ri-modal-num">Topic 01</p>
+          <h2>DOM Transformation</h2>
+        </div>
+      </div>
+      <div class="ri-modal-tags">
+        <span class="ri-tag">Generative AI</span><span class="ri-tag">Mass Spectrometry</span><span class="ri-tag">Marine Chemistry</span>
+      </div>
       <div class="ri-modal-body">
-        <p>Dissolved Organic Matter (DOM) in aquatic environments is one of the most chemically complex natural mixtures on Earth. My work focuses on constructing a <strong>chemical space refinement framework</strong> to decode its structural complexity using high-resolution mass spectrometry (HR-MS/MS).</p>
+        <p>Dissolved Organic Matter (DOM) in aquatic environments is one of the most chemically complex natural mixtures on Earth. My work constructs a <strong>chemical space refinement framework</strong> to decode its structural complexity using high-resolution mass spectrometry.</p>
         <ul>
-          <li>Graph-based filtering, network analysis, and spectral matching of HR-MS/MS data</li>
-          <li>Property-conditioned generative model (CRAM): VAE + GAT encoder + GRU-SELFIES decoder</li>
-          <li>Increased median candidate isomers per deep-ocean molecular formula from <strong>1.4 → 9.3</strong></li>
-          <li>ChemRxiv preprint: <a href="https://doi.org/10.26434/chemrxiv-2025-9s13m-v2" target="_blank" rel="noopener">doi:10.26434/chemrxiv-2025-9s13m-v2</a></li>
+          <li>Graph-based filtering, network analysis, and HR-MS/MS spectral matching</li>
+          <li>Property-conditioned generative model <strong>CRAM</strong>: VAE + GAT encoder + GRU-SELFIES decoder</li>
+          <li>Increased median candidate isomers per deep-ocean formula: <strong>1.4 → 9.3</strong></li>
+          <li>ChemRxiv: <a href="https://doi.org/10.26434/chemrxiv-2025-9s13m-v2" target="_blank" rel="noopener">doi:10.26434/chemrxiv-2025-9s13m-v2</a></li>
         </ul>
-        <p><strong>Collaboration interest:</strong> Environmental chemistry, HR-MS/MS data sharing, marine carbon cycling, generative chemistry.</p>
+        <p class="ri-collab-interest"><strong>Collaboration interest:</strong> Environmental chemistry, HR-MS/MS data sharing, marine carbon cycling, generative chemistry.</p>
       </div>
       <a href="mailto:suppaporn.2544@gmail.com?subject=Collaboration%20Inquiry%3A%20DOM%20Transformation" class="collab-btn-lg">✉ Contact for collaboration</a>
     </div>
   </div>
 
-  <div class="ri-modal-overlay" id="m02" onclick="closeModal(event,this)">
+  <div class="ri-modal-overlay" id="m02" onclick="closeModalOverlay(event,this)">
     <div class="ri-modal-box">
-      <button class="ri-modal-close" onclick="document.getElementById('m02').classList.remove('open')">✕</button>
-      <div class="ri-modal-icon">🔬</div>
-      <h2>Biotransformation Modeling</h2>
+      <button class="ri-modal-close" aria-label="Close">✕</button>
+      <div class="ri-modal-header">
+        <span class="ri-modal-icon">🔬</span>
+        <div>
+          <p class="ri-modal-num">Topic 02</p>
+          <h2>Biotransformation Modeling</h2>
+        </div>
+      </div>
+      <div class="ri-modal-tags">
+        <span class="ri-tag">GNN</span><span class="ri-tag">Toxicology</span><span class="ri-tag">Graph Transformer</span>
+      </div>
       <div class="ri-modal-body">
-        <p>Environmental pollutants rarely remain in their original form — they undergo microbial and chemical biotransformation, often producing metabolites more toxic than the parent compound.</p>
+        <p>Environmental pollutants undergo microbial and chemical biotransformation, often producing metabolites <em>more toxic</em> than the parent compound.</p>
         <ul>
-          <li>Published <strong>GSAT model</strong> (ACS ES&T Water): R²=0.907, 98.9% faster than traditional methods</li>
-          <li>Analyzed 4.7 million reaction steps across 12 priority pollutants</li>
-          <li>68.2% of metabolic transformations <em>increase</em> toxicity by an average 15.4-fold</li>
+          <li>Published <strong>GSAT model</strong> (ACS ES&amp;T Water): R²=0.907, 98.9% faster than traditional methods</li>
+          <li>Analyzed <strong>4.7 million reaction steps</strong> across 12 priority pollutants</li>
+          <li>68.2% of metabolic transformations increase toxicity by an average <strong>15.4-fold</strong></li>
           <li>Graph Transformer for Pathway Prediction: 210K+ reaction pairs, 99 classes, <strong>87% Top-3 accuracy</strong></li>
           <li>Techniques: Focal Loss, SMILES augmentation, Stochastic Weight Averaging (SWA)</li>
         </ul>
-        <p><strong>Collaboration interest:</strong> Environmental toxicology, metabolomics, biodegradation databases, regulatory risk assessment.</p>
+        <p class="ri-collab-interest"><strong>Collaboration interest:</strong> Environmental toxicology, metabolomics, biodegradation databases, regulatory risk assessment.</p>
       </div>
       <a href="mailto:suppaporn.2544@gmail.com?subject=Collaboration%20Inquiry%3A%20Biotransformation%20Modeling" class="collab-btn-lg">✉ Contact for collaboration</a>
     </div>
   </div>
 
-  <div class="ri-modal-overlay" id="m03" onclick="closeModal(event,this)">
+  <div class="ri-modal-overlay" id="m03" onclick="closeModalOverlay(event,this)">
     <div class="ri-modal-box">
-      <button class="ri-modal-close" onclick="document.getElementById('m03').classList.remove('open')">✕</button>
-      <div class="ri-modal-icon">📡</div>
-      <h2>MS1 Formula Assignment</h2>
+      <button class="ri-modal-close" aria-label="Close">✕</button>
+      <div class="ri-modal-header">
+        <span class="ri-modal-icon">📡</span>
+        <div>
+          <p class="ri-modal-num">Topic 03</p>
+          <h2>MS1 Formula Assignment</h2>
+        </div>
+      </div>
+      <div class="ri-modal-tags">
+        <span class="ri-tag">Mass Spectrometry</span><span class="ri-tag">PFAS</span><span class="ri-tag">Non-target Screening</span>
+      </div>
       <div class="ri-modal-body">
-        <p>Non-target screening of complex environmental samples generates vast numbers of molecular signals — accurately assigning molecular formulas and identifying unknown compounds is a major bottleneck.</p>
+        <p>Non-target screening of complex environmental samples generates vast molecular signals — accurately assigning formulas and identifying unknowns is a major bottleneck.</p>
         <ul>
-          <li>Computational pipelines for accurate molecular formula assignment from HR-MS1 data</li>
+          <li>Computational pipelines for molecular formula assignment from HR-MS1 data</li>
           <li>Mass difference network algorithms for automated PFAS transformation product identification</li>
           <li>High-throughput profiling integrating spectral matching and chemical space refinement</li>
           <li>Applied to marine DOM, freshwater, and PFAS-contaminated samples</li>
         </ul>
-        <p><strong>Collaboration interest:</strong> Environmental analytical chemistry, non-target screening datasets, PFAS research, water quality monitoring.</p>
+        <p class="ri-collab-interest"><strong>Collaboration interest:</strong> Environmental analytical chemistry, non-target screening datasets, PFAS research, water quality monitoring.</p>
       </div>
       <a href="mailto:suppaporn.2544@gmail.com?subject=Collaboration%20Inquiry%3A%20MS1%20Formula%20Assignment" class="collab-btn-lg">✉ Contact for collaboration</a>
     </div>
   </div>
 
-  <div class="ri-modal-overlay" id="m04" onclick="closeModal(event,this)">
+  <div class="ri-modal-overlay" id="m04" onclick="closeModalOverlay(event,this)">
     <div class="ri-modal-box">
-      <button class="ri-modal-close" onclick="document.getElementById('m04').classList.remove('open')">✕</button>
-      <div class="ri-modal-icon">⚡</div>
-      <h2>Kinetic Deep Learning</h2>
+      <button class="ri-modal-close" aria-label="Close">✕</button>
+      <div class="ri-modal-header">
+        <span class="ri-modal-icon">⚡</span>
+        <div>
+          <p class="ri-modal-num">Topic 04</p>
+          <h2>Kinetic Deep Learning</h2>
+        </div>
+      </div>
+      <div class="ri-modal-tags">
+        <span class="ri-tag">PINN</span><span class="ri-tag">Oceanography</span><span class="ri-tag">Half-life Prediction</span>
+      </div>
       <div class="ri-modal-body">
         <p>Predicting how fast chemicals degrade in the environment — and under what conditions — is essential for risk assessment and water quality management.</p>
         <ul>
-          <li>Hybrid <strong>GAT + MPNN</strong> architecture for molecular half-life prediction: R²=0.847</li>
-          <li>200+ molecular descriptors including 3D conformational features (ETKDG)</li>
-          <li>SHAP &amp; Integrated Gradients for model interpretability; Gradio web interface</li>
+          <li>Hybrid <strong>GAT + MPNN</strong> for molecular half-life prediction: R²=0.847; 200+ descriptors including 3D ETKDG features</li>
+          <li>SHAP &amp; Integrated Gradients for interpretability; Gradio web interface</li>
           <li><strong>Physics-Informed Neural Networks</strong>: R²=0.93 for degradation across 0–6000m ocean depth</li>
           <li>Discovered <strong>17,500× half-life variation</strong> from surface to abyssal waters</li>
           <li>Validated against ARGO &amp; GLODAP oceanographic databases (300K+ measurements)</li>
         </ul>
-        <p><strong>Collaboration interest:</strong> Oceanography, environmental fate modeling, kinetic databases, physics-informed ML.</p>
+        <p class="ri-collab-interest"><strong>Collaboration interest:</strong> Oceanography, environmental fate modeling, kinetic databases, physics-informed ML.</p>
       </div>
       <a href="mailto:suppaporn.2544@gmail.com?subject=Collaboration%20Inquiry%3A%20Kinetic%20Deep%20Learning" class="collab-btn-lg">✉ Contact for collaboration</a>
     </div>
   </div>
 
-  <div class="ri-modal-overlay" id="m05" onclick="closeModal(event,this)">
+  <div class="ri-modal-overlay" id="m05" onclick="closeModalOverlay(event,this)">
     <div class="ri-modal-box">
-      <button class="ri-modal-close" onclick="document.getElementById('m05').classList.remove('open')">✕</button>
-      <div class="ri-modal-icon">🗂️</div>
-      <h2>Clustering in High-Dimensional Datasets</h2>
+      <button class="ri-modal-close" aria-label="Close">✕</button>
+      <div class="ri-modal-header">
+        <span class="ri-modal-icon">🗂️</span>
+        <div>
+          <p class="ri-modal-num">Topic 05</p>
+          <h2>High-Dimensional Clustering</h2>
+        </div>
+      </div>
+      <div class="ri-modal-tags">
+        <span class="ri-tag">DBSCAN</span><span class="ri-tag">UMAP</span><span class="ri-tag">Dimensionality Reduction</span>
+      </div>
       <div class="ri-modal-body">
-        <p>Molecular and biological datasets are inherently high-dimensional. Standard Euclidean-based clustering methods often fail — requiring specialized approaches tailored to sparse, heterogeneous feature spaces.</p>
+        <p>Molecular and biological datasets are inherently high-dimensional. Standard Euclidean-based clustering often fails — requiring specialized approaches for sparse, heterogeneous feature spaces.</p>
         <ul>
           <li>Hierarchical DBSCAN for density-based clustering of large molecular datasets</li>
           <li>UMAP-assisted dimensionality reduction prior to clustering</li>
-          <li>Graph-partitioning methods for chemical space network segmentation</li>
+          <li>Graph-partitioning for chemical space network segmentation</li>
           <li>Applied to <strong>1.29M marine enzyme sequences</strong> (ESM-2 embeddings + k-mer features)</li>
           <li>Chemical space network clustering for DOM formula grouping</li>
           <li>Investigating optimal distance metrics for molecular fingerprint spaces</li>
         </ul>
-        <p><strong>Collaboration interest:</strong> Large-scale omics datasets, metabolomics, chemical library clustering, bioinformatics pipelines.</p>
+        <p class="ri-collab-interest"><strong>Collaboration interest:</strong> Large-scale omics, metabolomics, chemical library clustering, bioinformatics pipelines.</p>
       </div>
       <a href="mailto:suppaporn.2544@gmail.com?subject=Collaboration%20Inquiry%3A%20High-Dimensional%20Clustering" class="collab-btn-lg">✉ Contact for collaboration</a>
     </div>
   </div>
 
-  <div class="ri-modal-overlay" id="m06" onclick="closeModal(event,this)">
+  <div class="ri-modal-overlay" id="m06" onclick="closeModalOverlay(event,this)">
     <div class="ri-modal-box">
-      <button class="ri-modal-close" onclick="document.getElementById('m06').classList.remove('open')">✕</button>
-      <div class="ri-modal-icon">🌊</div>
-      <h2>Marine Enzyme Discovery</h2>
+      <button class="ri-modal-close" aria-label="Close">✕</button>
+      <div class="ri-modal-header">
+        <span class="ri-modal-icon">🌊</span>
+        <div>
+          <p class="ri-modal-num">Topic 06</p>
+          <h2>Marine Enzyme Discovery</h2>
+        </div>
+      </div>
+      <div class="ri-modal-tags">
+        <span class="ri-tag">ESM-2</span><span class="ri-tag">Protein LM</span><span class="ri-tag">Marine Carbon</span>
+      </div>
       <div class="ri-modal-body">
         <p>The ocean harbors vast untapped enzymatic diversity relevant to carbon cycling, bioremediation, and biotechnology. Computational discovery at scale is essential.</p>
         <ul>
@@ -244,39 +354,55 @@
           <li>Universal scaling laws for enzyme kinetics: R²=0.91</li>
           <li>Preprint: <em>"Structural and Kinetic Analysis of Carboxyl-Metabolizing Enzymes"</em> (ChemRxiv)</li>
         </ul>
-        <p><strong>Collaboration interest:</strong> Marine microbiology, enzyme databases, protein structure prediction, blue carbon research.</p>
+        <p class="ri-collab-interest"><strong>Collaboration interest:</strong> Marine microbiology, enzyme databases, protein structure prediction, blue carbon research.</p>
       </div>
       <a href="mailto:suppaporn.2544@gmail.com?subject=Collaboration%20Inquiry%3A%20Marine%20Enzyme%20Discovery" class="collab-btn-lg">✉ Contact for collaboration</a>
     </div>
   </div>
 
-  <div class="ri-modal-overlay" id="m07" onclick="closeModal(event,this)">
+  <div class="ri-modal-overlay" id="m07" onclick="closeModalOverlay(event,this)">
     <div class="ri-modal-box">
-      <button class="ri-modal-close" onclick="document.getElementById('m07').classList.remove('open')">✕</button>
-      <div class="ri-modal-icon">🧬</div>
-      <h2>Generative Molecular Models</h2>
+      <button class="ri-modal-close" aria-label="Close">✕</button>
+      <div class="ri-modal-header">
+        <span class="ri-modal-icon">🧬</span>
+        <div>
+          <p class="ri-modal-num">Topic 07</p>
+          <h2>Generative Molecular Models</h2>
+        </div>
+      </div>
+      <div class="ri-modal-tags">
+        <span class="ri-tag">VAE</span><span class="ri-tag">SELFIES</span><span class="ri-tag">Chemical Space</span>
+      </div>
       <div class="ri-modal-body">
         <p>Generative models allow us to explore chemical spaces beyond known compounds — proposing novel molecules with desired environmental or pharmaceutical properties.</p>
         <ul>
           <li>CRAM: property-conditioned <strong>VAE + GAT encoder + GRU-SELFIES decoder</strong></li>
-          <li>Conditioned on physicochemical properties (MW, DBE, O/C ratio, H/C ratio)</li>
-          <li>Specifically designed for marine DOM chemical space exploration</li>
+          <li>Conditioned on physicochemical properties (MW, DBE, O/C, H/C ratios)</li>
+          <li>Designed specifically for marine DOM chemical space exploration</li>
           <li>Enhanced candidate isomers per deep-ocean formula: 1.4 → <strong>9.3×</strong></li>
-          <li>Applications: de novo molecule generation for environmental and drug discovery contexts</li>
+          <li>Applications: de novo generation for environmental and drug discovery contexts</li>
         </ul>
-        <p><strong>Collaboration interest:</strong> Drug discovery, materials science, environmental chemistry, molecular generation benchmarking.</p>
+        <p class="ri-collab-interest"><strong>Collaboration interest:</strong> Drug discovery, materials science, environmental chemistry, molecular generation benchmarking.</p>
       </div>
       <a href="mailto:suppaporn.2544@gmail.com?subject=Collaboration%20Inquiry%3A%20Generative%20Molecular%20Models" class="collab-btn-lg">✉ Contact for collaboration</a>
     </div>
   </div>
 
-  <div class="ri-modal-overlay" id="m08" onclick="closeModal(event,this)">
+  <div class="ri-modal-overlay" id="m08" onclick="closeModalOverlay(event,this)">
     <div class="ri-modal-box">
-      <button class="ri-modal-close" onclick="document.getElementById('m08').classList.remove('open')">✕</button>
-      <div class="ri-modal-icon">💧</div>
-      <h2>PFAS &amp; Emerging Contaminants</h2>
+      <button class="ri-modal-close" aria-label="Close">✕</button>
+      <div class="ri-modal-header">
+        <span class="ri-modal-icon">💧</span>
+        <div>
+          <p class="ri-modal-num">Topic 08</p>
+          <h2>PFAS &amp; Emerging Contaminants</h2>
+        </div>
+      </div>
+      <div class="ri-modal-tags">
+        <span class="ri-tag">PFAS</span><span class="ri-tag">Water Quality</span><span class="ri-tag">Non-target Analysis</span>
+      </div>
       <div class="ri-modal-body">
-        <p>Per- and polyfluoroalkyl substances (PFAS) are persistent pollutants of global concern. Identifying their transformation products and understanding their fate is critical for water safety.</p>
+        <p>Per- and polyfluoroalkyl substances (PFAS) are persistent pollutants of global concern. Identifying transformation products and understanding their fate is critical for water safety.</p>
         <ul>
           <li>Mass difference network algorithm for automated transformation product identification</li>
           <li>High-throughput non-target screening of PFAS in water samples</li>
@@ -284,7 +410,7 @@
           <li>Integration with GNN-based toxicity prediction for risk prioritization</li>
           <li>JST-funded research collaboration with LLNL (2024–2025)</li>
         </ul>
-        <p><strong>Collaboration interest:</strong> PFAS monitoring, water treatment, non-target analysis, regulatory toxicology.</p>
+        <p class="ri-collab-interest"><strong>Collaboration interest:</strong> PFAS monitoring, water treatment, non-target analysis, regulatory toxicology.</p>
       </div>
       <a href="mailto:suppaporn.2544@gmail.com?subject=Collaboration%20Inquiry%3A%20PFAS%20Research" class="collab-btn-lg">✉ Contact for collaboration</a>
     </div>
@@ -303,28 +429,49 @@
 
   <script src="main.js"></script>
   <script>
-    function openModal(id) {
-      document.getElementById(id).classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal(e, overlay) {
-      if (e.target === overlay) {
-        overlay.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-    }
-    document.querySelectorAll('.ri-modal-close').forEach(btn => {
+    // Filter buttons
+    document.querySelectorAll('.ri-filter').forEach(btn => {
       btn.addEventListener('click', () => {
-        btn.closest('.ri-modal-overlay').classList.remove('open');
-        document.body.style.overflow = '';
+        document.querySelectorAll('.ri-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.ri-card').forEach(card => {
+          if (filter === 'all' || card.dataset.tags.includes(filter)) {
+            card.style.display = '';
+            card.style.animation = 'fadeUp .35s ease both';
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
     });
+
+    // Modal open
+    function openModal(id) {
+      const m = document.getElementById(id);
+      m.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close on overlay click
+    function closeModalOverlay(e, overlay) {
+      if (e.target === overlay) closeModal(overlay);
+    }
+
+    // Close by X button
+    document.querySelectorAll('.ri-modal-close').forEach(btn => {
+      btn.addEventListener('click', () => closeModal(btn.closest('.ri-modal-overlay')));
+    });
+
+    function closeModal(el) {
+      el.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Escape key
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') {
-        document.querySelectorAll('.ri-modal-overlay.open').forEach(m => {
-          m.classList.remove('open');
-          document.body.style.overflow = '';
-        });
+        document.querySelectorAll('.ri-modal-overlay.open').forEach(m => closeModal(m));
       }
     });
   </script>
