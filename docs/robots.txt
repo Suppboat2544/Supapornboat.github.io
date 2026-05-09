@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://suppboat2544.github.io/Supapornboat.github.io/sitemap.xml
