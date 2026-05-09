@@ -70,11 +70,11 @@ h1,h2,h3,h4 { line-height: 1.25; font-weight: 700; }
 .hero-links svg { width: 20px; height: 20px; }
 
 /* ── HERO VISUAL ── */
-.hero-visual { flex: 0 0 360px; height: 290px; position: relative; display: flex; align-items: center; justify-content: center; }
+.hero-visual { flex: 0 0 440px; height: 340px; position: relative; display: flex; align-items: center; justify-content: center; }
 .blob { position: absolute; border-radius: 50%; filter: blur(64px); opacity: .2; }
-.blob-1 { width: 280px; height: 280px; background: var(--accent); top: 0; right: 0; animation: pulse 7s ease-in-out infinite; }
-.blob-2 { width: 220px; height: 220px; background: var(--accent2); bottom: 0; left: 0; animation: pulse 9s 2s ease-in-out infinite; }
-.molecule { position: relative; z-index: 1; width: 340px; height: 250px; animation: float 6s ease-in-out infinite; filter: drop-shadow(0 0 28px rgba(79,142,247,.35)); }
+.blob-1 { width: 340px; height: 340px; background: var(--accent); top: 0; right: 0; animation: pulse 7s ease-in-out infinite; }
+.blob-2 { width: 260px; height: 260px; background: var(--accent2); bottom: 0; left: 0; animation: pulse 9s 2s ease-in-out infinite; }
+.molecule { position: relative; z-index: 1; width: 430px; height: 310px; animation: float 6s ease-in-out infinite; filter: drop-shadow(0 0 28px rgba(79,142,247,.35)); }
 
 /* ── SECTIONS ── */
 .section { padding: 88px 24px; }
@@ -307,10 +307,10 @@ h1,h2,h3,h4 { line-height: 1.25; font-weight: 700; }
 .ri-card:hover { transform: translateY(-6px); border-color: rgba(79,142,247,.5); box-shadow: 0 16px 48px rgba(79,142,247,.14); }
 
 /* Research card figure strip */
-.ri-card-fig { margin: -1.6rem -1.5rem 1.1rem; border-radius: var(--radius) var(--radius) 0 0; overflow: hidden; height: 148px; background: var(--bg3); position: relative; }
-.ri-card-fig::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(to bottom, transparent, var(--bg2)); pointer-events: none; }
-.ri-card-fig img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; opacity: .82; transition: opacity .4s var(--ease), transform .5s var(--ease); }
-.ri-card:hover .ri-card-fig img { opacity: 1; transform: scale(1.05); }
+.ri-card-fig { margin: -1.6rem -1.5rem 1.1rem; border-radius: var(--radius) var(--radius) 0 0; overflow: hidden; height: 190px; background: #0a0e14; position: relative; display: flex; align-items: center; justify-content: center; }
+.ri-card-fig::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 44px; background: linear-gradient(to bottom, transparent, var(--bg2)); pointer-events: none; }
+.ri-card-fig img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; opacity: .88; padding: 10px 8px 0; transition: opacity .4s var(--ease), transform .5s var(--ease); }
+.ri-card:hover .ri-card-fig img { opacity: 1; transform: scale(1.04); }
 .ri-card-meta { margin-bottom: .1rem; }
 .ri-num { display: inline-block; font-size: .65rem; font-weight: 700; color: var(--accent); letter-spacing: .12em; text-transform: uppercase; background: rgba(79,142,247,.1); border: 1px solid rgba(79,142,247,.22); padding: .18rem .55rem; border-radius: 6px; }
 .ri-card h3 { font-size: .97rem; font-weight: 700; color: var(--fg); margin: 0; line-height: 1.35; }
@@ -354,3 +354,62 @@ h1,h2,h3,h4 { line-height: 1.25; font-weight: 700; }
 .modal-figure { width: 100%; border-radius: 10px; margin-bottom: 1.3rem; border: 1px solid var(--border2); display: block; background: var(--bg3); }
 .collab-btn-lg { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.7rem; background: var(--accent); color: #fff; border-radius: 10px; font-weight: 600; font-size: .88rem; text-decoration: none; transition: opacity var(--t), transform var(--t); }
 .collab-btn-lg:hover { opacity: .88; transform: translateY(-2px); text-decoration: none; }
+
+/* ══════════════════════════════════════
+   GSAT MODEL PAGE
+══════════════════════════════════════ */
+.gsat-hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(79,142,247,.1); border: 1px solid rgba(79,142,247,.28); border-radius: 100px; padding: 6px 18px; font-size: .78rem; font-weight: 600; color: var(--accent); margin-bottom: 20px; letter-spacing: .03em; }
+.gsat-hero-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px rgba(79,142,247,.25); flex-shrink: 0; animation: blink 2.5s ease-in-out infinite; }
+
+/* Architecture diagram */
+.arch-diagram { background: var(--bg2); border: 1px solid var(--border2); border-radius: var(--radius); padding: 2.4rem 2rem; margin: 2rem 0; overflow-x: auto; }
+.arch-flow { display: flex; align-items: center; gap: 0; flex-wrap: nowrap; min-width: 660px; }
+.arch-block { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
+.arch-box { border-radius: 10px; padding: 10px 14px; font-size: .78rem; font-weight: 700; text-align: center; line-height: 1.35; width: 110px; position: relative; }
+.arch-box-sub { font-size: .67rem; font-weight: 400; opacity: .72; display: block; margin-top: 3px; }
+.arch-box-graph { background: rgba(79,142,247,.14); border: 1.5px solid rgba(79,142,247,.5); color: var(--accent); }
+.arch-box-seq { background: rgba(124,106,247,.14); border: 1.5px solid rgba(124,106,247,.5); color: var(--accent2); }
+.arch-box-attn { background: rgba(247,188,79,.12); border: 1.5px solid rgba(247,188,79,.45); color: #f7bc4f; }
+.arch-box-out { background: rgba(247,106,106,.12); border: 1.5px solid rgba(247,106,106,.45); color: var(--accent3); }
+.arch-box-fuse { background: rgba(79,220,130,.1); border: 1.5px solid rgba(79,220,130,.38); color: #4fdc82; }
+.arch-arrow { font-size: 1.2rem; color: var(--fg3); padding: 0 4px; flex-shrink: 0; align-self: center; margin-bottom: 28px; }
+.arch-label { font-size: .62rem; color: var(--fg2); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+
+/* Metric cards */
+.metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 1.8rem 0; }
+.metric-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px 16px; text-align: center; }
+.metric-val { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.1; letter-spacing: -.03em; }
+.metric-label { font-size: .68rem; color: var(--fg2); font-weight: 600; letter-spacing: .09em; text-transform: uppercase; margin-top: 5px; }
+.metric-sub { font-size: .7rem; color: var(--fg3); margin-top: 3px; }
+
+/* Two-column layout for GSAT page */
+.gsat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 2rem 0; }
+.gsat-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin: 1.5rem 0; }
+@media(max-width:780px) { .gsat-grid,.gsat-grid-3 { grid-template-columns: 1fr; } .arch-flow { min-width: 100%; flex-direction: column; } .arch-arrow { transform: rotate(90deg); margin: 0 0 0 0; } }
+
+/* Feature block */
+.feat-block { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 20px; }
+.feat-block h4 { font-size: .93rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 9px; }
+.feat-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.feat-dot-blue { background: var(--accent); box-shadow: 0 0 0 3px rgba(79,142,247,.2); }
+.feat-dot-purple { background: var(--accent2); box-shadow: 0 0 0 3px rgba(124,106,247,.2); }
+.feat-dot-yellow { background: #f7bc4f; box-shadow: 0 0 0 3px rgba(247,188,79,.2); }
+.feat-dot-green { background: #4fdc82; box-shadow: 0 0 0 3px rgba(79,220,130,.2); }
+.feat-dot-red { background: var(--accent3); box-shadow: 0 0 0 3px rgba(247,106,106,.2); }
+.feat-block p,.feat-block li { font-size: .83rem; color: var(--fg2); line-height: 1.75; }
+.feat-block ul { padding-left: 1.1rem; display: flex; flex-direction: column; gap: .4rem; margin: 0; }
+.feat-block li strong { color: var(--fg); }
+
+/* Attention heatmap demo (SVG-based) */
+.attn-demo-wrap { background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--radius); padding: 1.5rem; overflow-x: auto; }
+.attn-demo-wrap p { font-size: .78rem; color: var(--fg2); margin-bottom: 1rem; }
+
+/* Comparison table */
+.comp-table { width: 100%; border-collapse: collapse; font-size: .83rem; }
+.comp-table th { text-align: left; font-size: .67rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--fg2); padding: 8px 14px; border-bottom: 1px solid var(--border2); }
+.comp-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--fg2); }
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table td:first-child { font-weight: 600; color: var(--fg); }
+.comp-table .highlight-row td { background: rgba(79,142,247,.06); }
+.comp-table .highlight-row td:first-child { color: var(--accent); }
+.badge-best { display: inline-block; background: rgba(79,220,130,.12); color: #4fdc82; border: 1px solid rgba(79,220,130,.3); border-radius: 100px; font-size: .65rem; font-weight: 700; padding: 1px 7px; margin-left: 4px; }

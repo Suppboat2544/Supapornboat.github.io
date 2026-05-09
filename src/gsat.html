@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GSAT Model · Supaporn Klabklaydee</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SK</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="gsat.html" class="active" style="color:var(--accent);font-weight:700;">GSAT Model</a></li>
+      </ul>
+      <button class="nav-burger" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero" style="padding-bottom:56px;">
+    <div class="container">
+      <div class="gsat-hero-badge">Published · ACS ES&amp;T Water · 2024</div>
+      <h1 style="font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.03em;margin-bottom:14px;">
+        Graph–Sequence Attention<br><span style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Transformer (GSAT)</span>
+      </h1>
+      <p class="page-hero-sub" style="max-width:640px;">A hybrid deep learning architecture combining <strong style="color:var(--fg)">Graph Attention Networks</strong> and <strong style="color:var(--fg)">Sequence Transformers</strong> to predict multi-generational biotransformation toxicity of emerging environmental pollutants — 98.9% faster than traditional methods.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+        <a href="https://doi.org/10.1021/acsestwater.4c00123" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:.85rem;">📄 Read Paper (ACS)</a>
+        <a href="mailto:suppaporn.2544@gmail.com?subject=GSAT%20Collaboration" class="btn btn-ghost" style="font-size:.85rem;">✉ Collaborate</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- METRICS STRIP -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="metric-grid" style="max-width:860px;margin:0 auto;">
+        <div class="metric-card">
+          <div class="metric-val">0.907</div>
+          <div class="metric-label">R² Score</div>
+          <div class="metric-sub">Toxicity prediction accuracy</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">98.9%</div>
+          <div class="metric-label">Faster</div>
+          <div class="metric-sub">vs. traditional simulation</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">4.7M</div>
+          <div class="metric-label">Reaction Steps</div>
+          <div class="metric-sub">Analyzed across 12 pollutants</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">68.2%</div>
+          <div class="metric-label">Toxicity Increase</div>
+          <div class="metric-sub">Metabolites more toxic than parent</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">15.4×</div>
+          <div class="metric-label">Avg. Fold</div>
+          <div class="metric-sub">Toxicity amplification</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOTIVATION -->
+  <section class="section alt-section">
+    <div class="container">
+      <div class="section-label">Why GSAT?</div>
+      <div class="gsat-grid" style="align-items:start;">
+        <div>
+          <h2 style="font-size:1.45rem;font-weight:700;margin-bottom:16px;">The Problem</h2>
+          <p style="color:var(--fg2);font-size:.93rem;line-height:1.82;margin-bottom:14px;">Environmental pollutants — pharmaceuticals, pesticides, industrial chemicals — rarely remain in their original form. Microbial communities and chemical processes break them down into <strong style="color:var(--fg)">transformation products (TPs)</strong>, which are often <em>more persistent and more toxic</em> than the parent compound.</p>
+          <p style="color:var(--fg2);font-size:.93rem;line-height:1.82;margin-bottom:14px;">Traditional toxicokinetic simulations can take <strong style="color:var(--fg)">hours per compound</strong> and cannot scale to assess thousands of TPs across multi-generational pathways. Regulatory risk assessment is severely bottlenecked.</p>
+          <p style="color:var(--fg2);font-size:.93rem;line-height:1.82;">GSAT addresses this by learning <strong style="color:var(--fg)">both molecular structure (graph) and reaction sequence context (transformer)</strong> simultaneously — enabling near-instant, high-accuracy toxicity prediction across full metabolic trees.</p>
+        </div>
+        <div class="feat-block" style="background:var(--bg3);">
+          <h4><span class="feat-dot feat-dot-red"></span>Scale of the Challenge</h4>
+          <ul>
+            <li>12 priority pharmaceutical &amp; pesticide pollutants studied</li>
+            <li><strong>4.7 million reaction steps</strong> traced across multi-generational biotransformation trees</li>
+            <li>68.2% of metabolic TPs show <strong>increased toxicity</strong> vs. parent compound</li>
+            <li>Average toxicity amplification: <strong>15.4-fold</strong></li>
+            <li>Some TPs exhibit up to <strong>400× higher EC₅₀ toxicity</strong></li>
+            <li>Traditional simulation: ~6–12 hours per compound; GSAT: <strong>&lt;5 seconds</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Model Architecture</div>
+      <h2 style="font-size:1.45rem;font-weight:700;margin-bottom:8px;">How GSAT Works</h2>
+      <p style="color:var(--fg2);font-size:.88rem;margin-bottom:2rem;max-width:660px;">GSAT fuses two complementary views of a molecule: its <strong style="color:var(--accent)">graph topology</strong> (atoms as nodes, bonds as edges) and its <strong style="color:var(--accent2)">SMILES sequence representation</strong> (chemical grammar). A cross-modal attention layer learns which structural features drive toxicity.</p>
+
+      <!-- Architecture diagram -->
+      <div class="arch-diagram">
+        <div class="arch-flow">
+          <!-- Input -->
+          <div class="arch-block">
+            <div class="arch-box" style="background:rgba(255,255,255,.04);border:1.5px solid var(--border2);color:var(--fg2);width:90px;">
+              Molecule
+              <span class="arch-box-sub">SMILES string</span>
+            </div>
+            <div class="arch-label">Input</div>
+          </div>
+          <div class="arch-arrow">→</div>
+
+          <!-- Dual encoder fork -->
+          <div class="arch-block" style="gap:6px;">
+            <div class="arch-box arch-box-graph">
+              GAT Encoder
+              <span class="arch-box-sub">Graph Attention<br>Network (4 layers)</span>
+            </div>
+            <div style="font-size:.65rem;color:var(--fg3);margin:2px 0;">parallel</div>
+            <div class="arch-box arch-box-seq">
+              Seq. Transformer
+              <span class="arch-box-sub">SMILES tokens<br>(8 heads, 4 layers)</span>
+            </div>
+            <div class="arch-label">Dual Encoder</div>
+          </div>
+          <div class="arch-arrow">→</div>
+
+          <!-- Cross-modal attention -->
+          <div class="arch-block">
+            <div class="arch-box arch-box-attn">
+              Cross-Modal<br>Attention
+              <span class="arch-box-sub">Graph ↔ Sequence<br>attention bridge</span>
+            </div>
+            <div class="arch-label">Fusion</div>
+          </div>
+          <div class="arch-arrow">→</div>
+
+          <!-- Feature fusion -->
+          <div class="arch-block">
+            <div class="arch-box arch-box-fuse">
+              Feature Fusion
+              <span class="arch-box-sub">Concat + LayerNorm<br>+ Dropout (0.3)</span>
+            </div>
+            <div class="arch-label">Integration</div>
+          </div>
+          <div class="arch-arrow">→</div>
+
+          <!-- Prediction head -->
+          <div class="arch-block">
+            <div class="arch-box arch-box-out">
+              Prediction Head
+              <span class="arch-box-sub">MLP → EC₅₀<br>(log scale)</span>
+            </div>
+            <div class="arch-label">Output</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature blocks 3-col -->
+      <div class="gsat-grid-3">
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-blue"></span>Graph Attention Network (GAT)</h4>
+          <p>Each atom is a node with RDKit-derived features: atomic number, hybridization, formal charge, ring membership, aromaticity, and 3D ETKDG coordinates. Four GAT layers with multi-head attention aggregate neighborhood information, learning which atoms and bonds matter most for biotransformation reactivity.</p>
+        </div>
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-purple"></span>Sequence Transformer</h4>
+          <p>The SMILES string is tokenized at the character level and processed through a 4-layer, 8-head Transformer encoder. Positional encodings allow the model to learn chemical grammar patterns — ring closure notation, branch points, stereochemistry — that the graph representation cannot directly encode as sequence.</p>
+        </div>
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-yellow"></span>Cross-Modal Attention Bridge</h4>
+          <p>A novel cross-attention layer allows graph node embeddings to attend to sequence token embeddings and vice versa. This bidirectional coupling lets the model resolve ambiguities — e.g., which aromatic carbon in the graph corresponds to which token position — producing richer, more informative joint representations.</p>
+        </div>
+      </div>
+
+      <!-- Attention demo SVG -->
+      <div class="attn-demo-wrap">
+        <p style="font-weight:600;color:var(--fg);margin-bottom:.3rem;">Atom-level attention heatmap <span style="font-weight:400;font-size:.73rem;color:var(--fg2);">(example: Ciprofloxacin TP-1 · assumed visualization)</span></p>
+        <p>Brighter nodes = higher cross-modal attention weight. The model learns that hydroxylated aromatic carbons and quinolone nitrogen drive toxicity prediction.</p>
+        <svg viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;display:block;margin:0 auto;">
+          <!-- Ring 1 (quinolone) -->
+          <polygon points="120,80 148,64 176,80 176,112 148,128 120,112" stroke="rgba(255,255,255,.15)" stroke-width="1.5" fill="none"/>
+          <!-- Ring 2 (piperazine) -->
+          <polygon points="220,80 248,64 276,80 276,112 248,128 220,112" stroke="rgba(255,255,255,.15)" stroke-width="1.5" fill="none"/>
+          <!-- Linker -->
+          <line x1="176" y1="96" x2="220" y2="96" stroke="rgba(255,255,255,.15)" stroke-width="1.5"/>
+          <!-- Fluorine -->
+          <line x1="148" y1="64" x2="148" y2="38" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
+          <!-- COOH -->
+          <line x1="120" y1="96" x2="90" y2="96" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
+          <!-- N-1 substitute -->
+          <line x1="120" y1="80" x2="96" y2="64" stroke="rgba(255,255,255,.12)" stroke-width="1.5"/>
+          <!-- Nitrogen quinolone (high attn) -->
+          <circle cx="148" cy="96" r="14" fill="rgba(247,188,79,.25)"/>
+          <circle cx="148" cy="96" r="9" fill="#f7bc4f"/>
+          <text x="148" y="100" font-size="8.5" fill="black" text-anchor="middle" font-weight="800" font-family="monospace">N</text>
+          <!-- C=O carbonyl (high attn) -->
+          <circle cx="120" cy="96" r="13" fill="rgba(247,106,106,.22)"/>
+          <circle cx="120" cy="96" r="8.5" fill="#f76a6a"/>
+          <text x="120" y="100" font-size="8" fill="white" text-anchor="middle" font-weight="800" font-family="monospace">C</text>
+          <!-- Fluorine (mid attn) -->
+          <circle cx="148" cy="38" r="11" fill="rgba(124,106,247,.2)"/>
+          <circle cx="148" cy="38" r="7" fill="#7c6af7"/>
+          <text x="148" y="42" font-size="7.5" fill="white" text-anchor="middle" font-weight="800" font-family="monospace">F</text>
+          <!-- Piperazine N (high) -->
+          <circle cx="248" cy="80" r="13" fill="rgba(247,188,79,.2)"/>
+          <circle cx="248" cy="80" r="8.5" fill="#f7bc4f" opacity=".9"/>
+          <text x="248" y="84" font-size="8" fill="black" text-anchor="middle" font-weight="800" font-family="monospace">N</text>
+          <!-- Piperazine N2 (mid) -->
+          <circle cx="248" cy="112" r="11" fill="rgba(124,106,247,.18)"/>
+          <circle cx="248" cy="112" r="7" fill="#7c6af7" opacity=".75"/>
+          <text x="248" y="116" font-size="7.5" fill="white" text-anchor="middle" font-weight="800" font-family="monospace">N</text>
+          <!-- Other carbons (low) -->
+          <circle cx="176" cy="80" r="9" fill="rgba(79,142,247,.18)"/><circle cx="176" cy="80" r="6" fill="#4f8ef7" opacity=".5"/><text x="176" y="84" font-size="7" fill="white" text-anchor="middle" font-family="monospace">C</text>
+          <circle cx="176" cy="112" r="9" fill="rgba(79,142,247,.12)"/><circle cx="176" cy="112" r="6" fill="#4f8ef7" opacity=".38"/><text x="176" y="116" font-size="7" fill="white" text-anchor="middle" font-family="monospace">C</text>
+          <circle cx="220" cy="96" r="9" fill="rgba(74,85,104,.6)"/><circle cx="220" cy="96" r="6" fill="#4a5568"/><text x="220" y="100" font-size="7" fill="rgba(255,255,255,.7)" text-anchor="middle" font-family="monospace">C</text>
+          <circle cx="120" cy="80" r="9" fill="rgba(74,85,104,.55)"/><circle cx="120" cy="80" r="6" fill="#4a5568" opacity=".85"/><text x="120" y="84" font-size="7" fill="rgba(255,255,255,.7)" text-anchor="middle" font-family="monospace">C</text>
+          <circle cx="96" cy="64" r="8" fill="rgba(74,85,104,.45)"/><circle cx="96" cy="64" r="5.5" fill="#4a5568" opacity=".7"/><text x="96" y="68" font-size="6.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="monospace">N</text>
+          <circle cx="90" cy="96" r="8" fill="rgba(247,106,106,.15)"/><circle cx="90" cy="96" r="5" fill="#f76a6a" opacity=".45"/><text x="90" y="100" font-size="6.5" fill="white" text-anchor="middle" font-family="monospace">O</text>
+
+          <!-- LEGEND -->
+          <rect x="340" y="20" width="280" height="120" rx="8" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+          <text x="480" y="38" font-size="8" fill="rgba(139,148,158,.85)" text-anchor="middle" font-family="monospace" font-weight="700" letter-spacing="1">ATTENTION LEGEND</text>
+          <!-- High -->
+          <circle cx="360" cy="56" r="7" fill="#f7bc4f"/><text x="375" y="60" font-size="8.5" fill="rgba(230,237,243,.85)" font-family="monospace">High  (0.75–1.0) · N, C=O</text>
+          <!-- Mid-high -->
+          <circle cx="360" cy="74" r="7" fill="#f76a6a"/><text x="375" y="78" font-size="8.5" fill="rgba(230,237,243,.75)" font-family="monospace">Mid-high (0.55–0.74)</text>
+          <!-- Mid -->
+          <circle cx="360" cy="92" r="7" fill="#7c6af7"/><text x="375" y="96" font-size="8.5" fill="rgba(230,237,243,.65)" font-family="monospace">Mid  (0.35–0.54)</text>
+          <!-- Low -->
+          <circle cx="360" cy="110" r="7" fill="#4f8ef7" opacity=".5"/><text x="375" y="114" font-size="8.5" fill="rgba(230,237,243,.5)" font-family="monospace">Low  (0.10–0.34)</text>
+          <circle cx="360" cy="128" r="7" fill="#4a5568"/><text x="375" y="132" font-size="8.5" fill="rgba(230,237,243,.35)" font-family="monospace">Minimal  (&lt;0.10)</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINING & TECHNIQUES -->
+  <section class="section alt-section">
+    <div class="container">
+      <div class="section-label">Training Strategy</div>
+      <h2 style="font-size:1.45rem;font-weight:700;margin-bottom:1.5rem;">Handling Imbalanced Toxicity Data</h2>
+      <div class="gsat-grid">
+        <div>
+          <div class="feat-block" style="margin-bottom:14px;">
+            <h4><span class="feat-dot feat-dot-yellow"></span>Focal Loss</h4>
+            <p>Standard MSE loss underweights rare high-toxicity TPs — the most dangerous compounds for environmental risk. GSAT uses focal-style regression loss that up-weights hard samples, forcing the model to accurately predict compounds at the tails of the toxicity distribution (EC₅₀ &lt; 0.1 mg/L).</p>
+          </div>
+          <div class="feat-block" style="margin-bottom:14px;">
+            <h4><span class="feat-dot feat-dot-purple"></span>SMILES Augmentation</h4>
+            <p>Each molecule has multiple valid SMILES representations (canonical vs. randomized). During training, 8–12 augmented SMILES are generated per molecule. This forces the sequence encoder to learn atom-graph invariant features rather than canonical string artifacts, improving generalization by ~4% R².</p>
+          </div>
+          <div class="feat-block">
+            <h4><span class="feat-dot feat-dot-green"></span>Stochastic Weight Averaging (SWA)</h4>
+            <p>Rather than using a single endpoint model, SWA averages weights across the final 30 training epochs. This flattens the loss landscape and improves generalization, reducing overfitting on smaller pollutant-class clusters — critical when some compound classes have &lt;50 training examples.</p>
+          </div>
+        </div>
+        <div>
+          <!-- Figure from folder -->
+          <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);overflow:hidden;margin-bottom:14px;">
+            <img src="figure/toxicity_model.png" alt="GSAT toxicity model — architecture visualization" style="width:100%;display:block;object-fit:contain;max-height:260px;background:#0a0e14;padding:12px;" loading="lazy"/>
+            <div style="padding:12px 16px;font-size:.75rem;color:var(--fg2);">Figure: GSAT model architecture visualization (from publication)</div>
+          </div>
+          <div class="feat-block">
+            <h4><span class="feat-dot feat-dot-blue"></span>Key Hyperparameters</h4>
+            <ul>
+              <li>GAT layers: <strong>4</strong> · Hidden dim: <strong>256</strong></li>
+              <li>Transformer heads: <strong>8</strong> · Layers: <strong>4</strong></li>
+              <li>Cross-attention heads: <strong>4</strong></li>
+              <li>Dropout: <strong>0.3</strong> · LR: <strong>3×10⁻⁴</strong> (cosine decay)</li>
+              <li>Batch size: <strong>64</strong> · Epochs: <strong>200</strong> + SWA 30</li>
+              <li>Feature set: <strong>200+</strong> descriptors including 3D ETKDG</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATHWAY PREDICTION -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Extension: Pathway Prediction</div>
+      <h2 style="font-size:1.45rem;font-weight:700;margin-bottom:8px;">Graph Transformer for Reaction Class Prediction</h2>
+      <p style="color:var(--fg2);font-size:.9rem;line-height:1.8;margin-bottom:2rem;max-width:700px;">Beyond toxicity, the GSAT framework was extended to predict <strong style="color:var(--fg)">which biotransformation reaction</strong> a molecule will undergo — enabling automated construction of full metabolic trees.</p>
+
+      <!-- Figure -->
+      <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);overflow:hidden;margin-bottom:2rem;">
+        <img src="figure/transformation_model.png" alt="Biotransformation pathway model" style="width:100%;display:block;object-fit:contain;max-height:320px;background:#0a0e14;padding:16px;" loading="lazy"/>
+        <div style="padding:12px 18px;font-size:.75rem;color:var(--fg2);">Figure: Biotransformation pathway prediction model — reaction class classification architecture</div>
+      </div>
+
+      <div class="gsat-grid-3">
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-blue"></span>Dataset Scale</h4>
+          <ul>
+            <li><strong>210,000+</strong> reaction pairs from EAWAG-BBD and enviPath</li>
+            <li><strong>99 reaction classes</strong> (hydroxylation, dealkylation, oxidation, hydrolysis…)</li>
+            <li>Multi-generational trees up to <strong>7 generations</strong> deep</li>
+          </ul>
+        </div>
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-yellow"></span>Performance</h4>
+          <ul>
+            <li>Top-1 accuracy: <strong>71.3%</strong></li>
+            <li>Top-3 accuracy: <strong>87.0%</strong></li>
+            <li>Top-5 accuracy: <strong>93.2%</strong></li>
+            <li>Macro F1: <strong>0.68</strong></li>
+          </ul>
+        </div>
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-green"></span>Applications</h4>
+          <ul>
+            <li>Automated metabolic tree construction</li>
+            <li>Regulatory risk screening at scale</li>
+            <li>Coupled with GSAT toxicity: full <strong>structure→pathway→toxicity</strong> pipeline</li>
+            <li>SHAP + Integrated Gradients for interpretability</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="section alt-section">
+    <div class="container">
+      <div class="section-label">Benchmarks</div>
+      <h2 style="font-size:1.45rem;font-weight:700;margin-bottom:1.5rem;">GSAT vs. Baseline Models</h2>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Architecture</th>
+              <th>R²</th>
+              <th>RMSE</th>
+              <th>Speed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>QSAR (classical)</td><td>Random Forest + RDKit FP</td><td>0.731</td><td>0.62</td><td>Fast</td></tr>
+            <tr><td>GCN</td><td>Graph Conv. Network</td><td>0.803</td><td>0.53</td><td>Fast</td></tr>
+            <tr><td>AttentiveFP</td><td>GAT (graph only)</td><td>0.851</td><td>0.46</td><td>Fast</td></tr>
+            <tr><td>GROVER</td><td>Self-supervised GNN</td><td>0.864</td><td>0.44</td><td>Moderate</td></tr>
+            <tr><td>ChemBERTa</td><td>Seq. Transformer only</td><td>0.843</td><td>0.47</td><td>Fast</td></tr>
+            <tr><td>Traditional simulation</td><td>Mechanistic QSAR</td><td>—</td><td>—</td><td>6–12 h/compound</td></tr>
+            <tr class="highlight-row">
+              <td>GSAT (ours)<span class="badge-best">Best</span></td>
+              <td>GAT + Seq. Transformer + Cross-attn</td>
+              <td><strong>0.907</strong></td>
+              <td><strong>0.37</strong></td>
+              <td>~5 s/tree <span class="badge-best">98.9% faster</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.75rem;color:var(--fg3);margin-top:10px;">Evaluation on held-out test set (20% split). RMSE in log EC₅₀ units. Speed measured per full multi-generational tree.</p>
+    </div>
+  </section>
+
+  <!-- FUTURE DIRECTIONS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Future Work</div>
+      <h2 style="font-size:1.45rem;font-weight:700;margin-bottom:1.5rem;">Where GSAT Goes Next</h2>
+      <div class="gsat-grid-3">
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-blue"></span>3D Geometric Extension</h4>
+          <p>Incorporating 3D molecular conformations (ETKDG + SE(3)-equivariant layers) to capture steric effects that govern enzyme binding and biotransformation selectivity.</p>
+        </div>
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-purple"></span>Mixture Toxicity</h4>
+          <p>Extending from single-compound to <strong>mixture toxicity prediction</strong> — modeling synergistic and antagonistic interactions between multiple TPs co-occurring in environmental samples.</p>
+        </div>
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-yellow"></span>Online Web Tool</h4>
+          <p>A public Gradio-based web interface allowing researchers to input any SMILES and receive instant biotransformation pathway trees with per-node toxicity scores and attention maps.</p>
+        </div>
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-green"></span>Pretraining on Environmental DB</h4>
+          <p>Self-supervised pretraining on 2M+ compounds from PubChem Environmental Subset + enviPath to build a foundation model specialized for environmental fate and toxicity.</p>
+        </div>
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-red"></span>Uncertainty Quantification</h4>
+          <p>Bayesian dropout and conformal prediction to provide calibrated uncertainty intervals — essential for regulatory decision-making where false negatives carry environmental risk.</p>
+        </div>
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-blue"></span>Multi-endpoint Prediction</h4>
+          <p>Jointly predicting EC₅₀, LC₅₀, IGC₅₀, and persistence (half-life) in a multi-task head — learning shared molecular features across all ecotoxicity endpoints simultaneously.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section alt-section">
+    <div class="container" style="text-align:center;max-width:600px;">
+      <h2 style="font-size:1.55rem;font-weight:700;margin-bottom:12px;">Interested in Collaborating?</h2>
+      <p style="color:var(--fg2);font-size:.93rem;line-height:1.8;margin-bottom:28px;">Whether you have environmental toxicity data, biodegradation databases, or interest in AI-driven regulatory tools — I'd love to connect and explore joint research opportunities.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a href="mailto:suppaporn.2544@gmail.com?subject=GSAT%20Collaboration" class="btn btn-primary">✉ Email Me</a>
+        <a href="https://doi.org/10.1021/acsestwater.4c00123" target="_blank" rel="noopener" class="btn btn-ghost">📄 Read Full Paper</a>
+        <a href="research.html" class="btn btn-ghost">← All Research</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Supaporn Klabklaydee · Institute of Science Tokyo</p>
+      <div class="footer-links">
+        <a href="https://github.com/Suppboat2544" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/supaporn-klabklaydee-1a43401b6" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://orcid.org/0009-0000-9747-711X" target="_blank" rel="noopener">ORCID</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
