@@ -171,3 +171,45 @@ h1,h2,h3,h4 { line-height: 1.25; font-weight: 600; }
   .nav-links.open { display: flex; }
   .nav-burger { display: flex; }
 }
+
+/* ── EXPANDABLE RESEARCH ITEMS ── */
+.section-note { color: var(--fg2); font-size: .85rem; margin: -.25rem 0 1rem; }
+.research-item.expandable { cursor: pointer; transition: border-color .2s; }
+.research-item.expandable:hover { border-color: var(--accent); }
+.expand-icon { color: var(--accent); font-size: 1rem; margin-left: .3rem; transition: transform .25s; display:inline-block; }
+.research-detail { display: none; margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--bg3); }
+.research-detail p { font-size: .85rem; color: var(--fg2); line-height: 1.7; margin: 0 0 .75rem; }
+.research-item.open .research-detail { display: block; }
+.research-item.open .expand-icon { transform: rotate(45deg); }
+.collab-btn { display: inline-block; margin-top: .25rem; padding: .35rem .85rem; background: var(--accent); color: #fff; border-radius: 6px; font-size: .78rem; font-weight: 600; text-decoration: none; transition: opacity .2s; }
+.collab-btn:hover { opacity: .85; }
+
+/* ── AWARDS ── */
+.awards-section { margin-top: 2.5rem; }
+.awards-section h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.1rem; color: var(--fg); }
+.award-list { display: flex; flex-direction: column; gap: .85rem; }
+.award-item { display: flex; gap: 1.1rem; align-items: flex-start; padding: .85rem 1rem; background: var(--bg2); border: 1px solid var(--bg3); border-radius: var(--radius); }
+.award-year { min-width: 38px; font-size: .78rem; font-weight: 700; color: var(--accent); padding-top: .15rem; }
+.award-body { display: flex; flex-direction: column; gap: .2rem; }
+.award-body strong { font-size: .9rem; color: var(--fg); }
+.award-org { font-size: .8rem; color: var(--fg2); }
+
+/* ── EXPERIENCE CARDS ── */
+.exp-section { margin-top: 2.5rem; }
+.exp-section h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.1rem; color: var(--fg); }
+.exp-card { background: var(--bg2); border: 1px solid var(--bg3); border-radius: var(--radius); padding: 1.2rem 1.4rem; margin-bottom: 1rem; }
+.exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: .85rem; }
+.exp-role { display: block; font-size: .95rem; font-weight: 700; color: var(--fg); margin-bottom: .2rem; }
+.exp-org { display: block; font-size: .82rem; color: var(--accent2); font-weight: 500; }
+.exp-date { font-size: .78rem; color: var(--fg2); white-space: nowrap; padding-top: .15rem; }
+.exp-bullets { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: .55rem; }
+.exp-bullets li { font-size: .85rem; color: var(--fg2); line-height: 1.65; }
+.exp-bullets li strong { color: var(--fg); }
+.exp-bullets li em { color: var(--fg); font-style: italic; }
+
+/* ── SKILLS SECTION ── */
+.skills-section { margin-top: 2.5rem; }
+.skills-section h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--fg); }
+
+/* ── TIMELINE ACTIVE DOT ── */
+.tl-dot-active { background: var(--accent) !important; box-shadow: 0 0 0 3px rgba(79,142,247,.3); }

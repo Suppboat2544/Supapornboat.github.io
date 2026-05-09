@@ -6,7 +6,7 @@
   <title>About · Supaporn Klabklaydee</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <nav class="nav" id="nav">
@@ -18,105 +18,286 @@
         <li><a href="publications.html">Publications</a></li>
         <li><a href="projects.html">Projects</a></li>
       </ul>
-      <button class="nav-burger" aria-label="Toggle menu" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-burger" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
   <div class="page-hero page-hero-sm">
     <div class="container">
       <h1>About Me</h1>
-      <p class="page-hero-sub">Researcher · Environmental Engineer · Tokyo, Japan</p>
+      <p class="page-hero-sub">Ph.D. Student · Computational Environmental Science · Tokyo, Japan</p>
     </div>
   </div>
 
   <section class="section">
     <div class="container about-grid">
 
-      <!-- LEFT: identity card -->
+      <!-- ── LEFT CARD ── -->
       <aside class="about-card">
         <div class="avatar-ring">
           <img src="https://avatars.githubusercontent.com/u/179722549?v=4" alt="Supaporn Klabklaydee" class="avatar-img" />
         </div>
         <h2 class="about-name">Supaporn Klabklaydee</h2>
         <p class="about-nickname">Boat</p>
-        <p class="about-affil">M.Eng Student<br>Institute of Science Tokyo</p>
+        <p class="about-affil">Ph.D. Student · Civil &amp; Environmental Engineering<br>Institute of Science Tokyo</p>
         <div class="about-meta">
           <div class="meta-row">📍 Tokyo, Japan</div>
-          <div class="meta-row">✉️ <a href="mailto:suppboat@m.titech.ac.jp">m.titech.ac.jp</a></div>
+          <div class="meta-row">✉️ <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp">klabklaydee.s.aa@m.titech.ac.jp</a></div>
+          <div class="meta-row">✉️ <a href="mailto:suppaporn.2544@gmail.com">suppaporn.2544@gmail.com</a></div>
         </div>
         <div class="about-social">
           <a href="https://github.com/Suppboat2544" target="_blank" rel="noopener" class="social-pill">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
             GitHub
           </a>
           <a href="https://www.linkedin.com/in/supaporn-klabklaydee-1a43401b6" target="_blank" rel="noopener" class="social-pill">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
           </a>
           <a href="https://orcid.org/0009-0000-9747-711X" target="_blank" rel="noopener" class="social-pill">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.888-1.575 3.888-3.722 0-2.016-1.453-3.722-3.888-3.722h-2.297z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.888-1.575 3.888-3.722 0-2.016-1.453-3.722-3.888-3.722h-2.297z"/></svg>
             ORCID
           </a>
         </div>
       </aside>
 
-      <!-- RIGHT: bio + timeline -->
+      <!-- ── RIGHT MAIN ── -->
       <div class="about-main">
+
+        <!-- BIO -->
         <div class="prose">
           <h2>Hello, I'm Boat 👋</h2>
-          <p>I am a 2nd-year Master's student in Environmental Engineering at the <strong>Institute of Science Tokyo</strong> (formerly Tokyo Institute of Technology). My research sits at the intersection of <strong>artificial intelligence</strong>, <strong>cheminformatics</strong>, and <strong>environmental science</strong>.</p>
-          <p>I am passionate about developing computational frameworks that can predict chemical toxicity, understand molecular transformations, and help us tackle global environmental challenges — from PFAS contamination to marine carbon cycling.</p>
-          <p>When not in the lab, I enjoy exploring machine learning models for protein design and vaccine development.</p>
+          <p>I am a Ph.D. student in <strong>Civil and Environmental Engineering</strong> at the <strong>Institute of Science Tokyo</strong> with a strong interdisciplinary background in computational modeling and chemical analysis. My research has focused on developing innovative tools — e.g. using graph-based sequence models and NLP applied to molecular representations — to predict the toxicity of emerging pollutants and drive new molecular discoveries.</p>
+          <p>With extensive experience in data analysis using <strong>Python, R, and Julia</strong>, I am passionate about leveraging AI to solve complex environmental challenges — from PFAS contamination and marine carbon cycling to biotransformation pathway prediction and kinetic modeling.</p>
         </div>
 
+        <!-- CURRENT RESEARCH -->
         <div class="current-research">
           <h3>Current Research</h3>
+          <p class="section-note">Open to new collaborations — click any topic to learn more.</p>
           <div class="research-grid">
-            <div class="research-item">
+
+            <div class="research-item expandable" onclick="toggleResearch(this)">
               <div class="research-num">01</div>
               <div class="research-body">
-                <strong>DOM Transformation</strong>
-                <p>Investigating the transformation pathways of dissolved organic matter (DOM) in aquatic environments using high-resolution mass spectrometry and computational chemistry.</p>
+                <strong>DOM Transformation <span class="expand-icon">＋</span></strong>
+                <p class="research-short">Investigating transformation pathways of dissolved organic matter in aquatic environments using high-resolution mass spectrometry.</p>
+                <div class="research-detail">
+                  <p>Constructing a chemical space refinement framework to decode the structural complexity of marine DOM. Applying graph-based filtering, network analysis, and HR-MS/MS spectral matching. Building a property-conditioned generative model (CRAM) with VAE + GAT encoder and GRU-SELFIES decoder. Enhanced median candidate isomers per deep-ocean molecular formula from 1.4 (PubChem-only) to 9.3.</p>
+                  <a href="mailto:suppaporn.2544@gmail.com" class="collab-btn">Contact for collaboration →</a>
+                </div>
               </div>
             </div>
-            <div class="research-item">
+
+            <div class="research-item expandable" onclick="toggleResearch(this)">
               <div class="research-num">02</div>
               <div class="research-body">
-                <strong>Biotransformation Model</strong>
-                <p>Developing predictive models for multigenerational biotransformation of chemicals, capturing how metabolites evolve through enzymatic reactions using Graph Neural Networks.</p>
+                <strong>Biotransformation Model <span class="expand-icon">＋</span></strong>
+                <p class="research-short">Developing multigenerational biotransformation prediction models using Graph Neural Networks.</p>
+                <div class="research-detail">
+                  <p>Published GSAT model achieving R² = 0.907, 98.9% faster than traditional methods. Analyzed 4.7 million reaction steps across 12 priority pollutants — 68.2% of metabolic transformations increase toxicity by an average 15.4-fold. Currently building Graph Transformer for Biotransformation Pathway Prediction (CRAMs) with 210K+ reaction pairs, 87% Top-3 accuracy, trained across 99 biotransformation classes.</p>
+                  <a href="mailto:suppaporn.2544@gmail.com" class="collab-btn">Contact for collaboration →</a>
+                </div>
               </div>
             </div>
-            <div class="research-item">
+
+            <div class="research-item expandable" onclick="toggleResearch(this)">
               <div class="research-num">03</div>
               <div class="research-body">
-                <strong>Identification of MS1-Formula Assignment</strong>
-                <p>Building computational pipelines for molecular formula assignment from MS1 mass spectrometry data, enabling accurate identification of unknown compounds in complex environmental samples.</p>
+                <strong>Identification of MS1-Formula Assignment <span class="expand-icon">＋</span></strong>
+                <p class="research-short">Building computational pipelines for molecular formula assignment from MS1 mass spectrometry data.</p>
+                <div class="research-detail">
+                  <p>Developing pipelines for accurate identification of unknown compounds in complex environmental samples. Applying mass difference network algorithms for automated PFAS transformation product identification and high-throughput profiling. Integrating HR-MS/MS spectral matching with chemical space refinement for unknown compound discovery in marine and freshwater DOM.</p>
+                  <a href="mailto:suppaporn.2544@gmail.com" class="collab-btn">Contact for collaboration →</a>
+                </div>
               </div>
             </div>
-            <div class="research-item">
+
+            <div class="research-item expandable" onclick="toggleResearch(this)">
               <div class="research-num">04</div>
               <div class="research-body">
-                <strong>Kinetic Reaction Deep Learning Model</strong>
-                <p>Applying deep learning to predict kinetic rate constants and reaction dynamics for environmental chemical transformations, accelerating mechanistic understanding of pollutant degradation.</p>
+                <strong>Kinetic Reaction Deep Learning Model <span class="expand-icon">＋</span></strong>
+                <p class="research-short">Applying deep learning to predict kinetic rate constants and reaction dynamics for environmental chemical transformations.</p>
+                <div class="research-detail">
+                  <p>Developing a hybrid GAT + MPNN architecture for predicting environmental persistence of organic compounds. Integrated 200+ molecular descriptors including 3D conformational features (ETKDG), achieving R²=0.847. Built Physics-Informed Neural Networks (R²=0.93) for predicting chemical degradation across 0–6000m ocean depth; discovered 17,500× half-life variation from surface to abyssal waters. Validated against ARGO/GLODAP oceanographic databases (300K+ measurements).</p>
+                  <a href="mailto:suppaporn.2544@gmail.com" class="collab-btn">Contact for collaboration →</a>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
 
+        <!-- EDUCATION -->
         <div class="timeline">
           <h3>Education</h3>
           <div class="timeline-item">
+            <div class="tl-dot tl-dot-active"></div>
+            <div class="tl-content">
+              <span class="tl-year">2025 – Present</span>
+              <strong>Ph.D. in Civil and Environmental Engineering</strong>
+              <span class="tl-org">Institute of Science Tokyo, Tokyo, Japan</span>
+            </div>
+          </div>
+          <div class="timeline-item">
             <div class="tl-dot"></div>
             <div class="tl-content">
-              <span class="tl-year">2023 – Present</span>
+              <span class="tl-year">2023 – 2025</span>
               <strong>M.Eng in Environmental Engineering</strong>
               <span class="tl-org">Institute of Science Tokyo, Tokyo, Japan</span>
             </div>
           </div>
         </div>
 
+        <!-- AWARDS -->
+        <div class="awards-section">
+          <h3>Awards &amp; Honors</h3>
+          <div class="award-list">
+            <div class="award-item">
+              <span class="award-year">2024</span>
+              <div class="award-body">
+                <strong>Best Student Cohort</strong>
+                <span class="award-org">DSSI Summer Intern · Lawrence Livermore National Laboratory (LLNL)</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2025</span>
+              <div class="award-body">
+                <strong>Excellence Poster Presentation Award</strong>
+                <span class="award-org">JWET Conference 2025</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2024</span>
+              <div class="award-body">
+                <strong>2nd Runner-up</strong>
+                <span class="award-org">WTUN Hackathon for Climate Action</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2020</span>
+              <div class="award-body">
+                <strong>2nd Runner-up &amp; Gold Medal — NRCT Thailand New Gen Award</strong>
+                <span class="award-org">National Research Council of Thailand</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2020</span>
+              <div class="award-body">
+                <strong>2nd Runner-up — Group A, Applied Sciences &amp; Engineering</strong>
+                <span class="award-org">International Poster Presentation Competition (IPPC) 2020</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2019</span>
+              <div class="award-body">
+                <strong>Attended Intel ISEF</strong>
+                <span class="award-org">Intel International Science and Engineering Fair · Phoenix, Arizona</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2018</span>
+              <div class="award-body">
+                <strong>Gold Award — I-Envex</strong>
+                <span class="award-org">IYIA 2018 · International Young Inventors Award</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERNSHIPS -->
+        <div class="exp-section">
+          <h3>Internship Experiences</h3>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <strong class="exp-role">Research Student</strong>
+                <span class="exp-org">Japan Science and Technology Agency × Lawrence Livermore National Laboratory (LLNL)</span>
+              </div>
+              <span class="exp-date">Jul 2025 – Sep 2025</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Secured research funding from Japan Science and Technology Agency (JST) for an exchanged research collaboration</li>
+              <li>"Structure-Aware Genetic Algorithm" project awarded <strong>Top Presenter at Summer Case Competition (Cohort 2 Session)</strong>, recognized among peer cohort for research excellence</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <strong class="exp-role">Research Student</strong>
+                <span class="exp-org">Kyoto University</span>
+              </div>
+              <span class="exp-date">Jun 2022 – Oct 2022</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Secured research funding from <strong>AMGEN Japan (2022)</strong> for a project on PPCPs degradation</li>
+              <li>Represented research at the Kyoto International Symposium and Virtual Amgen Asia Symposium under supervision of Prof. Takashi Sagawa</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- RESEARCH EXPERIENCES -->
+        <div class="exp-section">
+          <h3>Research Experiences</h3>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <strong class="exp-role">Research Assistant / Student</strong>
+                <span class="exp-org">Fujii Laboratory, Institute of Science Tokyo</span>
+              </div>
+              <span class="exp-date">Oct 2023 – Present</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Published <em>"Multigenerational Toxicity Prediction Using Graph Neural Networks and Biotransformation Analysis"</em> — ACS ES&amp;T Water; GSAT model: R²=0.907, 98.9% faster computation; analyzed 4.7M reaction steps across 12 pollutants</li>
+              <li>Pre-published <em>"Structural and Kinetic Analysis of Carboxyl-Metabolizing Enzymes"</em> — FPocket analysis, MD simulations, universal scaling laws (R²=0.91)</li>
+              <li>Building CRAM generative model: property-conditioned VAE + GAT encoder + GRU-SELFIES decoder; increased median candidate isomers per marine formula from 1.4 → 9.3</li>
+              <li>Designing hybrid GAT + MPNN for molecular half-life prediction (R²=0.847) with SHAP/Integrated Gradients; Gradio web interface for real-time predictions</li>
+              <li>Developing Marine Enzyme Discovery framework: ESM-2 embeddings + k-mer features, hierarchical DBSCAN clustering of 1.29M marine enzyme sequences</li>
+              <li>Physics-Informed Neural Networks (R²=0.93) for chemical degradation across 0–6000m ocean depth; 17,500× half-life variation discovered; validated vs ARGO/GLODAP (300K+ measurements)</li>
+              <li>Graph Transformer for Biotransformation Pathway Prediction — 210K+ reaction pairs, 99 classes, 87% Top-3 accuracy; Focal Loss + SMILES augmentation + SWA</li>
+              <li>JST topic: PFAS transformation product identification via mass difference network algorithm — <em>Water Research</em> doi:10.1016/j.watres.2025.123645</li>
+              <li>JST topic: Chemical Space Refinement Framework for DOM structural complexity — ChemRxiv doi:10.26434/chemrxiv-2025-9s13m-v2</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <strong class="exp-role">Research Student</strong>
+                <span class="exp-org">Research Center of Advanced Materials for Energy and Environmental Technology (MEET), Thailand</span>
+              </div>
+              <span class="exp-date">Oct 2022 – Sep 2023</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Assisted study of Metal Organic Frameworks (MOFs) with imprinted technique for selective industrial pollutant removal</li>
+              <li>Undergraduate thesis: <em>"Molecular Imprinted TiO₂ for Organic Pollutants Removal in Wastewater"</em> — supervised by Assoc. Prof. Patiya Kemacheevakul, Assoc. Prof. Surawut Chuangchote, and Prof. Takashi Sagawa</li>
+              <li>Synthesized molecularly imprinted TiO₂ nanoparticles via sol-gel process; optimized calcination for enhanced photocatalytic degradation of phenol</li>
+              <li>Utilized DFT (B3LYP/STO-3G) to correlate HOMO-LUMO gaps and binding energies with molecular adsorption behavior; employed descriptors (TPSA, aromaticity) to predict degradation potential</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <strong class="exp-role">Research Assistant</strong>
+                <span class="exp-org">Research Affairs, Faculty of Medicine · Chulalongkorn University</span>
+              </div>
+              <span class="exp-date">Mar 2022 – Present</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Computational analyses for NRCT-funded project: <em>"Collagen Scaffold with Gallic Acid-Assisted Crosslinking: Potential Application for Bone Tissue Engineering"</em></li>
+              <li>Molecular docking simulations to characterize protein-collagen binding interactions</li>
+              <li>Sequence identification and analysis for protein binding site determination</li>
+              <li>Calculated collagen–gallic acid crosslinking energies to optimize scaffold stability for bone tissue applications</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- SKILLS -->
         <div class="skills-section">
           <h3>Research Interests &amp; Skills</h3>
           <div class="skills-grid">
@@ -126,17 +307,21 @@
             <span class="skill-tag">PFAS Analysis</span>
             <span class="skill-tag">Toxicity Prediction</span>
             <span class="skill-tag">Molecular Dynamics</span>
+            <span class="skill-tag">DFT Calculations</span>
             <span class="skill-tag">RDKit</span>
             <span class="skill-tag">Python</span>
-            <span class="skill-tag">Jupyter</span>
+            <span class="skill-tag">R</span>
+            <span class="skill-tag">Julia</span>
             <span class="skill-tag">Protein Design</span>
             <span class="skill-tag">Marine Carbon Cycling</span>
-            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Mass Spectrometry</span>
+            <span class="skill-tag">Physics-Informed Neural Networks</span>
+            <span class="skill-tag">Generative Models</span>
           </div>
         </div>
-      </div>
 
-    </div>
+      </div><!-- /about-main -->
+    </div><!-- /about-grid -->
   </section>
 
   <footer class="site-footer">
@@ -150,5 +335,12 @@
     </div>
   </footer>
   <script src="main.js"></script>
+  <script>
+  function toggleResearch(el) {
+    const wasOpen = el.classList.contains('open');
+    document.querySelectorAll('.research-item.expandable').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) el.classList.add('open');
+  }
+  </script>
 </body>
 </html>
