@@ -53,18 +53,38 @@
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
       <div class="molecule">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="60"  r="18" fill="var(--accent)"  opacity="0.85"/>
-          <circle cx="50"  cy="140" r="14" fill="var(--accent2)" opacity="0.75"/>
-          <circle cx="150" cy="140" r="14" fill="var(--accent2)" opacity="0.75"/>
-          <circle cx="100" cy="110" r="10" fill="var(--accent3)" opacity="0.7"/>
-          <line x1="100" y1="78"  x2="100" y2="100" stroke="var(--accent)"  stroke-width="3"/>
-          <line x1="100" y1="110" x2="56"  y2="130" stroke="var(--accent2)" stroke-width="3"/>
-          <line x1="100" y1="110" x2="144" y2="130" stroke="var(--accent2)" stroke-width="3"/>
-          <text x="93"  y="65"  font-size="11" fill="white" font-weight="bold">C</text>
-          <text x="44"  y="145" font-size="10" fill="white" font-weight="bold">N</text>
-          <text x="144" y="145" font-size="10" fill="white" font-weight="bold">O</text>
-          <text x="95"  y="115" font-size="9"  fill="white" font-weight="bold">H</text>
+        <!-- Gallic acid (3,4,5-trihydroxybenzoic acid) — linked to Boat's collagen-gallic acid & DOM research -->
+        <svg viewBox="0 0 220 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Aromatic ring -->
+          <polygon points="110,88 146,109 146,151 110,172 74,151 74,109"
+                   stroke="rgba(79,142,247,0.85)" stroke-width="2" fill="rgba(79,142,247,0.06)"/>
+          <!-- Inner aromatic circle -->
+          <circle cx="110" cy="130" r="24" stroke="rgba(79,142,247,0.45)" stroke-width="1.5" fill="none"/>
+
+          <!-- COOH group at top (position 1, vertex 110,88) -->
+          <line x1="110" y1="88"  x2="110" y2="62"  stroke="rgba(230,237,243,0.75)" stroke-width="1.8"/>
+          <!-- C=O double bond to left -->
+          <line x1="110" y1="62"  x2="89"  y2="47"  stroke="rgba(230,237,243,0.75)" stroke-width="1.8"/>
+          <line x1="107" y1="58.5" x2="86" y2="43.5" stroke="rgba(230,237,243,0.75)" stroke-width="1.8"/>
+          <!-- C–OH to right -->
+          <line x1="110" y1="62"  x2="131" y2="47"  stroke="rgba(230,237,243,0.75)" stroke-width="1.8"/>
+          <text x="75"  y="47"  font-size="10" fill="var(--accent3)" font-family="monospace" font-weight="700">O</text>
+          <text x="133" y="47"  font-size="10" fill="var(--accent3)" font-family="monospace" font-weight="700">OH</text>
+
+          <!-- OH at position 3 (vertex C = 146,151) -->
+          <line x1="146" y1="151" x2="170" y2="164" stroke="rgba(230,237,243,0.75)" stroke-width="1.8"/>
+          <text x="172" y="168" font-size="10" fill="var(--accent3)" font-family="monospace" font-weight="700">OH</text>
+
+          <!-- OH at position 4 (vertex D = 110,172) -->
+          <line x1="110" y1="172" x2="110" y2="196" stroke="rgba(230,237,243,0.75)" stroke-width="1.8"/>
+          <text x="97"  y="210" font-size="10" fill="var(--accent3)" font-family="monospace" font-weight="700">OH</text>
+
+          <!-- OH at position 5 (vertex E = 74,151) -->
+          <line x1="74"  y1="151" x2="50"  y2="164" stroke="rgba(230,237,243,0.75)" stroke-width="1.8"/>
+          <text x="18"  y="168" font-size="10" fill="var(--accent3)" font-family="monospace" font-weight="700">HO</text>
+
+          <!-- Molecule label -->
+          <text x="110" y="232" font-size="7.5" fill="rgba(139,148,158,0.65)" font-family="monospace" text-anchor="middle">Gallic Acid · C₇H₆O₅</text>
         </svg>
       </div>
     </div>
