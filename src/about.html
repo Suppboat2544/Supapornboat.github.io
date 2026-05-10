@@ -44,11 +44,15 @@
         </div>
         <h2 class="about-name">Supaporn Klabklaydee</h2>
         <p class="about-nickname">Boat</p>
-        <p class="about-affil">Ph.D. Student · Civil &amp; Environmental Engineering<br>Institute of Science Tokyo</p>
+        <p class="about-affil">Ph.D. Student · Civil &amp; Environmental Engineering<br>Institute of Science Tokyo · Fujii Lab</p>
         <div class="about-meta">
           <div class="meta-row">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
             Tokyo, Japan
+          </div>
+          <div class="meta-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Supervisor: <strong>Prof. Manabu Fujii</strong>
           </div>
           <div class="meta-row">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -81,7 +85,7 @@
         <!-- BIO -->
         <div class="prose">
           <h2>Hi, I'm Boat</h2>
-          <p>I am a Ph.D. student in <strong>Civil and Environmental Engineering</strong> at the <strong>Institute of Science Tokyo</strong> with a strong interdisciplinary background in computational modeling and chemical analysis. My research has focused on developing innovative tools — e.g. using graph-based sequence models and NLP applied to molecular representations — to predict the toxicity of emerging pollutants and drive new molecular discoveries.</p>
+          <p>I am a Ph.D. student in <strong>Civil and Environmental Engineering</strong> at the <strong>Institute of Science Tokyo</strong>, supervised by <strong>Prof. Manabu Fujii</strong> (Fujii Lab). My doctoral research focuses on <em>AI-Driven Generation of Carboxyl-Rich Aliphatic/Alicyclic Molecules (CRAM)</em> — a property-conditioned deep learning approach for understanding refractory dissolved organic matter — alongside developing the <strong>CRAM-GTransformer</strong>, a bidirectional graph transformer for site-specific and pathway-level CRAM biotransformation prediction.</p>
           <p>With extensive experience in data analysis using <strong>Python, R, and Julia</strong>, I am passionate about leveraging AI to solve complex environmental challenges — from PFAS contamination and marine carbon cycling to biotransformation pathway prediction and kinetic modeling.</p>
         </div>
 
@@ -94,8 +98,8 @@
             <div class="research-item expandable" onclick="toggleResearch(this)">
               <div class="research-num">01</div>
               <div class="research-body">
-                <strong>DOM Transformation <span class="expand-icon">＋</span></strong>
-                <p class="research-short">Investigating transformation pathways of dissolved organic matter in aquatic environments using high-resolution mass spectrometry.</p>
+                <strong>CRAM Generation &amp; DOM Understanding <span class="expand-icon">＋</span></strong>
+                <p class="research-short">AI-Driven Generation of Carboxyl-Rich Aliphatic/Alicyclic Molecules (CRAM): A Property-Conditioned Deep Learning Approach for Understanding Refractory Dissolved Organic Matter.</p>
                 <div class="research-detail">
                   <p>Constructing a chemical space refinement framework to decode the structural complexity of marine DOM. Applying graph-based filtering, network analysis, and HR-MS/MS spectral matching. Building a property-conditioned generative model (CRAM) with VAE + GAT encoder and GRU-SELFIES decoder. Enhanced median candidate isomers per deep-ocean molecular formula from 1.4 (PubChem-only) to 9.3.</p>
                   <a href="mailto:suppaporn.2544@gmail.com" class="collab-btn">Contact for collaboration →</a>
@@ -106,10 +110,10 @@
             <div class="research-item expandable" onclick="toggleResearch(this)">
               <div class="research-num">02</div>
               <div class="research-body">
-                <strong>Biotransformation Model <span class="expand-icon">＋</span></strong>
-                <p class="research-short">Developing multigenerational biotransformation prediction models using Graph Neural Networks.</p>
+                <strong>CRAM-GTransformer: Biotransformation Prediction <span class="expand-icon">＋</span></strong>
+                <p class="research-short">Bidirectional Graph Transformer for Site-Specific and Pathway-Level CRAM Biotransformation — predicting multigenerational transformation of refractory DOM.</p>
                 <div class="research-detail">
-                  <p>Published GSAT model achieving R² = 0.907, 98.9% faster than traditional methods. Analyzed 4.7 million reaction steps across 12 priority pollutants — 68.2% of metabolic transformations increase toxicity by an average 15.4-fold. Currently building Graph Transformer for Biotransformation Pathway Prediction (CRAMs) with 210K+ reaction pairs, 87% Top-3 accuracy, trained across 99 biotransformation classes.</p>
+                  <p>Published GSAT model achieving R² = 0.907, 98.9% faster than traditional methods. Analyzed 4.7 million reaction steps across 12 priority pollutants — 68.2% of metabolic transformations increase toxicity by an average 15.4-fold. Currently building CRAM-GTransformer with 210K+ reaction pairs, 87% Top-3 accuracy, trained across 99 biotransformation classes.</p>
                   <a href="mailto:suppaporn.2544@gmail.com" class="collab-btn">Contact for collaboration →</a>
                 </div>
               </div>
