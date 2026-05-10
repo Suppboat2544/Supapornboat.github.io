@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CRAM · Supaporn Klabklaydee | PhD Thesis · Property-Conditioned Deep Learning for Dissolved Organic Matter</title>
+  <meta name="description" content="CRAM & CRAM-GTransformer — PhD thesis by Supaporn Klabklaydee. AI-driven generation of carboxyl-rich aliphatic/alicyclic molecules and bidirectional graph transformer for biotransformation prediction." />
+  <meta name="keywords" content="CRAM, dissolved organic matter, DOM, graph transformer, biotransformation, generative model, VAE, GAT, GRU-SELFIES, Supaporn Klabklaydee" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://suppboat2544.github.io/Supapornboat.github.io/cram.html" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">SK</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="cram.html" class="active nav-highlight">CRAM</a></li>
+        <li><a href="gsat.html" class="nav-highlight">GSAT</a></li>
+      </ul>
+      <button class="nav-burger" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero" style="padding-bottom:60px;">
+    <div class="container">
+      <div class="page-hero-eyebrow">PhD Thesis · 2025–Present · Fujii Lab · IST</div>
+      <h1 style="font-size:clamp(1.8rem,5vw,3rem);letter-spacing:-.035em;margin-bottom:14px;">
+        CRAM &amp; <span style="background:linear-gradient(135deg,var(--cyan),var(--blue-soft));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">CRAM-GTransformer</span>
+      </h1>
+      <p class="page-hero-sub" style="max-width:680px;">
+        <strong style="color:rgba(255,255,255,.88)">AI-Driven Generation of Carboxyl-Rich Aliphatic/Alicyclic Molecules (CRAM)</strong>: A Property-Conditioned Deep Learning Approach for Understanding Refractory Dissolved Organic Matter — and its companion model for site-specific and pathway-level biotransformation prediction.
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;">
+        <a href="publications.html" class="btn btn-primary" style="font-size:.85rem;">📄 View Publications</a>
+        <a href="mailto:suppaporn.2544@gmail.com?subject=CRAM%20Collaboration" class="btn btn-ghost-dark" style="font-size:.85rem;">✉ Collaborate</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- METRICS STRIP -->
+  <div class="stats-strip">
+    <div class="stats-inner" style="max-width:900px;margin:0 auto;">
+      <div class="stat-item">
+        <span class="stat-num">9.3×</span>
+        <span class="stat-label">More Candidates</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <span class="stat-num">210K+</span>
+        <span class="stat-label">Reaction Pairs</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <span class="stat-num">87%</span>
+        <span class="stat-label">Top-3 Accuracy</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <span class="stat-num">99</span>
+        <span class="stat-label">Biotransformation Classes</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <span class="stat-num">1.4→9.3</span>
+        <span class="stat-label">Median Isomers / Formula</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PART 1: CRAM GENERATIVE MODEL -->
+  <section class="section alt-section">
+    <div class="container">
+
+      <div class="section-label">Part I</div>
+      <h2 class="section-title" style="font-size:clamp(1.3rem,3vw,1.9rem);margin-bottom:6px;">CRAM Generative Model</h2>
+      <p class="section-sub">AI-Driven Generation of Carboxyl-Rich Aliphatic/Alicyclic Molecules — A Property-Conditioned Deep Learning Approach for Understanding Refractory Dissolved Organic Matter</p>
+
+      <!-- THE PROBLEM -->
+      <div class="cram-two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-red"></span>The Challenge</h4>
+          <p>Marine dissolved organic matter (DOM) is Earth's largest reservoir of reduced organic carbon — yet its molecular structure remains largely unknown. Deep-ocean DOM is dominated by <strong>carboxyl-rich aliphatic/alicyclic molecules (CRAMs)</strong>, but for any given molecular formula from HR-MS data, PubChem returns only <strong>1–2 candidate structures</strong> — far too few to capture true chemical diversity.</p>
+          <p style="margin-top:8px;">Traditional databases were built for pharmaceuticals, not environmental chemistry. The chemical space of marine DOM is essentially <strong>uncharted</strong>.</p>
+        </div>
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-blue"></span>The CRAM Approach</h4>
+          <ul>
+            <li>Curated a CRAM-specific training corpus from marine DOM databases and computational screening</li>
+            <li>Built a <strong>property-conditioned generative model</strong>: VAE encoder with Graph Attention Networks (GAT) + GRU-SELFIES decoder</li>
+            <li>Model conditions on molecular properties: double bond equivalence (DBE), O/C ratio, H/C ratio — key CRAM descriptors</li>
+            <li>Integrated with a chemical space refinement pipeline using HR-MS/MS spectral matching and graph-based filtering</li>
+            <li>Result: <strong>Median candidate isomers per deep-ocean molecular formula increased from 1.4 → 9.3</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ARCHITECTURE -->
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px;color:var(--fg);">Model Architecture</h3>
+      <div class="arch-diagram">
+        <div class="arch-flow">
+          <div class="arch-block">
+            <div class="arch-box arch-box-graph">
+              Molecular Graph
+              <span class="arch-box-sub">SMILES → Graph</span>
+            </div>
+            <div class="arch-label">Input</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-block">
+            <div class="arch-box arch-box-graph">
+              GAT Encoder
+              <span class="arch-box-sub">Graph Attention Network</span>
+            </div>
+            <div class="arch-label">Encode</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-block">
+            <div class="arch-box arch-box-attn">
+              VAE Latent Space
+              <span class="arch-box-sub">μ, σ sampling</span>
+            </div>
+            <div class="arch-label">Latent</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-block">
+            <div class="arch-box arch-box-fuse">
+              Property Conditioning
+              <span class="arch-box-sub">DBE · O/C · H/C</span>
+            </div>
+            <div class="arch-label">Condition</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-block">
+            <div class="arch-box arch-box-seq">
+              GRU Decoder
+              <span class="arch-box-sub">SELFIES output</span>
+            </div>
+            <div class="arch-label">Decode</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-block">
+            <div class="arch-box arch-box-out">
+              CRAM Molecules
+              <span class="arch-box-sub">Valid &amp; novel structures</span>
+            </div>
+            <div class="arch-label">Output</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="cram-two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;">
+        <div class="feat-block" style="background:var(--bg);">
+          <h4><span class="feat-dot feat-dot-green"></span>Key Results</h4>
+          <ul>
+            <li>Median candidate isomers per marine molecular formula: <strong>1.4 (PubChem) → 9.3 (CRAM model)</strong></li>
+            <li>Generated molecules satisfy key CRAM property constraints (O/C, H/C, DBE ranges)</li>
+            <li>Chemical space refinement pipeline integrates HR-MS/MS spectral matching for experimental validation</li>
+            <li>Network analysis reveals structural clustering patterns consistent with known DOM composition</li>
+          </ul>
+        </div>
+        <div class="feat-block" style="background:var(--bg);">
+          <h4><span class="feat-dot feat-dot-yellow"></span>Significance</h4>
+          <ul>
+            <li>First property-conditioned generative model specifically targeting marine CRAM chemistry</li>
+            <li>Enables <strong>de novo hypothesis generation</strong> for unknown DOM structures</li>
+            <li>Bridges the gap between high-resolution mass spectrometry data and structural annotation</li>
+            <li>Opens pathways for studying marine carbon cycling at molecular resolution</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PART 2: CRAM-GTransformer -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-label">Part II</div>
+      <h2 class="section-title" style="font-size:clamp(1.3rem,3vw,1.9rem);margin-bottom:6px;">CRAM-GTransformer</h2>
+      <p class="section-sub">Bidirectional Graph Transformer for Site-Specific and Pathway-Level CRAM Biotransformation — predicting how refractory DOM molecules transform in aquatic environments.</p>
+
+      <div class="cram-two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-red"></span>Why Biotransformation Matters</h4>
+          <p>CRAM molecules in DOM are not static — they undergo microbial and photochemical biotransformation that alters their structure, reactivity, and environmental fate. Understanding <strong>which atoms react, at which sites, and along which pathways</strong> is essential for modeling marine carbon cycling.</p>
+          <p style="margin-top:8px;">Existing tools predict reactions at the compound level but cannot resolve <strong>site-specific atom transformations</strong> — exactly the information needed to trace CRAM degradation pathways.</p>
+        </div>
+        <div class="feat-block">
+          <h4><span class="feat-dot feat-dot-blue"></span>CRAM-GTransformer Design</h4>
+          <ul>
+            <li><strong>Bidirectional Graph Transformer</strong> — attends over both reactant and product molecular graphs simultaneously</li>
+            <li>Trained on <strong>210K+ curated reaction pairs</strong> across 99 biotransformation classes</li>
+            <li>Predicts both the <strong>reaction class</strong> and the <strong>specific reactive site</strong> within the molecule</li>
+            <li>Training tricks: <strong>Focal Loss</strong> for class imbalance + <strong>SMILES augmentation</strong> + <strong>Stochastic Weight Averaging (SWA)</strong></li>
+            <li>Achieves <strong>87% Top-3 accuracy</strong> across all biotransformation classes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ARCHITECTURE 2 -->
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px;color:var(--fg);">CRAM-GTransformer Architecture</h3>
+      <div class="arch-diagram">
+        <div class="arch-flow">
+          <div class="arch-block">
+            <div class="arch-box arch-box-graph">
+              Reactant Graph
+              <span class="arch-box-sub">CRAM molecule</span>
+            </div>
+            <div class="arch-label">Reactant</div>
+          </div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-block">
+            <div class="arch-box arch-box-seq">
+              Bidirectional<br>Graph Transformer
+              <span class="arch-box-sub">Multi-head attention</span>
+            </div>
+            <div class="arch-label">Encode Both</div>
+          </div>
+          <div class="arch-arrow">←</div>
+          <div class="arch-block">
+            <div class="arch-box arch-box-graph">
+              Product Graph
+              <span class="arch-box-sub">Transformed structure</span>
+            </div>
+            <div class="arch-label">Product</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center;margin-top:12px;">
+          <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+            <div class="arch-block" style="flex:none;">
+              <div class="arch-box arch-box-attn" style="width:180px;">
+                Site-Specific Attention Head
+                <span class="arch-box-sub">Atom-level reactive site</span>
+              </div>
+              <div class="arch-label">Site Prediction</div>
+            </div>
+            <div class="arch-block" style="flex:none;">
+              <div class="arch-box arch-box-fuse" style="width:180px;">
+                Classification Head
+                <span class="arch-box-sub">99 biotransformation classes</span>
+              </div>
+              <div class="arch-label">Reaction Class</div>
+            </div>
+            <div class="arch-block" style="flex:none;">
+              <div class="arch-box arch-box-out" style="width:180px;">
+                Pathway Prediction
+                <span class="arch-box-sub">Multi-step tree generation</span>
+              </div>
+              <div class="arch-label">Full Pathway</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERFORMANCE -->
+      <div class="metric-grid" style="margin-top:28px;">
+        <div class="metric-card">
+          <div class="metric-val">87%</div>
+          <div class="metric-label">Top-3 Accuracy</div>
+          <div class="metric-sub">Reaction class prediction</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">210K+</div>
+          <div class="metric-label">Reaction Pairs</div>
+          <div class="metric-sub">Training data curated</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">99</div>
+          <div class="metric-label">Classes</div>
+          <div class="metric-sub">Biotransformation types</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">Bidir.</div>
+          <div class="metric-label">Transformer</div>
+          <div class="metric-sub">Reactant + product attention</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">SWA</div>
+          <div class="metric-label">Training Trick</div>
+          <div class="metric-sub">Stochastic weight averaging</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COLLABORATION CTA -->
+  <section class="section alt-section">
+    <div class="container">
+      <div class="collab-banner">
+        <div class="collab-banner-inner">
+          <div>
+            <h3>Open to Collaboration</h3>
+            <p>This PhD thesis work is ongoing. If you work in marine biogeochemistry, dissolved organic matter, environmental mass spectrometry, or graph-based molecular modeling — I'd love to discuss potential collaborations, data sharing, or co-authorship opportunities.</p>
+          </div>
+          <div class="collab-banner-links">
+            <a href="mailto:suppaporn.2544@gmail.com?subject=CRAM%20Collaboration" class="ri-btn-primary">✉ Get in touch</a>
+            <a href="publications.html" class="ri-btn-secondary">View publications →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">SK</a>
+        <p>Computational environmental scientist building AI-driven tools for molecular discovery, toxicity prediction &amp; water quality.</p>
+      </div>
+      <nav class="footer-nav">
+        <div class="footer-nav-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Models</h4>
+          <ul>
+            <li><a href="cram.html">CRAM Model</a></li>
+            <li><a href="gsat.html">GSAT Model</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Supaporn Klabklaydee &middot; Institute of Science Tokyo</p>
+      <div class="footer-social">
+        <a href="https://github.com/Suppboat2544" target="_blank" rel="noopener" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/supaporn-klabklaydee-1a43401b6" target="_blank" rel="noopener" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://orcid.org/0009-0000-9747-711X" target="_blank" rel="noopener" title="ORCID">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.888-1.575 3.888-3.722 0-2.016-1.453-3.722-3.888-3.722h-2.297z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
