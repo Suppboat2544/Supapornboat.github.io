@@ -449,7 +449,7 @@ p{color:var(--fg2)}
 .exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap;margin-bottom:12px}
 .exp-role{display:block;font-size:.92rem;font-weight:700;color:var(--fg);margin-bottom:.2rem}
 .exp-org{display:block;font-size:.79rem;color:var(--cyan);font-weight:600;font-family:'JetBrains Mono',monospace;font-size:.75rem}
-.exp-date{font-size:.72rem;color:var(--fg3);background:var(--dark2);color:var(--dark-text3);padding:3px 10px;border-radius:100px;border:1px solid rgba(37,99,235,.2);flex-shrink:0;white-space:nowrap;height:fit-content;font-family:'JetBrains Mono',monospace}
+.exp-date{font-size:.72rem;color:rgba(255,255,255,.82);background:var(--dark2);padding:3px 10px;border-radius:100px;border:1px solid rgba(37,99,235,.28);flex-shrink:0;white-space:nowrap;height:fit-content;font-family:'JetBrains Mono',monospace}
 .exp-bullets{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:.45rem}
 .exp-bullets li{font-size:.82rem;color:var(--fg2);line-height:1.7}
 .exp-bullets li strong{color:var(--fg)}
