@@ -1,6 +1,7 @@
 /* ══════════════════════════════════════════════════════════
    DESIGN SYSTEM — Supaporn Klabklaydee Academic Portfolio
 ══════════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
 :root {
   --blue:       #2563eb;
   --blue-dark:  #1d4ed8;
@@ -265,14 +266,110 @@ p{color:var(--fg2)}
 .ext-link-icon{color:var(--muted);transition:color var(--t);flex-shrink:0}
 .ext-link-icon:hover{color:var(--accent)}
 
-/* PAGE HERO */
-.page-hero{padding:calc(var(--nav-h) + 52px) 24px 48px;background:var(--bg2);border-bottom:1px solid var(--border);position:relative;overflow:hidden}
-.page-hero::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan),transparent 80%)}
-.page-hero-inner{max-width:var(--max-w);margin:0 auto}
-.page-hero-label{font-size:.67rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.page-hero-label::before{content:'';width:18px;height:2px;background:var(--accent);border-radius:2px}
-.page-hero h1{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;letter-spacing:-.035em;margin-bottom:10px}
-.page-hero-sub{color:var(--fg3);font-size:.95rem;line-height:1.65}
+/* PAGE HERO — dark gradient matching home brand */
+.page-hero{
+  padding:calc(var(--nav-h) + 60px) 24px 56px;
+  background:linear-gradient(160deg, var(--dark) 0%, var(--dark2) 55%, #0a1f3a 100%);
+  border-bottom:1px solid rgba(37,99,235,.22);
+  position:relative;overflow:hidden
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(37,99,235,.11) 1px,transparent 1px);
+  background-size:24px 24px;pointer-events:none
+}
+.page-hero::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--blue),transparent 70%)
+}
+.page-hero .container{position:relative;z-index:1}
+.page-hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--cyan);margin-bottom:14px;
+  font-family:'JetBrains Mono','Fira Code',monospace
+}
+.page-hero-eyebrow::before{content:'//';opacity:.55;font-size:.65rem}
+.page-hero h1{
+  font-size:clamp(1.9rem,4.5vw,3rem);font-weight:800;letter-spacing:-.035em;
+  margin-bottom:12px;color:#fff;
+  text-shadow:0 2px 24px rgba(37,99,235,.25)
+}
+.page-hero-sub{color:rgba(255,255,255,.58);font-size:.92rem;line-height:1.72;max-width:560px}
+.page-hero-sm{padding:calc(var(--nav-h) + 44px) 24px 44px}
+
+/* Publication type badges — fix missing styles */
+.pub-type{display:inline-block;font-size:.64rem;font-weight:700;padding:2px 8px;border-radius:100px;letter-spacing:.04em;text-transform:uppercase}
+.pub-type-journal{background:#ecfdf5;color:#059669;border:1px solid #a7f3d0}
+.pub-type-preprint{background:#fff7ed;color:#d97706;border:1px solid #fcd34d}
+.pub-type-conference{background:var(--blue-pale);color:var(--accent);border:1px solid var(--blue-ring)}
+.pub-first{display:inline-block;font-size:.64rem;font-weight:700;padding:2px 8px;border-radius:100px;background:var(--blue-pale);color:var(--blue-dark);border:1px solid var(--blue-ring);font-style:italic;letter-spacing:.02em}
+
+/* Avatar ring — fix missing class alias */
+.avatar-ring{
+  width:92px;height:92px;margin:0 auto 16px;border-radius:50%;
+  padding:3px;background:linear-gradient(135deg,var(--blue),var(--cyan));
+  box-shadow:0 0 0 4px rgba(37,99,235,.12),var(--shadow-accent)
+}
+.avatar-ring .avatar-img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--bg3)}
+
+/* About card — sticky positioning */
+.about-card{
+  background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:28px 22px;text-align:center;overflow:hidden;box-shadow:var(--shadow-sm);
+  position:sticky;top:calc(var(--nav-h) + 20px)
+}
+
+/* Timeline — fix class name mismatch (HTML uses .timeline-item, .timeline) */
+.timeline{display:flex;flex-direction:column;gap:0}
+.timeline-item{display:flex;gap:16px;position:relative}
+.timeline-item:not(:last-child)::before{
+  content:'';position:absolute;left:5px;top:16px;bottom:-4px;
+  width:1px;background:var(--border)
+}
+
+/* Improved about section visuals */
+.awards-section,.exp-section,.skills-section,.current-research,.timeline{margin-top:0}
+.award-item{display:flex;gap:14px;align-items:flex-start;padding:14px 18px;
+  background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);
+  transition:border-color var(--t),box-shadow var(--t),transform var(--t);box-shadow:var(--shadow-xs)}
+.award-item:hover{border-color:var(--blue-ring);box-shadow:var(--shadow-sm);transform:translateX(3px)}
+.award-year{min-width:42px;font-size:.7rem;font-weight:700;color:var(--cyan);
+  font-family:'JetBrains Mono',monospace;padding-top:.18rem}
+.award-body strong{font-size:.88rem;color:var(--fg)}
+.award-org{font-size:.78rem;color:var(--fg3);margin-top:.18rem}
+
+/* Experience cards — improved */
+.exp-card{
+  background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);
+  padding:22px 24px;margin-bottom:10px;
+  transition:border-color var(--t),box-shadow var(--t);box-shadow:var(--shadow-xs);
+  position:relative;overflow:hidden
+}
+.exp-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--blue),var(--cyan));
+  border-radius:3px 0 0 3px
+}
+.exp-card:hover{border-color:var(--blue-ring);box-shadow:var(--shadow)}
+
+/* Research items — improved open state */
+.research-item.open{
+  border-color:rgba(37,99,235,.35);
+  background:linear-gradient(to right,rgba(37,99,235,.04),transparent);
+  box-shadow:var(--shadow-xs)
+}
+
+/* Section improvements */
+.section{padding:88px 24px;background:var(--bg)}
+.alt-section{background:var(--bg2)}
+.highlights-section{background:var(--bg)}
+
+/* Prose improvements */
+.prose h2{font-size:1.3rem;font-weight:800;margin-bottom:14px;letter-spacing:-.02em;
+  background:linear-gradient(135deg,var(--fg) 0%,var(--fg2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.prose em{color:var(--accent);font-style:italic}
 
 /* FOOTER */
 .site-footer{background:var(--bg2);border-top:1px solid var(--border);padding:44px 24px 28px}
@@ -292,11 +389,10 @@ p{color:var(--fg2)}
 .footer-social svg{width:11px;height:11px}
 
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:256px 1fr;gap:48px;align-items:start}
+.about-grid{display:grid;grid-template-columns:270px 1fr;gap:52px;align-items:start}
 .about-sidebar{position:sticky;top:calc(var(--nav-h) + 20px)}
-.about-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 22px;text-align:center;overflow:hidden;box-shadow:var(--shadow-sm);position:relative}
-.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--teal))}
-.avatar-wrap{width:86px;height:86px;margin:0 auto 14px;border-radius:50%;padding:3px;background:linear-gradient(135deg,var(--blue),var(--teal));box-shadow:var(--shadow-accent)}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan))}
+.avatar-wrap{width:92px;height:92px;margin:0 auto 16px;border-radius:50%;padding:3px;background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:var(--shadow-accent)}
 .avatar-img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--bg3)}
 .about-name{font-size:1.02rem;font-weight:700;margin-bottom:2px}
 .about-nickname{color:var(--accent);font-size:.8rem;font-weight:600;margin-bottom:8px}
@@ -321,7 +417,7 @@ p{color:var(--fg2)}
 .tl-dot{width:11px;height:11px;border-radius:50%;border:2px solid var(--border2);background:var(--bg);flex-shrink:0;margin-top:4px;position:relative;z-index:1}
 .tl-dot-active{border-color:var(--accent)!important;background:var(--accent)!important;box-shadow:0 0 0 3px var(--blue-pale)}
 .tl-content{display:flex;flex-direction:column;gap:2px;padding-bottom:20px}
-.tl-year{font-size:.72rem;color:var(--accent);font-weight:700}
+.tl-year{font-size:.72rem;color:var(--cyan);font-weight:700;font-family:'JetBrains Mono',monospace}
 .tl-content strong{font-size:.89rem;color:var(--fg)}
 .tl-org{font-size:.8rem;color:var(--fg3)}
 .skill-group{margin-bottom:18px}
@@ -348,18 +444,11 @@ p{color:var(--fg2)}
 .collab-btn{display:inline-flex;align-items:center;gap:6px;padding:.32rem .9rem;background:var(--accent);color:#fff;border-radius:var(--radius-sm);font-size:.76rem;font-weight:600;text-decoration:none;transition:background var(--t)}
 .collab-btn:hover{background:var(--blue-dark);color:#fff}
 .award-list{display:flex;flex-direction:column;gap:8px}
-.award-item{display:flex;gap:14px;align-items:flex-start;padding:13px 16px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);transition:border-color var(--t),box-shadow var(--t);box-shadow:var(--shadow-xs)}
-.award-item:hover{border-color:var(--blue-ring);box-shadow:var(--shadow-sm)}
-.award-year{min-width:38px;font-size:.72rem;font-weight:700;color:var(--accent);padding-top:.18rem}
 .award-body{display:flex;flex-direction:column;gap:.2rem}
-.award-body strong{font-size:.87rem;color:var(--fg)}
-.award-org{font-size:.77rem;color:var(--fg3)}
-.exp-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;margin-bottom:10px;transition:border-color var(--t),box-shadow var(--t);box-shadow:var(--shadow-xs)}
-.exp-card:hover{border-color:var(--blue-ring);box-shadow:var(--shadow-sm)}
 .exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap;margin-bottom:12px}
 .exp-role{display:block;font-size:.92rem;font-weight:700;color:var(--fg);margin-bottom:.2rem}
-.exp-org{display:block;font-size:.79rem;color:var(--accent);font-weight:500}
-.exp-date{font-size:.72rem;color:var(--fg3);background:var(--bg2);padding:3px 10px;border-radius:100px;border:1px solid var(--border);flex-shrink:0;white-space:nowrap;height:fit-content}
+.exp-org{display:block;font-size:.79rem;color:var(--cyan);font-weight:600;font-family:'JetBrains Mono',monospace;font-size:.75rem}
+.exp-date{font-size:.72rem;color:var(--fg3);background:var(--dark2);color:var(--dark-text3);padding:3px 10px;border-radius:100px;border:1px solid rgba(37,99,235,.2);flex-shrink:0;white-space:nowrap;height:fit-content;font-family:'JetBrains Mono',monospace}
 .exp-bullets{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:.45rem}
 .exp-bullets li{font-size:.82rem;color:var(--fg2);line-height:1.7}
 .exp-bullets li strong{color:var(--fg)}
@@ -474,6 +563,6 @@ p{color:var(--fg2)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
 /* RESPONSIVE */
-@media(max-width:960px){.about-grid{grid-template-columns:1fr}.about-sidebar{position:static}.footer-inner{grid-template-columns:1fr}.footer-nav{gap:24px}}
+@media(max-width:960px){.about-grid{grid-template-columns:1fr}.about-card{position:static}.footer-inner{grid-template-columns:1fr}.footer-nav{gap:24px}}
 @media(max-width:768px){.section{padding:60px 20px}.hero{flex-direction:column;padding-top:calc(var(--nav-h) + 40px);gap:28px}.hero-visual{display:none}.stat-item{padding:10px 24px}.stat-div{display:none}.nav-links{display:none;flex-direction:column;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);padding:24px 20px;gap:4px;z-index:199}.nav-links.open{display:flex;animation:fadeIn .18s ease}.nav-links a{padding:12px 16px;font-size:.95rem;border-radius:var(--radius)}.nav-burger{display:flex}.pub-card{flex-direction:column}.pub-year-col{writing-mode:horizontal-tb;flex:none;border-right:none;border-bottom:1px solid var(--blue-ring);padding:8px 16px}.highlights-grid{grid-template-columns:1fr}.footer-nav{flex-direction:column}.footer-inner{grid-template-columns:1fr}.section-header{flex-direction:column;gap:8px}}
 @media(max-width:480px){.hero-name{font-size:2.6rem}.stat-item{padding:10px 16px}}
