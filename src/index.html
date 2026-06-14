@@ -50,28 +50,30 @@
       <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4" type="video/mp4" />
     </video>
 
-    <nav class="nav nav-cinematic" id="nav" aria-label="Main navigation">
-      <div class="nav-cinematic-inner">
-        <a href="index.html" class="nav-cinematic-logo" aria-current="page">
-          <span class="nav-logo-mark">SK</span>
-          <span class="nav-logo-sub">Cheminformatics</span>
-        </a>
-        <ul class="nav-links nav-cinematic-links" id="nav-links">
+      <nav class="nav nav-cinematic" id="nav" aria-label="Main navigation">
+        <div class="nav-cinematic-inner">
+      <a href="index.html" class="nav-cinematic-logo" aria-current="page">
+        <span class="nav-logo-mark">SK</span>
+        <span class="nav-logo-sub">Cheminformatics</span>
+      </a>
+      <ul class="nav-links nav-cinematic-links" id="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="research.html">Research</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="cv.html">CV</a></li>
-        </ul>
-        <div class="nav-cinematic-actions">
-          <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp" class="liquid-glass nav-cinematic-cta">Collaborate</a>
-          <button class="nav-burger nav-cinematic-burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
+          <li><a href="cram.html" class="nav-cinematic-highlight">CRAM</a></li>
+          <li><a href="gsat.html" class="nav-cinematic-highlight">GSAT</a></li>
+      </ul>
+      <div class="nav-cinematic-actions">
+        <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp" class="nav-cinematic-cta">Collaborate</a>
+        <button class="nav-burger nav-cinematic-burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </nav>
+        </div>
+      </nav>
 
     <section class="hero-cinematic" aria-label="Introduction">
       <p class="hero-cinematic-eyebrow animate-fade-rise">Cheminformatics · Environmental Chemistry · Institute of Science Tokyo</p>
@@ -89,6 +91,8 @@
         <span class="hero-chem-tag">SMILES</span>
         <span class="hero-chem-tag">PFAS</span>
         <span class="hero-chem-tag">DOM</span>
+        <a href="cram.html" class="hero-chem-tag hero-chem-tag-link">CRAM</a>
+        <a href="gsat.html" class="hero-chem-tag hero-chem-tag-link">GSAT</a>
       </div>
       <div class="hero-cinematic-actions animate-fade-rise-delay-2">
         <a href="research.html" class="liquid-glass hero-cinematic-cta hero-cinematic-cta-primary">Research Areas</a>
@@ -159,8 +163,24 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Get in touch
           </a>
-          <a href="research.html" class="status-more-btn">View research →</a>
+          <a href="cram.html" class="status-more-btn">CRAM project →</a>
         </div>
+      </div>
+
+      <div class="section-label" style="margin-top:44px">Current Work</div>
+      <div class="current-work-grid" data-reveal>
+        <a href="cram.html" class="current-work-card current-work-cram">
+          <span class="current-work-badge">PhD Thesis · In Progress</span>
+          <h3>CRAM-GTransformer</h3>
+          <p>Property-conditioned deep learning for carboxyl-rich aliphatic/alicyclic molecules (CRAM) and site-specific, pathway-level DOM biotransformation.</p>
+          <span class="current-work-link">View CRAM project →</span>
+        </a>
+        <a href="gsat.html" class="current-work-card current-work-gsat">
+          <span class="current-work-badge">Published · ACS ES&amp;T Water 2026</span>
+          <h3>GSAT Model</h3>
+          <p>Graph–Sequence Attention Transformer for multigenerational ecotoxicity prediction — R² = 0.907 on LC<sub>50</sub> benchmarks.</p>
+          <span class="current-work-link">View GSAT model →</span>
+        </a>
       </div>
 
       <div class="section-label" style="margin-top:52px">Research Areas</div>
@@ -248,11 +268,18 @@
           </ul>
         </div>
         <div class="footer-nav-col">
+          <h4>Current Work</h4>
+          <ul>
+            <li><a href="cram.html">CRAM-GTransformer</a></li>
+            <li><a href="gsat.html">GSAT Model</a></li>
+            <li><a href="publications.html">Publications</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
           <h4>More</h4>
           <ul>
-            <li><a href="publications.html">Publications</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="gsat.html">GSAT Model</a></li>
+            <li><a href="cv.html">CV</a></li>
           </ul>
         </div>
       </nav>
