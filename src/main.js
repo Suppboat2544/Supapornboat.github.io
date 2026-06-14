@@ -46,6 +46,11 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     el.style.opacity = '1';
     el.style.transform = 'none';
   });
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    heroVideo.pause();
+    heroVideo.removeAttribute('autoplay');
+  }
 }
 
 /* ── SCROLL REVEAL ── */

@@ -1812,6 +1812,186 @@ pre,code,table{overflow-x:auto}
   .cv-pres-item{flex-direction:column;gap:6px;}
 }
 
+/* ── TALKS PREVIEW (homepage) ── */
+.talks-preview-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.talk-preview-card{
+  padding:22px 24px;
+  border-radius:var(--radius-lg);
+  background:var(--surface);
+  border:1px solid var(--border);
+  transition:border-color .25s,transform .25s;
+}
+.talk-preview-card:hover{
+  border-color:rgba(6,182,212,.35);
+  transform:translateY(-2px);
+}
+.talk-preview-year{
+  display:inline-block;
+  font-family:var(--font-mono);
+  font-size:.68rem;
+  font-weight:700;
+  color:var(--cyan);
+  letter-spacing:.08em;
+  margin-bottom:10px;
+}
+.talk-preview-card h3{
+  font-size:1rem;
+  font-weight:600;
+  margin:0 0 8px;
+  line-height:1.35;
+}
+.talk-preview-card p{
+  font-size:.85rem;
+  color:var(--text-muted);
+  margin:0;
+  line-height:1.5;
+}
+
+/* ── TALKS PAGE ── */
+.talks-list{display:flex;flex-direction:column;gap:16px}
+.talk-card{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  gap:20px;
+  padding:22px 24px;
+  border-radius:var(--radius-lg);
+  background:var(--surface);
+  border:1px solid var(--border);
+}
+.talk-card-year,
+.talk-year{
+  font-family:var(--font-mono);
+  font-size:.82rem;
+  font-weight:700;
+  color:var(--cyan);
+  padding-top:2px;
+}
+.talk-card h3,
+.talk-body h3{font-size:1.05rem;margin:0 0 6px}
+.talk-card-meta,
+.talk-venue{font-size:.82rem;color:var(--text-muted);margin:0 0 8px}
+.talk-card p,
+.talk-desc{font-size:.88rem;color:var(--text-muted);margin:0;line-height:1.55}
+
+/* ── RESEARCH HUB (about) ── */
+.research-hub{
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  gap:32px;
+  align-items:center;
+  padding:32px;
+  border-radius:var(--radius-xl);
+  background:linear-gradient(135deg,rgba(6,182,212,.06),rgba(37,99,235,.04));
+  border:1px solid rgba(6,182,212,.15);
+}
+.research-hub h2{font-size:1.5rem;margin:8px 0 10px}
+.research-hub-text p{color:var(--text-muted);margin:0;line-height:1.6}
+.research-hub-links{display:grid;gap:12px}
+.research-hub-card{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:16px 18px;
+  border-radius:var(--radius);
+  background:var(--surface);
+  border:1px solid var(--border);
+  text-decoration:none;
+  color:inherit;
+  transition:border-color .2s,transform .2s;
+}
+.research-hub-card:hover{
+  border-color:rgba(6,182,212,.4);
+  transform:translateX(4px);
+}
+.research-hub-card strong{font-size:.95rem}
+.research-hub-card span:last-child{font-size:.82rem;color:var(--text-muted)}
+.research-hub-badge{
+  font-family:var(--font-mono);
+  font-size:.62rem;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--cyan);
+}
+
+/* ── PROJECT FLAGSHIP CARDS ── */
+.project-flagship-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-bottom:8px;
+}
+.project-flagship-card{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:28px;
+  border-radius:var(--radius-xl);
+  background:linear-gradient(145deg,rgba(6,182,212,.08),rgba(15,23,42,.6));
+  border:1px solid rgba(6,182,212,.2);
+  text-decoration:none;
+  color:inherit;
+  transition:border-color .25s,transform .25s;
+}
+.project-flagship-card:hover{
+  border-color:rgba(6,182,212,.45);
+  transform:translateY(-3px);
+}
+.project-flagship-badge{
+  font-family:var(--font-mono);
+  font-size:.65rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--cyan);
+}
+.project-flagship-card h3{font-size:1.25rem;margin:0}
+.project-flagship-card p{font-size:.88rem;color:var(--text-muted);margin:0;line-height:1.55;flex:1}
+.project-flagship-link{font-size:.85rem;font-weight:600;color:var(--cyan)}
+
+/* ── GSAT CODE BANNER ── */
+.gsat-code-banner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:28px 32px;
+  border-radius:var(--radius-xl);
+  background:linear-gradient(135deg,rgba(6,182,212,.1),rgba(37,99,235,.06));
+  border:1px solid rgba(6,182,212,.22);
+}
+.gsat-code-banner h3{margin:0 0 6px;font-size:1.15rem}
+.gsat-code-banner p{margin:0;color:var(--text-muted);font-size:.9rem;line-height:1.5}
+.gsat-code-banner-actions{display:flex;gap:12px;flex-shrink:0}
+
+/* ── PUB MODEL BADGE ── */
+.pub-link-model{
+  background:rgba(6,182,212,.12)!important;
+  border-color:rgba(6,182,212,.3)!important;
+  color:var(--cyan)!important;
+}
+
+/* ── 404 PAGE ── */
+.error-page{
+  min-height:60vh;
+  display:flex;
+  align-items:center;
+  padding:120px 0 80px;
+}
+.error-page h1{font-size:clamp(2rem,5vw,3rem);margin:0 0 12px}
+.error-page-sub{color:var(--text-muted);margin:0 0 28px;font-size:1.05rem}
+.error-page-links{display:flex;flex-wrap:wrap;gap:12px}
+
+@media(max-width:900px){
+  .talks-preview-grid,.project-flagship-grid,.research-hub{grid-template-columns:1fr}
+  .gsat-code-banner{flex-direction:column;align-items:flex-start}
+  .talk-card{grid-template-columns:1fr;gap:8px}
+}
+
 /* Print styles */
 @media print{
   .nav,.site-footer,.btn,.page-hero{display:none!important;}

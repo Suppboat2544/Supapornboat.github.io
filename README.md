@@ -8,14 +8,12 @@ Personal academic site for **Supaporn Klabklaydee (Boat)**, Ph.D. student in Civ
 
 ## About
 
-This site showcases Boat's research, publications, and projects in computational environmental science, with a focus on:
+This site showcases Boat's research, publications, and projects in computational environmental science and cheminformatics:
 
 - Graph Neural Networks for toxicity prediction & biotransformation modeling
 - PFAS analysis and transformation product identification
 - Dissolved Organic Matter (DOM) chemical space refinement
-- Kinetic deep learning models for environmental persistence
-- Clustering techniques in high-dimensional chemical/biological datasets
-- Marine carbon cycling and enzyme discovery
+- Structure-aware genetic algorithms (GSAT, CRAM-GTransformer)
 
 ---
 
@@ -23,34 +21,37 @@ This site showcases Boat's research, publications, and projects in computational
 
 | Page | Description |
 |---|---|
-| [Home](src/index.html) | Hero, research highlights, recent publications |
-| [About](src/about.html) | Full CV — bio, education, awards, internships, research experience |
+| [Home](src/index.html) | Cinematic hero, current work, publications, talks teaser |
+| [About](src/about.html) | Bio, education, awards, internships, research hub |
+| [Research](src/research.html) | Research themes and methodology |
 | [Publications](src/publications.html) | Peer-reviewed papers and preprints |
-| [Projects](src/projects.html) | Open-source GitHub projects |
+| [Talks](src/talks.html) | Presentations, competitions, recognition |
+| [Projects](src/projects.html) | CRAM/GSAT flagship work + open-source repos |
+| [CV](src/cv.html) | Full curriculum vitae |
+| [CRAM](src/cram.html) | PhD thesis — CRAM-GTransformer |
+| [GSAT](src/gsat.html) | Published GSAT model documentation |
 
 ---
 
 ## Tech Stack
 
 - Pure static HTML / CSS / JS — zero runtime dependencies
-- Dark theme with CSS custom properties
-- Google Fonts (Inter)
-- Deployed via **GitHub Actions** → `docs/` folder → GitHub Pages
+- Cinematic dark theme with liquid-glass navigation
+- Google Fonts (Instrument Serif, Inter, JetBrains Mono)
+- Deployed via **GitHub Actions** → `node scripts/build.js` → `docs/` → GitHub Pages
 
 ---
 
 ## Development
 
-Edit source files in `src/`, then sync to `docs/` and push:
+Edit source files in `src/`, then build and push:
 
 ```bash
-cp src/about.html docs/about.html
-cp src/styles.css docs/styles.css
-# ... repeat for other changed files
+node scripts/build.js
 git add -A && git commit -m "your message" && git push
 ```
 
-GitHub Actions will automatically deploy from the `docs/` folder on the `main` branch.
+CI runs the same build step before deploy. Do not edit `docs/` directly.
 
 ---
 
