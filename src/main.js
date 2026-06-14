@@ -1,6 +1,8 @@
 /* ── NAV ── */
 function toggleMenu() {
-  document.querySelector('.nav-links').classList.toggle('open');
+  const links = document.querySelector('.nav-links');
+  links.classList.toggle('open');
+  document.querySelector('.nav-burger')?.classList.toggle('open');
 }
 document.querySelectorAll('.nav-links a').forEach(a => {
   a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
