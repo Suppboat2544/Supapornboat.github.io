@@ -236,14 +236,33 @@
 }
 .nav-cinematic-logo{
   font-family:var(--font-display);
-  font-size:1.875rem;
-  letter-spacing:-.025em;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:.1rem;
   color:hsl(var(--cinematic-foreground));
   text-decoration:none;
   font-weight:400;
   justify-self:start;
+  line-height:1;
+}
+.nav-logo-mark{
+  font-family:'JetBrains Mono','Fira Code',monospace;
+  font-size:1.125rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  color:hsl(var(--cinematic-foreground));
+}
+.nav-logo-sub{
+  font-family:'JetBrains Mono','Fira Code',monospace;
+  font-size:.5625rem;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:hsl(var(--cinematic-muted-foreground));
 }
 .nav-cinematic-logo:hover{color:hsl(var(--cinematic-foreground))}
+.nav-cinematic-logo:hover .nav-logo-mark{color:var(--cyan)}
 .nav-cinematic-links{
   display:none;
   list-style:none;
@@ -307,13 +326,36 @@ body.menu-open{overflow:hidden}
   min-height:100dvh;
 }
 .hero-cinematic-eyebrow{
-  font-size:.75rem;
-  font-weight:500;
-  letter-spacing:.14em;
+  font-family:'JetBrains Mono','Fira Code',monospace;
+  font-size:.6875rem;
+  font-weight:600;
+  letter-spacing:.12em;
   text-transform:uppercase;
-  color:hsl(var(--cinematic-muted-foreground));
+  color:var(--cyan);
   margin-bottom:1.5rem;
 }
+.hero-chem-tags{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  margin-top:1.75rem;
+  max-width:40rem;
+}
+.hero-chem-tag{
+  font-family:'JetBrains Mono','Fira Code',monospace;
+  font-size:.6875rem;
+  font-weight:600;
+  letter-spacing:.04em;
+  color:hsl(var(--cinematic-muted-foreground));
+  border:1px solid hsla(var(--cinematic-border),.8);
+  background:rgba(6,182,212,.08);
+  border-radius:9999px;
+  padding:.35rem .75rem;
+  line-height:1.2;
+}
+.hero-chem-tag sub{font-size:.85em}
 .hero-cinematic-title{
   font-family:var(--font-display);
   font-size:clamp(2.75rem,7.5vw,6rem);
@@ -791,10 +833,10 @@ p{color:var(--fg2)}
 .footer-brand .nav-logo,
 .footer-brand .footer-logo{display:inline-block;margin-bottom:10px}
 .footer-logo{
-  font-family:var(--font-display);
-  font-size:1.35rem;
-  font-weight:400;
-  letter-spacing:-.02em;
+  font-family:'JetBrains Mono','Fira Code',monospace;
+  font-size:1rem;
+  font-weight:700;
+  letter-spacing:.04em;
   color:var(--fg);
   text-decoration:none;
 }
