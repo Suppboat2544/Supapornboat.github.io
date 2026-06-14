@@ -1,16 +1,52 @@
 /* ── NAV ── */
 function toggleMenu() {
   const links = document.querySelector('.nav-links');
-  links.classList.toggle('open');
-  document.querySelector('.nav-burger')?.classList.toggle('open');
+  const burger = document.querySelector('.nav-burger');
+  if (!links) return;
+
+  const isOpen = links.classList.toggle('open');
+  burger?.classList.toggle('open', isOpen);
+  burger?.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  document.body.classList.toggle('menu-open', isOpen);
 }
+
+function closeMenu() {
+  const links = document.querySelector('.nav-links');
+  const burger = document.querySelector('.nav-burger');
+  links?.classList.remove('open');
+  burger?.classList.remove('open');
+  burger?.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('menu-open');
+}
+
 document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
+  a.addEventListener('click', closeMenu);
 });
-window.addEventListener('scroll', () => {
-  document.getElementById('nav').style.boxShadow =
-    window.scrollY > 10 ? '0 4px 28px rgba(0,0,0,.45)' : '';
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMenu();
 });
+
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 10;
+    if (nav.classList.contains('nav-cinematic-bar')) {
+      nav.classList.toggle('scrolled', scrolled);
+    } else if (!nav.classList.contains('nav-cinematic')) {
+      nav.style.boxShadow = scrolled ? '0 4px 28px rgba(0,0,0,.45)' : '';
+    }
+  }, { passive: true });
+}
+
+/* ── REDUCED MOTION ── */
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[class*="animate-fade"]').forEach(el => {
+    el.style.animation = 'none';
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+  });
+}
 
 /* ── SCROLL REVEAL ── */
 const revealObserver = new IntersectionObserver((entries) => {
