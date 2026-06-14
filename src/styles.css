@@ -1992,6 +1992,36 @@ pre,code,table{overflow-x:auto}
   .talk-card{grid-template-columns:1fr;gap:8px}
 }
 
+.collab-btn-link{
+  background:transparent!important;
+  border:1px solid rgba(6,182,212,.35)!important;
+  color:var(--cyan)!important;
+  margin-right:8px;
+}
+.talks-section-title{
+  font-size:1.1rem;
+  font-weight:600;
+  margin:0 0 20px;
+  color:var(--fg);
+}
+.talk-card-award{
+  border-left:3px solid rgba(6,182,212,.4);
+}
+.ri-empty-msg{
+  text-align:center;
+  color:var(--text-muted);
+  font-size:.9rem;
+  padding:24px;
+}
+.ri-card[role="button"]:focus-visible{
+  outline:2px solid var(--cyan);
+  outline-offset:3px;
+}
+.research-item.expandable[role="button"]:focus-visible{
+  outline:2px solid var(--cyan);
+  outline-offset:2px;
+}
+
 /* Print styles */
 @media print{
   .nav,.site-footer,.btn,.page-hero{display:none!important;}

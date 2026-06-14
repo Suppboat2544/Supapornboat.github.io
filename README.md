@@ -47,7 +47,7 @@ This site showcases Boat's research, publications, and projects in computational
 Edit source files in `src/`, then build and push:
 
 ```bash
-node scripts/build.js
+node scripts/build.js    # or: python3 scripts/build.py
 git add -A && git commit -m "your message" && git push
 ```
 

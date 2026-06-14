@@ -81,7 +81,7 @@ const statsObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.querySelectorAll('.stat-num[data-count]').forEach(el => {
-        animateCount(el, parseInt(el.dataset.count), 1200);
+        animateCount(el, parseInt(el.dataset.count, 10), 1200);
       });
       statsObserver.unobserve(entry.target);
     }
@@ -90,3 +90,150 @@ const statsObserver = new IntersectionObserver((entries) => {
 
 const statsEl = document.querySelector('.stats-strip');
 if (statsEl) statsObserver.observe(statsEl);
+
+/* ── ABOUT: RESEARCH EXPANDABLES ── */
+function initAboutExpandables() {
+  const items = document.querySelectorAll('.research-item.expandable');
+  if (!items.length) return;
+
+  items.forEach((item) => {
+    const toggle = item.querySelector('.research-toggle') || item;
+    if (!toggle) return;
+
+    const setExpanded = (open) => {
+      items.forEach(i => {
+        i.classList.remove('open');
+        const btn = i.querySelector('.research-toggle') || i;
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      if (open) {
+        item.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    };
+
+    const onActivate = () => {
+      const willOpen = !item.classList.contains('open');
+      setExpanded(willOpen);
+    };
+
+    if (toggle.classList.contains('research-toggle')) {
+      toggle.addEventListener('click', onActivate);
+    } else {
+      toggle.setAttribute('role', 'button');
+      toggle.setAttribute('tabindex', '0');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.addEventListener('click', onActivate);
+      toggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onActivate();
+        }
+      });
+    }
+  });
+}
+
+/* ── RESEARCH: FILTERS + MODALS ── */
+let lastModalFocus = null;
+
+function closeResearchModal(overlay) {
+  if (!overlay) return;
+  overlay.classList.remove('open');
+  overlay.removeAttribute('aria-modal');
+  const dialog = overlay.querySelector('.ri-modal');
+  if (dialog) {
+    dialog.removeAttribute('role');
+    dialog.removeAttribute('aria-labelledby');
+  }
+  document.body.style.overflow = '';
+  if (lastModalFocus) {
+    lastModalFocus.focus();
+    lastModalFocus = null;
+  }
+}
+
+function openResearchModal(id) {
+  const overlay = document.getElementById(id);
+  if (!overlay) return;
+
+  lastModalFocus = document.activeElement;
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-modal', 'true');
+
+  const dialog = overlay.querySelector('.ri-modal');
+  const title = overlay.querySelector('.ri-modal h2, .ri-modal h3');
+  if (dialog) {
+    dialog.setAttribute('role', 'dialog');
+    if (title) dialog.setAttribute('aria-labelledby', title.id || (title.id = 'modal-title-' + id));
+  }
+
+  document.body.style.overflow = 'hidden';
+  const closeBtn = overlay.querySelector('.ri-modal-close');
+  closeBtn?.focus();
+}
+
+function initResearchPage() {
+  const grid = document.getElementById('riGrid');
+  if (!grid) return;
+
+  let emptyMsg = document.getElementById('riEmpty');
+  if (!emptyMsg) {
+    emptyMsg = document.createElement('p');
+    emptyMsg.id = 'riEmpty';
+    emptyMsg.className = 'ri-empty-msg';
+    emptyMsg.hidden = true;
+    emptyMsg.textContent = 'No topics match this filter.';
+    grid.parentNode.insertBefore(emptyMsg, grid.nextSibling);
+  }
+
+  document.querySelectorAll('.ri-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.ri-filter').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+
+      const filter = btn.dataset.filter;
+      let visible = 0;
+      document.querySelectorAll('.ri-card').forEach(card => {
+        const show = filter === 'all' || card.dataset.tags.includes(filter);
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      emptyMsg.hidden = visible > 0;
+    });
+    btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+  });
+
+  document.querySelectorAll('.ri-card[data-modal]').forEach(card => {
+    const open = () => openResearchModal(card.dataset.modal);
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open();
+      }
+    });
+  });
+
+  document.querySelectorAll('.ri-modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeResearchModal(overlay);
+    });
+    overlay.querySelector('.ri-modal-close')?.addEventListener('click', () => closeResearchModal(overlay));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.ri-modal-overlay.open').forEach(closeResearchModal);
+  });
+}
+
+/* ── INIT ── */
+document.addEventListener('DOMContentLoaded', () => {
+  initAboutExpandables();
+  initResearchPage();
+});
