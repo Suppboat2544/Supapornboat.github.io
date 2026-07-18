@@ -215,15 +215,21 @@
               <div class="cv-item-header">
                 <div>
                   <div class="cv-item-title">Remote Research Collaborator — Marine Bioinformatics &amp; HPC Computing</div>
-                  <div class="cv-item-subtitle">JAMSTEC &amp; RIKEN</div>
+                  <div class="cv-item-subtitle">JAMSTEC (Japan Agency for Marine-Earth Science and Technology) &amp; RIKEN</div>
                   <div class="cv-item-location">Remote / Japan</div>
                 </div>
                 <div class="cv-item-date">Dec 2025 – Present</div>
               </div>
               <ul class="cv-item-list">
-                <li>Collaborating with JAMSTEC and RIKEN on large-scale marine metagenomics and enzyme family discovery using national HPC resources</li>
-                <li>Built scalable dual-embedding pipelines (ESM-2 + <em>k</em>-mer) and hierarchical DBSCAN clustering across 1.29M+ ocean sequences</li>
-                <li>Discovered 847 marine enzyme families (156 novel putative); environmental adaptation models with XGBoost + SHAP</li>
+                <li><strong>Institutional collaboration:</strong> JAMSTEC (marine biogeochemistry / ocean microbiome) + RIKEN (computational biology &amp; national HPC) for scalable marine enzyme family discovery</li>
+                <li><strong>Ocean-scale datasets:</strong> TARA Oceans, OSD, GOS, Malaspina — surface to abyssal (0–6000 m) with depth, temperature, and geographic metadata</li>
+                <li><strong>Dual-embedding pipelines:</strong> ESM-2 (480-dim, half-precision) + <em>k</em>-mer (8,000-dim, <em>k</em>=4) via Mahalanobis-weighted fusion; HDF5 I/O for 1.29M+ sequences on large-memory HPC nodes</li>
+                <li><strong>HPC clustering:</strong> HDBSCAN + FAISS IVF-PQ (O(<em>n</em> log <em>n</em>)); SLURM arrays; full clustering in &lt;6 h wall time with RIKEN-aligned reproducible workflows</li>
+                <li><strong>Discovery:</strong> 847 enzyme families (78.3% EC consistency; Silhouette 0.47 vs 0.32); 156 novel putative families; UMAP stratified by depth/temperature/basin</li>
+                <li><strong>Environmental adaptation:</strong> XGBoost + SHAP; temperature–depth explains 34.7% of inter-family embedding variance (<em>R</em>²)</li>
+                <li><strong>JAMSTEC framing:</strong> linking enzyme families to marine carbon-cycling hypotheses (carboxyl-metabolising / environmentally adapted enzymes)</li>
+                <li><strong>RIKEN practice:</strong> Singularity, Snakemake, Git-LFS, open-science documentation toward a global marine enzyme atlas</li>
+                <li><strong>Manuscript (in prep.):</strong> “Deep Learning-Guided Discovery of Marine Enzyme Families…” (w/ N. Subsa-ard, K. Iwabuchi, J. Liu, M. Fujii)</li>
               </ul>
             </div>
 
