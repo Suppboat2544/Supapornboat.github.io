@@ -1,0 +1,113 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=teal!60!black
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Project Summary}
+\fancyhead[R]{\small Supaporn Klabklaydee}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{0.75em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.75em}{}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Project Summary}\\[0.6em]
+  {\large Sample-Efficiency of Quantum Fidelity Kernels\\
+  for Molecular Property Classification:\\[0.25em]
+  A Learning-Curve Benchmark Against Classical Baselines}\\[1em]
+  {\normalsize Supaporn Klabklaydee}\\
+  {\small Institute of Science Tokyo}\\[0.4em]
+  {\footnotesize A negative / null-result study with multi-seed, scaffold-split learning curves.}
+\end{center}
+
+\vspace{0.6em}
+\noindent\rule{\textwidth}{0.6pt}
+\vspace{0.8em}
+
+\section*{Core Question}
+Does a quantum fidelity kernel (simulated on a classical computer) show a real \emph{sample-efficiency} advantage over classical machine-learning methods when labeled molecular data is scarce---the low-data regime that matters most in drug discovery and toxicology, where labels are expensive?
+
+\section*{Method}
+The study benchmarks a PennyLane simulator-based quantum fidelity kernel SVM
+(8-qubit ``Circuit~B,'' using angle encoding + ring CNOT entanglement on PCA-8 molecular features)
+against three classical baselines---Random Forest, RBF-SVM, and AttentiveFP graph neural network---
+across four MoleculeNet binary classification tasks:
+\begin{itemize}[leftmargin=1.4em,itemsep=0.2em]
+  \item \textbf{BBBP} --- blood--brain barrier permeability
+  \item \textbf{BACE} --- enzyme inhibition
+  \item \textbf{HIV} --- replication inhibition
+  \item \textbf{Tox21 NR-AR} --- toxicity
+\end{itemize}
+
+\paragraph{Key design rigor.}
+Training sizes were swept from $N=50$ up to the full dataset (7 sizes),
+with Bemis--Murcko scaffold splitting (to prevent structural leakage between train and test)
+and 10 random seeds---\textbf{280 total model--condition pairs}.
+A pre-registered hypothesis was tested: that the quantum kernel would show a statistically significant advantage over the GNN specifically at $N<500$ (paired Wilcoxon, $p<0.05$).
+
+\section*{Key Results}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l X X@{}}
+\toprule
+Dataset & Quantum vs.\ GNN advantage & Quantum vs.\ best classical model \\
+\midrule
+BBBP & Significant at $N=300$, $N=500$ & Never exceeded RF / RBF-SVM \\
+BACE & No significant advantage & Quantum near chance-level ($\sim$0.50 AUC) throughout \\
+HIV & Significant at $N=50$--$200$ & Never exceeded RF / RBF-SVM \\
+Tox21 & Mean crossover at $N=50$, not significant ($p=0.23$) & Not robust; RBF-SVM later dominated \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{0.5em}
+The quantum kernel's AUC stayed flat in a narrow \textbf{0.46--0.53} band on three of four tasks---essentially chance-level---while Random Forest and RBF-SVM generally dominated overall, with gaps of \textbf{0.12--0.34 AUC} points at larger $N$.
+
+\section*{Why the ``Significant'' Wins Are Not What They Look Like}
+The paper is unusually candid: the quantum-over-GNN significant results largely reflect \textbf{GNN underfitting at small $N$}, not quantum kernel strength.
+On HIV at $N=50$, the GNN scored only \textbf{0.340} while Random Forest already hit \textbf{0.552}---the quantum kernel's \textbf{0.491} beat the GNN but still trailed the simpler classical baselines.
+
+\section*{Explanation Offered}
+The authors attribute the quantum kernel's plateau to \textbf{expressivity limits}:
+with 8~qubits, the fidelity kernel's rank is bounded by a 256-dimensional Hilbert space and constrained by the fixed ring-CNOT circuit structure,
+unlike the RBF kernel or Morgan fingerprints, which operate in much higher-dimensional, more flexible spaces.
+This points to a \emph{capacity-saturated} regime rather than overfitting.
+
+\section*{Practical Trade-offs}
+Computing the quantum kernel's Gram matrix required $O(N^2)$ circuit evaluations,
+taking \textbf{hours per dataset} on a simulator, versus \textbf{seconds to minutes} for classical Random Forest and RBF-SVM on the same hardware---
+a substantial computational cost for no net performance benefit.
+
+\section*{Conclusion}
+This is presented as the first systematic scaffold-split learning-curve comparison of a quantum fidelity kernel against modern classical baselines with proper multi-seed statistics.
+
+\textbf{Bottom line:} the quantum kernel is not globally competitive with the best classical models on any of the four benchmarks,
+though it does show narrow, likely GNN-underfitting-driven advantages in a few low-data corners (BBBP, HIV).
+The authors are transparent about limitations---no Bonferroni correction across the many comparisons, simulator-only evaluation, and fixed (non-trainable) quantum circuit design---
+and frame the exploratory ``wins'' as evidence of GNN fragility at low~$N$ rather than proof of quantum advantage.
+
+\vspace{0.6em}
+\noindent\fbox{\parbox{0.97\textwidth}{\small
+\textbf{Takeaway.}
+This is a negative / null-result paper with strong methodological rigor---valuable as a reproducible baseline for the field precisely because it resists overselling a fashionable ``quantum advantage'' narrative.
+}}
+
+\end{document}
