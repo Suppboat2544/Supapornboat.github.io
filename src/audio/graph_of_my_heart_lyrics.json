@@ -1,0 +1,269 @@
+{
+  "title": "Graph of My Heart",
+  "artist": "Boat · BoatOS",
+  "bpm": 74,
+  "genre": "R&B / neo-soul",
+  "duration_sec": 181.66,
+  "lines": [
+    {
+      "t": 0.6,
+      "section": "intro",
+      "text": "Mmm, soft tide"
+    },
+    {
+      "t": 4.67,
+      "section": "intro",
+      "text": "Calling my name from the other side"
+    },
+    {
+      "t": 8.75,
+      "section": "intro",
+      "text": "Boat on the water, heart open wide"
+    },
+    {
+      "t": 13.22,
+      "section": "verse",
+      "text": "Grew up where the coastline taught me to listen"
+    },
+    {
+      "t": 16.42,
+      "section": "verse",
+      "text": "Salt on the wind, every ripple a mission"
+    },
+    {
+      "t": 19.61,
+      "section": "verse",
+      "text": "Thailand sun on a curious mind"
+    },
+    {
+      "t": 22.8,
+      "section": "verse",
+      "text": "Following currents I couldn't define"
+    },
+    {
+      "t": 26.0,
+      "section": "verse",
+      "text": "Tokyo nights, new city, same ocean inside"
+    },
+    {
+      "t": 29.19,
+      "section": "verse",
+      "text": "Ph.D. dreams under Fujii Lab lights"
+    },
+    {
+      "t": 32.38,
+      "section": "verse",
+      "text": "Molecules dancing in patterns I draw"
+    },
+    {
+      "t": 35.58,
+      "section": "verse",
+      "text": "Edges and nodes — I learn what they are"
+    },
+    {
+      "t": 39.17,
+      "section": "pre-chorus",
+      "text": "There's a whisper in the water"
+    },
+    {
+      "t": 42.31,
+      "section": "pre-chorus",
+      "text": "Chemistry like a love letter"
+    },
+    {
+      "t": 45.46,
+      "section": "pre-chorus",
+      "text": "I read between the waves"
+    },
+    {
+      "t": 48.6,
+      "section": "pre-chorus",
+      "text": "Find the signal in the noise you made"
+    },
+    {
+      "t": 52.14,
+      "section": "chorus",
+      "text": "You're the graph of my heart"
+    },
+    {
+      "t": 56.4,
+      "section": "chorus",
+      "text": "Every bond, every start"
+    },
+    {
+      "t": 60.66,
+      "section": "chorus",
+      "text": "Structure-aware, pulling me through the dark"
+    },
+    {
+      "t": 64.91,
+      "section": "chorus",
+      "text": "From the shore to the stars"
+    },
+    {
+      "t": 69.17,
+      "section": "chorus",
+      "text": "I can feel who you are"
+    },
+    {
+      "t": 73.43,
+      "section": "chorus",
+      "text": "In the graph of my heart — oh, the graph of my heart"
+    },
+    {
+      "t": 78.09,
+      "section": "verse",
+      "text": "LC50 secrets on toxicity's thread"
+    },
+    {
+      "t": 81.28,
+      "section": "verse",
+      "text": "GSAT showing me what the molecules said"
+    },
+    {
+      "t": 84.47,
+      "section": "verse",
+      "text": "CRAM in the deep, DOM drifting slow"
+    },
+    {
+      "t": 87.67,
+      "section": "verse",
+      "text": "Ocean's old memory that only few know"
+    },
+    {
+      "t": 90.86,
+      "section": "verse",
+      "text": "PFAS transforming — we watch what remains"
+    },
+    {
+      "t": 94.05,
+      "section": "verse",
+      "text": "Water stays sacred; we carry that flame"
+    },
+    {
+      "t": 97.25,
+      "section": "verse",
+      "text": "JAMSTEC and RIKEN, enzymes that swim"
+    },
+    {
+      "t": 100.44,
+      "section": "verse",
+      "text": "LLNL summer — high compute, high hymn"
+    },
+    {
+      "t": 104.03,
+      "section": "pre-chorus",
+      "text": "There's a whisper in the water"
+    },
+    {
+      "t": 107.18,
+      "section": "pre-chorus",
+      "text": "Chemistry like a love letter"
+    },
+    {
+      "t": 110.32,
+      "section": "pre-chorus",
+      "text": "I read between the waves"
+    },
+    {
+      "t": 113.46,
+      "section": "pre-chorus",
+      "text": "Find the signal in the noise you made"
+    },
+    {
+      "t": 117.01,
+      "section": "chorus",
+      "text": "You're the graph of my heart"
+    },
+    {
+      "t": 121.26,
+      "section": "chorus",
+      "text": "Every bond, every start"
+    },
+    {
+      "t": 125.52,
+      "section": "chorus",
+      "text": "Structure-aware, pulling me through the dark"
+    },
+    {
+      "t": 129.78,
+      "section": "chorus",
+      "text": "From the shore to the stars"
+    },
+    {
+      "t": 134.04,
+      "section": "chorus",
+      "text": "I can feel who you are"
+    },
+    {
+      "t": 138.3,
+      "section": "chorus",
+      "text": "In the graph of my heart — oh, the graph of my heart"
+    },
+    {
+      "t": 142.95,
+      "section": "bridge",
+      "text": "Soft now"
+    },
+    {
+      "t": 145.47,
+      "section": "bridge",
+      "text": "Boat still floating on what I believe"
+    },
+    {
+      "t": 147.98,
+      "section": "bridge",
+      "text": "Neural nets humming a low melody"
+    },
+    {
+      "t": 150.5,
+      "section": "bridge",
+      "text": "GNN holding my hand through the sea"
+    },
+    {
+      "t": 152.62,
+      "section": "bridge",
+      "text": "Love is a molecule — structure sets free"
+    },
+    {
+      "t": 155.93,
+      "section": "final-chorus",
+      "text": "You're the graph of my heart"
+    },
+    {
+      "t": 159.12,
+      "section": "final-chorus",
+      "text": "Every bond, every start"
+    },
+    {
+      "t": 162.31,
+      "section": "final-chorus",
+      "text": "Structure-aware, pulling me through the dark"
+    },
+    {
+      "t": 165.51,
+      "section": "final-chorus",
+      "text": "From the shore to the stars"
+    },
+    {
+      "t": 168.7,
+      "section": "final-chorus",
+      "text": "I can feel who you are"
+    },
+    {
+      "t": 171.89,
+      "section": "final-chorus",
+      "text": "In the graph of my heart"
+    },
+    {
+      "t": 175.09,
+      "section": "final-chorus",
+      "text": "Mmm, graph of my heart"
+    },
+    {
+      "t": 178.28,
+      "section": "final-chorus",
+      "text": "Boat on the water, graph of my heart"
+    }
+  ]
+}
