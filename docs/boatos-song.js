@@ -6,7 +6,7 @@
     src: "audio/soft_tide.mp3",
     lyricsSrc: "audio/soft_tide_lyrics.json",
     title: "Soft Tide",
-    subtitle: "Suno · male vocal · soft R&B",
+    subtitle: "soft R&B",
     artist: "Boat · BoatOS",
   };
 
@@ -88,7 +88,7 @@
     const label = document.getElementById("media-track");
     if (label) label.textContent = on ? TRACK.title + " ▸ playing" : TRACK.title + " — " + TRACK.artist;
     const dock = document.getElementById("song-dock-status");
-    if (dock) dock.textContent = on ? "Now playing · Soft Tide" : "Soft Tide · soft R&B";
+    if (dock) dock.textContent = on ? "Now playing · Soft Tide" : "Soft Tide";
   }
 
   async function play() {
@@ -130,7 +130,7 @@
     loadLyrics().then((data) => {
       const meta = document.getElementById("song-lyrics-meta");
       if (meta && data) {
-        meta.textContent = (data.title || TRACK.title) + " · " + (data.genre || "R&B") + " · " + (data.bpm || 74) + " BPM";
+        meta.textContent = (data.title || TRACK.title) + " — " + TRACK.artist;
       }
       renderLyric("Press play for lyrics", "");
     });

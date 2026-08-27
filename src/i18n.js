@@ -16,6 +16,22 @@
     return /\/(th|ja)(\/|$)/.test(location.pathname) ? "../" : "";
   }
 
+  function currentPage() {
+    const file = location.pathname.split("/").pop() || "index.html";
+    if (!file || file === "th" || file === "ja" || !file.includes(".")) return "index.html";
+    if (file === "404.html") return "index.html";
+    return file.includes(".html") ? file : "index.html";
+  }
+
+  function langHref(lang, page) {
+    if (lang === "en") {
+      return page === "index.html" ? SITE_ROOT + "/" : SITE_ROOT + "/" + page;
+    }
+    return page === "index.html"
+      ? SITE_ROOT + "/" + lang + "/"
+      : SITE_ROOT + "/" + lang + "/" + page;
+  }
+
   function getByPath(obj, path) {
     return path.split(".").reduce((o, k) => (o && o[k] != null ? o[k] : null), obj);
   }
@@ -44,17 +60,11 @@
       const val = getByPath(dict, "nav." + key);
       if (val != null) el.textContent = val;
     });
+    const page = currentPage();
     document.querySelectorAll(".lang-switch a").forEach((a) => {
       const lang = a.getAttribute("data-lang");
       a.classList.toggle("is-active", lang === dict.lang);
-      // Keep absolute project-root links healthy on GitHub Pages
-      const file = (location.pathname.split("/").pop() || "index.html");
-      const page = file.includes(".html") ? file : "index.html";
-      if (lang === "en") {
-        a.href = page === "index.html" ? SITE_ROOT + "/" : SITE_ROOT + "/" + page;
-      } else {
-        a.href = SITE_ROOT + "/" + lang + "/" + page;
-      }
+      a.href = langHref(lang, page);
     });
   }
 

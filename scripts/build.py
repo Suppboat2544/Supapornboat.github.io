@@ -74,17 +74,27 @@ def load_locale(lang: str) -> dict:
 
 def lang_urls(filename: str, lang: str) -> dict:
     """Absolute language switcher URLs (GitHub project Pages safe)."""
-    en = f"{SITE_ROOT}/" if filename == "index.html" else f"{SITE_ROOT}/{filename}"
+    # Prefer clean directory URLs for locale homes (…/th/ not …/th/index.html)
+    if filename == "index.html":
+        en = f"{SITE_ROOT}/"
+        th = f"{SITE_ROOT}/th/"
+        ja = f"{SITE_ROOT}/ja/"
+    else:
+        en = f"{SITE_ROOT}/{filename}"
+        th = f"{SITE_ROOT}/th/{filename}"
+        ja = f"{SITE_ROOT}/ja/{filename}"
     return {
         "lang_en": en,
-        "lang_th": f"{SITE_ROOT}/th/{filename}",
-        "lang_ja": f"{SITE_ROOT}/ja/{filename}",
+        "lang_th": th,
+        "lang_ja": ja,
     }
 
 
 def page_href(filename: str, lang: str = "en") -> str:
     if lang == "en":
         return f"{SITE_ROOT}/" if filename == "index.html" else f"{SITE_ROOT}/{filename}"
+    if filename == "index.html":
+        return f"{SITE_ROOT}/{lang}/"
     return f"{SITE_ROOT}/{lang}/{filename}"
 
 
@@ -117,22 +127,23 @@ def nav_link(item_id, href, label, active_id, extra_class="", i18n_key=None):
     return f'<li><a href="{href}"{attrs}>{label}</a></li>'
 
 
-def build_lang_bar(filename: str, lang: str = "en") -> str:
-    """Fixed EN / JP / THA switcher above the main header."""
-    urls = lang_urls(filename, lang)
+def build_lang_switch(filename: str, lang: str = "en", extra_class: str = "") -> str:
+    """EN / JP / THA switcher for header (and footer)."""
+    # Error page should switch to each locale's home, not 404.html
+    switch_file = "index.html" if filename in ("404.html",) else filename
+    urls = lang_urls(switch_file, lang)
+    cls = "lang-switch" + (f" {extra_class}" if extra_class else "")
     active = {
         "en": ' class="is-active" aria-current="page"' if lang == "en" else "",
         "ja": ' class="is-active" aria-current="page"' if lang == "ja" else "",
         "th": ' class="is-active" aria-current="page"' if lang == "th" else "",
     }
     return (
-        '  <div class="lang-bar" role="navigation" aria-label="Language">\n'
-        '    <nav class="lang-switch lang-switch-top">\n'
-        f'      <a href="{urls["lang_en"]}" data-lang="en" hreflang="en"{active["en"]}>EN</a>\n'
-        f'      <a href="{urls["lang_ja"]}" data-lang="ja" hreflang="ja"{active["ja"]}>JP</a>\n'
-        f'      <a href="{urls["lang_th"]}" data-lang="th" hreflang="th"{active["th"]}>THA</a>\n'
-        "    </nav>\n"
-        "  </div>\n"
+        f'<nav class="{cls}" aria-label="Language">'
+        f'<a href="{urls["lang_en"]}" data-lang="en" hreflang="en"{active["en"]}>EN</a>'
+        f'<a href="{urls["lang_ja"]}" data-lang="ja" hreflang="ja"{active["ja"]}>JP</a>'
+        f'<a href="{urls["lang_th"]}" data-lang="th" hreflang="th"{active["th"]}>THA</a>'
+        "</nav>"
     )
 
 
@@ -147,16 +158,17 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
         return nav_labels.get(key, fallback)
 
     if meta.get("minimalNav"):
-        home = page_href("index.html", "en")
+        home = page_href("index.html", lang if lang in ("th", "ja") else "en")
+        lang_sw = "        " + build_lang_switch(filename, lang, "lang-switch-nav") + "\n"
         return (
-            build_lang_bar(filename, lang)
-            + '  <nav class="nav nav-cinematic nav-cinematic-bar" id="nav" aria-label="Main navigation">\n'
+            '  <nav class="nav nav-cinematic nav-cinematic-bar" id="nav" aria-label="Main navigation">\n'
             '    <div class="nav-cinematic-inner">\n'
             f'      <a href="{home}" class="nav-cinematic-logo">\n'
             '        <span class="nav-logo-mark">SK</span>\n'
             '        <span class="nav-logo-sub">BoatOS 95</span>\n'
             '      </a>\n'
             '      <div class="nav-cinematic-actions">\n'
+            f'{lang_sw}'
             f'        <a href="{home}" class="nav-cinematic-cta" data-i18n-nav="home">{label_for("home", "Home")}</a>\n'
             '      </div>\n'
             '    </div>\n'
@@ -187,9 +199,11 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
         '          <span></span><span></span><span></span>\n'
         '        </button>'
     )
-    collab = label_for("collaborate", "Collaborate") if False else nav_labels.get("collaborate", "Collaborate")
+    lang_sw = "        " + build_lang_switch(filename, lang, "lang-switch-nav") + "\n"
+    collab = nav_labels.get("collaborate", "Collaborate")
     actions = (
-        f'        <a href="mailto:{COLLAB_EMAIL}" class="nav-cinematic-cta" data-i18n-nav="collaborate">{collab}</a>\n'
+        f'{lang_sw}'
+        f'        <a href="mailto:{COLLAB_EMAIL}" class="nav-cinematic-cta nav-cinematic-cta-desk" data-i18n-nav="collaborate">{collab}</a>\n'
         f'{burger}'
     )
     home_href = page_href("index.html", "en")
@@ -210,15 +224,8 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
         f'      </div>'
     )
 
-    lang_bar = build_lang_bar(filename, lang)
     if is_home:
-        # Indent to match home cinematic wrap nesting
-        home_bar = "\n".join(
-            ("      " + line.lstrip()) if line.strip() else line
-            for line in lang_bar.rstrip("\n").split("\n")
-        ) + "\n"
         return (
-            f'{home_bar}'
             f'      <nav class="{nav_class}" id="nav" aria-label="Main navigation">\n'
             f'        <div class="nav-cinematic-inner">\n'
             f'{inner}\n'
@@ -228,7 +235,6 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
 
     return (
         f'  <a class="skip-link" href="#main-content">Skip to content</a>\n'
-        f'{lang_bar}'
         f'  <nav class="{nav_class}" id="nav" aria-label="Main navigation">\n'
         f'    <div class="nav-cinematic-inner">\n'
         f'{inner}\n'
