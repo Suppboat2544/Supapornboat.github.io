@@ -26,6 +26,7 @@ NAV_ITEMS = [
 HIGHLIGHT_ITEMS = [
     ("cram", "cram.html", "CRAM"),
     ("gsat", "gsat.html", "GSAT"),
+    ("win95", "win95.html", "BoatOS"),
 ]
 
 PAGE_META = {
@@ -65,7 +66,7 @@ def build_nav(filename: str) -> str:
             '    <div class="nav-cinematic-inner">\n'
             '      <a href="index.html" class="nav-cinematic-logo">\n'
             '        <span class="nav-logo-mark">SK</span>\n'
-            '        <span class="nav-logo-sub">Cheminformatics</span>\n'
+            '        <span class="nav-logo-sub">BoatOS 95</span>\n'
             '      </a>\n'
             '      <div class="nav-cinematic-actions">\n'
             '        <a href="index.html" class="nav-cinematic-cta">Home</a>\n'
@@ -94,7 +95,7 @@ def build_nav(filename: str) -> str:
     inner = (
         f'      <a href="index.html" class="nav-cinematic-logo"{logo_current}>\n'
         f'        <span class="nav-logo-mark">SK</span>\n'
-        f'        <span class="nav-logo-sub">Cheminformatics</span>\n'
+        f'        <span class="nav-logo-sub">BoatOS 95</span>\n'
         f'      </a>\n'
         f'      <ul class="nav-links nav-cinematic-links" id="nav-links">\n'
         f'          {links}\n'

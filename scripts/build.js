@@ -23,6 +23,7 @@ const NAV_ITEMS = [
 const HIGHLIGHT_ITEMS = [
   { id: 'cram', href: 'cram.html', label: 'CRAM' },
   { id: 'gsat', href: 'gsat.html', label: 'GSAT' },
+  { id: 'win95', href: 'win95.html', label: 'BoatOS' },
 ];
 
 const PAGE_META = {
@@ -65,7 +66,7 @@ function buildNav(filename) {
       '    <div class="nav-cinematic-inner">\n' +
       '      <a href="index.html" class="nav-cinematic-logo">\n' +
       '        <span class="nav-logo-mark">SK</span>\n' +
-      '        <span class="nav-logo-sub">Cheminformatics</span>\n' +
+      '        <span class="nav-logo-sub">BoatOS 95</span>\n' +
       '      </a>\n' +
       '      <div class="nav-cinematic-actions">\n' +
       '        <a href="index.html" class="nav-cinematic-cta">Home</a>\n' +
@@ -88,7 +89,7 @@ function buildNav(filename) {
       '        <div class="nav-cinematic-inner">\n' +
       '      <a href="index.html" class="nav-cinematic-logo"' + logoCurrent + '>\n' +
       '        <span class="nav-logo-mark">SK</span>\n' +
-      '        <span class="nav-logo-sub">Cheminformatics</span>\n' +
+      '        <span class="nav-logo-sub">BoatOS 95</span>\n' +
       '      </a>\n' +
       '      <ul class="nav-links nav-cinematic-links" id="nav-links">\n' +
       '          ' + links + '\n' +
@@ -111,7 +112,7 @@ function buildNav(filename) {
     '    <div class="nav-cinematic-inner">\n' +
     '      <a href="index.html" class="nav-cinematic-logo">\n' +
     '        <span class="nav-logo-mark">SK</span>\n' +
-    '        <span class="nav-logo-sub">Cheminformatics</span>\n' +
+    '        <span class="nav-logo-sub">BoatOS 95</span>\n' +
     '      </a>\n' +
     '      <ul class="nav-links nav-cinematic-links" id="nav-links">\n' +
     '          ' + links + '\n' +
