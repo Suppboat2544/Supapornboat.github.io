@@ -1,0 +1,34 @@
+Official organization logos downloaded for the website.
+Downloaded (UTC): 2026-08-27
+Method: curl with User-Agent; SVG→PNG via cairosvg (max dimension ~512px, RGBA/transparent).
+
+logo_science_tokyo.png / logo_science_tokyo.svg
+  Source: https://upload.wikimedia.org/wikipedia/commons/2/2e/Institute_of_Science_Tokyo_logo%2C_advanced.svg
+  Commons: https://commons.wikimedia.org/wiki/File:Institute_of_Science_Tokyo_logo,_advanced.svg
+  Notes: Official Institute of Science Tokyo “advanced” wordmark; SVG kept; PNG 512×242 RGBA.
+
+logo_chulalongkorn.png / logo_chulalongkorn.svg
+  Source: https://upload.wikimedia.org/wikipedia/commons/7/78/Logo_of_Chulalongkorn_University_%282026%29.svg
+  Commons: https://commons.wikimedia.org/wiki/File:Logo_of_Chulalongkorn_University.svg
+    (FilePath resolves to Logo_of_Chulalongkorn_University_(2026).svg — Phra Kiao)
+  Notes: Official Chulalongkorn University Phra Kiao emblem; SVG kept; PNG 337×512 RGBA.
+
+logo_jamstec.png / logo_jamstec.svg
+  Source (SVG): https://upload.wikimedia.org/wikipedia/commons/7/7b/Emblem_of_JAMSTEC.svg
+  Commons: https://commons.wikimedia.org/wiki/File:Emblem_of_JAMSTEC.svg
+  Also available (raster, 300×300): https://upload.wikimedia.org/wikipedia/commons/9/90/JAMSTEC_logo.png
+    (same mark as official https://www.jamstec.go.jp/j/about/logo/images/term-logo.png)
+  Notes: Emblem SVG converted to crisp 512×512 PNG; SVG kept.
+
+logo_riken.png
+  Source: https://upload.wikimedia.org/wikipedia/commons/0/00/RIKEN_logo.png
+  Commons: https://commons.wikimedia.org/wiki/File:RIKEN_logo.png
+  Notes: Official RIKEN mark + wordmark; resized longest side to 512px → 301×512 RGBA PNG.
+
+logo_llnl.png / logo_llnl.svg
+  Source (SVG preferred): https://upload.wikimedia.org/wikipedia/commons/f/fd/Lawrence_Livermore_National_Laboratory_logo.svg
+  Commons: https://commons.wikimedia.org/wiki/File:Lawrence_Livermore_National_Laboratory_logo.svg
+  Fallback raster also used for verification:
+    https://upload.wikimedia.org/wikipedia/commons/a/ae/LLNL-logo.png
+  Notes: Official LLNL lockup; SVG kept; PNG 512×86 RGBA.
+  (cdn.llnl.gov/onelab/…/llnl-logo-400x400.png was unreachable from this environment.)
