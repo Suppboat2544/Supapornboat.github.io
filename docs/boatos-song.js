@@ -5,8 +5,8 @@
   const TRACK = {
     src: "audio/graph_of_my_heart.mp3",
     lyricsSrc: "audio/graph_of_my_heart_lyrics.json",
-    title: "Graph of My Heart",
-    subtitle: "R&B · Boat study story",
+    title: "Soft Tide",
+    subtitle: "HYBS-inspired · soft R&B",
     artist: "Boat · BoatOS",
   };
 
@@ -88,7 +88,7 @@
     const label = document.getElementById("media-track");
     if (label) label.textContent = on ? TRACK.title + " ▸ playing" : TRACK.title + " — " + TRACK.artist;
     const dock = document.getElementById("song-dock-status");
-    if (dock) dock.textContent = on ? "Now playing · R&B 74 BPM" : "Graph of My Heart · R&B";
+    if (dock) dock.textContent = on ? "Now playing · Soft Tide" : "Soft Tide · soft R&B";
   }
 
   async function play() {

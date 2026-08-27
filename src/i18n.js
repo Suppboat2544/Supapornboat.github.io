@@ -2,13 +2,13 @@
 (function () {
   "use strict";
 
+  const SITE_ROOT = "/Supapornboat.github.io";
+
   function detectLang() {
     const q = new URLSearchParams(location.search).get("lang");
     if (q === "th" || q === "ja" || q === "en") return q;
     if (/\/th(\/|$)/.test(location.pathname)) return "th";
     if (/\/ja(\/|$)/.test(location.pathname)) return "ja";
-    const stored = localStorage.getItem("boatos-lang");
-    if (stored === "th" || stored === "ja" || stored === "en") return stored;
     return "en";
   }
 
@@ -45,23 +45,21 @@
       if (val != null) el.textContent = val;
     });
     document.querySelectorAll(".lang-switch a").forEach((a) => {
-      a.classList.toggle("is-active", a.getAttribute("data-lang") === dict.lang);
+      const lang = a.getAttribute("data-lang");
+      a.classList.toggle("is-active", lang === dict.lang);
+      // Keep absolute project-root links healthy on GitHub Pages
+      const file = (location.pathname.split("/").pop() || "index.html");
+      const page = file.includes(".html") ? file : "index.html";
+      if (lang === "en") {
+        a.href = page === "index.html" ? SITE_ROOT + "/" : SITE_ROOT + "/" + page;
+      } else {
+        a.href = SITE_ROOT + "/" + lang + "/" + page;
+      }
     });
   }
 
-  function langHref(lang) {
-    const file = (location.pathname.split("/").pop() || "index.html");
-    const page = file.includes(".html") ? file : "index.html";
-    if (lang === "en") return assetPrefix() ? "../" + page : page;
-    if (assetPrefix()) {
-      return lang === detectLang() ? page : "../" + lang + "/" + page;
-    }
-    return lang + "/" + (page === "index.html" ? "index.html" : page);
-  }
-
-  window function init() {
+  async function init() {
     const lang = detectLang();
-    localStorage.setItem("boatos-lang", lang);
     try {
       const dict = await loadLocale(lang);
       apply(dict);
@@ -69,12 +67,6 @@
     } catch (e) {
       console.warn("i18n load failed", e);
     }
-
-    document.querySelectorAll(".lang-switch a[data-lang]").forEach((a) => {
-      a.addEventListener("click", () => {
-        localStorage.setItem("boatos-lang", a.getAttribute("data-lang"));
-      });
-    });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

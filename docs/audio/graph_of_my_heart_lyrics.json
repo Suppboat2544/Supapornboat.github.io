@@ -1,272 +1,115 @@
 {
-  "title": "Graph of My Heart",
-  "bpm": 74,
-  "voice": "en-US-AriaNeural",
-  "rate": "-12%",
-  "duration_sec": 230.74,
+  "title": "Soft Tide",
+  "artist": "Boat (Supaporn Klabklaydee)",
+  "bpm": 96.0,
+  "duration": 90.0,
+  "genre": "neo city-pop R&B",
+  "style": "HYBS-inspired · soft groove",
   "lines": [
     {
-      "t": 0.81,
-      "text": "Mmm… soft tide",
+      "t": 0.0,
+      "text": "Mmm… soft tide, soft light",
       "section": "Intro"
     },
     {
-      "t": 4.7,
-      "text": "Calling my name from the other side",
-      "section": "Intro"
-    },
-    {
-      "t": 9.06,
-      "text": "Boat on the water, heart open wide",
-      "section": "Intro"
-    },
-    {
-      "t": 15.04,
-      "text": "Grew up where the coastline taught me to listen",
+      "t": 5.0,
+      "text": "Warm Thai morning on my window",
       "section": "Verse 1"
     },
     {
-      "t": 19.33,
-      "text": "Salt on the wind, every ripple a mission",
+      "t": 6.25,
+      "text": "Notebook full of little whys",
       "section": "Verse 1"
     },
     {
-      "t": 23.67,
-      "text": "Thailand sun on a curious mind",
+      "t": 7.5,
+      "text": "Then the sky got bigger, suitcase lighter",
       "section": "Verse 1"
     },
     {
-      "t": 27.72,
-      "text": "Following currents I couldn't define",
+      "t": 8.75,
+      "text": "Tokyo taught me how to try",
       "section": "Verse 1"
     },
     {
-      "t": 31.6,
-      "text": "Tokyo nights, new city, same ocean inside",
-      "section": "Verse 1"
-    },
-    {
-      "t": 36.87,
-      "text": "Ph.D. dreams under Fujii Lab lights",
-      "section": "Verse 1"
-    },
-    {
-      "t": 41.52,
-      "text": "Molecules dancing in patterns I draw",
+      "t": 25.0,
+      "text": "If the water keeps a secret",
       "section": "Pre-Chorus"
     },
     {
-      "t": 45.91,
-      "text": "Edges and nodes — I learn what they are",
+      "t": 26.25,
+      "text": "I can hold it for a while",
       "section": "Pre-Chorus"
     },
     {
-      "t": 51.51,
-      "text": "There's a whisper in the water",
-      "section": "Pre-Chorus"
-    },
-    {
-      "t": 55.04,
-      "text": "Chemistry like a love letter",
+      "t": 35.0,
+      "text": "Soft tide, take me where the night feels kind",
       "section": "Chorus"
     },
     {
-      "t": 58.72,
-      "text": "I read between the waves",
+      "t": 36.25,
+      "text": "Soft light, draw a line from heart to mind",
       "section": "Chorus"
     },
     {
-      "t": 62.22,
-      "text": "Find the signal in the noise you made",
+      "t": 37.5,
+      "text": "I'm just Boat on a quiet ride",
       "section": "Chorus"
     },
     {
-      "t": 67.13,
-      "text": "You're the graph of my heart",
+      "t": 38.75,
+      "text": "Finding home in the in-between",
       "section": "Chorus"
     },
     {
-      "t": 70.73,
-      "text": "Every bond, every start",
-      "section": "Chorus"
-    },
-    {
-      "t": 74.76,
-      "text": "Structure-aware, pulling me through the dark",
-      "section": "Chorus"
-    },
-    {
-      "t": 79.56,
-      "text": "From the shore to the stars",
+      "t": 55.0,
+      "text": "Molecules like tiny cities",
       "section": "Verse 2"
     },
     {
-      "t": 83.26,
-      "text": "I can feel who you are",
+      "t": 55.625,
+      "text": "Talking soft beneath the sea",
       "section": "Verse 2"
     },
     {
-      "t": 86.77,
-      "text": "In the graph of my heart — oh, the graph of my heart",
+      "t": 56.25,
+      "text": "Late-night coffee, lab-coat daydreams",
       "section": "Verse 2"
     },
     {
-      "t": 93.64,
-      "text": "LC50 secrets on toxicity's thread",
+      "t": 56.875,
+      "text": "Making maps of you and me",
       "section": "Verse 2"
     },
     {
-      "t": 98.34,
-      "text": "GSAT showing me what the molecules said",
-      "section": "Verse 2"
-    },
-    {
-      "t": 102.92,
-      "text": "CRAM in the deep, DOM drifting slow",
-      "section": "Verse 2"
-    },
-    {
-      "t": 107.45,
-      "text": "Ocean's old memory that only few know",
-      "section": "Pre-Chorus"
-    },
-    {
-      "t": 111.71,
-      "text": "PFAS transforming — we watch what remains",
-      "section": "Pre-Chorus"
-    },
-    {
-      "t": 116.62,
-      "text": "Water stays sacred; we carry that flame",
-      "section": "Pre-Chorus"
-    },
-    {
-      "t": 121.37,
-      "text": "JAMSTEC and RIKEN, enzymes that swim",
+      "t": 65.0,
+      "text": "Soft tide, take me where the night feels kind",
       "section": "Chorus"
     },
     {
-      "t": 126.04,
-      "text": "LLNL summer — high compute, high hymn",
+      "t": 66.25,
+      "text": "Soft light, draw a line from heart to mind",
       "section": "Chorus"
     },
     {
-      "t": 132.25,
-      "text": "There's a whisper in the water",
+      "t": 67.5,
+      "text": "I'm just Boat on a quiet ride",
       "section": "Chorus"
     },
     {
-      "t": 135.78,
-      "text": "Chemistry like a love letter",
+      "t": 68.75,
+      "text": "Finding home in the in-between",
       "section": "Chorus"
     },
     {
-      "t": 139.45,
-      "text": "I read between the waves",
-      "section": "Chorus"
-    },
-    {
-      "t": 142.96,
-      "text": "Find the signal in the noise you made",
-      "section": "Chorus"
-    },
-    {
-      "t": 147.87,
-      "text": "You're the graph of my heart",
-      "section": "Bridge"
-    },
-    {
-      "t": 151.47,
-      "text": "Every bond, every start",
-      "section": "Bridge"
-    },
-    {
-      "t": 155.49,
-      "text": "Structure-aware, pulling me through the dark",
-      "section": "Bridge"
-    },
-    {
-      "t": 160.3,
-      "text": "From the shore to the stars",
-      "section": "Bridge"
-    },
-    {
-      "t": 164.0,
-      "text": "I can feel who you are",
-      "section": "Bridge"
-    },
-    {
-      "t": 167.5,
-      "text": "In the graph of my heart — oh, the graph of my heart",
-      "section": "Bridge"
-    },
-    {
-      "t": 174.38,
-      "text": "Soft now…",
-      "section": "Final Chorus"
-    },
-    {
-      "t": 177.7,
-      "text": "Boat still floating on what I believe",
-      "section": "Final Chorus"
-    },
-    {
-      "t": 182.13,
-      "text": "Neural nets humming a low melody",
-      "section": "Final Chorus"
-    },
-    {
-      "t": 186.4,
-      "text": "GNN holding my hand through the sea",
-      "section": "Final Chorus"
-    },
-    {
-      "t": 190.99,
-      "text": "Love is a molecule — structure sets free",
-      "section": "Final Chorus"
-    },
-    {
-      "t": 196.96,
-      "text": "You're the graph of my heart",
+      "t": 85.0,
+      "text": "Soft tide… keep me close tonight",
       "section": "Outro"
     },
     {
-      "t": 200.56,
-      "text": "Every bond, every start",
-      "section": "Outro"
-    },
-    {
-      "t": 204.58,
-      "text": "Structure-aware, pulling me through the dark",
-      "section": "Outro"
-    },
-    {
-      "t": 209.39,
-      "text": "From the shore to the stars",
-      "section": "Outro"
-    },
-    {
-      "t": 213.09,
-      "text": "I can feel who you are",
-      "section": "Outro"
-    },
-    {
-      "t": 216.59,
-      "text": "In the graph of my heart",
-      "section": "Outro"
-    },
-    {
-      "t": 220.1,
-      "text": "Mmm… graph of my heart",
-      "section": "Outro"
-    },
-    {
-      "t": 223.92,
-      "text": "Boat on the water… graph of my heart",
+      "t": 86.25,
+      "text": "Mmm… soft light",
       "section": "Outro"
     }
-  ],
-  "genre": "neo-soul R&B",
-  "style": "neo-soul R&B",
-  "artist": "Boat (Supaporn Klabklaydee)"
+  ]
 }

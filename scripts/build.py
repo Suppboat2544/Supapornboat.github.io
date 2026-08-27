@@ -13,6 +13,7 @@ SNIPPETS = SRC / "snippets"
 LOCALES = SRC / "locales"
 
 SITE_BASE = "https://suppboat2544.github.io/Supapornboat.github.io"
+SITE_ROOT = "/Supapornboat.github.io"  # absolute path prefix for GitHub project Pages
 OG_IMAGE = "https://avatars.githubusercontent.com/u/179722549?v=4"
 COLLAB_EMAIL = "klabklaydee.s.aa@m.titech.ac.jp"
 
@@ -72,26 +73,37 @@ def load_locale(lang: str) -> dict:
 
 
 def lang_urls(filename: str, lang: str) -> dict:
-    """Relative language switcher URLs for a page in a given locale folder."""
-    if lang == "en":
-        return {
-            "lang_en": filename,
-            "lang_th": f"th/{filename}",
-            "lang_ja": f"ja/{filename}",
-        }
+    """Absolute language switcher URLs (GitHub project Pages safe)."""
+    en = f"{SITE_ROOT}/" if filename == "index.html" else f"{SITE_ROOT}/{filename}"
     return {
-        "lang_en": f"../{filename}",
-        "lang_th": f"../th/{filename}" if lang != "th" else filename,
-        "lang_ja": f"../ja/{filename}" if lang != "ja" else filename,
+        "lang_en": en,
+        "lang_th": f"{SITE_ROOT}/th/{filename}",
+        "lang_ja": f"{SITE_ROOT}/ja/{filename}",
     }
 
 
-def prefix_href(href: str, prefix: str) -> str:
-    if not prefix:
+def page_href(filename: str, lang: str = "en") -> str:
+    if lang == "en":
+        return f"{SITE_ROOT}/" if filename == "index.html" else f"{SITE_ROOT}/{filename}"
+    return f"{SITE_ROOT}/{lang}/{filename}"
+
+
+def prefix_href(href: str, prefix: str = "", lang: str = "en") -> str:
+    if not href or href.startswith(("http://", "https://", "mailto:", "#", "data:", SITE_ROOT)):
         return href
-    if href.startswith(("http://", "https://", "mailto:", "#", "data:")):
+    if href.startswith("../"):
         return href
-    return prefix + href
+    if href.endswith(".html"):
+        return page_href(href, lang)
+    return (prefix or "") + href
+
+
+def inject_base_tag(html: str, lang: str = "en") -> str:
+    """Ensure relative links resolve under the GitHub project Pages root."""
+    base = f"{SITE_ROOT}/" if lang == "en" else f"{SITE_ROOT}/{lang}/"
+    if re.search(r"<base\s", html, flags=re.I):
+        return re.sub(r'<base\s+[^>]*>', f'<base href="{base}" />', html, count=1, flags=re.I)
+    return re.sub(r"(<head[^>]*>)", rf'\1\n  <base href="{base}" />', html, count=1, flags=re.I)
 
 
 def nav_link(item_id, href, label, active_id, extra_class="", i18n_key=None):
@@ -116,7 +128,7 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
         return nav_labels.get(key, fallback)
 
     if meta.get("minimalNav"):
-        home = prefix_href("index.html", asset_prefix)
+        home = page_href("index.html", "en")
         return (
             '  <nav class="nav nav-cinematic nav-cinematic-bar" id="nav" aria-label="Main navigation">\n'
             '    <div class="nav-cinematic-inner">\n'
@@ -139,13 +151,13 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
     nav_class = "nav nav-cinematic" if is_home else "nav nav-cinematic nav-cinematic-bar"
     logo_current = ' aria-current="page"' if active == "home" else ""
     links = "\n          ".join(
-        nav_link(i, prefix_href(h, asset_prefix), label_for(i, l), active, i18n_key=NAV_I18N_KEYS.get(i))
+        nav_link(i, page_href(h, "en" if not asset_prefix else lang), label_for(i, l), active, i18n_key=NAV_I18N_KEYS.get(i))
         for i, h, l in NAV_ITEMS
     )
     highlights = "\n          ".join(
         nav_link(
             i,
-            prefix_href(h, asset_prefix),
+            page_href(h, "en" if not asset_prefix else lang),
             label_for(i, l),
             meta.get("highlight"),
             "nav-cinematic-highlight",
@@ -172,7 +184,10 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
         f'{lang_switch}'
         f'{burger}'
     )
-    home_href = prefix_href("index.html", asset_prefix)
+    home_href = page_href("index.html", "en")
+    # Locale pages should still land on translated home when available
+    if asset_prefix and lang in ("th", "ja"):
+        home_href = page_href("index.html", lang)
     inner = (
         f'      <a href="{home_href}" class="nav-cinematic-logo"{logo_current}>\n'
         f'        <span class="nav-logo-mark">SK</span>\n'
@@ -324,13 +339,12 @@ def process_html(content: str, filename: str, lang: str = "en", asset_prefix: st
         footer = read_snippet("footer.html").replace("{{year}}", str(year))
         for k, v in urls.items():
             footer = footer.replace("{{" + k + "}}", v)
-        if asset_prefix:
-            # footer internal links need prefix except lang switch already set
-            footer = re.sub(
-                r'href="(?!https?:|mailto:|#|\.\./|th/|ja/)([^"]+\.html)"',
-                rf'href="{asset_prefix}\1"',
-                footer,
-            )
+        # Rewrite footer HTML links to absolute site paths
+        footer = re.sub(
+            r'href="(?!https?:|mailto:|#|/|\{)([^"]+\.html)"',
+            lambda m: f'href="{page_href(m.group(1), "en")}"',
+            footer,
+        )
         out = out.replace("<!-- SITE_FOOTER -->", footer)
 
     if "<!-- SITE_MOL_LAYER -->" in out:
@@ -343,6 +357,7 @@ def process_html(content: str, filename: str, lang: str = "en", asset_prefix: st
         out = out.replace("<!-- SITE_MAIN_END -->", "</main>" if needs_main else "")
 
     out = out.replace("mailto:suppaporn.2544@gmail.com", f"mailto:{COLLAB_EMAIL}")
+    out = inject_base_tag(out, lang)
 
     if lang != "en":
         out = re.sub(r'<html\s+lang="[^"]*"', f'<html lang="{lang}"', out, count=1)
@@ -350,6 +365,8 @@ def process_html(content: str, filename: str, lang: str = "en", asset_prefix: st
         out = apply_i18n_build(out, loc)
         out = rewrite_root_assets(out, asset_prefix or "../")
         out = fix_locale_lang_switch(out, filename, lang)
+        # After asset rewrite, re-assert base for this locale
+        out = inject_base_tag(out, lang)
 
     return out
 
@@ -392,6 +409,7 @@ def main():
     copy_tree(SRC, OUT)
     build_locale_site("th")
     build_locale_site("ja")
+    (OUT / ".nojekyll").write_text("", encoding="utf-8")
     print("Build complete. Output in docs/ (en) + docs/th + docs/ja")
 
 
