@@ -2935,3 +2935,158 @@ a:hover{color:#000060}
 .research-hub-card .fig-frame img{max-height:140px !important}
 .page-hero .fig-frame{margin-left:3px;margin-right:3px}
 .page-hero .fig-frame img{max-height:220px !important}
+
+/* ═══ BoatOS interactive: boot, taskbar, dialogs, meters ═══ */
+.page-home{padding-bottom:36px}
+.site-boot{
+  position:fixed;inset:0;z-index:20000;background:#000;color:#33ff33;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .45s ease,visibility .45s ease;
+}
+.site-boot.boot-done{opacity:0;visibility:hidden;pointer-events:none}
+.site-boot-inner{width:min(440px,92vw);text-align:center}
+.site-boot-bios{
+  text-align:left;font-family:var(--font-mono);font-size:11px;
+  min-height:6.5em;margin:0 0 14px;white-space:pre-wrap;color:#33ff33;
+}
+.site-boot-visual{margin:0 auto 10px;max-width:320px;box-shadow:var(--bevel-out)}
+.site-boot-art{display:block;width:100%;height:auto;object-fit:contain;background:#111}
+.site-boot-brand{margin:0 0 10px;font-size:26px;font-weight:700;color:#fff}
+.site-boot-brand span{color:#ffcc00}
+.site-boot-track{
+  height:18px;background:#222;border:2px solid #555;padding:2px;
+  box-shadow:inset 1px 1px 0 #000;
+}
+.site-boot-fill{
+  height:100%;width:0%;
+  background:repeating-linear-gradient(90deg,#000080 0 8px,#1084d0 8px 16px);
+  transition:width .1s linear;
+}
+.site-boot-status{margin:10px 0 4px;color:#aaa;font-size:11px}
+.site-boot-hint{margin:0;color:#666;font-size:10px}
+
+.boatos-desk-icons{pointer-events:auto}
+.boatos-desk-icon{
+  appearance:none;border:1px dotted transparent;background:transparent;
+  cursor:pointer;text-decoration:none;color:#fff;
+}
+.boatos-desk-icon img{
+  width:48px;height:48px;object-fit:contain;display:block;margin:0 auto 4px;
+  image-rendering:auto;filter:drop-shadow(1px 1px 0 rgba(0,0,0,.4));
+}
+.boatos-desk-emoji{font-size:28px;display:block;margin-bottom:2px}
+.boatos-desk-icon:hover,
+.boatos-desk-icon:focus-visible{
+  background:rgba(0,0,128,.35);border-color:rgba(255,255,255,.65);outline:none;
+}
+
+.win-ctrls button{
+  width:16px;height:14px;padding:0;line-height:10px;font-size:10px;font-weight:700;
+  background:var(--win-gray);border:none;box-shadow:var(--bevel-out);cursor:pointer;color:#000;
+}
+.win-ctrls button:active{box-shadow:var(--bevel-in)}
+[data-win-panel].is-min .hero-welcome-body,
+[data-win-panel].is-min .sys-props-body{display:none}
+[data-win-panel].is-max{position:relative;z-index:20;width:100% !important;max-width:none}
+[data-win-panel].is-closed{opacity:0;transform:scale(.96);transition:.2s ease}
+
+.sys-props-body{background:#fff;margin:3px;padding:12px;box-shadow:var(--bevel-in)}
+.sys-props-art{margin-bottom:12px}
+.sys-props-art img{max-height:180px !important}
+.sys-meters{display:flex;flex-direction:column;gap:8px}
+.sys-meter{display:grid;grid-template-columns:140px 1fr;gap:8px;align-items:center;font-size:11px}
+.sys-meter-track{height:14px;background:#fff;box-shadow:var(--bevel-in);padding:2px}
+.sys-meter-track i{
+  display:block;height:100%;width:0%;
+  background:repeating-linear-gradient(90deg,#000080 0 6px,#1084d0 6px 12px);
+  transition:width .9s ease;
+}
+.sys-props-note{margin:12px 0 0;font-size:11px;color:#404040}
+
+.site-taskbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:9000;
+  height:30px;display:flex;align-items:center;gap:4px;padding:2px 4px;
+  background:var(--win-gray);
+  box-shadow:inset 0 1px 0 #fff,0 -1px 0 #808080;
+}
+.site-start-btn{
+  display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px 0 4px;
+  font-weight:700;font-size:11px;background:var(--win-gray);border:none;
+  box-shadow:var(--bevel-out);cursor:pointer;
+}
+.site-start-btn.is-pressed,.site-start-btn:active{box-shadow:var(--bevel-in)}
+.site-start-logo{
+  width:16px;height:16px;
+  background:linear-gradient(#f00 50%,#0f0 50%) 0 0/50% 100% no-repeat,
+             linear-gradient(#00f 50%,#ff0 50%) 100% 0/50% 100% no-repeat;
+}
+.site-task-apps{flex:1;display:flex;gap:3px;overflow:auto;min-width:0}
+.site-task-btn{
+  height:22px;padding:0 10px;background:var(--win-gray);box-shadow:var(--bevel-out);
+  text-decoration:none;color:#000;font-size:11px;display:inline-flex;align-items:center;
+  white-space:nowrap;
+}
+.site-task-btn:hover{box-shadow:var(--bevel-in)}
+.site-tray{
+  display:flex;align-items:center;gap:6px;height:22px;padding:0 8px;
+  box-shadow:var(--bevel-in);font-size:11px;flex-shrink:0;
+}
+
+.site-start-menu{
+  position:fixed;left:4px;bottom:32px;z-index:9100;display:flex;min-width:210px;
+  background:var(--win-gray);box-shadow:var(--bevel-out),2px 2px 0 rgba(0,0,0,.35);
+}
+.site-start-menu[hidden]{display:none !important}
+.site-start-side{
+  width:26px;background:linear-gradient(180deg,#000080,#1084d0);color:#fff;
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  display:flex;align-items:center;justify-content:flex-end;gap:4px;
+  padding:8px 3px;font-weight:700;font-size:14px;
+}
+.site-start-menu ul{list-style:none;margin:0;padding:4px 0;flex:1}
+.site-start-menu a,.site-start-menu button{
+  display:flex;width:100%;padding:6px 12px;border:none;background:transparent;
+  color:#000;text-decoration:none;font-size:12px;text-align:left;cursor:pointer;
+}
+.site-start-menu a:hover,.site-start-menu button:hover{background:#000080;color:#fff}
+.site-start-sep{height:2px;margin:4px 6px;background:#808080;box-shadow:0 1px 0 #fff}
+
+.win-dialog{
+  position:fixed;inset:0;z-index:12000;
+  background:rgba(0,128,128,.35);
+  display:flex;align-items:center;justify-content:center;padding:16px;
+}
+.win-dialog[hidden]{display:none !important}
+.win-dialog-panel{
+  width:min(380px,100%);background:var(--win-gray);
+  box-shadow:var(--bevel-out),4px 4px 0 rgba(0,0,0,.35);
+  animation:win-settle .25s ease both;
+}
+.win-dialog-wide{width:min(640px,100%)}
+.win-dlg-x{
+  margin-left:auto;width:16px;height:14px;border:none;background:var(--win-gray);
+  box-shadow:var(--bevel-out);cursor:pointer;font-weight:700;line-height:10px;
+}
+.win-dialog-body{padding:12px;background:#fff;margin:3px;box-shadow:var(--bevel-in)}
+.win-dialog-icon{width:72px;height:72px;object-fit:contain;display:block;margin:0 auto 10px}
+.win-dialog-banner{width:100%;height:auto;max-height:160px;object-fit:contain;display:block;margin-bottom:10px;background:#111}
+.win-dialog-list{margin:8px 0 12px;padding-left:18px;font-size:12px}
+.win-dialog-list a{color:#000080}
+.win-lightbox-body{text-align:center}
+.win-lightbox-body img{
+  max-width:100%;max-height:60vh;width:auto;height:auto;object-fit:contain !important;
+  background:#111;display:block;margin:0 auto 12px;
+}
+.bevel-btn{
+  display:inline-block;padding:4px 14px;background:var(--win-gray);border:none;
+  box-shadow:var(--bevel-out);cursor:pointer;font-size:12px;
+}
+.bevel-btn:active{box-shadow:var(--bevel-in)}
+
+.site-footer{margin-bottom:30px}
+
+@media(max-width:700px){
+  .boatos-desk-icons{display:none}
+  .sys-meter{grid-template-columns:1fr}
+  .site-task-apps{display:none}
+}

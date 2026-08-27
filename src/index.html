@@ -44,27 +44,62 @@
 
   <a class="skip-link" href="#main-content">Skip to content</a>
 
+  <!-- BOOT / LOAD BAR -->
+  <div id="site-boot" class="site-boot" role="status" aria-live="polite" aria-label="BoatOS loading">
+    <div class="site-boot-inner">
+      <pre class="site-boot-bios" id="site-boot-bios" aria-hidden="true"></pre>
+      <div class="site-boot-visual">
+        <img src="figure/section_boot_splash.png" alt="" class="site-boot-art" />
+      </div>
+      <p class="site-boot-brand">Boat<span>OS</span> 95</p>
+      <div class="site-boot-track"><div class="site-boot-fill" id="site-boot-bar"></div></div>
+      <p class="site-boot-status" id="site-boot-status">Starting BoatOS…</p>
+      <p class="site-boot-hint">Press nothing — loading research desktop</p>
+    </div>
+  </div>
+
   <!-- BoatOS 95 HERO -->
   <div class="cinematic-wrap boatos-desktop">
     <div class="boatos-wallpaper" aria-hidden="true"></div>
 
-    <aside class="boatos-desk-icons" aria-hidden="true">
-      <div class="boatos-desk-icon"><span>💻</span><em>My Computer</em></div>
-      <div class="boatos-desk-icon"><span>🌐</span><em>Network</em></div>
-      <div class="boatos-desk-icon"><span>🗑️</span><em>Recycle</em></div>
+    <aside class="boatos-desk-icons" aria-label="Desktop shortcuts">
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-computer">
+        <img src="figure/icon_my_computer.png" alt="" />
+        <em>My Computer</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-network">
+        <img src="figure/icon_network.png" alt="" />
+        <em>Network</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-control">
+        <img src="figure/section_control_panel.png" alt="" />
+        <em>Control Panel</em>
+      </button>
+      <a class="boatos-desk-icon" href="win95.html">
+        <span class="boatos-desk-emoji">🖥️</span>
+        <em>Full Desktop</em>
+      </a>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-recycle">
+        <span class="boatos-desk-emoji">🗑️</span>
+        <em>Recycle Bin</em>
+      </button>
     </aside>
 
       <!-- SITE_NAV -->
 
     <section class="hero-cinematic hero-boatos" aria-label="Introduction">
       <div class="hero-stage">
-        <div class="hero-welcome hero-welcome-main animate-fade-rise">
+        <div class="hero-welcome hero-welcome-main animate-fade-rise" data-win-panel>
           <div class="hero-welcome-titlebar">
             <span aria-hidden="true">📄</span>
             <span>Welcome.txt — BoatOS 95</span>
-            <span class="win-ctrls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+            <span class="win-ctrls">
+              <button type="button" data-win-min aria-label="Minimize">_</button>
+              <button type="button" data-win-max aria-label="Maximize">□</button>
+              <button type="button" data-win-close aria-label="Close">×</button>
+            </span>
           </div>
-          <div class="hero-welcome-body hero-welcome-split">
+          <div class="hero-welcome-body hero-welcome-split" data-win-body>
             <div class="hero-welcome-copy">
               <p class="hero-cinematic-eyebrow">Supaporn Klabklaydee · Institute of Science Tokyo</p>
               <h1 class="hero-cinematic-title">
@@ -277,12 +312,28 @@
             <div class="win-gallery-frame"><img src="figure/section_awards.png" alt="Awards illustration" loading="lazy" /></div>
             <span>awards.bmp</span>
           </a>
-          <a class="win-gallery-item" href="cv.html">
+          <a class="win-gallery-item" href="cv.html" data-lightbox="figure/section_education.png" data-lightbox-title="education.bmp">
             <div class="win-gallery-frame"><img src="figure/section_education.png" alt="Education illustration" loading="lazy" /></div>
             <span>education.bmp</span>
           </a>
+          <a class="win-gallery-item" href="#" data-lightbox="figure/section_paint_viewer.png" data-lightbox-title="paint_viewer.bmp">
+            <div class="win-gallery-frame"><img src="figure/section_paint_viewer.png" alt="Paint viewer illustration" loading="lazy" /></div>
+            <span>paint_viewer.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="#" data-lightbox="figure/section_dashboard.png" data-lightbox-title="dashboard.bmp">
+            <div class="win-gallery-frame"><img src="figure/section_dashboard.png" alt="Dashboard illustration" loading="lazy" /></div>
+            <span>dashboard.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="#" data-lightbox="figure/section_control_panel.png" data-lightbox-title="control_panel.bmp">
+            <div class="win-gallery-frame"><img src="figure/section_control_panel.png" alt="Control panel illustration" loading="lazy" /></div>
+            <span>control_panel.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="#" data-lightbox="figure/section_boot_splash.png" data-lightbox-title="boot_splash.bmp">
+            <div class="win-gallery-frame"><img src="figure/section_boot_splash.png" alt="Boot splash illustration" loading="lazy" /></div>
+            <span>boot_splash.bmp</span>
+          </a>
         </div>
-        <div class="win-gallery-status"><span>14 object(s)</span><span>My Research</span></div>
+        <div class="win-gallery-status"><span>18 object(s)</span><span>Double-click to preview</span></div>
       </div>
 
       <div class="section-label" style="margin-top:52px">Research Areas</div>
@@ -401,9 +452,154 @@
 
   </main>
 
+  <!-- SYSTEM METERS -->
+  <section class="section section-sm">
+    <div class="container" data-win-panel>
+      <div class="hero-welcome-titlebar">
+        <span>💾</span><span>System Properties — BoatOS</span>
+        <span class="win-ctrls">
+          <button type="button" data-win-min aria-label="Minimize">_</button>
+          <button type="button" data-win-max aria-label="Maximize">□</button>
+          <button type="button" data-win-close aria-label="Close">×</button>
+        </span>
+      </div>
+      <div class="sys-props-body" data-win-body>
+        <div class="sys-props-art fig-frame">
+          <img src="figure/section_dashboard.png" alt="System dashboard" loading="lazy" />
+        </div>
+        <div class="sys-meters">
+          <div class="sys-meter" data-meter="94"><span>Deep Learning</span><div class="sys-meter-track"><i data-meter-fill></i></div></div>
+          <div class="sys-meter" data-meter="90"><span>Cheminformatics</span><div class="sys-meter-track"><i data-meter-fill></i></div></div>
+          <div class="sys-meter" data-meter="88"><span>HPC / Software</span><div class="sys-meter-track"><i data-meter-fill></i></div></div>
+          <div class="sys-meter" data-meter="85"><span>Scientific Writing</span><div class="sys-meter-track"><i data-meter-fill></i></div></div>
+          <div class="sys-meter" data-meter="80"><span>Teaching / Workshops</span><div class="sys-meter-track"><i data-meter-fill></i></div></div>
+        </div>
+        <p class="sys-props-note">Tip: click desktop icons · Start menu · gallery previews · window _ □ × controls</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE TASKBAR -->
+  <footer class="site-taskbar" role="contentinfo">
+    <button type="button" class="site-start-btn" id="site-start-btn" aria-expanded="false" aria-controls="site-start-menu">
+      <span class="site-start-logo" aria-hidden="true"></span> Start
+    </button>
+    <div class="site-task-apps">
+      <a class="site-task-btn" href="about.html">About</a>
+      <a class="site-task-btn" href="research.html">Research</a>
+      <a class="site-task-btn" href="cv.html">CV</a>
+      <a class="site-task-btn" href="win95.html">BoatOS Desktop</a>
+    </div>
+    <div class="site-tray">
+      <span aria-hidden="true">🔊</span>
+      <time data-win-clock>--:--</time>
+    </div>
+  </footer>
+
+  <div id="site-start-menu" class="site-start-menu" hidden>
+    <div class="site-start-side"><span>BoatOS</span><span>95</span></div>
+    <ul>
+      <li><a href="about.html">📄 About</a></li>
+      <li><a href="projects.html">📁 Projects</a></li>
+      <li><a href="research.html">🔬 Research</a></li>
+      <li><a href="cv.html">📋 CV</a></li>
+      <li><a href="win95.html">🖥️ Full Desktop</a></li>
+      <li class="site-start-sep"></li>
+      <li><button type="button" data-open-dialog="dlg-computer">💻 My Computer</button></li>
+      <li><button type="button" data-open-dialog="dlg-control">⚙️ Control Panel</button></li>
+    </ul>
+  </div>
+
+  <!-- DIALOGS -->
+  <div id="dlg-computer" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-computer-title">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar">
+        <span>💻</span><span id="dlg-computer-title">My Computer</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-computer" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body">
+        <img src="figure/icon_my_computer.png" alt="" class="win-dialog-icon" />
+        <p><strong>BoatOS Drive (C:)</strong></p>
+        <ul class="win-dialog-list">
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="cv.html">Curriculum Vitae</a></li>
+          <li><a href="Supaporn_Klabklaydee_CV_Computing.pdf">Computing CV.pdf</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+        <button type="button" class="bevel-btn" data-close-dialog="dlg-computer">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-network" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-network-title">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar">
+        <span>🌐</span><span id="dlg-network-title">Network Neighborhood</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-network" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body">
+        <img src="figure/icon_network.png" alt="" class="win-dialog-icon" />
+        <p>Connected collaborators</p>
+        <ul class="win-dialog-list">
+          <li>Institute of Science Tokyo — Fujii Lab</li>
+          <li>JAMSTEC &amp; RIKEN — HPC bioinformatics</li>
+          <li>LLNL DSSI 2025 — alumni</li>
+          <li><a href="https://github.com/Suppboat2544" target="_blank" rel="noopener">GitHub / Suppboat2544</a></li>
+        </ul>
+        <button type="button" class="bevel-btn" data-close-dialog="dlg-network">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-control" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-control-title">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar">
+        <span>⚙️</span><span id="dlg-control-title">Control Panel</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-control" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body">
+        <img src="figure/section_control_panel.png" alt="" class="win-dialog-banner" />
+        <p>Quick settings</p>
+        <ul class="win-dialog-list">
+          <li><a href="win95.html">Launch full BoatOS desktop</a></li>
+          <li><a href="index.html?skipboot=1">Skip boot next time</a></li>
+          <li><a href="mailto:klabklaydee.s.aa@m.titech.ac.jp">Mail Boat</a></li>
+        </ul>
+        <button type="button" class="bevel-btn" data-close-dialog="dlg-control">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-recycle" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-recycle-title">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar">
+        <span>🗑️</span><span id="dlg-recycle-title">Recycle Bin</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-recycle" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body">
+        <p>Recycle Bin is empty.<br>Old cinematic video hero has been permanently deleted.</p>
+        <button type="button" class="bevel-btn" data-close-dialog="dlg-recycle">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-lightbox" class="win-dialog" hidden role="dialog" aria-labelledby="lightbox-title">
+    <div class="win-dialog-panel win-dialog-wide">
+      <div class="hero-welcome-titlebar">
+        <span>🖼</span><span id="lightbox-title">Image Preview</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-lightbox" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body win-lightbox-body">
+        <img id="lightbox-img" src="" alt="Preview" />
+        <button type="button" class="bevel-btn" data-close-dialog="dlg-lightbox">Close</button>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <!-- SITE_FOOTER -->
 
   <script src="main.js"></script>
+  <script src="boatos-home.js"></script>
 </body>
 </html>
