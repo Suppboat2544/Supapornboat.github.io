@@ -277,45 +277,47 @@
 
       <div class="section-label" style="margin-top:52px" data-i18n="home.profileLabel">About Me &amp; Skills</div>
       <div class="home-profile-grid" data-reveal>
-        <article class="home-win95-panel" data-win-panel>
-          <div class="hero-welcome-titlebar">
+        <article class="home-win95-panel">
+          <div class="home-win-titlebar">
             <span aria-hidden="true">📄</span>
-            <span data-i18n="home.aboutWinTitle">About Me.txt — BoatOS</span>
-            <span class="win-ctrls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+            <span class="home-win-title" data-i18n="home.aboutWinTitle">About Me.txt — BoatOS</span>
+            <span class="home-win-ctrls" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span>
           </div>
           <div class="home-win95-menubar" aria-hidden="true"><span>File</span><span>Edit</span><span>View</span><span>Help</span></div>
-          <div class="home-win95-body" data-win-body>
+          <div class="home-win95-body">
             <div class="home-about-head">
-              <img src="https://avatars.githubusercontent.com/u/179722549?v=4" alt="" width="72" height="72" />
+              <img src="https://avatars.githubusercontent.com/u/179722549?v=4" alt="Supaporn Klabklaydee" width="80" height="80" />
               <div>
                 <p class="home-about-name">Supaporn Klabklaydee <em>(Boat)</em></p>
                 <p class="home-about-role" data-i18n="home.aboutRole">Ph.D. Researcher · Institute of Science Tokyo · Fujii Lab</p>
+                <p class="home-about-meta">Yokohama / Tokyo · Thai · EN · JP</p>
               </div>
             </div>
-            <p data-i18n="home.aboutLead">Thai researcher building scalable AI/ML for environmental chemistry — from molecular graphs to aquatic fate.</p>
-            <ul class="home-win95-list">
-              <li data-i18n="home.aboutFocus"><strong>Focus:</strong> GNNs, generative molecular ML, cheminformatics, HPC</li>
-              <li data-i18n="home.aboutEdu"><strong>Education:</strong> Ph.D. (GPA 4.05/4.5) · M.Eng. Chulalongkorn · B.Sc. Chemistry</li>
-              <li data-i18n="home.aboutCollab"><strong>Collaborations:</strong> JAMSTEC · RIKEN · LLNL DSSI 2025</li>
-              <li data-i18n="home.aboutBase"><strong>Based in:</strong> Yokohama / Tokyo, Japan · open to collaborations</li>
-              <li data-i18n="home.aboutLang"><strong>Languages:</strong> Thai (native) · English (professional) · Japanese (intermediate)</li>
-            </ul>
+            <p class="home-about-lead" data-i18n="home.aboutLead">I build structure-aware machine learning for environmental chemistry — graph neural networks that connect molecular structure to aquatic fate, toxicity, and biotransformation.</p>
+            <div class="home-kv-grid">
+              <div class="home-kv"><span>Focus</span><strong data-i18n="home.aboutFocusVal">GNNs · generative molecular ML · cheminformatics · HPC</strong></div>
+              <div class="home-kv"><span>Thesis</span><strong data-i18n="home.aboutThesisVal">CRAM generation + CRAM-GTransformer biotransformation</strong></div>
+              <div class="home-kv"><span>Education</span><strong data-i18n="home.aboutEduVal">Ph.D. GPA 4.05/4.5 · M.Eng. Chulalongkorn · B.Sc. Chemistry</strong></div>
+              <div class="home-kv"><span>Labs</span><strong data-i18n="home.aboutCollabVal">Science Tokyo · JAMSTEC · RIKEN · LLNL DSSI 2025</strong></div>
+              <div class="home-kv"><span>Open to</span><strong data-i18n="home.aboutOpenVal">Collaborations · internships · talks · open-source science</strong></div>
+            </div>
             <p class="home-win95-quote">“Scalable AI/ML &amp; HPC — software you can run, test, and reproduce.”</p>
-            <p class="home-win95-actions">
-              <a class="bevel-btn" href="about.html">Open About →</a>
-              <a class="bevel-btn" href="cv.html">View CV →</a>
-            </p>
+            <div class="home-win95-actions">
+              <a class="bevel-btn" href="about.html">Full About →</a>
+              <a class="bevel-btn" href="cv.html">CV →</a>
+              <a class="bevel-btn" href="mailto:klabklaydee.s.aa@m.titech.ac.jp">Email →</a>
+            </div>
           </div>
-          <div class="home-win95-status"><span>Ready</span><span>About Me.txt</span></div>
+          <div class="home-win95-status"><span>Ready</span><span>About Me.txt · 5 facts</span></div>
         </article>
 
-        <article class="home-win95-panel" data-win-panel>
-          <div class="hero-welcome-titlebar">
+        <article class="home-win95-panel">
+          <div class="home-win-titlebar">
             <span aria-hidden="true">💾</span>
-            <span data-i18n="home.skillsWinTitle">Skills.exe — System Properties</span>
-            <span class="win-ctrls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+            <span class="home-win-title" data-i18n="home.skillsWinTitle">Skills.exe — System Properties</span>
+            <span class="home-win-ctrls" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span>
           </div>
-          <div class="home-win95-body home-skills-body" data-win-body>
+          <div class="home-win95-body home-skills-body">
             <div class="home-skills-tabs" role="tablist" aria-label="Skills categories">
               <button type="button" class="home-skills-tab is-active" role="tab" aria-selected="true" data-skill-tab="compute">Computing</button>
               <button type="button" class="home-skills-tab" role="tab" aria-selected="false" data-skill-tab="ml">ML / AI</button>
@@ -327,47 +329,86 @@
                 <li>SLURM · multi-node GPU (A100 / H100 / V100)</li>
                 <li>Ray · MPI · FAISS IVF-PQ · HDF5 mmap</li>
                 <li>Docker · Singularity · Snakemake · Git-LFS</li>
-                <li>Python · R · Julia · Bash · C++ basics</li>
+                <li>Python · R · Julia · Bash · reproducible pipelines</li>
               </ul>
-              <div class="home-meter-row" data-meter="92"><span>HPC fluency</span><div class="home-meter"><i data-meter-fill></i></div></div>
-              <div class="home-meter-row" data-meter="88"><span>Software eng.</span><div class="home-meter"><i data-meter-fill></i></div></div>
+              <div class="home-meter-row" data-meter="92"><span>HPC fluency</span><div class="home-meter"><span class="home-meter-fill" data-meter-fill></span></div></div>
+              <div class="home-meter-row" data-meter="88"><span>Software eng.</span><div class="home-meter"><span class="home-meter-fill" data-meter-fill></span></div></div>
             </div>
             <div class="home-skills-panel" data-skill-panel="ml" hidden>
               <ul class="home-win95-list">
                 <li>PyTorch · PyTorch Geometric · Hugging Face (ESM-2)</li>
                 <li>GNN / GAT / MPNN · VAE · PINN · Graph Transformer</li>
-                <li>SHAP · Integrated Gradients · Captum</li>
+                <li>SHAP · Integrated Gradients · Captum explainability</li>
                 <li>RDKit · DeepChem · SELFIES · OpenBabel</li>
               </ul>
-              <div class="home-meter-row" data-meter="94"><span>Deep learning</span><div class="home-meter"><i data-meter-fill></i></div></div>
-              <div class="home-meter-row" data-meter="90"><span>Cheminformatics</span><div class="home-meter"><i data-meter-fill></i></div></div>
+              <div class="home-meter-row" data-meter="94"><span>Deep learning</span><div class="home-meter"><span class="home-meter-fill" data-meter-fill></span></div></div>
+              <div class="home-meter-row" data-meter="90"><span>Cheminformatics</span><div class="home-meter"><span class="home-meter-fill" data-meter-fill></span></div></div>
             </div>
             <div class="home-skills-panel" data-skill-panel="chem" hidden>
               <ul class="home-win95-list">
-                <li>LC<sub>50</sub> / ecotoxicity · biotransformation pathways</li>
+                <li>LC<sub>50</sub> / ecotoxicity · multigenerational pathways</li>
                 <li>PFAS fate · DOM / CRAM chemical space</li>
                 <li>HR-MS/MS interpretation · kinetic modeling</li>
                 <li>GROMACS · Gaussian (DFT) · AutoDock Vina</li>
               </ul>
-              <div class="home-meter-row" data-meter="91"><span>Env. chemistry</span><div class="home-meter"><i data-meter-fill></i></div></div>
-              <div class="home-meter-row" data-meter="86"><span>Mass spec / DFT</span><div class="home-meter"><i data-meter-fill></i></div></div>
+              <div class="home-meter-row" data-meter="91"><span>Env. chemistry</span><div class="home-meter"><span class="home-meter-fill" data-meter-fill></span></div></div>
+              <div class="home-meter-row" data-meter="86"><span>Mass spec / DFT</span><div class="home-meter"><span class="home-meter-fill" data-meter-fill></span></div></div>
             </div>
             <div class="home-skills-panel" data-skill-panel="tools" hidden>
               <ul class="home-win95-list">
-                <li>Git / GitHub · Gradio · AWS / GCP (spot)</li>
-                <li>Word · Excel · PowerPoint · LaTeX</li>
+                <li>Git / GitHub · Gradio apps · AWS / GCP spot</li>
+                <li>LaTeX · Word · Excel · PowerPoint</li>
                 <li>Scientific writing · conference talks</li>
-                <li>Collaboration across Japan / Thailand / US labs</li>
+                <li>Cross-lab work: Japan · Thailand · US</li>
               </ul>
-              <div class="home-meter-row" data-meter="89"><span>Reproducible workflows</span><div class="home-meter"><i data-meter-fill></i></div></div>
-              <div class="home-meter-row" data-meter="85"><span>Communication</span><div class="home-meter"><i data-meter-fill></i></div></div>
+              <div class="home-meter-row" data-meter="89"><span>Reproducible workflows</span><div class="home-meter"><span class="home-meter-fill" data-meter-fill></span></div></div>
+              <div class="home-meter-row" data-meter="85"><span>Communication</span><div class="home-meter"><span class="home-meter-fill" data-meter-fill></span></div></div>
             </div>
-            <p class="home-win95-actions">
+            <div class="home-win95-actions">
               <a class="bevel-btn" href="cv.html">Full skills on CV →</a>
-              <a class="bevel-btn" href="win95.html">Open BoatOS Desktop →</a>
-            </p>
+              <a class="bevel-btn" href="win95.html">BoatOS Desktop →</a>
+            </div>
           </div>
-          <div class="home-win95-status"><span>System Properties</span><span>BoatOS 95</span></div>
+          <div class="home-win95-status"><span>System Properties</span><span>4 skill boards</span></div>
+        </article>
+      </div>
+
+      <div class="section-label" style="margin-top:52px" data-i18n="home.pipelineLabel">How Research Flows</div>
+      <div class="home-pipeline" data-reveal>
+        <article class="home-win95-panel home-pipeline-panel">
+          <div class="home-win-titlebar">
+            <span aria-hidden="true">🧭</span>
+            <span class="home-win-title" data-i18n="home.pipelineWinTitle">Research Pipeline.hlp — BoatOS</span>
+            <span class="home-win-ctrls" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span>
+          </div>
+          <div class="home-win95-body">
+            <p class="home-about-lead" data-i18n="home.pipelineLead">This site mirrors the research loop: observe molecules → learn on graphs → predict fate → share reproducible code.</p>
+            <ol class="home-pipeline-steps">
+              <li>
+                <strong data-i18n="home.pipe1t">1 · Molecules &amp; spectra</strong>
+                <span data-i18n="home.pipe1d">DOM / PFAS / pollutants from HR-MS and literature reaction networks</span>
+              </li>
+              <li>
+                <strong data-i18n="home.pipe2t">2 · Graph learning</strong>
+                <span data-i18n="home.pipe2d">GNN / Graph Transformer models (GSAT, CRAM-GTransformer) on structure</span>
+              </li>
+              <li>
+                <strong data-i18n="home.pipe3t">3 · Fate &amp; toxicity</strong>
+                <span data-i18n="home.pipe3d">LC<sub>50</sub>, biotransformation pathways, kinetic / PINN persistence</span>
+              </li>
+              <li>
+                <strong data-i18n="home.pipe4t">4 · HPC &amp; release</strong>
+                <span data-i18n="home.pipe4d">SLURM / GPU runs, open code, papers, and collaboration-ready tools</span>
+              </li>
+            </ol>
+            <div class="home-win95-actions">
+              <a class="bevel-btn" href="research.html">Research topics →</a>
+              <a class="bevel-btn" href="gsat.html">GSAT →</a>
+              <a class="bevel-btn" href="cram.html">CRAM →</a>
+              <a class="bevel-btn" href="projects.html">Projects →</a>
+            </div>
+          </div>
+          <div class="home-win95-status"><span>Help</span><span>4-stage pipeline</span></div>
         </article>
       </div>
 
@@ -800,27 +841,10 @@
     </div>
   </div>
 
-  <!-- Song dock -->
-  <aside id="song-dock" class="song-dock" aria-label="Soft Tide R&amp;B single">
-    <img src="figure/app_media.png" alt="" class="song-dock-art" />
-    <div class="song-dock-meta">
-      <strong data-i18n="home.songTitle">Soft Tide</strong>
-      <span id="song-dock-status">Soft Tide</span>
-      <span id="song-dock-lyric" class="song-dock-lyric">Press play</span>
-      <div class="song-dock-track"><i id="song-dock-bar"></i></div>
-    </div>
-    <div class="song-dock-btns">
-      <button type="button" class="bevel-btn" data-song-play>▶ Play Song</button>
-      <button type="button" class="bevel-btn" data-song-stop>■</button>
-      <button type="button" class="bevel-btn" data-open-dialog="dlg-media">♫</button>
-    </div>
-  </aside>
-
   <!-- FOOTER -->
   <!-- SITE_FOOTER -->
 
   <script src="main.js"></script>
-  <script src="boatos-song.js"></script>
   <script src="boatos-home.js"></script>
   <script src="boatos-games.js"></script>
 </body>

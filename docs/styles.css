@@ -3248,7 +3248,8 @@ a:hover{color:#000060}
 .song-dock-track{
   height:10px;margin-top:4px;background:#fff;box-shadow:var(--bevel-in);padding:1px;
 }
-.song-dock-track i{
+.song-dock-track i,
+.song-dock-bar-fill{
   display:block;height:100%;width:0%;
   background:repeating-linear-gradient(90deg,#000080 0 5px,#1084d0 5px 10px);
 }
@@ -3337,18 +3338,36 @@ a:hover{color:#000060}
 /* ——— Home About / Skills Win95 panels ——— */
 .home-profile-grid{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:8px;
+  align-items:stretch;
 }
+.home-pipeline{margin-top:8px}
+.home-pipeline-panel{max-width:100%}
 .home-win95-panel{
-  background:var(--win-gray);box-shadow:var(--bevel-out);display:flex;flex-direction:column;min-height:100%;
+  background:var(--win-gray);box-shadow:var(--bevel-out);
+  display:flex;flex-direction:column;min-width:0;overflow:hidden;
+}
+.home-win-titlebar{
+  display:flex;align-items:center;gap:6px;min-height:22px;padding:3px 6px;
+  background:var(--title-active);color:#fff;font-size:11px;font-weight:700;
+}
+.home-win-title{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.home-win-ctrls{display:flex;gap:3px;margin-left:auto;flex-shrink:0}
+.home-win-ctrls b{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:16px;height:14px;font-size:10px;font-weight:700;font-style:normal;
+  background:var(--win-gray);color:#000;box-shadow:var(--bevel-out);
 }
 .home-win95-menubar{
   display:flex;gap:12px;padding:2px 8px;font-size:11px;border-bottom:1px solid var(--win-gray-dk);
 }
-.home-win95-body{padding:12px 14px;background:#fff;box-shadow:var(--bevel-in);margin:4px;flex:1}
+.home-win95-body{
+  padding:12px 14px;background:#fff;box-shadow:var(--bevel-in);margin:4px;flex:1;min-width:0;
+  color:#000;font-size:12px;line-height:1.45;
+}
 .home-win95-list{margin:8px 0 12px;padding-left:18px;font-size:12px;line-height:1.45}
 .home-win95-list li{margin:4px 0}
 .home-win95-quote{
-  margin:0 0 12px;padding:8px 10px;font-size:12px;font-style:italic;background:#c0c0c0;
+  margin:10px 0 12px;padding:8px 10px;font-size:12px;font-style:italic;background:#c0c0c0;
   box-shadow:var(--bevel-in);color:#000080;
 }
 .home-win95-actions{display:flex;flex-wrap:wrap;gap:8px;margin:0}
@@ -3358,10 +3377,20 @@ a:hover{color:#000060}
 }
 .home-about-head{display:flex;gap:12px;align-items:center;margin-bottom:10px}
 .home-about-head img{
-  width:72px;height:72px;object-fit:cover;background:#fff;box-shadow:var(--bevel-in);flex-shrink:0;
+  width:80px;height:80px;object-fit:cover;background:#fff;box-shadow:var(--bevel-in);flex-shrink:0;
 }
-.home-about-name{margin:0;font-size:14px;font-weight:700}
-.home-about-role{margin:2px 0 0;font-size:11px;color:#404040}
+.home-about-name{margin:0;font-size:14px;font-weight:700;color:#000}
+.home-about-name em{font-style:normal;color:#000080}
+.home-about-role{margin:2px 0 0;font-size:11px;color:#303030}
+.home-about-meta{margin:4px 0 0;font-size:10px;color:#505050;font-family:var(--font-mono)}
+.home-about-lead{margin:0 0 10px;font-size:12px;line-height:1.5;color:#000}
+.home-kv-grid{display:grid;gap:6px;margin:0 0 8px}
+.home-kv{
+  display:grid;grid-template-columns:72px 1fr;gap:8px;align-items:start;
+  padding:6px 8px;background:#c0c0c0;box-shadow:var(--bevel-in);
+}
+.home-kv span{font-size:10px;font-weight:700;color:#000080;text-transform:uppercase;letter-spacing:.03em}
+.home-kv strong{font-size:11px;font-weight:600;color:#000;line-height:1.35}
 .home-skills-tabs{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
 .home-skills-tab{
   border:0;cursor:pointer;padding:3px 8px;font-size:11px;font-weight:700;
@@ -3371,8 +3400,17 @@ a:hover{color:#000060}
 .home-skills-panel[hidden]{display:none !important}
 .home-meter-row{display:grid;grid-template-columns:110px 1fr;gap:8px;align-items:center;margin:8px 0;font-size:11px}
 .home-meter{height:14px;background:#fff;box-shadow:var(--bevel-in);padding:2px}
-.home-meter i{display:block;height:100%;width:0%;background:linear-gradient(90deg,#000080,#1084d0);transition:width .8s ease}
+.home-meter-fill{
+  display:block;height:100%;width:0%;background:linear-gradient(90deg,#000080,#1084d0);transition:width .8s ease;
+}
+.home-pipeline-steps{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:8px}
+.home-pipeline-steps li{
+  display:grid;gap:2px;padding:8px 10px;background:#c0c0c0;box-shadow:var(--bevel-in);
+}
+.home-pipeline-steps strong{font-size:12px;color:#000080}
+.home-pipeline-steps span{font-size:11px;color:#202020;line-height:1.4}
 @media(max-width:900px){
   .home-profile-grid{grid-template-columns:1fr}
   .home-meter-row{grid-template-columns:1fr}
+  .home-kv{grid-template-columns:1fr}
 }

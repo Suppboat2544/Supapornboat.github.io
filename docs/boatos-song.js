@@ -1,4 +1,4 @@
-/* BoatOS R&B single — "Soft Tide" */
+/* BoatOS R&B single — Soft Tide (persists across pages via sessionStorage) */
 (function () {
   "use strict";
 
@@ -9,15 +9,39 @@
     subtitle: "soft R&B",
     artist: "Boat · BoatOS",
   };
+  const STORE_KEY = "boatos-song-v1";
+  const UNLOCK_KEY = "boatos-audio-unlocked";
 
   let audio = null;
   let playing = false;
   let lyrics = null;
   let lyricIdx = -1;
-  let unlockBound = false;
+  let saveTimer = null;
 
   function prefix() {
     return /\/(th|ja)(\/|$)/.test(location.pathname) ? "../" : "";
+  }
+
+  function loadState() {
+    try {
+      return JSON.parse(sessionStorage.getItem(STORE_KEY) || "null") || {};
+    } catch (_) {
+      return {};
+    }
+  }
+
+  function saveState() {
+    if (!audio) return;
+    try {
+      sessionStorage.setItem(
+        STORE_KEY,
+        JSON.stringify({
+          t: audio.currentTime || 0,
+          playing: !audio.paused,
+          vol: audio.volume,
+        })
+      );
+    } catch (_) {}
   }
 
   function ensureAudio() {
@@ -27,9 +51,13 @@
     audio.preload = "auto";
     audio.volume = 0.65;
     audio.addEventListener("timeupdate", onTime);
-    audio.addEventListener("play", () => setPlaying(true));
+    audio.addEventListener("play", () => {
+      setPlaying(true);
+      saveState();
+    });
     audio.addEventListener("pause", () => {
-      if (!audio.ended) setPlaying(false);
+      setPlaying(false);
+      saveState();
     });
     return audio;
   }
@@ -82,13 +110,13 @@
   function setPlaying(on) {
     playing = on;
     document.querySelectorAll("[data-song-play]").forEach((btn) => {
-      btn.textContent = on ? "⏸ Pause" : "▶ Play Song";
+      btn.textContent = on ? "⏸ Pause" : "▶ Play";
       btn.setAttribute("aria-pressed", on ? "true" : "false");
     });
     const label = document.getElementById("media-track");
     if (label) label.textContent = on ? TRACK.title + " ▸ looping" : TRACK.title + " — " + TRACK.artist;
     const dock = document.getElementById("song-dock-status");
-    if (dock) dock.textContent = on ? "Now playing · Soft Tide (loop)" : "Soft Tide";
+    if (dock) dock.textContent = on ? "Playing · loop on" : "Ready · Soft Tide";
   }
 
   async function play() {
@@ -97,7 +125,9 @@
     a.loop = true;
     try {
       await a.play();
+      sessionStorage.setItem(UNLOCK_KEY, "1");
       setPlaying(true);
+      saveState();
       return true;
     } catch (err) {
       setPlaying(false);
@@ -109,6 +139,7 @@
     if (!audio) return;
     audio.pause();
     setPlaying(false);
+    saveState();
   }
 
   function toggle() {
@@ -124,41 +155,71 @@
     lyricIdx = -1;
     renderLyric("Press play for lyrics", "");
     syncBars();
+    saveState();
   }
 
-  /** Try autoplay; if blocked, start on first user gesture. */
-  function autoplayLoop() {
-    play().then((ok) => {
-      if (ok || unlockBound) return;
-      unlockBound = true;
-      const unlock = () => {
-        play();
-        document.removeEventListener("pointerdown", unlock, true);
-        document.removeEventListener("keydown", unlock, true);
-      };
-      document.addEventListener("pointerdown", unlock, true);
-      document.addEventListener("keydown", unlock, true);
-    });
+  function bindUnlock() {
+    const unlock = () => {
+      sessionStorage.setItem(UNLOCK_KEY, "1");
+      play();
+      document.removeEventListener("pointerdown", unlock, true);
+      document.removeEventListener("keydown", unlock, true);
+    };
+    document.addEventListener("pointerdown", unlock, true);
+    document.addEventListener("keydown", unlock, true);
   }
 
-  window.BoatOSSong = { play, pause, toggle, stop, autoplayLoop, TRACK };
+  /** Resume from session or start fresh; keep playing across page loads. */
+  async function resumeOrStart() {
+    await loadLyrics();
+    const a = ensureAudio();
+    const state = loadState();
+    if (typeof state.t === "number" && state.t > 0) {
+      try {
+        a.currentTime = state.t;
+      } catch (_) {}
+    }
+    if (typeof state.vol === "number") a.volume = state.vol;
 
-  document.addEventListener("DOMContentLoaded", () => {
-    loadLyrics().then((data) => {
-      const meta = document.getElementById("song-lyrics-meta");
-      if (meta && data) {
-        meta.textContent = (data.title || TRACK.title) + " — " + TRACK.artist;
-      }
-      renderLyric("Press play for lyrics", "");
-    });
+    const wantPlay = state.playing !== false; // default: play
+    if (!wantPlay) {
+      setPlaying(false);
+      renderLyric("Paused — press play", "");
+      return;
+    }
 
+    const ok = await play();
+    if (!ok) {
+      const dock = document.getElementById("song-dock-status");
+      if (dock) dock.textContent = "Tap anywhere to start music";
+      renderLyric("Tap anywhere to start Soft Tide", "");
+      bindUnlock();
+    }
+  }
+
+  window.BoatOSSong = {
+    play,
+    pause,
+    toggle,
+    stop,
+    resumeOrStart,
+    autoplayLoop: resumeOrStart,
+    saveState,
+    TRACK,
+  };
+
+  function wireUi() {
     document.querySelectorAll("[data-song-play]").forEach((btn) => {
+      if (btn.dataset.songWired) return;
+      btn.dataset.songWired = "1";
       btn.addEventListener("click", (e) => {
         e.preventDefault();
         toggle();
       });
     });
     document.querySelectorAll("[data-song-stop]").forEach((btn) => {
+      if (btn.dataset.songWired) return;
+      btn.dataset.songWired = "1";
       btn.addEventListener("click", (e) => {
         e.preventDefault();
         stop();
@@ -170,24 +231,55 @@
     const mediaNext = document.getElementById("media-next");
     const mediaLabel = document.getElementById("media-track");
     if (mediaLabel) mediaLabel.textContent = TRACK.title + " — " + TRACK.artist;
-    if (mediaPlay) {
-      mediaPlay.addEventListener("click", (e) => {
-        e.stopImmediatePropagation();
-        toggle();
-      }, true);
+    if (mediaPlay && !mediaPlay.dataset.songWired) {
+      mediaPlay.dataset.songWired = "1";
+      mediaPlay.addEventListener(
+        "click",
+        (e) => {
+          e.stopImmediatePropagation();
+          toggle();
+        },
+        true
+      );
     }
-    if (mediaStop) {
-      mediaStop.addEventListener("click", (e) => {
-        e.stopImmediatePropagation();
-        stop();
-      }, true);
+    if (mediaStop && !mediaStop.dataset.songWired) {
+      mediaStop.dataset.songWired = "1";
+      mediaStop.addEventListener(
+        "click",
+        (e) => {
+          e.stopImmediatePropagation();
+          stop();
+        },
+        true
+      );
     }
-    if (mediaNext) {
-      mediaNext.addEventListener("click", (e) => {
-        e.stopImmediatePropagation();
-        if (audio) audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 12);
-        onTime();
-      }, true);
+    if (mediaNext && !mediaNext.dataset.songWired) {
+      mediaNext.dataset.songWired = "1";
+      mediaNext.addEventListener(
+        "click",
+        (e) => {
+          e.stopImmediatePropagation();
+          if (audio) audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 12);
+          onTime();
+        },
+        true
+      );
     }
-  });
+  }
+
+  function boot() {
+    wireUi();
+    loadLyrics().then((data) => {
+      const meta = document.getElementById("song-lyrics-meta");
+      if (meta && data) meta.textContent = (data.title || TRACK.title) + " — " + TRACK.artist;
+    });
+    // Start / resume ASAP (before boot overlay finishes when possible)
+    resumeOrStart();
+    if (!saveTimer) saveTimer = setInterval(saveState, 500);
+    window.addEventListener("pagehide", saveState);
+    window.addEventListener("beforeunload", saveState);
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
 })();

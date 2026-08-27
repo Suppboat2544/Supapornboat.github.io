@@ -189,9 +189,5 @@
 
   tickClock();
   setInterval(tickClock, 1000);
-  runBoot().then(() => {
-    if (window.BoatOSSong && typeof window.BoatOSSong.autoplayLoop === "function") {
-      window.BoatOSSong.autoplayLoop();
-    }
-  });
+  runBoot();
 })();

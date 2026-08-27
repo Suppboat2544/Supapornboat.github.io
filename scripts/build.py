@@ -367,6 +367,12 @@ def process_html(content: str, filename: str, lang: str = "en", asset_prefix: st
             lambda m: f'href="{page_href(m.group(1), "en")}"',
             footer,
         )
+        song = read_snippet("song-dock.html")
+        if asset_prefix:
+            song = rewrite_root_assets(song, asset_prefix)
+            footer = rewrite_root_assets(footer, asset_prefix)
+            footer = fix_locale_lang_switch(footer, filename, lang)
+        footer = footer.replace("<!-- SITE_SONG_DOCK -->", song)
         out = out.replace("<!-- SITE_FOOTER -->", footer)
 
     if "<!-- SITE_MOL_LAYER -->" in out:

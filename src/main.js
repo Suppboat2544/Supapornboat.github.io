@@ -299,6 +299,9 @@ function initSectionLoadPhase() {
   }
 
   function go(href) {
+    if (window.BoatOSSong && typeof window.BoatOSSong.saveState === "function") {
+      window.BoatOSSong.saveState();
+    }
     showLoad(labelFromHref(href));
     const delay = 720;
     setTimeout(() => { location.href = href; }, delay);
