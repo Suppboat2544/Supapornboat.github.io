@@ -38,6 +38,7 @@ PAGE_META = {
     "cv.html": {"active": "cv", "ogTitle": "CV · Supaporn Klabklaydee"},
     "cram.html": {"active": "cram", "ogTitle": "CRAM-GTransformer · Supaporn Klabklaydee", "highlight": "cram"},
     "gsat.html": {"active": "gsat", "ogTitle": "GSAT Model · Supaporn Klabklaydee", "highlight": "gsat"},
+    "win95.html": {"active": None, "ogTitle": "BoatOS 95 · Supaporn Klabklaydee", "minimalNav": True},
     "404.html": {"active": None, "ogTitle": "Page not found · Supaporn Klabklaydee", "minimalNav": True},
 }
 
