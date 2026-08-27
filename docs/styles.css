@@ -3261,3 +3261,15 @@ a:hover{color:#000060}
   .song-dock{left:8px;right:8px;bottom:36px;max-width:none}
   .lang-switch-nav{display:none}
 }
+
+.song-lyrics-meta{font-size:11px;color:#404040;margin:0 0 8px}
+.song-lyrics-box{
+  min-height:72px;margin:0 0 10px;padding:10px;background:#000080;color:#fff;
+  box-shadow:var(--bevel-in);text-align:center;
+}
+.song-lyrics-section{display:block;font-size:10px;opacity:.75;margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em}
+.song-lyrics-line{margin:0;font-size:14px;line-height:1.35;font-weight:700}
+.song-dock-lyric{
+  display:block;font-size:10px;color:#202020;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px;
+}
+.affil-logo-card img{background:#fff}

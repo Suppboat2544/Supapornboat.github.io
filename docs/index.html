@@ -408,7 +408,7 @@
           <span>LLNL · DSSI</span>
         </a>
       </div>
-      <p class="affil-note" data-i18n="home.affilNote">Affiliation marks are original stylized emblems for this portfolio (not official trademarks).</p>
+      <p class="affil-note" data-i18n="home.affilNote">Official organization logos shown for affiliation identification.</p>
 
       <div class="section-label" style="margin-top:52px" data-i18n="home.appsLabel">BoatOS Apps &amp; Desktop Art</div>
       <div class="win-gallery win-gallery-apps" data-reveal>
@@ -862,36 +862,44 @@
   </div>
 
   <div id="dlg-media" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-media-title">
-    <div class="win-dialog-panel">
+    <div class="win-dialog-panel win-dialog-wide">
       <div class="hero-welcome-titlebar">
-        <span>🎵</span><span id="dlg-media-title">Media Player</span>
+        <span>🎵</span><span id="dlg-media-title">Media Player — Graph of My Heart</span>
         <button type="button" class="win-dlg-x" data-close-dialog="dlg-media" aria-label="Close">×</button>
       </div>
       <div class="win-dialog-body media-app">
         <img src="figure/app_media.png" alt="" class="win-dialog-banner" />
-        <p id="media-track" class="media-track">Ocean Graph Theme</p>
+        <p id="media-track" class="media-track">Graph of My Heart — Boat · BoatOS</p>
+        <p id="song-lyrics-meta" class="song-lyrics-meta">R&amp;B / neo-soul · 74 BPM</p>
+        <div class="song-lyrics-box" aria-live="polite">
+          <span id="song-lyrics-section" class="song-lyrics-section"></span>
+          <p id="song-lyrics-line" class="song-lyrics-line">Press play for lyrics</p>
+        </div>
         <div class="media-track-bar"><i id="media-bar"></i></div>
         <div class="media-controls">
-          <button type="button" class="bevel-btn" id="media-play" data-song-play>▶ Play Theme</button>
+          <button type="button" class="bevel-btn" id="media-play" data-song-play>▶ Play Song</button>
           <button type="button" class="bevel-btn" id="media-stop" data-song-stop>■ Stop</button>
           <button type="button" class="bevel-btn" id="media-next">⏭ +12s</button>
+          <a class="bevel-btn" href="audio/graph_of_my_heart_lyrics.txt" download>📄 Lyrics</a>
         </div>
-        <p class="mine-help" data-i18n="home.songDesc">Original study-story soundtrack for this site</p>
+        <p class="mine-help" data-i18n="home.songDesc">Original R&amp;B study-story song — Thailand → Tokyo · graphs · ocean chemistry</p>
       </div>
     </div>
   </div>
 
   <!-- Song dock -->
-  <aside id="song-dock" class="song-dock" aria-label="Research theme music">
+  <aside id="song-dock" class="song-dock" aria-label="Graph of My Heart R&amp;B single">
     <img src="figure/app_media.png" alt="" class="song-dock-art" />
     <div class="song-dock-meta">
-      <strong data-i18n="home.songTitle">Ocean Graph Theme</strong>
-      <span id="song-dock-status">Theme ready</span>
+      <strong data-i18n="home.songTitle">Graph of My Heart</strong>
+      <span id="song-dock-status">Graph of My Heart · R&amp;B</span>
+      <span id="song-dock-lyric" class="song-dock-lyric">Press play</span>
       <div class="song-dock-track"><i id="song-dock-bar"></i></div>
     </div>
     <div class="song-dock-btns">
-      <button type="button" class="bevel-btn" data-song-play>▶ Play Theme</button>
+      <button type="button" class="bevel-btn" data-song-play>▶ Play Song</button>
       <button type="button" class="bevel-btn" data-song-stop>■</button>
+      <button type="button" class="bevel-btn" data-open-dialog="dlg-media">♫</button>
     </div>
   </aside>
 
