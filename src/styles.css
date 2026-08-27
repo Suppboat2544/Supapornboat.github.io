@@ -3224,8 +3224,15 @@ a:hover{color:#000060}
   box-shadow:var(--bevel-out);font-size:11px;
 }
 .affil-logo-card:hover{box-shadow:var(--bevel-in)}
+.song-lyric-line{
+  margin-top:4px;min-height:2.4em;font-size:11px;line-height:1.25;color:#000080;font-style:italic;
+}
+.media-lyric{
+  min-height:2.6em;margin:6px 0;padding:6px 8px;background:#fff;box-shadow:var(--bevel-in);
+  font-size:12px;line-height:1.35;color:#000080;text-align:center;
+}
 .affil-logo-card img{
-  width:72px;height:72px;object-fit:contain;background:#fff;padding:4px;box-shadow:var(--bevel-in);
+  width:88px;height:72px;object-fit:contain;background:#fff;padding:6px;box-shadow:var(--bevel-in);
 }
 .affil-note{font-size:10px;color:#505050;margin:8px 0 0}
 .win-gallery-apps .win-gallery-titlebar{background:linear-gradient(90deg,#008080,#000080)}

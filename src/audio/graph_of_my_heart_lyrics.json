@@ -8,172 +8,215 @@
   "lines": [
     {
       "t": 0.0,
-      "text": "Mmm… soft tide, soft light"
+      "text": "Mmm… soft tide, soft light",
+      "section": "Intro"
     },
     {
       "t": 3.243,
-      "text": "Tokyo night, but the water still calls my name"
+      "text": "Tokyo night, but the water still calls my name",
+      "section": "Intro"
     },
     {
       "t": 12.973,
-      "text": "I came from warm Thai mornings, notebooks full of why"
+      "text": "I came from warm Thai mornings, notebooks full of why",
+      "section": "Verse 1"
     },
     {
       "t": 15.0,
-      "text": "Watching rivers carry secrets under open sky"
+      "text": "Watching rivers carry secrets under open sky",
+      "section": "Verse 1"
     },
     {
       "t": 17.027,
-      "text": "Then the plane lifted heavy, and Japan drew me near"
+      "text": "Then the plane lifted heavy, and Japan drew me near",
+      "section": "Verse 1"
     },
     {
       "t": 19.054,
-      "text": "Institute of Science Tokyo — Fujii Lab made it clear"
+      "text": "Institute of Science Tokyo — Fujii Lab made it clear",
+      "section": "Verse 1"
     },
     {
       "t": 21.081,
-      "text": "I'm Boat on the shoreline of molecules and fate"
+      "text": "I'm Boat on the shoreline of molecules and fate",
+      "section": "Verse 1"
     },
     {
       "t": 23.108,
-      "text": "Every bond is a heartbeat, every graph is a gate"
+      "text": "Every bond is a heartbeat, every graph is a gate",
+      "section": "Verse 1"
     },
     {
       "t": 38.919,
-      "text": "LC-fifty on my mind, toxicity in the rain"
+      "text": "LC-fifty on my mind, toxicity in the rain",
+      "section": "Verse 1"
     },
     {
       "t": 42.162,
-      "text": "If the ocean keeps a memory, I will learn its name"
+      "text": "If the ocean keeps a memory, I will learn its name",
+      "section": "Pre-Chorus"
     },
     {
       "t": 51.892,
-      "text": "I'm reading the graph of my heart in the deep"
+      "text": "I'm reading the graph of my heart in the deep",
+      "section": "Pre-Chorus"
     },
     {
       "t": 53.919,
-      "text": "Nodes of carbon, edges of hope that I keep"
+      "text": "Nodes of carbon, edges of hope that I keep",
+      "section": "Chorus"
     },
     {
       "t": 55.946,
-      "text": "From DOM in the dark to a model that sees"
+      "text": "From DOM in the dark to a model that sees",
+      "section": "Chorus"
     },
     {
       "t": 57.973,
-      "text": "CRAM in the current, AI in the seas"
+      "text": "CRAM in the current, AI in the seas",
+      "section": "Chorus"
     },
     {
       "t": 60.0,
-      "text": "Oh, map me the pathway, don't let the truth drift apart"
+      "text": "Oh, map me the pathway, don't let the truth drift apart",
+      "section": "Chorus"
     },
     {
       "t": 62.027,
-      "text": "I'm singing the graph of my heart"
+      "text": "I'm singing the graph of my heart",
+      "section": "Chorus"
     },
     {
       "t": 77.838,
-      "text": "PFAS leave fingerprints where the clean water bleeds"
+      "text": "PFAS leave fingerprints where the clean water bleeds",
+      "section": "Chorus"
     },
     {
       "t": 79.865,
-      "text": "Biotransformation turning harm into seeds of need"
+      "text": "Biotransformation turning harm into seeds of need",
+      "section": "Verse 2"
     },
     {
       "t": 81.892,
-      "text": "GNN like a prayer over SMILES in the night"
+      "text": "GNN like a prayer over SMILES in the night",
+      "section": "Verse 2"
     },
     {
       "t": 83.919,
-      "text": "GSAT finding answers when the old code can't fight"
+      "text": "GSAT finding answers when the old code can't fight",
+      "section": "Verse 2"
     },
     {
       "t": 85.946,
-      "text": "JAMSTEC waves and RIKEN light, HPC under my hands"
+      "text": "JAMSTEC waves and RIKEN light, HPC under my hands",
+      "section": "Verse 2"
     },
     {
       "t": 87.973,
-      "text": "LLNL summer taught me: build systems that stand"
+      "text": "LLNL summer taught me: build systems that stand",
+      "section": "Verse 2"
     },
     {
       "t": 42.162,
-      "text": "Multigenerational stories the molecules tell"
+      "text": "Multigenerational stories the molecules tell",
+      "section": "Pre-Chorus"
     },
     {
       "t": 45.405,
-      "text": "I translate their danger so the living stay well"
+      "text": "I translate their danger so the living stay well",
+      "section": "Pre-Chorus"
     },
     {
       "t": 55.135,
-      "text": "I'm reading the graph of my heart in the deep"
+      "text": "I'm reading the graph of my heart in the deep",
+      "section": "Chorus"
     },
     {
       "t": 57.162,
-      "text": "Nodes of carbon, edges of hope that I keep"
+      "text": "Nodes of carbon, edges of hope that I keep",
+      "section": "Chorus"
     },
     {
       "t": 59.189,
-      "text": "From DOM in the dark to a model that sees"
+      "text": "From DOM in the dark to a model that sees",
+      "section": "Chorus"
     },
     {
       "t": 61.216,
-      "text": "CRAM in the current, AI in the seas"
+      "text": "CRAM in the current, AI in the seas",
+      "section": "Chorus"
     },
     {
       "t": 63.243,
-      "text": "Oh, map me the pathway, don't let the truth drift apart"
+      "text": "Oh, map me the pathway, don't let the truth drift apart",
+      "section": "Chorus"
     },
     {
       "t": 65.27,
-      "text": "I'm singing the graph of my heart"
+      "text": "I'm singing the graph of my heart",
+      "section": "Chorus"
     },
     {
       "t": 142.703,
-      "text": "Thailand to Tokyo, student to scholar in bloom"
+      "text": "Thailand to Tokyo, student to scholar in bloom",
+      "section": "Chorus"
     },
     {
       "t": 145.946,
-      "text": "Not chasing the spotlight — just clearing the room"
+      "text": "Not chasing the spotlight — just clearing the room",
+      "section": "Bridge"
     },
     {
       "t": 149.189,
-      "text": "For safer chemistry, cleaner tomorrow, a quieter shore"
+      "text": "For safer chemistry, cleaner tomorrow, a quieter shore",
+      "section": "Bridge"
     },
     {
       "t": 152.432,
-      "text": "If my models can warn us, then love did its chore"
+      "text": "If my models can warn us, then love did its chore",
+      "section": "Bridge"
     },
     {
       "t": 58.378,
-      "text": "I'm reading the graph of my heart in the deep"
+      "text": "I'm reading the graph of my heart in the deep",
+      "section": "Chorus"
     },
     {
       "t": 60.405,
-      "text": "Nodes of carbon, edges of hope that I keep"
+      "text": "Nodes of carbon, edges of hope that I keep",
+      "section": "Chorus"
     },
     {
       "t": 62.432,
-      "text": "From field to the lab to the open-source spark"
+      "text": "From field to the lab to the open-source spark",
+      "section": "Chorus"
     },
     {
       "t": 64.459,
-      "text": "Boat on the desktop, still lighting the dark"
+      "text": "Boat on the desktop, still lighting the dark",
+      "section": "Chorus"
     },
     {
       "t": 66.486,
-      "text": "Oh, map me the pathway, don't let the truth drift apart"
+      "text": "Oh, map me the pathway, don't let the truth drift apart",
+      "section": "Chorus"
     },
     {
       "t": 68.514,
-      "text": "I'm singing the graph of my heart"
+      "text": "I'm singing the graph of my heart",
+      "section": "Chorus"
     },
     {
       "t": 194.595,
-      "text": "Mmm… soft tide, soft light"
+      "text": "Mmm… soft tide, soft light",
+      "section": "Final Chorus"
     },
     {
       "t": 197.838,
-      "text": "Keep the graph close tonight"
+      "text": "Keep the graph close tonight",
+      "section": "Outro"
     }
   ],
-  "duration_sec": 207.6
+  "duration_sec": 207.6,
+  "genre": "neo-soul R&B"
 }
