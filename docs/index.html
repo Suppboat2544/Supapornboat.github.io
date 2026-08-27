@@ -50,7 +50,15 @@
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- BoatOS 95 HERO -->
-  <div class="cinematic-wrap">
+  <div class="cinematic-wrap boatos-desktop">
+    <div class="boatos-wallpaper" aria-hidden="true"></div>
+
+    <aside class="boatos-desk-icons" aria-hidden="true">
+      <div class="boatos-desk-icon"><span>💻</span><em>My Computer</em></div>
+      <div class="boatos-desk-icon"><span>🌐</span><em>Network</em></div>
+      <div class="boatos-desk-icon"><span>🗑️</span><em>Recycle</em></div>
+    </aside>
+
             <nav class="nav nav-cinematic" id="nav" aria-label="Main navigation">
         <div class="nav-cinematic-inner">
       <a href="index.html" class="nav-cinematic-logo" aria-current="page">
@@ -78,48 +86,73 @@
         </div>
       </nav>
 
-    <section class="hero-cinematic" aria-label="Introduction">
-      <div class="hero-welcome">
-        <div class="hero-welcome-titlebar">
-          <span aria-hidden="true">📄</span>
-          <span>Welcome.txt — BoatOS 95</span>
-          <span class="win-dot" aria-hidden="true">×</span>
+    <section class="hero-cinematic hero-boatos" aria-label="Introduction">
+      <div class="hero-stage">
+        <div class="hero-welcome hero-welcome-main animate-fade-rise">
+          <div class="hero-welcome-titlebar">
+            <span aria-hidden="true">📄</span>
+            <span>Welcome.txt — BoatOS 95</span>
+            <span class="win-ctrls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+          </div>
+          <div class="hero-welcome-body hero-welcome-split">
+            <div class="hero-welcome-copy">
+              <p class="hero-cinematic-eyebrow">Supaporn Klabklaydee · Institute of Science Tokyo</p>
+              <h1 class="hero-cinematic-title">
+                From <em class="hero-em">molecular graphs</em><br class="hero-br">to <em class="hero-em">environmental fate.</em>
+              </h1>
+              <p class="hero-cinematic-sub">
+                Boat — Ph.D. researcher building structure-aware ML on molecular graphs:
+                GNN-based LC<sub>50</sub> prediction, biotransformation pathway modeling, PFAS transformation products, and DOM chemical space.
+              </p>
+              <div class="hero-chem-tags" aria-label="Research focus areas">
+                <span class="hero-chem-tag">GNN</span>
+                <span class="hero-chem-tag">Molecular Graphs</span>
+                <span class="hero-chem-tag">LC<sub>50</sub></span>
+                <span class="hero-chem-tag">SMILES</span>
+                <span class="hero-chem-tag">PFAS</span>
+                <span class="hero-chem-tag">DOM</span>
+                <a href="cram.html" class="hero-chem-tag hero-chem-tag-link">CRAM</a>
+                <a href="gsat.html" class="hero-chem-tag hero-chem-tag-link">GSAT</a>
+              </div>
+              <div class="hero-cinematic-actions">
+                <a href="research.html" class="liquid-glass hero-cinematic-cta hero-cinematic-cta-primary">Research Areas</a>
+                <a href="publications.html" class="liquid-glass hero-cinematic-cta hero-cinematic-cta-secondary">Publications</a>
+                <a href="win95.html" class="liquid-glass hero-cinematic-cta hero-cinematic-cta-secondary" title="Full desktop experience">Open BoatOS Desktop</a>
+              </div>
+              <div class="hero-cinematic-social" aria-label="Social profiles">
+                <a href="https://github.com/Suppboat2544" target="_blank" rel="noopener" class="liquid-glass hero-social-pill" title="GitHub">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/supaporn-klabklaydee-1a43401b6" target="_blank" rel="noopener" class="liquid-glass hero-social-pill" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://orcid.org/0009-0000-9747-711X" target="_blank" rel="noopener" class="liquid-glass hero-social-pill" title="ORCID">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.888-1.575 3.888-3.722 0-2.016-1.453-3.722-3.888-3.722h-2.297z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="hero-welcome-portrait">
+              <div class="hero-portrait-frame">
+                <img src="https://avatars.githubusercontent.com/u/179722549?v=4" alt="Supaporn Klabklaydee" width="160" height="160" />
+              </div>
+              <p class="hero-portrait-caption">Boat · Ph.D. · Fujii Lab</p>
+            </div>
+          </div>
         </div>
-        <div class="hero-welcome-body">
-          <p class="hero-cinematic-eyebrow animate-fade-rise">Supaporn Klabklaydee · Institute of Science Tokyo</p>
-          <h1 class="hero-cinematic-title animate-fade-rise">
-            From <em class="hero-em">molecular graphs</em><br class="hero-br">to <em class="hero-em">environmental fate.</em>
-          </h1>
-          <p class="hero-cinematic-sub animate-fade-rise-delay">
-            Boat — Ph.D. researcher building structure-aware ML on molecular graphs:
-            GNN-based LC<sub>50</sub> prediction, biotransformation pathway modeling, PFAS transformation products, and DOM chemical space.
-          </p>
-          <div class="hero-chem-tags animate-fade-rise-delay" aria-label="Research focus areas">
-            <span class="hero-chem-tag">GNN</span>
-            <span class="hero-chem-tag">Molecular Graphs</span>
-            <span class="hero-chem-tag">LC<sub>50</sub></span>
-            <span class="hero-chem-tag">SMILES</span>
-            <span class="hero-chem-tag">PFAS</span>
-            <span class="hero-chem-tag">DOM</span>
-            <a href="cram.html" class="hero-chem-tag hero-chem-tag-link">CRAM</a>
-            <a href="gsat.html" class="hero-chem-tag hero-chem-tag-link">GSAT</a>
-          </div>
-          <div class="hero-cinematic-actions animate-fade-rise-delay-2">
-            <a href="research.html" class="liquid-glass hero-cinematic-cta hero-cinematic-cta-primary">Research Areas</a>
-            <a href="publications.html" class="liquid-glass hero-cinematic-cta hero-cinematic-cta-secondary">Publications</a>
-            <a href="win95.html" class="liquid-glass hero-cinematic-cta hero-cinematic-cta-secondary" title="Full desktop experience">Open BoatOS Desktop</a>
-          </div>
-          <div class="hero-cinematic-social animate-fade-rise-delay-2" aria-label="Social profiles">
-            <a href="https://github.com/Suppboat2544" target="_blank" rel="noopener" class="liquid-glass hero-social-pill" title="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/supaporn-klabklaydee-1a43401b6" target="_blank" rel="noopener" class="liquid-glass hero-social-pill" title="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a href="https://orcid.org/0009-0000-9747-711X" target="_blank" rel="noopener" class="liquid-glass hero-social-pill" title="ORCID">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.888-1.575 3.888-3.722 0-2.016-1.453-3.722-3.888-3.722h-2.297z"/></svg>
-            </a>
-          </div>
+
+        <div class="hero-float-stack" aria-label="Featured research figures">
+          <a href="gsat.html" class="hero-float-win animate-fade-rise-delay">
+            <div class="hero-welcome-titlebar"><span>🖼</span><span>GSAT.bmp</span></div>
+            <div class="hero-float-body">
+              <img src="figure/toxicity_model.png" alt="GSAT toxicity model" loading="eager" />
+            </div>
+          </a>
+          <a href="cram.html" class="hero-float-win hero-float-win-2 animate-fade-rise-delay-2">
+            <div class="hero-welcome-titlebar"><span>🖼</span><span>CRAM.bmp</span></div>
+            <div class="hero-float-body">
+              <img src="figure/cram_formation_overview.png" alt="CRAM formation overview" loading="eager" />
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -149,6 +182,10 @@
     <div class="container">
       <!-- CURRENT STATUS PANEL -->
       <div class="status-panel" data-reveal>
+        <div class="status-banner">
+          <img src="figure/section_status_banner.png" alt="" loading="lazy" />
+        </div>
+        <div class="status-panel-body">
         <div class="status-panel-left">
           <div class="status-row">
             <span class="status-key">status</span>
@@ -182,17 +219,24 @@
           </a>
           <a href="cram.html" class="status-more-btn">CRAM project →</a>
         </div>
+        </div>
       </div>
 
       <div class="section-label" style="margin-top:44px">Current Work</div>
       <div class="current-work-grid" data-reveal>
         <a href="cram.html" class="current-work-card current-work-cram">
+          <div class="work-card-media">
+            <img src="figure/cram_formation_overview.png" alt="" loading="lazy" />
+          </div>
           <span class="current-work-badge">PhD Thesis · In Progress</span>
           <h3>CRAM-GTransformer</h3>
           <p>Property-conditioned deep learning for carboxyl-rich aliphatic/alicyclic molecules (CRAM) and site-specific, pathway-level DOM biotransformation.</p>
           <span class="current-work-link">View CRAM project →</span>
         </a>
         <a href="gsat.html" class="current-work-card current-work-gsat">
+          <div class="work-card-media">
+            <img src="figure/toxicity_model.png" alt="" loading="lazy" />
+          </div>
           <span class="current-work-badge">Published · ACS ES&amp;T Water 2026</span>
           <h3>GSAT Model</h3>
           <p>Graph–Sequence Attention Transformer for multigenerational ecotoxicity prediction — R² = 0.907 on LC<sub>50</sub> benchmarks.</p>
@@ -200,27 +244,78 @@
         </a>
       </div>
 
+      <div class="section-label" style="margin-top:52px">Research Gallery</div>
+      <div class="win-gallery" data-reveal>
+        <div class="win-gallery-titlebar">
+          <span>🖼</span>
+          <span>My Pictures — Research Figures</span>
+          <span class="win-ctrls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+        </div>
+        <div class="win-gallery-toolbar">
+          <span>File</span><span>Edit</span><span>View</span><span>Help</span>
+        </div>
+        <div class="win-gallery-grid">
+          <a class="win-gallery-item" href="gsat.html">
+            <div class="win-gallery-frame"><img src="figure/toxicity_model.png" alt="GSAT toxicity model" loading="lazy" /></div>
+            <span>toxicity_model.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="gsat.html">
+            <div class="win-gallery-frame"><img src="figure/new_GSAT_architecture.png" alt="GSAT architecture" loading="lazy" /></div>
+            <span>GSAT_architecture.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="cram.html">
+            <div class="win-gallery-frame"><img src="figure/cram_formation_overview.png" alt="CRAM formation overview" loading="lazy" /></div>
+            <span>cram_overview.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="research.html">
+            <div class="win-gallery-frame"><img src="figure/transformation_model.png" alt="Biotransformation model" loading="lazy" /></div>
+            <span>transformation.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="research.html">
+            <div class="win-gallery-frame"><img src="figure/reactivity.png" alt="Molecular reactivity" loading="lazy" /></div>
+            <span>reactivity.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="cv.html">
+            <div class="win-gallery-frame"><img src="figure/4a457f42-7ae0-836b-9c23-019d1db166a4.png" alt="Data Science &amp; AI certificate" loading="lazy" /></div>
+            <span>DS_AI_certificate.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="research.html">
+            <div class="win-gallery-frame"><img src="figure/section_bioinformatics.png" alt="Bioinformatics illustration" loading="lazy" /></div>
+            <span>bioinformatics.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="research.html">
+            <div class="win-gallery-frame"><img src="figure/section_hpc.png" alt="HPC computing illustration" loading="lazy" /></div>
+            <span>hpc_cluster.bmp</span>
+          </a>
+        </div>
+        <div class="win-gallery-status"><span>8 object(s)</span><span>My Research</span></div>
+      </div>
+
       <div class="section-label" style="margin-top:52px">Research Areas</div>
       <div class="highlights-grid">
-        <div class="highlight-card" data-reveal style="--hc-color:#2563eb">
+        <div class="highlight-card" data-reveal>
+          <div class="highlight-media"><img src="figure/section_bioinformatics.png" alt="" loading="lazy" /></div>
           <div class="highlight-cat">⬡ Bioinformatics</div>
           <h3>Protein &amp; Enzyme Discovery</h3>
           <p>Large-scale computational discovery of marine enzymes using protein language models, deep clustering, and structural analysis.</p>
           <a href="research.html" class="highlight-link">Explore →</a>
         </div>
-        <div class="highlight-card" data-reveal="delay-1" style="--hc-color:#1d4ed8">
+        <div class="highlight-card" data-reveal="delay-1">
+          <div class="highlight-media"><img src="figure/section_cheminformatics.png" alt="" loading="lazy" /></div>
           <div class="highlight-cat">⬡ Chemoinformatics</div>
           <h3>Chemical Space &amp; Molecular AI</h3>
           <p>Generative models and graph neural networks for molecular formula assignment, toxicity prediction, and chemical space exploration.</p>
           <a href="research.html" class="highlight-link">Explore →</a>
         </div>
-        <div class="highlight-card" data-reveal="delay-2" style="--hc-color:#0891b2">
+        <div class="highlight-card" data-reveal="delay-2">
+          <div class="highlight-media"><img src="figure/section_environmental.png" alt="" loading="lazy" /></div>
           <div class="highlight-cat">⬡ Environmental Science</div>
           <h3>DOM &amp; Marine Carbon</h3>
           <p>Decoding dissolved organic matter complexity in aquatic environments using HR-MS/MS and kinetic deep learning models.</p>
           <a href="research.html" class="highlight-link">Explore →</a>
         </div>
-        <div class="highlight-card" data-reveal="delay-3" style="--hc-color:#3b82f6">
+        <div class="highlight-card" data-reveal="delay-3">
+          <div class="highlight-media"><img src="figure/section_ml_gnn.png" alt="" loading="lazy" /></div>
           <div class="highlight-cat">⬡ Machine Learning</div>
           <h3>GNN &amp; Physics-Informed Models</h3>
           <p>Graph Transformers, PINNs, and VAE architectures applied to environmental fate modeling, biotransformation, and drug discovery.</p>
@@ -236,6 +331,9 @@
       <div class="section-header">
         <h2>Recent Publications</h2>
         <a href="publications.html" class="see-all">See all →</a>
+      </div>
+      <div class="section-hero-fig">
+        <img src="figure/section_publications.png" alt="Publications illustration" loading="lazy" />
       </div>
       <div class="pub-list">
         <article class="pub-card" data-reveal>
@@ -281,18 +379,24 @@
         <h2>Talks &amp; Recognition</h2>
         <a href="talks.html" class="see-all">View all →</a>
       </div>
+      <div class="section-hero-fig">
+        <img src="figure/section_talks.png" alt="Talks and conference illustration" loading="lazy" />
+      </div>
       <div class="talks-preview-grid" data-reveal>
         <article class="talk-preview-card">
+          <div class="talk-card-media"><img src="figure/section_hpc.png" alt="" loading="lazy" /></div>
           <span class="talk-preview-year">2025</span>
           <h3>Top Presenter — LLNL Summer Case Competition</h3>
           <p>Structure-Aware Genetic Algorithm · JST × Lawrence Livermore National Laboratory</p>
         </article>
         <article class="talk-preview-card">
+          <div class="talk-card-media"><img src="figure/section_cheminformatics.png" alt="" loading="lazy" /></div>
           <span class="talk-preview-year">2025</span>
           <h3>Kyoto University · Amgen Symposium</h3>
           <p>Cheminformatics &amp; ML for molecular discovery and environmental fate</p>
         </article>
         <article class="talk-preview-card">
+          <div class="talk-card-media"><img src="figure/section_talks.png" alt="" loading="lazy" /></div>
           <span class="talk-preview-year">2019</span>
           <h3>Intel International Science and Engineering Fair</h3>
           <p>Finalist presentation · Phoenix, Arizona</p>
