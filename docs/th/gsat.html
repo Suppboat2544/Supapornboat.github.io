@@ -4,8 +4,8 @@
   <base href="/Supapornboat.github.io/th/" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GSAT Model · Supaporn Klabklaydee | Graph Self-Attention for Ecotoxicity Prediction</title>
-  <meta name="description" content="GSAT — Graph Self-Attention model for LC50 aquatic ecotoxicity prediction. R²=0.907, published in ACS Environmental Science & Technology Water. By Supaporn Klabklaydee." />
+  <title>รุ่น GSAT · Supaporn Klabklaydee</title>
+  <meta name="description" content="Graph–Sequence Attention Transformer สำหรับการทำนายความเป็นพิษต่อสิ่งแวดล้อมของ LC50 หลายรุ่น" />
   <meta name="keywords" content="GSAT, graph neural network, ecotoxicity, LC50, aquatic toxicity, attention mechanism, ACS EST Water, Supaporn Klabklaydee" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://suppboat2544.github.io/Supapornboat.github.io/gsat.html" />
@@ -34,21 +34,21 @@
         <a class="skip-link" href="#main-content">Skip to content</a>
   <nav class="nav nav-cinematic nav-cinematic-bar" id="nav" aria-label="Main navigation">
     <div class="nav-cinematic-inner">
-      <a href="..//Supapornboat.github.io/th/" class="nav-cinematic-logo">
+      <a href="/Supapornboat.github.io/th/" class="nav-cinematic-logo">
         <span class="nav-logo-mark">SK</span>
         <span class="nav-logo-sub">BoatOS 95</span>
       </a>
       <ul class="nav-links nav-cinematic-links" id="nav-links">
-          <li><a href="..//Supapornboat.github.io/th/" data-i18n-nav="home">หน้าแรก</a></li>
-          <li><a href="..//Supapornboat.github.io/th/about.html" data-i18n-nav="about">เกี่ยวกับ</a></li>
-          <li><a href="..//Supapornboat.github.io/th/research.html" data-i18n-nav="research">งานวิจัย</a></li>
-          <li><a href="..//Supapornboat.github.io/th/publications.html" data-i18n-nav="publications">ผลงานตีพิมพ์</a></li>
-          <li><a href="..//Supapornboat.github.io/th/talks.html" data-i18n-nav="talks">การบรรยาย</a></li>
-          <li><a href="..//Supapornboat.github.io/th/projects.html" data-i18n-nav="projects">โครงการ</a></li>
-          <li><a href="..//Supapornboat.github.io/th/cv.html" data-i18n-nav="cv">เรซูเม่</a></li>
-          <li><a href="..//Supapornboat.github.io/th/cram.html" class="nav-cinematic-highlight" data-i18n-nav="cram">CRAM</a></li>
-          <li><a href="..//Supapornboat.github.io/th/gsat.html" class="nav-cinematic-highlight active" aria-current="page" data-i18n-nav="gsat">GSAT</a></li>
-          <li><a href="..//Supapornboat.github.io/th/win95.html" class="nav-cinematic-highlight" data-i18n-nav="boatos">BoatOS</a></li>
+          <li><a href="/Supapornboat.github.io/th/" data-i18n-nav="home">หน้าแรก</a></li>
+          <li><a href="/Supapornboat.github.io/th/about.html" data-i18n-nav="about">เกี่ยวกับ</a></li>
+          <li><a href="/Supapornboat.github.io/th/research.html" data-i18n-nav="research">งานวิจัย</a></li>
+          <li><a href="/Supapornboat.github.io/th/publications.html" data-i18n-nav="publications">ผลงานตีพิมพ์</a></li>
+          <li><a href="/Supapornboat.github.io/th/talks.html" data-i18n-nav="talks">การนำเสนอ</a></li>
+          <li><a href="/Supapornboat.github.io/th/projects.html" data-i18n-nav="projects">โครงการ</a></li>
+          <li><a href="/Supapornboat.github.io/th/cv.html" data-i18n-nav="cv">ประวัติ</a></li>
+          <li><a href="/Supapornboat.github.io/th/cram.html" class="nav-cinematic-highlight" data-i18n-nav="cram">CRAM</a></li>
+          <li><a href="/Supapornboat.github.io/th/gsat.html" class="nav-cinematic-highlight active" aria-current="page" data-i18n-nav="gsat">GSAT</a></li>
+          <li><a href="/Supapornboat.github.io/win95.html" class="nav-cinematic-highlight" data-i18n-nav="boatos">BoatOS</a></li>
       </ul>
       <div class="nav-cinematic-actions">
         <nav class="lang-switch lang-switch-nav" aria-label="Language"><a href="/Supapornboat.github.io/gsat.html" data-lang="en" hreflang="en">EN</a><a href="/Supapornboat.github.io/ja/gsat.html" data-lang="ja" hreflang="ja">JP</a><a href="/Supapornboat.github.io/th/gsat.html" data-lang="th" hreflang="th" class="is-active" aria-current="page">THA</a></nav>
@@ -115,14 +115,14 @@
     </div>
 
 <div class="container">
-      <div class="page-hero-eyebrow">GSAT Model · ACS ES&amp;T Water · 2026</div>
+      <div class="page-hero-eyebrow" data-i18n="gsat.eyebrow">โมเดล GSAT · ACS ES&T Water · 2026</div>
       <h1 style="font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.03em;margin-bottom:14px;">
         Graph–Sequence Attention<br><span style="background:linear-gradient(135deg,var(--cyan),var(--blue-soft));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Transformer (GSAT)</span>
       </h1>
-      <p class="page-hero-sub" style="max-width:640px;">A hybrid deep learning architecture combining <strong style="color:rgba(255,255,255,.88)">Graph Attention Networks</strong> and <strong style="color:rgba(255,255,255,.88)">Sequence Transformers</strong> to predict multi-generational biotransformation toxicity of emerging environmental pollutants — 98.9% faster than traditional methods.</p>
+      <p class="page-hero-sub" style="max-width:640px;" data-i18n-html="gsat.heroSubHtml">สถาปัตยกรรมดีปเลิร์นนิงแบบผสมที่รวม <strong style="color:rgba(255,255,255,.88)">Graph Attention Networks</strong> และ <strong style="color:rgba(255,255,255,.88)">Sequence Transformers</strong> เพื่อทำนายความเป็นพิษจากการแปลงทางชีวภาพหลายรุ่นของมลพิษอุบัติใหม่ — เร็วกว่าวิธีดั้งเดิม 98.9%</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
-        <a href="https://pubs.acs.org/doi/abs/10.1021/acsestwater.5c00828" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:.85rem;">📄 Read Paper (ACS EST Water)</a>
-        <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp?subject=GSAT%20Collaboration" class="btn btn-ghost-dark" style="font-size:.85rem;">✉ Collaborate</a>
+        <a href="https://pubs.acs.org/doi/abs/10.1021/acsestwater.5c00828" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:.85rem;" data-i18n="gsat.btnPaper">📄 อ่านเปเปอร์ (ACS EST Water)</a>
+        <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp?subject=GSAT%20Collaboration" class="btn btn-ghost-dark" style="font-size:.85rem;" data-i18n="gsat.btnCollab">✉ ร่วมงานวิจัย</a>
       </div>
     </div>
   </div>
@@ -133,23 +133,23 @@
       <div class="metric-grid" style="max-width:860px;margin:0 auto;">
         <div class="metric-card">
           <div class="metric-val">0.907</div>
-          <div class="metric-label">R² Score</div>
-          <div class="metric-sub">Toxicity prediction accuracy</div>
+          <div class="metric-label" data-i18n="gsat.m1">คะแนน R²</div>
+          <div class="metric-sub" data-i18n="gsat.m1s">ความแม่นยำการทำนายความเป็นพิษ</div>
         </div>
         <div class="metric-card">
           <div class="metric-val">98.9%</div>
-          <div class="metric-label">Faster</div>
-          <div class="metric-sub">vs. traditional simulation</div>
+          <div class="metric-label" data-i18n="gsat.m2">เร็วขึ้น</div>
+          <div class="metric-sub" data-i18n="gsat.m2s">เทียบกับการจำลองแบบดั้งเดิม</div>
         </div>
         <div class="metric-card">
           <div class="metric-val">4.7M</div>
-          <div class="metric-label">Reaction Steps</div>
-          <div class="metric-sub">Analyzed across 12 pollutants</div>
+          <div class="metric-label" data-i18n="gsat.m3">ขั้นปฏิกิริยา</div>
+          <div class="metric-sub" data-i18n="gsat.m3s">วิเคราะห์ครอบคลุม 12 มลพิษ</div>
         </div>
         <div class="metric-card">
           <div class="metric-val">68.2%</div>
-          <div class="metric-label">Toxicity Increase</div>
-          <div class="metric-sub">Metabolites more toxic than parent</div>
+          <div class="metric-label" data-i18n="gsat.m4">ความเป็นพิษเพิ่มขึ้น</div>
+          <div class="metric-sub" data-i18n="gsat.m4s">เมตาบอไลต์พิษกว่าสารตั้งต้น</div>
         </div>
         <div class="metric-card">
           <div class="metric-val">15.4×</div>
@@ -527,33 +527,33 @@
       <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="..//Supapornboat.github.io/" class="footer-logo">SK · BoatOS 95</a>
-        <p>Structure-aware machine learning for molecular toxicology, biotransformation, PFAS fate, and aquatic chemical space.</p>
+        <a href="/Supapornboat.github.io/th/" class="footer-logo">SK · BoatOS 95</a>
+        <p data-i18n="footer.blurb">การเรียนรู้ของเครื่องโดยคำนึงถึงโครงสร้างสำหรับพิษวิทยาระดับโมเลกุล การเปลี่ยนแปลงทางชีวภาพ ชะตากรรมของ PFAS และพื้นที่เคมีในน้ำ</p>
       </div>
       <nav class="footer-nav" aria-label="Footer navigation">
         <div class="footer-nav-col">
-          <h4>Pages</h4>
+          <h4 data-i18n="footer.pages">หน้า</h4>
           <ul>
-            <li><a href="..//Supapornboat.github.io/">Home</a></li>
-            <li><a href="..//Supapornboat.github.io/about.html">About</a></li>
-            <li><a href="..//Supapornboat.github.io/research.html">Research</a></li>
+            <li><a href="/Supapornboat.github.io/th/" data-i18n="footer.home">บ้าน</a></li>
+            <li><a href="/Supapornboat.github.io/th/about.html" data-i18n="footer.about">เกี่ยวกับ</a></li>
+            <li><a href="/Supapornboat.github.io/th/research.html" data-i18n="footer.research">วิจัย</a></li>
           </ul>
         </div>
         <div class="footer-nav-col">
-          <h4>Current Work</h4>
+          <h4 data-i18n="footer.currentWork">งานปัจจุบัน</h4>
           <ul>
-            <li><a href="..//Supapornboat.github.io/cram.html">CRAM-GTransformer</a></li>
-            <li><a href="..//Supapornboat.github.io/gsat.html">GSAT Model</a></li>
+            <li><a href="/Supapornboat.github.io/th/cram.html" data-i18n="footer.cram">CRAM-GTransformer</a></li>
+            <li><a href="/Supapornboat.github.io/th/gsat.html" data-i18n="footer.gsat">GSAT รุ่น</a></li>
           </ul>
         </div>
         <div class="footer-nav-col">
-          <h4>More</h4>
+          <h4 data-i18n="footer.more">มากกว่า</h4>
           <ul>
-            <li><a href="..//Supapornboat.github.io/publications.html">Publications</a></li>
-            <li><a href="..//Supapornboat.github.io/talks.html">Talks</a></li>
-            <li><a href="..//Supapornboat.github.io/projects.html">Projects</a></li>
-            <li><a href="..//Supapornboat.github.io/cv.html">CV</a></li>
-            <li><a href="..//Supapornboat.github.io/win95.html">BoatOS Desktop</a></li>
+            <li><a href="/Supapornboat.github.io/th/publications.html" data-i18n="footer.publications">สิ่งพิมพ์</a></li>
+            <li><a href="/Supapornboat.github.io/th/talks.html" data-i18n="footer.talks">พูดคุย</a></li>
+            <li><a href="/Supapornboat.github.io/th/projects.html" data-i18n="footer.projects">โครงการ</a></li>
+            <li><a href="/Supapornboat.github.io/th/cv.html" data-i18n="footer.cv">ประวัติย่อ</a></li>
+            <li><a href="/Supapornboat.github.io/th/win95.html" data-i18n="footer.boatos">BoatOS Desktop</a></li>
           </ul>
         </div>
       </nav>

@@ -185,7 +185,8 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
     highlights = "\n          ".join(
         nav_link(
             i,
-            page_href(h, "en" if not asset_prefix else lang),
+            # BoatOS desktop stays EN-only (no locale copy)
+            page_href(h, "en" if i == "win95" else ("en" if not asset_prefix else lang)),
             label_for(i, l),
             meta.get("highlight"),
             "nav-cinematic-highlight",
@@ -276,40 +277,51 @@ def get_by_path(obj, path: str):
     return cur
 
 
-def apply_i18n_build(html: str, loc: dict) -> str:
-    """Replace text of elements that have data-i18n at build time (best-effort)."""
-
-    def replacer(match):
-        full = match.group(0)
-        key = match.group(1)
-        val = get_by_path(loc, key)
-        if val is None:
-            return full
-        # replace innermost text only for simple tags
-        return re.sub(r">(.*?)</", f">{val}</", full, count=1, flags=re.S)
-
-    return re.sub(
-        r'<([a-zA-Z0-9]+)([^>]*\sdata-i18n="([^"]+)"[^>]*)>(.*?)</\1>',
-        lambda m: (
-            f"<{m.group(1)}{m.group(2)}>{get_by_path(loc, m.group(3))}</{m.group(1)}>"
-            if get_by_path(loc, m.group(3)) is not None
-            else m.group(0)
-        ),
-        html,
-        flags=re.S,
-    )
-
-
 def rewrite_root_assets(html: str, prefix: str = "../") -> str:
     """Point relative assets to parent for locale subfolders."""
+    # Do not rewrite absolute site paths (starting with /) or protocols
     out = re.sub(
-        r'(href|src)="(?!https?:|mailto:|#|data:|\.\./)([^"]+)"',
+        r'(href|src)="(?!https?:|mailto:|#|data:|\.\./|/)([^"]+)"',
         rf'\1="{prefix}\2"',
         html,
     )
     out = out.replace(f"{prefix}th/", "../th/")
     out = out.replace(f"{prefix}ja/", "../ja/")
     return out
+
+
+def apply_i18n_build(html: str, loc: dict) -> str:
+    """Replace text/HTML of elements that have data-i18n / data-i18n-html at build time."""
+
+    def repl_html(match):
+        key = match.group(3)
+        val = get_by_path(loc, key)
+        if val is None:
+            return match.group(0)
+        return f"<{match.group(1)}{match.group(2)}>{val}</{match.group(1)}>"
+
+    def repl_text(match):
+        key = match.group(3)
+        val = get_by_path(loc, key)
+        if val is None:
+            return match.group(0)
+        # plain text — escape nothing special beyond keeping string
+        return f"<{match.group(1)}{match.group(2)}>{val}</{match.group(1)}>"
+
+    # HTML first so nested tags in values are preserved
+    html = re.sub(
+        r'<([a-zA-Z0-9]+)([^>]*\sdata-i18n-html="([^"]+)"[^>]*)>(.*?)</\1>',
+        repl_html,
+        html,
+        flags=re.S,
+    )
+    html = re.sub(
+        r'<([a-zA-Z0-9]+)([^>]*\sdata-i18n="([^"]+)"[^>]*)>(.*?)</\1>',
+        repl_text,
+        html,
+        flags=re.S,
+    )
+    return html
 
 
 def fix_locale_lang_switch(html: str, filename: str, lang: str) -> str:
@@ -361,10 +373,10 @@ def process_html(content: str, filename: str, lang: str = "en", asset_prefix: st
         footer = read_snippet("footer.html").replace("{{year}}", str(year))
         for k, v in urls.items():
             footer = footer.replace("{{" + k + "}}", v)
-        # Rewrite footer HTML links to absolute site paths
+        # Rewrite footer HTML links to absolute site paths (same language)
         footer = re.sub(
             r'href="(?!https?:|mailto:|#|/|\{)([^"]+\.html)"',
-            lambda m: f'href="{page_href(m.group(1), "en")}"',
+            lambda m: f'href="{page_href(m.group(1), lang)}"',
             footer,
         )
         song = read_snippet("song-dock.html")
@@ -387,9 +399,40 @@ def process_html(content: str, filename: str, lang: str = "en", asset_prefix: st
     out = out.replace("mailto:suppaporn.2544@gmail.com", f"mailto:{COLLAB_EMAIL}")
     out = inject_base_tag(out, lang)
 
+    page_i18n_ns = {
+        "about.html": "about",
+        "research.html": "research",
+        "publications.html": "publications",
+        "talks.html": "talks",
+        "projects.html": "projects",
+        "cv.html": "cv",
+        "cram.html": "cram",
+        "gsat.html": "gsat",
+    }
+
     if lang != "en":
         out = re.sub(r'<html\s+lang="[^"]*"', f'<html lang="{lang}"', out, count=1)
         loc = load_locale(lang)
+        # Localize document title + meta description when keys exist
+        ns = page_i18n_ns.get(filename)
+        if ns:
+            title = get_by_path(loc, f"{ns}.title")
+            if title:
+                out = re.sub(r"<title>.*?</title>", f"<title>{title}</title>", out, count=1, flags=re.S)
+            desc = get_by_path(loc, f"{ns}.desc")
+            if desc:
+                safe = (
+                    desc.replace("&", "&amp;")
+                    .replace('"', "&quot;")
+                    .replace("<", "&lt;")
+                    .replace(">", "&gt;")
+                )
+                out = re.sub(
+                    r'(<meta name="description" content=")[^"]*(")',
+                    rf"\1{safe}\2",
+                    out,
+                    count=1,
+                )
         out = apply_i18n_build(out, loc)
         out = rewrite_root_assets(out, asset_prefix or "../")
         out = fix_locale_lang_switch(out, filename, lang)

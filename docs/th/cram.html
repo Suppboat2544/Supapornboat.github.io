@@ -4,8 +4,8 @@
   <base href="/Supapornboat.github.io/th/" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CRAM · Supaporn Klabklaydee | PhD Thesis · Property-Conditioned Deep Learning for Dissolved Organic Matter</title>
-  <meta name="description" content="CRAM & CRAM-GTransformer — PhD thesis by Supaporn Klabklaydee. AI-driven generation of carboxyl-rich aliphatic/alicyclic molecules and bidirectional graph transformer for biotransformation prediction." />
+  <title>CRAM-GTransformer · Supaporn Klabklaydee</title>
+  <meta name="description" content="แบบจำลองกำเนิด CRAM และ CRAM-GTransformer สำหรับการเปลี่ยนรูปทางชีวภาพของ DOM — ปริญญาเอก งานวิทยานิพนธ์โดย Supaporn Klabklaydee" />
   <meta name="keywords" content="CRAM, dissolved organic matter, DOM, graph transformer, biotransformation, generative model, VAE, GAT, GRU-SELFIES, Supaporn Klabklaydee" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://suppboat2544.github.io/Supapornboat.github.io/cram.html" />
@@ -34,21 +34,21 @@
         <a class="skip-link" href="#main-content">Skip to content</a>
   <nav class="nav nav-cinematic nav-cinematic-bar" id="nav" aria-label="Main navigation">
     <div class="nav-cinematic-inner">
-      <a href="..//Supapornboat.github.io/th/" class="nav-cinematic-logo">
+      <a href="/Supapornboat.github.io/th/" class="nav-cinematic-logo">
         <span class="nav-logo-mark">SK</span>
         <span class="nav-logo-sub">BoatOS 95</span>
       </a>
       <ul class="nav-links nav-cinematic-links" id="nav-links">
-          <li><a href="..//Supapornboat.github.io/th/" data-i18n-nav="home">หน้าแรก</a></li>
-          <li><a href="..//Supapornboat.github.io/th/about.html" data-i18n-nav="about">เกี่ยวกับ</a></li>
-          <li><a href="..//Supapornboat.github.io/th/research.html" data-i18n-nav="research">งานวิจัย</a></li>
-          <li><a href="..//Supapornboat.github.io/th/publications.html" data-i18n-nav="publications">ผลงานตีพิมพ์</a></li>
-          <li><a href="..//Supapornboat.github.io/th/talks.html" data-i18n-nav="talks">การบรรยาย</a></li>
-          <li><a href="..//Supapornboat.github.io/th/projects.html" data-i18n-nav="projects">โครงการ</a></li>
-          <li><a href="..//Supapornboat.github.io/th/cv.html" data-i18n-nav="cv">เรซูเม่</a></li>
-          <li><a href="..//Supapornboat.github.io/th/cram.html" class="nav-cinematic-highlight active" aria-current="page" data-i18n-nav="cram">CRAM</a></li>
-          <li><a href="..//Supapornboat.github.io/th/gsat.html" class="nav-cinematic-highlight" data-i18n-nav="gsat">GSAT</a></li>
-          <li><a href="..//Supapornboat.github.io/th/win95.html" class="nav-cinematic-highlight" data-i18n-nav="boatos">BoatOS</a></li>
+          <li><a href="/Supapornboat.github.io/th/" data-i18n-nav="home">หน้าแรก</a></li>
+          <li><a href="/Supapornboat.github.io/th/about.html" data-i18n-nav="about">เกี่ยวกับ</a></li>
+          <li><a href="/Supapornboat.github.io/th/research.html" data-i18n-nav="research">งานวิจัย</a></li>
+          <li><a href="/Supapornboat.github.io/th/publications.html" data-i18n-nav="publications">ผลงานตีพิมพ์</a></li>
+          <li><a href="/Supapornboat.github.io/th/talks.html" data-i18n-nav="talks">การนำเสนอ</a></li>
+          <li><a href="/Supapornboat.github.io/th/projects.html" data-i18n-nav="projects">โครงการ</a></li>
+          <li><a href="/Supapornboat.github.io/th/cv.html" data-i18n-nav="cv">ประวัติ</a></li>
+          <li><a href="/Supapornboat.github.io/th/cram.html" class="nav-cinematic-highlight active" aria-current="page" data-i18n-nav="cram">CRAM</a></li>
+          <li><a href="/Supapornboat.github.io/th/gsat.html" class="nav-cinematic-highlight" data-i18n-nav="gsat">GSAT</a></li>
+          <li><a href="/Supapornboat.github.io/win95.html" class="nav-cinematic-highlight" data-i18n-nav="boatos">BoatOS</a></li>
       </ul>
       <div class="nav-cinematic-actions">
         <nav class="lang-switch lang-switch-nav" aria-label="Language"><a href="/Supapornboat.github.io/cram.html" data-lang="en" hreflang="en">EN</a><a href="/Supapornboat.github.io/ja/cram.html" data-lang="ja" hreflang="ja">JP</a><a href="/Supapornboat.github.io/th/cram.html" data-lang="th" hreflang="th" class="is-active" aria-current="page">THA</a></nav>
@@ -115,16 +115,14 @@
     </div>
 
 <div class="container">
-      <div class="page-hero-eyebrow">PhD Thesis · 2025–Present · Fujii Lab · IST</div>
+      <div class="page-hero-eyebrow" data-i18n="cram.eyebrow">วิทยานิพนธ์ปริญญาเอก · 2025–ปัจจุบัน · Fujii Lab · IST</div>
       <h1 style="font-size:clamp(1.8rem,5vw,3rem);letter-spacing:-.035em;margin-bottom:14px;">
         CRAM &amp; <span style="background:linear-gradient(135deg,var(--cyan),var(--blue-soft));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">CRAM-GTransformer</span>
       </h1>
-      <p class="page-hero-sub" style="max-width:680px;">
-        <strong style="color:rgba(255,255,255,.88)">AI-Driven Generation of Carboxyl-Rich Aliphatic/Alicyclic Molecules (CRAM)</strong>: A Property-Conditioned Deep Learning Approach for Understanding Refractory Dissolved Organic Matter — and its companion model for site-specific and pathway-level biotransformation prediction.
-      </p>
+      <p class="page-hero-sub" style="max-width:680px;" data-i18n-html="cram.heroSubHtml"><strong style="color:rgba(255,255,255,.88)">การสร้างโมเลกุล Carboxyl-Rich Aliphatic/Alicyclic (CRAM) ด้วย AI</strong>: แนวทางดีปเลิร์นนิงแบบมีเงื่อนไขคุณสมบัติเพื่อทำความเข้าใจ DOM ที่ทนทาน — พร้อมโมเดลคู่สำหรับทำนาย biotransformation ระดับตำแหน่งและเส้นทาง</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;">
-        <a href="../publications.html" class="btn btn-primary" style="font-size:.85rem;">📄 View Publications</a>
-        <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp?subject=CRAM%20Collaboration" class="btn btn-ghost-dark" style="font-size:.85rem;">✉ Collaborate</a>
+        <a href="../publications.html" class="btn btn-primary" style="font-size:.85rem;" data-i18n="cram.btnPubs">📄 ดูผลงานตีพิมพ์</a>
+        <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp?subject=CRAM%20Collaboration" class="btn btn-ghost-dark" style="font-size:.85rem;" data-i18n="cram.btnCollab">✉ ร่วมงานวิจัย</a>
       </div>
     </div>
   </div>
@@ -134,22 +132,22 @@
     <div class="stats-inner" style="max-width:900px;margin:0 auto;">
       <div class="stat-item">
         <span class="stat-num">9.3×</span>
-        <span class="stat-label">More Candidates</span>
+        <span class="stat-label" data-i18n="cram.m1">ตัวเลือกเพิ่มขึ้น</span>
       </div>
       <div class="stat-div"></div>
       <div class="stat-item">
         <span class="stat-num">210K+</span>
-        <span class="stat-label">Reaction Pairs</span>
+        <span class="stat-label" data-i18n="cram.m2">คู่ปฏิกิริยา</span>
       </div>
       <div class="stat-div"></div>
       <div class="stat-item">
         <span class="stat-num">87%</span>
-        <span class="stat-label">Top-3 Accuracy</span>
+        <span class="stat-label" data-i18n="cram.m3">ความแม่นยำ Top-3</span>
       </div>
       <div class="stat-div"></div>
       <div class="stat-item">
         <span class="stat-num">99</span>
-        <span class="stat-label">Biotransformation Classes</span>
+        <span class="stat-label" data-i18n="cram.m4">คลาส biotransformation</span>
       </div>
       <div class="stat-div"></div>
       <div class="stat-item">
@@ -163,9 +161,9 @@
   <section class="section alt-section">
     <div class="container">
 
-      <div class="section-label">Part I</div>
-      <h2 class="section-title" style="font-size:clamp(1.3rem,3vw,1.9rem);margin-bottom:6px;">CRAM Generative Model</h2>
-      <p class="section-sub">AI-Driven Generation of Carboxyl-Rich Aliphatic/Alicyclic Molecules — A Property-Conditioned Deep Learning Approach for Understanding Refractory Dissolved Organic Matter</p>
+      <div class="section-label" data-i18n="cram.part1">ส่วนที่ 1</div>
+      <h2 class="section-title" style="font-size:clamp(1.3rem,3vw,1.9rem);margin-bottom:6px;" data-i18n="cram.part1Title">รุ่นเจเนอเรทีฟ CRAM</h2>
+      <p class="section-sub" data-i18n="cram.part1Sub">การสร้างโมเลกุลอะลิฟาติก/อะลิไซคลิกที่อุดมด้วยคาร์บอกซิลที่ขับเคลื่อนด้วย AI — แนวทางการเรียนรู้เชิงลึกที่มีเงื่อนไขตามคุณสมบัติเพื่อทำความเข้าใจสารอินทรีย์ที่ละลายในวัสดุทนไฟ</p>
 
       <!-- THE PROBLEM -->
       <div class="cram-two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
@@ -269,9 +267,9 @@
   <section class="section">
     <div class="container">
 
-      <div class="section-label">Part II</div>
-      <h2 class="section-title" style="font-size:clamp(1.3rem,3vw,1.9rem);margin-bottom:6px;">CRAM-GTransformer</h2>
-      <p class="section-sub">Bidirectional Graph Transformer for Site-Specific and Pathway-Level CRAM Biotransformation — predicting how refractory DOM molecules transform in aquatic environments.</p>
+      <div class="section-label" data-i18n="cram.part2">ส่วนที่ 2</div>
+      <h2 class="section-title" style="font-size:clamp(1.3rem,3vw,1.9rem);margin-bottom:6px;" data-i18n="cram.part2Title">CRAM-GTransformer</h2>
+      <p class="section-sub" data-i18n="cram.part2Sub">Bidirectional Graph Transformer สำหรับการเปลี่ยนรูปทางชีวภาพของ CRAM เฉพาะไซต์และระดับทางเดิน — คาดการณ์ว่าโมเลกุลของ DOM ที่ทนไฟจะเปลี่ยนแปลงไปในสภาพแวดล้อมทางน้ำได้อย่างไร</p>
 
       <div class="cram-two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
         <div class="feat-block">
@@ -400,33 +398,33 @@
     <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="..//Supapornboat.github.io/" class="footer-logo">SK · BoatOS 95</a>
-        <p>Structure-aware machine learning for molecular toxicology, biotransformation, PFAS fate, and aquatic chemical space.</p>
+        <a href="/Supapornboat.github.io/th/" class="footer-logo">SK · BoatOS 95</a>
+        <p data-i18n="footer.blurb">การเรียนรู้ของเครื่องโดยคำนึงถึงโครงสร้างสำหรับพิษวิทยาระดับโมเลกุล การเปลี่ยนแปลงทางชีวภาพ ชะตากรรมของ PFAS และพื้นที่เคมีในน้ำ</p>
       </div>
       <nav class="footer-nav" aria-label="Footer navigation">
         <div class="footer-nav-col">
-          <h4>Pages</h4>
+          <h4 data-i18n="footer.pages">หน้า</h4>
           <ul>
-            <li><a href="..//Supapornboat.github.io/">Home</a></li>
-            <li><a href="..//Supapornboat.github.io/about.html">About</a></li>
-            <li><a href="..//Supapornboat.github.io/research.html">Research</a></li>
+            <li><a href="/Supapornboat.github.io/th/" data-i18n="footer.home">บ้าน</a></li>
+            <li><a href="/Supapornboat.github.io/th/about.html" data-i18n="footer.about">เกี่ยวกับ</a></li>
+            <li><a href="/Supapornboat.github.io/th/research.html" data-i18n="footer.research">วิจัย</a></li>
           </ul>
         </div>
         <div class="footer-nav-col">
-          <h4>Current Work</h4>
+          <h4 data-i18n="footer.currentWork">งานปัจจุบัน</h4>
           <ul>
-            <li><a href="..//Supapornboat.github.io/cram.html">CRAM-GTransformer</a></li>
-            <li><a href="..//Supapornboat.github.io/gsat.html">GSAT Model</a></li>
+            <li><a href="/Supapornboat.github.io/th/cram.html" data-i18n="footer.cram">CRAM-GTransformer</a></li>
+            <li><a href="/Supapornboat.github.io/th/gsat.html" data-i18n="footer.gsat">GSAT รุ่น</a></li>
           </ul>
         </div>
         <div class="footer-nav-col">
-          <h4>More</h4>
+          <h4 data-i18n="footer.more">มากกว่า</h4>
           <ul>
-            <li><a href="..//Supapornboat.github.io/publications.html">Publications</a></li>
-            <li><a href="..//Supapornboat.github.io/talks.html">Talks</a></li>
-            <li><a href="..//Supapornboat.github.io/projects.html">Projects</a></li>
-            <li><a href="..//Supapornboat.github.io/cv.html">CV</a></li>
-            <li><a href="..//Supapornboat.github.io/win95.html">BoatOS Desktop</a></li>
+            <li><a href="/Supapornboat.github.io/th/publications.html" data-i18n="footer.publications">สิ่งพิมพ์</a></li>
+            <li><a href="/Supapornboat.github.io/th/talks.html" data-i18n="footer.talks">พูดคุย</a></li>
+            <li><a href="/Supapornboat.github.io/th/projects.html" data-i18n="footer.projects">โครงการ</a></li>
+            <li><a href="/Supapornboat.github.io/th/cv.html" data-i18n="footer.cv">ประวัติย่อ</a></li>
+            <li><a href="/Supapornboat.github.io/th/win95.html" data-i18n="footer.boatos">BoatOS Desktop</a></li>
           </ul>
         </div>
       </nav>
