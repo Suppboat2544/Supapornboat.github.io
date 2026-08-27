@@ -1,0 +1,37 @@
+{
+  "lang": "en",
+  "langName": "English",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "research": "Research",
+    "publications": "Publications",
+    "talks": "Talks",
+    "projects": "Projects",
+    "cv": "CV",
+    "collaborate": "Collaborate",
+    "cram": "CRAM",
+    "gsat": "GSAT",
+    "boatos": "BoatOS"
+  },
+  "home": {
+    "eyebrow": "Supaporn Klabklaydee · Institute of Science Tokyo",
+    "headline": "Structure-aware ML for molecular graphs, ecotoxicity, and aquatic chemistry.",
+    "journeyLabel": "Research Journey",
+    "journeyCap": "From field water → Tokyo lab → graph AI for aquatic chemistry",
+    "galleryLabel": "Research Gallery",
+    "galleryTitle": "My Pictures — Research Figures",
+    "galleryHint": "Research figures only",
+    "affilLabel": "Affiliations & Partners",
+    "affilNote": "Affiliation marks are original stylized emblems for this portfolio (not official trademarks).",
+    "appsLabel": "BoatOS Apps & Desktop Art",
+    "appsTitle": "Program Files — Games & Tools",
+    "appsHint": "Click .exe to launch · art opens preview",
+    "areasLabel": "Research Areas",
+    "songTitle": "Ocean Graph Theme",
+    "songDesc": "Original study-story soundtrack for this site"
+  },
+  "footer": {
+    "blurb": "Structure-aware machine learning for molecular toxicology, biotransformation, PFAS fate, and aquatic chemical space."
+  }
+}

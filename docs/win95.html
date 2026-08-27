@@ -68,6 +68,22 @@
         <span class="desk-icon-img" aria-hidden="true">✉️</span>
         <span class="desk-icon-label">Contact</span>
       </button>
+      <button type="button" class="desk-icon" data-open-dialog="dlg-mines">
+        <img class="desk-icon-img-file" src="figure/app_minesweeper.png" alt="" width="32" height="32" />
+        <span class="desk-icon-label">Minesweeper</span>
+      </button>
+      <button type="button" class="desk-icon" data-open-dialog="dlg-paint">
+        <img class="desk-icon-img-file" src="figure/app_paint.png" alt="" width="32" height="32" />
+        <span class="desk-icon-label">Paint</span>
+      </button>
+      <button type="button" class="desk-icon" data-open-dialog="dlg-cards">
+        <img class="desk-icon-img-file" src="figure/app_solitaire.png" alt="" width="32" height="32" />
+        <span class="desk-icon-label">Cards</span>
+      </button>
+      <button type="button" class="desk-icon" data-open-dialog="dlg-calc">
+        <img class="desk-icon-img-file" src="figure/app_calculator.png" alt="" width="32" height="32" />
+        <span class="desk-icon-label">Calculator</span>
+      </button>
       <a class="desk-icon" href="index.html">
         <span class="desk-icon-img" aria-hidden="true">🌐</span>
         <span class="desk-icon-label">Modern Site</span>
@@ -243,6 +259,13 @@
         <li><button type="button" role="menuitem" data-open="skills">💾 Skills</button></li>
         <li><button type="button" role="menuitem" data-open="contact">✉️ Contact</button></li>
         <li class="start-sep"></li>
+        <li><button type="button" role="menuitem" data-open-dialog="dlg-mines">💣 Minesweeper</button></li>
+        <li><button type="button" role="menuitem" data-open-dialog="dlg-paint">🎨 Paint</button></li>
+        <li><button type="button" role="menuitem" data-open-dialog="dlg-calc">🔢 Calculator</button></li>
+        <li><button type="button" role="menuitem" data-open-dialog="dlg-notepad">📝 Notepad</button></li>
+        <li><button type="button" role="menuitem" data-open-dialog="dlg-cards">🃏 Cards</button></li>
+        <li><button type="button" role="menuitem" data-open-dialog="dlg-media">🎵 Media Player</button></li>
+        <li class="start-sep"></li>
         <li><a role="menuitem" href="index.html">🌐 Modern Site</a></li>
         <li><a role="menuitem" href="cv.html">📋 Full CV</a></li>
         <li class="start-sep"></li>
@@ -272,6 +295,138 @@
     <button type="button" class="bevel-btn" id="reboot-btn">Reboot BoatOS</button>
   </div>
 
+  <!-- Playable app dialogs -->
+  <div id="dlg-mines" class="win-dialog" hidden role="dialog">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar win95-dlg-bar"><span>💣</span><span>Minesweeper</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-mines" aria-label="Close">×</button></div>
+      <div class="win-dialog-body mine-app">
+        <div class="mine-hud">
+          <span id="mine-flags">010</span>
+          <button type="button" id="mine-face" class="mine-face" aria-label="New game">🙂</button>
+          <button type="button" id="mine-new" class="bevel-btn">New</button>
+        </div>
+        <div id="mine-grid" class="mine-grid"></div>
+        <p class="mine-help">Left-click open · right-click flag</p>
+      </div>
+    </div>
+  </div>
+  <div id="dlg-paint" class="win-dialog" hidden role="dialog">
+    <div class="win-dialog-panel win-dialog-wide">
+      <div class="hero-welcome-titlebar win95-dlg-bar"><span>🎨</span><span>Paint</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-paint" aria-label="Close">×</button></div>
+      <div class="win-dialog-body paint-app">
+        <div class="paint-toolbar">
+          <button type="button" class="paint-swatch is-active" data-paint-color="#000080" style="--c:#000080"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#008080" style="--c:#008080"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#000000" style="--c:#000"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#c00" style="--c:#c00"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#080" style="--c:#080"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#fff" style="--c:#fff"></button>
+          <label class="paint-size-label">Size <input id="paint-size" type="range" min="1" max="16" value="3" /></label>
+          <button type="button" class="bevel-btn" id="paint-clear">Clear</button>
+        </div>
+        <canvas id="paint-canvas" width="520" height="280"></canvas>
+      </div>
+    </div>
+  </div>
+  <div id="dlg-calc" class="win-dialog" hidden role="dialog">
+    <div class="win-dialog-panel" style="width:min(280px,100%)">
+      <div class="hero-welcome-titlebar win95-dlg-bar"><span>🔢</span><span>Calculator</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-calc" aria-label="Close">×</button></div>
+      <div class="win-dialog-body calc-app">
+        <div id="calc-display" class="calc-display">0</div>
+        <div class="calc-keys">
+          <button type="button" data-calc="C">C</button>
+          <button type="button" data-calc="/">/</button>
+          <button type="button" data-calc="*">*</button>
+          <button type="button" data-calc="-">-</button>
+          <button type="button" data-calc="7">7</button>
+          <button type="button" data-calc="8">8</button>
+          <button type="button" data-calc="9">9</button>
+          <button type="button" data-calc="+">+</button>
+          <button type="button" data-calc="4">4</button>
+          <button type="button" data-calc="5">5</button>
+          <button type="button" data-calc="6">6</button>
+          <button type="button" data-calc="=" class="calc-eq">=</button>
+          <button type="button" data-calc="1">1</button>
+          <button type="button" data-calc="2">2</button>
+          <button type="button" data-calc="3">3</button>
+          <button type="button" data-calc="0" class="calc-zero">0</button>
+          <button type="button" data-calc=".">.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="dlg-notepad" class="win-dialog" hidden role="dialog">
+    <div class="win-dialog-panel win-dialog-wide">
+      <div class="hero-welcome-titlebar win95-dlg-bar"><span>📝</span><span>Notepad</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-notepad" aria-label="Close">×</button></div>
+      <div class="win-dialog-body">
+        <textarea id="notepad-area" class="notepad-area" rows="10">Welcome to BoatOS 95
+Ph.D. · AI/ML · Chemoinformatics
+Institute of Science Tokyo
+</textarea>
+      </div>
+    </div>
+  </div>
+  <div id="dlg-cards" class="win-dialog" hidden role="dialog">
+    <div class="win-dialog-panel win-dialog-wide">
+      <div class="hero-welcome-titlebar win95-dlg-bar"><span>🃏</span><span>Cards — Match Pairs</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-cards" aria-label="Close">×</button></div>
+      <div class="win-dialog-body">
+        <div class="cards-hud">
+          <span id="cards-status">Match the pairs</span>
+          <button type="button" class="bevel-btn" id="cards-new">New Game</button>
+        </div>
+        <div id="cards-board" class="cards-board"></div>
+      </div>
+    </div>
+  </div>
+  <div id="dlg-media" class="win-dialog" hidden role="dialog">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar win95-dlg-bar"><span>🎵</span><span>Media Player</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-media" aria-label="Close">×</button></div>
+      <div class="win-dialog-body media-app">
+        <p id="media-track" class="media-track">research_theme.mid</p>
+        <div class="media-track-bar"><i id="media-bar"></i></div>
+        <div class="media-controls">
+          <button type="button" class="bevel-btn" id="media-play">▶ Play</button>
+          <button type="button" class="bevel-btn" id="media-stop">■ Stop</button>
+          <button type="button" class="bevel-btn" id="media-next">⏭ Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="win95.js" defer></script>
+  <script src="boatos-games.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      function openDlg(id) {
+        const d = document.getElementById(id);
+        if (d) d.hidden = false;
+        document.getElementById("start-menu")?.setAttribute("hidden", "");
+      }
+      function closeDlg(id) {
+        const d = document.getElementById(id);
+        if (d) d.hidden = true;
+      }
+      document.querySelectorAll("[data-open-dialog]").forEach((el) => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          openDlg(el.getAttribute("data-open-dialog"));
+        });
+      });
+      document.querySelectorAll("[data-close-dialog]").forEach((el) => {
+        el.addEventListener("click", () => closeDlg(el.getAttribute("data-close-dialog")));
+      });
+      document.querySelectorAll(".win-dialog").forEach((dlg) => {
+        dlg.addEventListener("click", (e) => {
+          if (e.target === dlg) dlg.hidden = true;
+        });
+      });
+    });
+  </script>
 </body>
 </html>

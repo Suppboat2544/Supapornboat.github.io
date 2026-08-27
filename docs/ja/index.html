@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Supaporn Klabklaydee | Cheminformatics · Environmental Chemistry · Institute of Science Tokyo</title>
+  <meta name="description" content="Supaporn Klabklaydee (Boat) — Ph.D. researcher at Institute of Science Tokyo. GNN-based ecotoxicity prediction, environmental informatics, machine learning for chemical safety and water quality." />
+  <meta name="keywords" content="Supaporn Klabklaydee, Boat, Ph.D., Institute of Science Tokyo, GNN, ecotoxicity, atrazine, LC50, GSAT, environmental informatics, machine learning, cheminformatics, aquatic toxicology" />
+  <meta name="author" content="Supaporn Klabklaydee" />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="C7dEGAA43WTx2TIucGV_JqZZKabn8I1OjrQkeLIS_vA" />
+  <link rel="canonical" href="https://suppboat2544.github.io/Supapornboat.github.io/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://suppboat2544.github.io/Supapornboat.github.io/" />
+  <meta property="og:title" content="Supaporn Klabklaydee | Cheminformatics · Environmental Chemistry" />
+  <meta property="og:description" content="Structure-aware ML on molecular graphs — GNN-based LC50 prediction, biotransformation, PFAS, and DOM chemical space. Ph.D. at Institute of Science Tokyo." />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/179722549?v=4" />
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Supaporn Klabklaydee",
+    "alternateName": "Boat",
+    "url": "https://suppboat2544.github.io/Supapornboat.github.io/",
+    "jobTitle": "Ph.D. Researcher",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Institute of Science Tokyo"
+    },
+    "description": "Ph.D. researcher specializing in GNN-based ecotoxicity prediction, environmental informatics, and machine learning for chemical safety.",
+    "sameAs": [
+      "https://github.com/Suppboat2544",
+      "https://www.linkedin.com/in/supaporn-klabklaydee-1a43401b6",
+      "https://orcid.org/0009-0000-9747-711X"
+    ]
+  }
+  </script>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/179722549?v=4" />
+  <meta name="theme-color" content="#042a3a" />
+  <meta name="author" content="Supaporn Klabklaydee" />
+  <meta name="google-site-verification" content="C7dEGAA43WTx2TIucGV_JqZZKabn8I1OjrQkeLIS_vA" />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="page-home">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- BOOT / LOAD BAR -->
+  <div id="site-boot" class="site-boot" role="status" aria-live="polite" aria-label="BoatOS loading">
+    <div class="site-boot-inner">
+      <pre class="site-boot-bios" id="site-boot-bios" aria-hidden="true"></pre>
+      <div class="site-boot-visual">
+        <img src="../figure/section_boot_splash.png" alt="" class="site-boot-art" />
+      </div>
+      <p class="site-boot-brand">Boat<span>OS</span> 95</p>
+      <div class="site-boot-track"><div class="site-boot-fill" id="site-boot-bar"></div></div>
+      <p class="site-boot-status" id="site-boot-status">Starting BoatOS…</p>
+      <p class="site-boot-hint">Press nothing — loading research desktop</p>
+    </div>
+  </div>
+
+  <!-- BoatOS 95 HERO -->
+  <div class="cinematic-wrap boatos-desktop">
+    <div class="boatos-wallpaper" aria-hidden="true"></div>
+
+    <aside class="boatos-desk-icons" aria-label="Desktop shortcuts">
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-computer">
+        <img src="../figure/icon_my_computer.png" alt="" />
+        <em>My Computer</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-network">
+        <img src="../figure/icon_network.png" alt="" />
+        <em>Network</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-control">
+        <img src="../figure/section_control_panel.png" alt="" />
+        <em>Control Panel</em>
+      </button>
+      <a class="boatos-desk-icon" href="../win95.html">
+        <span class="boatos-desk-emoji">🖥️</span>
+        <em>Full Desktop</em>
+      </a>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-recycle">
+        <span class="boatos-desk-emoji">🗑️</span>
+        <em>Recycle Bin</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-mines">
+        <img src="../figure/app_minesweeper.png" alt="" />
+        <em>Minesweeper</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-paint">
+        <img src="../figure/app_paint.png" alt="" />
+        <em>Paint</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-cards">
+        <img src="../figure/app_solitaire.png" alt="" />
+        <em>Cards</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-calc">
+        <img src="../figure/app_calculator.png" alt="" />
+        <em>Calculator</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-media">
+        <img src="../figure/app_media.png" alt="" />
+        <em>Media</em>
+      </button>
+    </aside>
+
+            <nav class="nav nav-cinematic" id="nav" aria-label="Main navigation">
+        <div class="nav-cinematic-inner">
+      <a href="../index.html" class="nav-cinematic-logo" aria-current="page">
+        <span class="nav-logo-mark">SK</span>
+        <span class="nav-logo-sub">BoatOS 95</span>
+      </a>
+      <ul class="nav-links nav-cinematic-links" id="nav-links">
+          <li><a href="../index.html" class="active" aria-current="page" data-i18n-nav="home">ホーム</a></li>
+          <li><a href="../about.html" data-i18n-nav="about">について</a></li>
+          <li><a href="../research.html" data-i18n-nav="research">研究</a></li>
+          <li><a href="../publications.html" data-i18n-nav="publications">論文</a></li>
+          <li><a href="../talks.html" data-i18n-nav="talks">講演</a></li>
+          <li><a href="../projects.html" data-i18n-nav="projects">プロジェクト</a></li>
+          <li><a href="../cv.html" data-i18n-nav="cv">履歴書</a></li>
+          <li><a href="../cram.html" class="nav-cinematic-highlight" data-i18n-nav="cram">CRAM</a></li>
+          <li><a href="../gsat.html" class="nav-cinematic-highlight" data-i18n-nav="gsat">GSAT</a></li>
+          <li><a href="../win95.html" class="nav-cinematic-highlight" data-i18n-nav="boatos">BoatOS</a></li>
+      </ul>
+      <div class="nav-cinematic-actions">
+        <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp" class="nav-cinematic-cta" data-i18n-nav="collaborate">共同研究</a>
+        <nav class="lang-switch lang-switch-nav" aria-label="Language"><a href="../index.html" data-lang="en" hreflang="en">EN</a><a href="../th/index.html" data-lang="th" hreflang="th">ไทย</a><a href="index.html" data-lang="ja" hreflang="ja">日本語</a></nav>
+        <button class="nav-burger nav-cinematic-burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+        </div>
+      </nav>
+
+    <section class="hero-cinematic hero-boatos" aria-label="Introduction">
+      <div class="hero-stage">
+        <div class="hero-welcome hero-welcome-main animate-fade-rise" data-win-panel>
+          <div class="hero-welcome-titlebar">
+            <span aria-hidden="true">📄</span>
+            <span>Welcome.txt — BoatOS 95</span>
+            <span class="win-ctrls">
+              <button type="button" data-win-min aria-label="Minimize">_</button>
+              <button type="button" data-win-max aria-label="Maximize">□</button>
+              <button type="button" data-win-close aria-label="Close">×</button>
+            </span>
+          </div>
+          <div class="hero-welcome-body hero-welcome-split" data-win-body>
+            <div class="hero-welcome-copy">
+              <p class="hero-cinematic-eyebrow" data-i18n="home.eyebrow">Supaporn Klabklaydee · 東京科学大学</p>
+              <h1 class="hero-cinematic-title">
+                From <em class="hero-em">molecular graphs</em><br class="hero-br">to <em class="hero-em">environmental fate.</em>
+              </h1>
+              <p class="hero-cinematic-sub" data-i18n="home.headline">分子グラフ・生態毒性・水圏化学のための構造認識機械学習</p>
+              <div class="hero-chem-tags" aria-label="Research focus areas">
+                <span class="hero-chem-tag">GNN</span>
+                <span class="hero-chem-tag">Molecular Graphs</span>
+                <span class="hero-chem-tag">LC<sub>50</sub></span>
+                <span class="hero-chem-tag">SMILES</span>
+                <span class="hero-chem-tag">PFAS</span>
+                <span class="hero-chem-tag">DOM</span>
+                <a href="../cram.html" class="hero-chem-tag hero-chem-tag-link">CRAM</a>
+                <a href="../gsat.html" class="hero-chem-tag hero-chem-tag-link">GSAT</a>
+              </div>
+              <div class="hero-cinematic-actions">
+                <a href="../research.html" class="liquid-glass hero-cinematic-cta hero-cinematic-cta-primary">Research Areas</a>
+                <a href="../publications.html" class="liquid-glass hero-cinematic-cta hero-cinematic-cta-secondary">Publications</a>
+                <a href="../win95.html" class="liquid-glass hero-cinematic-cta hero-cinematic-cta-secondary" title="Full desktop experience">Open BoatOS Desktop</a>
+              </div>
+              <div class="hero-cinematic-social" aria-label="Social profiles">
+                <a href="https://github.com/Suppboat2544" target="_blank" rel="noopener" class="liquid-glass hero-social-pill" title="GitHub">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/supaporn-klabklaydee-1a43401b6" target="_blank" rel="noopener" class="liquid-glass hero-social-pill" title="LinkedIn">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://orcid.org/0009-0000-9747-711X" target="_blank" rel="noopener" class="liquid-glass hero-social-pill" title="ORCID">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.888-1.575 3.888-3.722 0-2.016-1.453-3.722-3.888-3.722h-2.297z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="hero-welcome-portrait">
+              <div class="hero-portrait-frame">
+                <img src="https://avatars.githubusercontent.com/u/179722549?v=4" alt="Supaporn Klabklaydee" width="160" height="160" />
+              </div>
+              <p class="hero-portrait-caption">Boat · Ph.D. · Fujii Lab</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-float-stack" aria-label="Featured research figures">
+          <a href="../gsat.html" class="hero-float-win animate-fade-rise-delay">
+            <div class="hero-welcome-titlebar"><span>🖼</span><span>GSAT.bmp</span></div>
+            <div class="hero-float-body">
+              <img src="../figure/toxicity_model.png" alt="GSAT toxicity model" loading="eager" />
+            </div>
+          </a>
+          <a href="../cram.html" class="hero-float-win hero-float-win-2 animate-fade-rise-delay-2">
+            <div class="hero-welcome-titlebar"><span>🖼</span><span>CRAM.bmp</span></div>
+            <div class="hero-float-body">
+              <img src="../figure/cram_formation_overview.png" alt="CRAM formation overview" loading="eager" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <a href="#main-content" class="hero-scroll-cue" aria-label="Scroll to content">
+      <span class="hero-scroll-text">Research</span>
+      <span class="hero-scroll-line" aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <main id="main-content" class="home-content">
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="container stats-inner">
+      <div class="stat-item"><span class="stat-num" data-count="5">5</span><span class="stat-label">Publications</span></div>
+      <div class="stat-div"></div>
+      <div class="stat-item"><span class="stat-num" data-count="7">7</span><span class="stat-label">Research Topics</span></div>
+      <div class="stat-div"></div>
+      <div class="stat-item"><span class="stat-num" data-count="3">3</span><span class="stat-label">Research Labs</span></div>
+      <div class="stat-div"></div>
+      <div class="stat-item"><span class="stat-num" data-count="8">8</span><span class="stat-label">Awards</span></div>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTS -->
+  <section class="section highlights-section">
+    <div class="container">
+      <!-- CURRENT STATUS PANEL -->
+      <div class="status-panel" data-reveal>
+        <div class="status-banner">
+          <img src="../figure/section_status_banner.png" alt="" loading="lazy" />
+        </div>
+        <div class="status-panel-body">
+        <div class="status-panel-left">
+          <div class="status-row">
+            <span class="status-key">status</span>
+            <span class="status-val status-active"><span class="status-dot"></span>Active PhD Researcher · Year 2</span>
+          </div>
+          <div class="status-row">
+            <span class="status-key">supervisor</span>
+            <span class="status-val">Prof. Manabu Fujii · Institute of Science Tokyo</span>
+          </div>
+          <div class="status-row">
+            <span class="status-key">institution</span>
+            <span class="status-val">Institute of Science Tokyo (IST) — Ookayama Campus</span>
+          </div>
+          <div class="status-row">
+            <span class="status-key">currently</span>
+            <span class="status-val">CRAM-GTransformer: Bidirectional Graph Transformer for Site-Specific and Pathway-Level CRAM Biotransformation</span>
+          </div>
+          <div class="status-row">
+            <span class="status-key">funding</span>
+            <span class="status-val status-open">AISpread1000 (PI: Prof. Fujii) · ¥5M · Million-scale diverse-DOM generation</span>
+          </div>
+          <div class="status-row">
+            <span class="status-key">open_to</span>
+            <span class="status-val status-open">Collaborations · Internships · Conference Talks</span>
+          </div>
+        </div>
+        <div class="status-panel-right">
+          <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp" class="status-contact-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Get in touch
+          </a>
+          <a href="../cram.html" class="status-more-btn">CRAM project →</a>
+        </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:44px">Current Work</div>
+      <div class="current-work-grid" data-reveal>
+        <a href="../cram.html" class="current-work-card current-work-cram">
+          <div class="work-card-media">
+            <img src="../figure/cram_formation_overview.png" alt="" loading="lazy" />
+          </div>
+          <span class="current-work-badge">PhD Thesis · In Progress</span>
+          <h3>CRAM-GTransformer</h3>
+          <p>Property-conditioned deep learning for carboxyl-rich aliphatic/alicyclic molecules (CRAM) and site-specific, pathway-level DOM biotransformation.</p>
+          <span class="current-work-link">View CRAM project →</span>
+        </a>
+        <a href="../gsat.html" class="current-work-card current-work-gsat">
+          <div class="work-card-media">
+            <img src="../figure/toxicity_model.png" alt="" loading="lazy" />
+          </div>
+          <span class="current-work-badge">Published · ACS ES&amp;T Water 2026</span>
+          <h3>GSAT Model</h3>
+          <p>Graph–Sequence Attention Transformer for multigenerational ecotoxicity prediction — R² = 0.907 on LC<sub>50</sub> benchmarks.</p>
+          <span class="current-work-link">View GSAT model →</span>
+        </a>
+      </div>
+
+      <div class="section-label" style="margin-top:52px" data-i18n="home.journeyLabel">研究の旅</div>
+      <figure class="study-journey" data-reveal>
+        <img src="../figure/study_research_journey.png" alt="From coastal water samples to Tokyo lab AI molecular models" loading="lazy" />
+        <figcaption data-i18n="home.journeyCap">現場の水試料 → 東京の研究室 → 水圏化学のためのグラフAI</figcaption>
+      </figure>
+
+      <div class="section-label" style="margin-top:52px" data-i18n="home.galleryLabel">研究ギャラリー</div>
+      <div class="win-gallery" data-reveal>
+        <div class="win-gallery-titlebar">
+          <span>🖼</span>
+          <span data-i18n="home.galleryTitle">マイピクチャ — 研究図</span>
+          <span class="win-ctrls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+        </div>
+        <div class="win-gallery-toolbar">
+          <span>File</span><span>Edit</span><span>View</span><span>Help</span>
+        </div>
+        <div class="win-gallery-grid">
+          <a class="win-gallery-item" href="../gsat.html">
+            <div class="win-gallery-frame"><img src="../figure/toxicity_model.png" alt="GSAT toxicity model" loading="lazy" /></div>
+            <span>toxicity_model.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../gsat.html">
+            <div class="win-gallery-frame"><img src="../figure/new_GSAT_architecture.png" alt="GSAT architecture" loading="lazy" /></div>
+            <span>GSAT_architecture.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../cram.html">
+            <div class="win-gallery-frame"><img src="../figure/cram_formation_overview.png" alt="CRAM formation overview" loading="lazy" /></div>
+            <span>cram_overview.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../research.html">
+            <div class="win-gallery-frame"><img src="../figure/transformation_model.png" alt="Biotransformation model" loading="lazy" /></div>
+            <span>transformation.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../research.html">
+            <div class="win-gallery-frame"><img src="../figure/reactivity.png" alt="Molecular reactivity" loading="lazy" /></div>
+            <span>reactivity.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../cram.html" data-lightbox="figure/study_dom_cram.png" data-lightbox-title="dom_cram.bmp">
+            <div class="win-gallery-frame"><img src="../figure/study_dom_cram.png" alt="DOM and CRAM molecules" loading="lazy" /></div>
+            <span>dom_cram.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../gsat.html" data-lightbox="figure/study_gnn_graph.png" data-lightbox-title="gnn_graph.bmp">
+            <div class="win-gallery-frame"><img src="../figure/study_gnn_graph.png" alt="Graph neural network on molecules" loading="lazy" /></div>
+            <span>gnn_graph.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../research.html" data-lightbox="figure/study_pfas_pathway.png" data-lightbox-title="pfas_pathway.bmp">
+            <div class="win-gallery-frame"><img src="../figure/study_pfas_pathway.png" alt="PFAS transformation pathway" loading="lazy" /></div>
+            <span>pfas_pathway.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../research.html" data-lightbox="figure/study_marine_enzyme.png" data-lightbox-title="marine_enzyme.bmp">
+            <div class="win-gallery-frame"><img src="../figure/study_marine_enzyme.png" alt="Marine enzyme discovery" loading="lazy" /></div>
+            <span>marine_enzyme.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../research.html">
+            <div class="win-gallery-frame"><img src="../figure/section_bioinformatics.png" alt="Bioinformatics illustration" loading="lazy" /></div>
+            <span>bioinformatics.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../research.html">
+            <div class="win-gallery-frame"><img src="../figure/section_hpc.png" alt="HPC computing illustration" loading="lazy" /></div>
+            <span>hpc_cluster.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../research.html">
+            <div class="win-gallery-frame"><img src="../figure/section_pfas.png" alt="PFAS chemistry illustration" loading="lazy" /></div>
+            <span>pfas_chem.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../research.html">
+            <div class="win-gallery-frame"><img src="../figure/section_cheminformatics.png" alt="Cheminformatics illustration" loading="lazy" /></div>
+            <span>cheminformatics.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../research.html">
+            <div class="win-gallery-frame"><img src="../figure/section_ml_gnn.png" alt="ML GNN illustration" loading="lazy" /></div>
+            <span>ml_gnn.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../research.html">
+            <div class="win-gallery-frame"><img src="../figure/section_environmental.png" alt="Environmental science illustration" loading="lazy" /></div>
+            <span>environmental.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../research.html">
+            <div class="win-gallery-frame"><img src="../figure/section_collaboration.png" alt="Collaboration illustration" loading="lazy" /></div>
+            <span>collaboration.bmp</span>
+          </a>
+        </div>
+        <div class="win-gallery-status"><span>16 object(s)</span><span data-i18n="home.galleryHint">研究図のみ</span></div>
+      </div>
+
+      <div class="section-label" style="margin-top:52px" data-i18n="home.affilLabel">所属・連携機関</div>
+      <div class="affil-logos" data-reveal>
+        <a class="affil-logo-card" href="../about.html#education" title="Institute of Science Tokyo">
+          <img src="../figure/logo_science_tokyo.png" alt="Institute of Science Tokyo emblem" loading="lazy" />
+          <span>Institute of Science Tokyo</span>
+        </a>
+        <a class="affil-logo-card" href="../about.html" title="Chulalongkorn University">
+          <img src="../figure/logo_chulalongkorn.png" alt="Chulalongkorn University emblem" loading="lazy" />
+          <span>Chulalongkorn University</span>
+        </a>
+        <a class="affil-logo-card" href="../about.html" title="JAMSTEC">
+          <img src="../figure/logo_jamstec.png" alt="JAMSTEC emblem" loading="lazy" />
+          <span>JAMSTEC</span>
+        </a>
+        <a class="affil-logo-card" href="../about.html" title="RIKEN">
+          <img src="../figure/logo_riken.png" alt="RIKEN emblem" loading="lazy" />
+          <span>RIKEN</span>
+        </a>
+        <a class="affil-logo-card" href="../talks.html" title="LLNL DSSI">
+          <img src="../figure/logo_llnl.png" alt="LLNL emblem" loading="lazy" />
+          <span>LLNL · DSSI</span>
+        </a>
+      </div>
+      <p class="affil-note" data-i18n="home.affilNote">所属マークは本ポートフォリオ用のオリジナル意匠です（公式商標ではありません）。</p>
+
+      <div class="section-label" style="margin-top:52px" data-i18n="home.appsLabel">BoatOS アプリとデスクトップアート</div>
+      <div class="win-gallery win-gallery-apps" data-reveal>
+        <div class="win-gallery-titlebar">
+          <span>🎮</span>
+          <span data-i18n="home.appsTitle">Program Files — ゲームとツール</span>
+          <span class="win-ctrls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+        </div>
+        <div class="win-gallery-toolbar"><span>Start</span><span>Play</span><span>Help</span></div>
+        <div class="win-gallery-grid">
+          <button type="button" class="win-gallery-item" data-open-dialog="dlg-mines">
+            <div class="win-gallery-frame"><img src="../figure/app_minesweeper.png" alt="Minesweeper" loading="lazy" /></div>
+            <span>minesweeper.exe</span>
+          </button>
+          <button type="button" class="win-gallery-item" data-open-dialog="dlg-paint">
+            <div class="win-gallery-frame"><img src="../figure/app_paint.png" alt="Paint" loading="lazy" /></div>
+            <span>paint.exe</span>
+          </button>
+          <button type="button" class="win-gallery-item" data-open-dialog="dlg-cards">
+            <div class="win-gallery-frame"><img src="../figure/app_solitaire.png" alt="Cards" loading="lazy" /></div>
+            <span>cards.exe</span>
+          </button>
+          <button type="button" class="win-gallery-item" data-open-dialog="dlg-calc">
+            <div class="win-gallery-frame"><img src="../figure/app_calculator.png" alt="Calculator" loading="lazy" /></div>
+            <span>calc.exe</span>
+          </button>
+          <button type="button" class="win-gallery-item" data-open-dialog="dlg-notepad">
+            <div class="win-gallery-frame"><img src="../figure/app_notepad.png" alt="Notepad" loading="lazy" /></div>
+            <span>notepad.exe</span>
+          </button>
+          <button type="button" class="win-gallery-item" data-open-dialog="dlg-media">
+            <div class="win-gallery-frame"><img src="../figure/app_media.png" alt="Media Player" loading="lazy" /></div>
+            <span>mplayer.exe</span>
+          </button>
+          <a class="win-gallery-item" href="#" data-lightbox="figure/section_boot_splash.png" data-lightbox-title="boot_splash.bmp">
+            <div class="win-gallery-frame"><img src="../figure/section_boot_splash.png" alt="Boot splash" loading="lazy" /></div>
+            <span>boot_splash.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="#" data-lightbox="figure/section_control_panel.png" data-lightbox-title="control_panel.bmp">
+            <div class="win-gallery-frame"><img src="../figure/section_control_panel.png" alt="Control panel" loading="lazy" /></div>
+            <span>control_panel.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="#" data-lightbox="figure/section_dashboard.png" data-lightbox-title="dashboard.bmp">
+            <div class="win-gallery-frame"><img src="../figure/section_dashboard.png" alt="Dashboard" loading="lazy" /></div>
+            <span>dashboard.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="#" data-lightbox="figure/section_paint_viewer.png" data-lightbox-title="paint_viewer.bmp">
+            <div class="win-gallery-frame"><img src="../figure/section_paint_viewer.png" alt="Paint viewer" loading="lazy" /></div>
+            <span>paint_viewer.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../about.html">
+            <div class="win-gallery-frame"><img src="../figure/section_about.png" alt="About" loading="lazy" /></div>
+            <span>about_boat.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../cv.html">
+            <div class="win-gallery-frame"><img src="../figure/section_education.png" alt="Education" loading="lazy" /></div>
+            <span>education.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../talks.html">
+            <div class="win-gallery-frame"><img src="../figure/section_awards.png" alt="Awards" loading="lazy" /></div>
+            <span>awards.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../projects.html">
+            <div class="win-gallery-frame"><img src="../figure/section_opensource.png" alt="Open source" loading="lazy" /></div>
+            <span>opensource.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="../cv.html">
+            <div class="win-gallery-frame"><img src="../figure/4a457f42-7ae0-836b-9c23-019d1db166a4.png" alt="DS AI certificate" loading="lazy" /></div>
+            <span>DS_AI_certificate.bmp</span>
+          </a>
+        </div>
+        <div class="win-gallery-status"><span>15 object(s)</span><span data-i18n="home.appsHint">.exe をクリックして起動 · 画像はプレビュー</span></div>
+      </div>
+
+      <div class="section-label" style="margin-top:52px" data-i18n="home.areasLabel">研究分野</div>
+      <div class="highlights-grid">
+        <div class="highlight-card" data-reveal>
+          <div class="highlight-media"><img src="../figure/section_bioinformatics.png" alt="" loading="lazy" /></div>
+          <div class="highlight-cat">⬡ Bioinformatics</div>
+          <h3>Protein &amp; Enzyme Discovery</h3>
+          <p>Large-scale computational discovery of marine enzymes using protein language models, deep clustering, and structural analysis.</p>
+          <a href="../research.html" class="highlight-link">Explore →</a>
+        </div>
+        <div class="highlight-card" data-reveal="delay-1">
+          <div class="highlight-media"><img src="../figure/section_cheminformatics.png" alt="" loading="lazy" /></div>
+          <div class="highlight-cat">⬡ Chemoinformatics</div>
+          <h3>Chemical Space &amp; Molecular AI</h3>
+          <p>Generative models and graph neural networks for molecular formula assignment, toxicity prediction, and chemical space exploration.</p>
+          <a href="../research.html" class="highlight-link">Explore →</a>
+        </div>
+        <div class="highlight-card" data-reveal="delay-2">
+          <div class="highlight-media"><img src="../figure/section_environmental.png" alt="" loading="lazy" /></div>
+          <div class="highlight-cat">⬡ Environmental Science</div>
+          <h3>DOM &amp; Marine Carbon</h3>
+          <p>Decoding dissolved organic matter complexity in aquatic environments using HR-MS/MS and kinetic deep learning models.</p>
+          <a href="../research.html" class="highlight-link">Explore →</a>
+        </div>
+        <div class="highlight-card" data-reveal="delay-3">
+          <div class="highlight-media"><img src="../figure/section_ml_gnn.png" alt="" loading="lazy" /></div>
+          <div class="highlight-cat">⬡ Machine Learning</div>
+          <h3>GNN &amp; Physics-Informed Models</h3>
+          <p>Graph Transformers, PINNs, and VAE architectures applied to environmental fate modeling, biotransformation, and drug discovery.</p>
+          <a href="../research.html" class="highlight-link">Explore →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT PUBLICATIONS -->
+  <section class="section alt-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Recent Publications</h2>
+        <a href="../publications.html" class="see-all">See all →</a>
+      </div>
+      <div class="section-hero-fig">
+        <img src="../figure/section_publications.png" alt="Publications illustration" loading="lazy" />
+      </div>
+      <div class="pub-list">
+        <article class="pub-card" data-reveal>
+          <span class="pub-year-col">2026</span>
+          <div class="pub-body">
+            <h4><a href="https://pubs.acs.org/doi/abs/10.1021/acsestwater.5c00828" target="_blank" rel="noopener">Multigenerational Toxicity Prediction Using Graph Neural Networks and Biotransformation Analysis</a></h4>
+            <p class="pub-authors"><strong>S. Klabklaydee</strong>, B. Zhang, J. Liu, N. Subsa-ard et al.</p>
+            <span class="pub-venue">ACS ES&amp;T Water</span>
+          </div>
+        </article>
+        <article class="pub-card" data-reveal="delay-1">
+          <span class="pub-year-col">2025</span>
+          <div class="pub-body">
+            <h4><a href="https://www.sciencedirect.com/science/article/pii/S004313542500555X" target="_blank" rel="noopener">Accurate detection and high throughput profiling of unknown PFAS transformation products for elucidating degradation pathways</a></h4>
+            <p class="pub-authors">B. Zhang, J. Liu, S. Qing, T.M. Herath, H. Zhao, <strong>S. Klabklaydee</strong> et al.</p>
+            <span class="pub-venue">Water Research · 13 citations</span>
+          </div>
+        </article>
+        <article class="pub-card" data-reveal="delay-2">
+          <span class="pub-year-col">2025</span>
+          <div class="pub-body">
+            <h4><a href="https://chemrxiv.org/doi/abs/10.26434/chemrxiv-2025-r8h7p" target="_blank" rel="noopener">Structural and Kinetic Analysis of Carboxyl-Metabolizing Enzymes…</a></h4>
+            <p class="pub-authors"><strong>S. Klabklaydee</strong>, N. Subsa-ard, M. Fujii</p>
+            <span class="pub-venue">ChemRxiv (Preprint) · First Author</span>
+          </div>
+        </article>
+        <article class="pub-card" data-reveal="delay-3">
+          <span class="pub-year-col">2025</span>
+          <div class="pub-body">
+            <h4><a href="https://openreview.net/forum?id=LHOLT4Kruf" target="_blank" rel="noopener">Structurally-aware Genetic Algorithm for Vaccine Development</a></h4>
+            <p class="pub-authors"><strong>S. Klabklaydee</strong>, S. Conti, F.L. da Silva</p>
+            <span class="pub-venue">OpenReview</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TALKS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Talks &amp; Recognition</h2>
+        <a href="../talks.html" class="see-all">View all →</a>
+      </div>
+      <div class="section-hero-fig">
+        <img src="../figure/section_talks.png" alt="Talks and conference illustration" loading="lazy" />
+      </div>
+      <div class="talks-preview-grid" data-reveal>
+        <article class="talk-preview-card">
+          <div class="talk-card-media"><img src="../figure/section_hpc.png" alt="" loading="lazy" /></div>
+          <span class="talk-preview-year">2025</span>
+          <h3>Top Presenter — LLNL Summer Case Competition</h3>
+          <p>Structure-Aware Genetic Algorithm · JST × Lawrence Livermore National Laboratory</p>
+        </article>
+        <article class="talk-preview-card">
+          <div class="talk-card-media"><img src="../figure/section_cheminformatics.png" alt="" loading="lazy" /></div>
+          <span class="talk-preview-year">2025</span>
+          <h3>Kyoto University · Amgen Symposium</h3>
+          <p>Cheminformatics &amp; ML for molecular discovery and environmental fate</p>
+        </article>
+        <article class="talk-preview-card">
+          <div class="talk-card-media"><img src="../figure/section_talks.png" alt="" loading="lazy" /></div>
+          <span class="talk-preview-year">2019</span>
+          <h3>Intel International Science and Engineering Fair</h3>
+          <p>Finalist presentation · Phoenix, Arizona</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- SYSTEM METERS -->
+  <section class="section section-sm">
+    <div class="container" data-win-panel>
+      <div class="hero-welcome-titlebar">
+        <span>💾</span><span>System Properties — BoatOS</span>
+        <span class="win-ctrls">
+          <button type="button" data-win-min aria-label="Minimize">_</button>
+          <button type="button" data-win-max aria-label="Maximize">□</button>
+          <button type="button" data-win-close aria-label="Close">×</button>
+        </span>
+      </div>
+      <div class="sys-props-body" data-win-body>
+        <div class="sys-props-art fig-frame">
+          <img src="../figure/section_dashboard.png" alt="System dashboard" loading="lazy" />
+        </div>
+        <div class="sys-meters">
+          <div class="sys-meter" data-meter="94"><span>Deep Learning</span><div class="sys-meter-track"><i data-meter-fill></i></div></div>
+          <div class="sys-meter" data-meter="90"><span>Cheminformatics</span><div class="sys-meter-track"><i data-meter-fill></i></div></div>
+          <div class="sys-meter" data-meter="88"><span>HPC / Software</span><div class="sys-meter-track"><i data-meter-fill></i></div></div>
+          <div class="sys-meter" data-meter="85"><span>Scientific Writing</span><div class="sys-meter-track"><i data-meter-fill></i></div></div>
+          <div class="sys-meter" data-meter="80"><span>Teaching / Workshops</span><div class="sys-meter-track"><i data-meter-fill></i></div></div>
+        </div>
+        <p class="sys-props-note">Tip: Start → Minesweeper / Paint / Cards · desktop icons · gallery app tiles</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE TASKBAR -->
+  <footer class="site-taskbar" role="contentinfo">
+    <button type="button" class="site-start-btn" id="site-start-btn" aria-expanded="false" aria-controls="site-start-menu">
+      <span class="site-start-logo" aria-hidden="true"></span> Start
+    </button>
+    <div class="site-task-apps">
+      <a class="site-task-btn" href="../about.html">About</a>
+      <a class="site-task-btn" href="../research.html">Research</a>
+      <a class="site-task-btn" href="../cv.html">CV</a>
+      <button type="button" class="site-task-btn" data-open-dialog="dlg-mines">Mines</button>
+      <button type="button" class="site-task-btn" data-open-dialog="dlg-paint">Paint</button>
+      <button type="button" class="site-task-btn" data-open-dialog="dlg-calc">Calc</button>
+      <a class="site-task-btn" href="../win95.html">BoatOS Desktop</a>
+    </div>
+    <div class="site-tray">
+      <span aria-hidden="true">🔊</span>
+      <time data-win-clock>--:--</time>
+    </div>
+  </footer>
+
+  <div id="site-start-menu" class="site-start-menu" hidden>
+    <div class="site-start-side"><span>BoatOS</span><span>95</span></div>
+    <ul>
+      <li><a href="../about.html">📄 About</a></li>
+      <li><a href="../projects.html">📁 Projects</a></li>
+      <li><a href="../research.html">🔬 Research</a></li>
+      <li><a href="../cv.html">📋 CV</a></li>
+      <li><a href="../win95.html">🖥️ Full Desktop</a></li>
+      <li class="site-start-sep"></li>
+      <li><button type="button" data-open-dialog="dlg-computer">💻 My Computer</button></li>
+      <li><button type="button" data-open-dialog="dlg-control">⚙️ Control Panel</button></li>
+      <li class="site-start-sep"></li>
+      <li><button type="button" data-open-dialog="dlg-mines">💣 Minesweeper</button></li>
+      <li><button type="button" data-open-dialog="dlg-paint">🎨 Paint</button></li>
+      <li><button type="button" data-open-dialog="dlg-calc">🔢 Calculator</button></li>
+      <li><button type="button" data-open-dialog="dlg-notepad">📝 Notepad</button></li>
+      <li><button type="button" data-open-dialog="dlg-cards">🃏 Cards</button></li>
+      <li><button type="button" data-open-dialog="dlg-media">🎵 Media Player</button></li>
+    </ul>
+  </div>
+
+  <!-- DIALOGS -->
+  <div id="dlg-computer" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-computer-title">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar">
+        <span>💻</span><span id="dlg-computer-title">My Computer</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-computer" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body">
+        <img src="../figure/icon_my_computer.png" alt="" class="win-dialog-icon" />
+        <p><strong>BoatOS Drive (C:)</strong></p>
+        <ul class="win-dialog-list">
+          <li><a href="../about.html">About Me</a></li>
+          <li><a href="../cv.html">Curriculum Vitae</a></li>
+          <li><a href="../Supaporn_Klabklaydee_CV_Computing.pdf">Computing CV.pdf</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+        </ul>
+        <button type="button" class="bevel-btn" data-close-dialog="dlg-computer">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-network" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-network-title">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar">
+        <span>🌐</span><span id="dlg-network-title">Network Neighborhood</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-network" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body">
+        <img src="../figure/icon_network.png" alt="" class="win-dialog-icon" />
+        <p>Connected collaborators</p>
+        <ul class="win-dialog-list">
+          <li>Institute of Science Tokyo — Fujii Lab</li>
+          <li>JAMSTEC &amp; RIKEN — HPC bioinformatics</li>
+          <li>LLNL DSSI 2025 — alumni</li>
+          <li><a href="https://github.com/Suppboat2544" target="_blank" rel="noopener">GitHub / Suppboat2544</a></li>
+        </ul>
+        <button type="button" class="bevel-btn" data-close-dialog="dlg-network">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-control" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-control-title">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar">
+        <span>⚙️</span><span id="dlg-control-title">Control Panel</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-control" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body">
+        <img src="../figure/section_control_panel.png" alt="" class="win-dialog-banner" />
+        <p>Quick settings</p>
+        <ul class="win-dialog-list">
+          <li><a href="../win95.html">Launch full BoatOS desktop</a></li>
+          <li><a href="../index.html?skipboot=1">Skip boot next time</a></li>
+          <li><a href="mailto:klabklaydee.s.aa@m.titech.ac.jp">Mail Boat</a></li>
+        </ul>
+        <button type="button" class="bevel-btn" data-close-dialog="dlg-control">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-recycle" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-recycle-title">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar">
+        <span>🗑️</span><span id="dlg-recycle-title">Recycle Bin</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-recycle" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body">
+        <p>Recycle Bin is empty.<br>Old cinematic video hero has been permanently deleted.</p>
+        <button type="button" class="bevel-btn" data-close-dialog="dlg-recycle">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-lightbox" class="win-dialog" hidden role="dialog" aria-labelledby="lightbox-title">
+    <div class="win-dialog-panel win-dialog-wide">
+      <div class="hero-welcome-titlebar">
+        <span>🖼</span><span id="lightbox-title">Image Preview</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-lightbox" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body win-lightbox-body">
+        <img id="lightbox-img" src="" alt="Preview" />
+        <button type="button" class="bevel-btn" data-close-dialog="dlg-lightbox">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAMES / APPS -->
+  <div id="dlg-mines" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-mines-title">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar">
+        <span>💣</span><span id="dlg-mines-title">Minesweeper</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-mines" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body mine-app">
+        <img src="../figure/app_minesweeper.png" alt="" class="win-dialog-banner" />
+        <div class="mine-hud">
+          <span id="mine-flags">010</span>
+          <button type="button" id="mine-face" class="mine-face" aria-label="New game">🙂</button>
+          <button type="button" id="mine-new" class="bevel-btn">New</button>
+        </div>
+        <div id="mine-grid" class="mine-grid" aria-label="Minesweeper board"></div>
+        <p class="mine-help">Left-click open · right-click flag</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-paint" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-paint-title">
+    <div class="win-dialog-panel win-dialog-wide">
+      <div class="hero-welcome-titlebar">
+        <span>🎨</span><span id="dlg-paint-title">Paint — untitled</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-paint" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body paint-app">
+        <div class="paint-toolbar">
+          <button type="button" class="paint-swatch is-active" data-paint-color="#000080" style="--c:#000080" aria-label="Navy"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#008080" style="--c:#008080" aria-label="Teal"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#000000" style="--c:#000" aria-label="Black"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#c00" style="--c:#c00" aria-label="Red"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#080" style="--c:#080" aria-label="Green"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#fff" style="--c:#fff" aria-label="Eraser white"></button>
+          <label class="paint-size-label">Size <input id="paint-size" type="range" min="1" max="16" value="3" /></label>
+          <button type="button" class="bevel-btn" id="paint-clear">Clear</button>
+        </div>
+        <canvas id="paint-canvas" width="520" height="280" aria-label="Paint canvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-calc" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-calc-title">
+    <div class="win-dialog-panel" style="width:min(280px,100%)">
+      <div class="hero-welcome-titlebar">
+        <span>🔢</span><span id="dlg-calc-title">Calculator</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-calc" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body calc-app">
+        <img src="../figure/app_calculator.png" alt="" class="win-dialog-icon" />
+        <div id="calc-display" class="calc-display">0</div>
+        <div class="calc-keys">
+          <button type="button" data-calc="C">C</button>
+          <button type="button" data-calc="/">/</button>
+          <button type="button" data-calc="*">*</button>
+          <button type="button" data-calc="-">-</button>
+          <button type="button" data-calc="7">7</button>
+          <button type="button" data-calc="8">8</button>
+          <button type="button" data-calc="9">9</button>
+          <button type="button" data-calc="+">+</button>
+          <button type="button" data-calc="4">4</button>
+          <button type="button" data-calc="5">5</button>
+          <button type="button" data-calc="6">6</button>
+          <button type="button" data-calc="=" class="calc-eq">=</button>
+          <button type="button" data-calc="1">1</button>
+          <button type="button" data-calc="2">2</button>
+          <button type="button" data-calc="3">3</button>
+          <button type="button" data-calc="0" class="calc-zero">0</button>
+          <button type="button" data-calc=".">.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-notepad" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-notepad-title">
+    <div class="win-dialog-panel win-dialog-wide">
+      <div class="hero-welcome-titlebar">
+        <span>📝</span><span id="dlg-notepad-title">Notepad — ideas.txt</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-notepad" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body">
+        <img src="../figure/app_notepad.png" alt="" class="win-dialog-banner" />
+        <textarea id="notepad-area" class="notepad-area" rows="10" placeholder="Type research notes here…">BoatOS 95 notes
+- Finish CRAM Digital Twin
+- Polish GSAT open-source README
+- Schedule JAMSTEC / RIKEN sync
+</textarea>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-cards" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-cards-title">
+    <div class="win-dialog-panel win-dialog-wide">
+      <div class="hero-welcome-titlebar">
+        <span>🃏</span><span id="dlg-cards-title">Cards — Match Pairs</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-cards" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body">
+        <img src="../figure/app_solitaire.png" alt="" class="win-dialog-banner" />
+        <div class="cards-hud">
+          <span id="cards-status">Match the pairs</span>
+          <button type="button" class="bevel-btn" id="cards-new">New Game</button>
+        </div>
+        <div id="cards-board" class="cards-board" aria-label="Memory cards"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-media" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-media-title">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar">
+        <span>🎵</span><span id="dlg-media-title">Media Player</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-media" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body media-app">
+        <img src="../figure/app_media.png" alt="" class="win-dialog-banner" />
+        <p id="media-track" class="media-track">Ocean Graph Theme</p>
+        <div class="media-track-bar"><i id="media-bar"></i></div>
+        <div class="media-controls">
+          <button type="button" class="bevel-btn" id="media-play" data-song-play>▶ Play Theme</button>
+          <button type="button" class="bevel-btn" id="media-stop" data-song-stop>■ Stop</button>
+          <button type="button" class="bevel-btn" id="media-next">⏭ +12s</button>
+        </div>
+        <p class="mine-help" data-i18n="home.songDesc">本サイトのためのオリジナル研究ストーリー楽曲</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Song dock -->
+  <aside id="song-dock" class="song-dock" aria-label="Research theme music">
+    <img src="../figure/app_media.png" alt="" class="song-dock-art" />
+    <div class="song-dock-meta">
+      <strong data-i18n="home.songTitle">Ocean Graph Theme</strong>
+      <span id="song-dock-status">Theme ready</span>
+      <div class="song-dock-track"><i id="song-dock-bar"></i></div>
+    </div>
+    <div class="song-dock-btns">
+      <button type="button" class="bevel-btn" data-song-play>▶ Play Theme</button>
+      <button type="button" class="bevel-btn" data-song-stop>■</button>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+    <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="footer-logo">SK · BoatOS 95</a>
+        <p>Structure-aware machine learning for molecular toxicology, biotransformation, PFAS fate, and aquatic chemical space.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <div class="footer-nav-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../research.html">Research</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Current Work</h4>
+          <ul>
+            <li><a href="../cram.html">CRAM-GTransformer</a></li>
+            <li><a href="../gsat.html">GSAT Model</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>More</h4>
+          <ul>
+            <li><a href="../publications.html">Publications</a></li>
+            <li><a href="../talks.html">Talks</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../cv.html">CV</a></li>
+            <li><a href="../win95.html">BoatOS Desktop</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Supaporn Klabklaydee &middot; Institute of Science Tokyo</p>
+      <nav class="lang-switch" aria-label="Language">
+        <a href="../index.html" data-lang="en" hreflang="en">EN</a>
+        <a href="../th/index.html" data-lang="th" hreflang="th">ไทย</a>
+        <a href="index.html" data-lang="ja" hreflang="ja">日本語</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://github.com/Suppboat2544" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/supaporn-klabklaydee-1a43401b6" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://orcid.org/0009-0000-9747-711X" target="_blank" rel="noopener" aria-label="ORCID">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.888-1.575 3.888-3.722 0-2.016-1.453-3.722-3.888-3.722h-2.297z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="../i18n.js"></script>
+
+
+  <script src="../main.js"></script>
+  <script src="../boatos-song.js"></script>
+  <script src="../boatos-home.js"></script>
+  <script src="../boatos-games.js"></script>
+</body>
+</html>

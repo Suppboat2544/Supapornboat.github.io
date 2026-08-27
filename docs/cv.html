@@ -37,19 +37,20 @@
         <span class="nav-logo-sub">BoatOS 95</span>
       </a>
       <ul class="nav-links nav-cinematic-links" id="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="talks.html">Talks</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="cv.html" class="active" aria-current="page">CV</a></li>
-          <li><a href="cram.html" class="nav-cinematic-highlight">CRAM</a></li>
-          <li><a href="gsat.html" class="nav-cinematic-highlight">GSAT</a></li>
-          <li><a href="win95.html" class="nav-cinematic-highlight">BoatOS</a></li>
+          <li><a href="index.html" data-i18n-nav="home">Home</a></li>
+          <li><a href="about.html" data-i18n-nav="about">About</a></li>
+          <li><a href="research.html" data-i18n-nav="research">Research</a></li>
+          <li><a href="publications.html" data-i18n-nav="publications">Publications</a></li>
+          <li><a href="talks.html" data-i18n-nav="talks">Talks</a></li>
+          <li><a href="projects.html" data-i18n-nav="projects">Projects</a></li>
+          <li><a href="cv.html" class="active" aria-current="page" data-i18n-nav="cv">CV</a></li>
+          <li><a href="cram.html" class="nav-cinematic-highlight" data-i18n-nav="cram">CRAM</a></li>
+          <li><a href="gsat.html" class="nav-cinematic-highlight" data-i18n-nav="gsat">GSAT</a></li>
+          <li><a href="win95.html" class="nav-cinematic-highlight" data-i18n-nav="boatos">BoatOS</a></li>
       </ul>
       <div class="nav-cinematic-actions">
-        <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp" class="nav-cinematic-cta">Collaborate</a>
+        <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp" class="nav-cinematic-cta" data-i18n-nav="collaborate">Collaborate</a>
+        <nav class="lang-switch lang-switch-nav" aria-label="Language"><a href="cv.html" data-lang="en" hreflang="en">EN</a><a href="th/cv.html" data-lang="th" hreflang="th">ไทย</a><a href="ja/cv.html" data-lang="ja" hreflang="ja">日本語</a></nav>
         <button class="nav-burger nav-cinematic-burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" onclick="toggleMenu()">
           <span></span><span></span><span></span>
         </button>
@@ -631,6 +632,11 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 Supaporn Klabklaydee &middot; Institute of Science Tokyo</p>
+      <nav class="lang-switch" aria-label="Language">
+        <a href="cv.html" data-lang="en" hreflang="en">EN</a>
+        <a href="th/cv.html" data-lang="th" hreflang="th">ไทย</a>
+        <a href="ja/cv.html" data-lang="ja" hreflang="ja">日本語</a>
+      </nav>
       <div class="footer-social">
         <a href="https://github.com/Suppboat2544" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
@@ -644,6 +650,7 @@
       </div>
     </div>
   </footer>
+  <script src="i18n.js"></script>
 
 
   <script src="main.js"></script>

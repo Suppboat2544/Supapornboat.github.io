@@ -88,6 +88,26 @@
         <span class="boatos-desk-emoji">🗑️</span>
         <em>Recycle Bin</em>
       </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-mines">
+        <img src="figure/app_minesweeper.png" alt="" />
+        <em>Minesweeper</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-paint">
+        <img src="figure/app_paint.png" alt="" />
+        <em>Paint</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-cards">
+        <img src="figure/app_solitaire.png" alt="" />
+        <em>Cards</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-calc">
+        <img src="figure/app_calculator.png" alt="" />
+        <em>Calculator</em>
+      </button>
+      <button type="button" class="boatos-desk-icon" data-open-dialog="dlg-media">
+        <img src="figure/app_media.png" alt="" />
+        <em>Media</em>
+      </button>
     </aside>
 
             <nav class="nav nav-cinematic" id="nav" aria-label="Main navigation">
@@ -97,19 +117,20 @@
         <span class="nav-logo-sub">BoatOS 95</span>
       </a>
       <ul class="nav-links nav-cinematic-links" id="nav-links">
-          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="talks.html">Talks</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="cv.html">CV</a></li>
-          <li><a href="cram.html" class="nav-cinematic-highlight">CRAM</a></li>
-          <li><a href="gsat.html" class="nav-cinematic-highlight">GSAT</a></li>
-          <li><a href="win95.html" class="nav-cinematic-highlight">BoatOS</a></li>
+          <li><a href="index.html" class="active" aria-current="page" data-i18n-nav="home">Home</a></li>
+          <li><a href="about.html" data-i18n-nav="about">About</a></li>
+          <li><a href="research.html" data-i18n-nav="research">Research</a></li>
+          <li><a href="publications.html" data-i18n-nav="publications">Publications</a></li>
+          <li><a href="talks.html" data-i18n-nav="talks">Talks</a></li>
+          <li><a href="projects.html" data-i18n-nav="projects">Projects</a></li>
+          <li><a href="cv.html" data-i18n-nav="cv">CV</a></li>
+          <li><a href="cram.html" class="nav-cinematic-highlight" data-i18n-nav="cram">CRAM</a></li>
+          <li><a href="gsat.html" class="nav-cinematic-highlight" data-i18n-nav="gsat">GSAT</a></li>
+          <li><a href="win95.html" class="nav-cinematic-highlight" data-i18n-nav="boatos">BoatOS</a></li>
       </ul>
       <div class="nav-cinematic-actions">
-        <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp" class="nav-cinematic-cta">Collaborate</a>
+        <a href="mailto:klabklaydee.s.aa@m.titech.ac.jp" class="nav-cinematic-cta" data-i18n-nav="collaborate">Collaborate</a>
+        <nav class="lang-switch lang-switch-nav" aria-label="Language"><a href="index.html" data-lang="en" hreflang="en">EN</a><a href="th/index.html" data-lang="th" hreflang="th">ไทย</a><a href="ja/index.html" data-lang="ja" hreflang="ja">日本語</a></nav>
         <button class="nav-burger nav-cinematic-burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" onclick="toggleMenu()">
           <span></span><span></span><span></span>
         </button>
@@ -131,11 +152,11 @@
           </div>
           <div class="hero-welcome-body hero-welcome-split" data-win-body>
             <div class="hero-welcome-copy">
-              <p class="hero-cinematic-eyebrow">Supaporn Klabklaydee · Institute of Science Tokyo</p>
+              <p class="hero-cinematic-eyebrow" data-i18n="home.eyebrow">Supaporn Klabklaydee · Institute of Science Tokyo</p>
               <h1 class="hero-cinematic-title">
                 From <em class="hero-em">molecular graphs</em><br class="hero-br">to <em class="hero-em">environmental fate.</em>
               </h1>
-              <p class="hero-cinematic-sub">
+              <p class="hero-cinematic-sub" data-i18n="home.headline">
                 Boat — Ph.D. researcher building structure-aware ML on molecular graphs:
                 GNN-based LC<sub>50</sub> prediction, biotransformation pathway modeling, PFAS transformation products, and DOM chemical space.
               </p>
@@ -279,11 +300,17 @@
         </a>
       </div>
 
-      <div class="section-label" style="margin-top:52px">Research Gallery</div>
+      <div class="section-label" style="margin-top:52px" data-i18n="home.journeyLabel">Research Journey</div>
+      <figure class="study-journey" data-reveal>
+        <img src="figure/study_research_journey.png" alt="From coastal water samples to Tokyo lab AI molecular models" loading="lazy" />
+        <figcaption data-i18n="home.journeyCap">From field water → Tokyo lab → graph AI for aquatic chemistry</figcaption>
+      </figure>
+
+      <div class="section-label" style="margin-top:52px" data-i18n="home.galleryLabel">Research Gallery</div>
       <div class="win-gallery" data-reveal>
         <div class="win-gallery-titlebar">
           <span>🖼</span>
-          <span>My Pictures — Research Figures</span>
+          <span data-i18n="home.galleryTitle">My Pictures — Research Figures</span>
           <span class="win-ctrls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
         </div>
         <div class="win-gallery-toolbar">
@@ -310,9 +337,21 @@
             <div class="win-gallery-frame"><img src="figure/reactivity.png" alt="Molecular reactivity" loading="lazy" /></div>
             <span>reactivity.bmp</span>
           </a>
-          <a class="win-gallery-item" href="cv.html">
-            <div class="win-gallery-frame"><img src="figure/4a457f42-7ae0-836b-9c23-019d1db166a4.png" alt="Data Science &amp; AI certificate" loading="lazy" /></div>
-            <span>DS_AI_certificate.bmp</span>
+          <a class="win-gallery-item" href="cram.html" data-lightbox="figure/study_dom_cram.png" data-lightbox-title="dom_cram.bmp">
+            <div class="win-gallery-frame"><img src="figure/study_dom_cram.png" alt="DOM and CRAM molecules" loading="lazy" /></div>
+            <span>dom_cram.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="gsat.html" data-lightbox="figure/study_gnn_graph.png" data-lightbox-title="gnn_graph.bmp">
+            <div class="win-gallery-frame"><img src="figure/study_gnn_graph.png" alt="Graph neural network on molecules" loading="lazy" /></div>
+            <span>gnn_graph.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="research.html" data-lightbox="figure/study_pfas_pathway.png" data-lightbox-title="pfas_pathway.bmp">
+            <div class="win-gallery-frame"><img src="figure/study_pfas_pathway.png" alt="PFAS transformation pathway" loading="lazy" /></div>
+            <span>pfas_pathway.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="research.html" data-lightbox="figure/study_marine_enzyme.png" data-lightbox-title="marine_enzyme.bmp">
+            <div class="win-gallery-frame"><img src="figure/study_marine_enzyme.png" alt="Marine enzyme discovery" loading="lazy" /></div>
+            <span>marine_enzyme.bmp</span>
           </a>
           <a class="win-gallery-item" href="research.html">
             <div class="win-gallery-frame"><img src="figure/section_bioinformatics.png" alt="Bioinformatics illustration" loading="lazy" /></div>
@@ -322,51 +361,129 @@
             <div class="win-gallery-frame"><img src="figure/section_hpc.png" alt="HPC computing illustration" loading="lazy" /></div>
             <span>hpc_cluster.bmp</span>
           </a>
-          <a class="win-gallery-item" href="about.html">
-            <div class="win-gallery-frame"><img src="figure/section_about.png" alt="About illustration" loading="lazy" /></div>
-            <span>about_boat.bmp</span>
+          <a class="win-gallery-item" href="research.html">
+            <div class="win-gallery-frame"><img src="figure/section_pfas.png" alt="PFAS chemistry illustration" loading="lazy" /></div>
+            <span>pfas_chem.bmp</span>
           </a>
-          <a class="win-gallery-item" href="projects.html">
-            <div class="win-gallery-frame"><img src="figure/section_opensource.png" alt="Open source illustration" loading="lazy" /></div>
-            <span>opensource.bmp</span>
+          <a class="win-gallery-item" href="research.html">
+            <div class="win-gallery-frame"><img src="figure/section_cheminformatics.png" alt="Cheminformatics illustration" loading="lazy" /></div>
+            <span>cheminformatics.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="research.html">
+            <div class="win-gallery-frame"><img src="figure/section_ml_gnn.png" alt="ML GNN illustration" loading="lazy" /></div>
+            <span>ml_gnn.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="research.html">
+            <div class="win-gallery-frame"><img src="figure/section_environmental.png" alt="Environmental science illustration" loading="lazy" /></div>
+            <span>environmental.bmp</span>
           </a>
           <a class="win-gallery-item" href="research.html">
             <div class="win-gallery-frame"><img src="figure/section_collaboration.png" alt="Collaboration illustration" loading="lazy" /></div>
             <span>collaboration.bmp</span>
           </a>
-          <a class="win-gallery-item" href="research.html">
-            <div class="win-gallery-frame"><img src="figure/section_pfas.png" alt="PFAS chemistry illustration" loading="lazy" /></div>
-            <span>pfas_chem.bmp</span>
-          </a>
-          <a class="win-gallery-item" href="talks.html">
-            <div class="win-gallery-frame"><img src="figure/section_awards.png" alt="Awards illustration" loading="lazy" /></div>
-            <span>awards.bmp</span>
-          </a>
-          <a class="win-gallery-item" href="cv.html" data-lightbox="figure/section_education.png" data-lightbox-title="education.bmp">
-            <div class="win-gallery-frame"><img src="figure/section_education.png" alt="Education illustration" loading="lazy" /></div>
-            <span>education.bmp</span>
-          </a>
-          <a class="win-gallery-item" href="#" data-lightbox="figure/section_paint_viewer.png" data-lightbox-title="paint_viewer.bmp">
-            <div class="win-gallery-frame"><img src="figure/section_paint_viewer.png" alt="Paint viewer illustration" loading="lazy" /></div>
-            <span>paint_viewer.bmp</span>
-          </a>
-          <a class="win-gallery-item" href="#" data-lightbox="figure/section_dashboard.png" data-lightbox-title="dashboard.bmp">
-            <div class="win-gallery-frame"><img src="figure/section_dashboard.png" alt="Dashboard illustration" loading="lazy" /></div>
-            <span>dashboard.bmp</span>
-          </a>
-          <a class="win-gallery-item" href="#" data-lightbox="figure/section_control_panel.png" data-lightbox-title="control_panel.bmp">
-            <div class="win-gallery-frame"><img src="figure/section_control_panel.png" alt="Control panel illustration" loading="lazy" /></div>
-            <span>control_panel.bmp</span>
-          </a>
-          <a class="win-gallery-item" href="#" data-lightbox="figure/section_boot_splash.png" data-lightbox-title="boot_splash.bmp">
-            <div class="win-gallery-frame"><img src="figure/section_boot_splash.png" alt="Boot splash illustration" loading="lazy" /></div>
-            <span>boot_splash.bmp</span>
-          </a>
         </div>
-        <div class="win-gallery-status"><span>18 object(s)</span><span>Double-click to preview</span></div>
+        <div class="win-gallery-status"><span>16 object(s)</span><span data-i18n="home.galleryHint">Research figures only</span></div>
       </div>
 
-      <div class="section-label" style="margin-top:52px">Research Areas</div>
+      <div class="section-label" style="margin-top:52px" data-i18n="home.affilLabel">Affiliations &amp; Partners</div>
+      <div class="affil-logos" data-reveal>
+        <a class="affil-logo-card" href="about.html#education" title="Institute of Science Tokyo">
+          <img src="figure/logo_science_tokyo.png" alt="Institute of Science Tokyo emblem" loading="lazy" />
+          <span>Institute of Science Tokyo</span>
+        </a>
+        <a class="affil-logo-card" href="about.html" title="Chulalongkorn University">
+          <img src="figure/logo_chulalongkorn.png" alt="Chulalongkorn University emblem" loading="lazy" />
+          <span>Chulalongkorn University</span>
+        </a>
+        <a class="affil-logo-card" href="about.html" title="JAMSTEC">
+          <img src="figure/logo_jamstec.png" alt="JAMSTEC emblem" loading="lazy" />
+          <span>JAMSTEC</span>
+        </a>
+        <a class="affil-logo-card" href="about.html" title="RIKEN">
+          <img src="figure/logo_riken.png" alt="RIKEN emblem" loading="lazy" />
+          <span>RIKEN</span>
+        </a>
+        <a class="affil-logo-card" href="talks.html" title="LLNL DSSI">
+          <img src="figure/logo_llnl.png" alt="LLNL emblem" loading="lazy" />
+          <span>LLNL · DSSI</span>
+        </a>
+      </div>
+      <p class="affil-note" data-i18n="home.affilNote">Affiliation marks are original stylized emblems for this portfolio (not official trademarks).</p>
+
+      <div class="section-label" style="margin-top:52px" data-i18n="home.appsLabel">BoatOS Apps &amp; Desktop Art</div>
+      <div class="win-gallery win-gallery-apps" data-reveal>
+        <div class="win-gallery-titlebar">
+          <span>🎮</span>
+          <span data-i18n="home.appsTitle">Program Files — Games &amp; Tools</span>
+          <span class="win-ctrls" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span>
+        </div>
+        <div class="win-gallery-toolbar"><span>Start</span><span>Play</span><span>Help</span></div>
+        <div class="win-gallery-grid">
+          <button type="button" class="win-gallery-item" data-open-dialog="dlg-mines">
+            <div class="win-gallery-frame"><img src="figure/app_minesweeper.png" alt="Minesweeper" loading="lazy" /></div>
+            <span>minesweeper.exe</span>
+          </button>
+          <button type="button" class="win-gallery-item" data-open-dialog="dlg-paint">
+            <div class="win-gallery-frame"><img src="figure/app_paint.png" alt="Paint" loading="lazy" /></div>
+            <span>paint.exe</span>
+          </button>
+          <button type="button" class="win-gallery-item" data-open-dialog="dlg-cards">
+            <div class="win-gallery-frame"><img src="figure/app_solitaire.png" alt="Cards" loading="lazy" /></div>
+            <span>cards.exe</span>
+          </button>
+          <button type="button" class="win-gallery-item" data-open-dialog="dlg-calc">
+            <div class="win-gallery-frame"><img src="figure/app_calculator.png" alt="Calculator" loading="lazy" /></div>
+            <span>calc.exe</span>
+          </button>
+          <button type="button" class="win-gallery-item" data-open-dialog="dlg-notepad">
+            <div class="win-gallery-frame"><img src="figure/app_notepad.png" alt="Notepad" loading="lazy" /></div>
+            <span>notepad.exe</span>
+          </button>
+          <button type="button" class="win-gallery-item" data-open-dialog="dlg-media">
+            <div class="win-gallery-frame"><img src="figure/app_media.png" alt="Media Player" loading="lazy" /></div>
+            <span>mplayer.exe</span>
+          </button>
+          <a class="win-gallery-item" href="#" data-lightbox="figure/section_boot_splash.png" data-lightbox-title="boot_splash.bmp">
+            <div class="win-gallery-frame"><img src="figure/section_boot_splash.png" alt="Boot splash" loading="lazy" /></div>
+            <span>boot_splash.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="#" data-lightbox="figure/section_control_panel.png" data-lightbox-title="control_panel.bmp">
+            <div class="win-gallery-frame"><img src="figure/section_control_panel.png" alt="Control panel" loading="lazy" /></div>
+            <span>control_panel.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="#" data-lightbox="figure/section_dashboard.png" data-lightbox-title="dashboard.bmp">
+            <div class="win-gallery-frame"><img src="figure/section_dashboard.png" alt="Dashboard" loading="lazy" /></div>
+            <span>dashboard.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="#" data-lightbox="figure/section_paint_viewer.png" data-lightbox-title="paint_viewer.bmp">
+            <div class="win-gallery-frame"><img src="figure/section_paint_viewer.png" alt="Paint viewer" loading="lazy" /></div>
+            <span>paint_viewer.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="about.html">
+            <div class="win-gallery-frame"><img src="figure/section_about.png" alt="About" loading="lazy" /></div>
+            <span>about_boat.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="cv.html">
+            <div class="win-gallery-frame"><img src="figure/section_education.png" alt="Education" loading="lazy" /></div>
+            <span>education.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="talks.html">
+            <div class="win-gallery-frame"><img src="figure/section_awards.png" alt="Awards" loading="lazy" /></div>
+            <span>awards.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="projects.html">
+            <div class="win-gallery-frame"><img src="figure/section_opensource.png" alt="Open source" loading="lazy" /></div>
+            <span>opensource.bmp</span>
+          </a>
+          <a class="win-gallery-item" href="cv.html">
+            <div class="win-gallery-frame"><img src="figure/4a457f42-7ae0-836b-9c23-019d1db166a4.png" alt="DS AI certificate" loading="lazy" /></div>
+            <span>DS_AI_certificate.bmp</span>
+          </a>
+        </div>
+        <div class="win-gallery-status"><span>15 object(s)</span><span data-i18n="home.appsHint">Click .exe to launch · art opens preview</span></div>
+      </div>
+
+      <div class="section-label" style="margin-top:52px" data-i18n="home.areasLabel">Research Areas</div>
       <div class="highlights-grid">
         <div class="highlight-card" data-reveal>
           <div class="highlight-media"><img src="figure/section_bioinformatics.png" alt="" loading="lazy" /></div>
@@ -504,7 +621,7 @@
           <div class="sys-meter" data-meter="85"><span>Scientific Writing</span><div class="sys-meter-track"><i data-meter-fill></i></div></div>
           <div class="sys-meter" data-meter="80"><span>Teaching / Workshops</span><div class="sys-meter-track"><i data-meter-fill></i></div></div>
         </div>
-        <p class="sys-props-note">Tip: click desktop icons · Start menu · gallery previews · window _ □ × controls</p>
+        <p class="sys-props-note">Tip: Start → Minesweeper / Paint / Cards · desktop icons · gallery app tiles</p>
       </div>
     </div>
   </section>
@@ -518,6 +635,9 @@
       <a class="site-task-btn" href="about.html">About</a>
       <a class="site-task-btn" href="research.html">Research</a>
       <a class="site-task-btn" href="cv.html">CV</a>
+      <button type="button" class="site-task-btn" data-open-dialog="dlg-mines">Mines</button>
+      <button type="button" class="site-task-btn" data-open-dialog="dlg-paint">Paint</button>
+      <button type="button" class="site-task-btn" data-open-dialog="dlg-calc">Calc</button>
       <a class="site-task-btn" href="win95.html">BoatOS Desktop</a>
     </div>
     <div class="site-tray">
@@ -537,6 +657,13 @@
       <li class="site-start-sep"></li>
       <li><button type="button" data-open-dialog="dlg-computer">💻 My Computer</button></li>
       <li><button type="button" data-open-dialog="dlg-control">⚙️ Control Panel</button></li>
+      <li class="site-start-sep"></li>
+      <li><button type="button" data-open-dialog="dlg-mines">💣 Minesweeper</button></li>
+      <li><button type="button" data-open-dialog="dlg-paint">🎨 Paint</button></li>
+      <li><button type="button" data-open-dialog="dlg-calc">🔢 Calculator</button></li>
+      <li><button type="button" data-open-dialog="dlg-notepad">📝 Notepad</button></li>
+      <li><button type="button" data-open-dialog="dlg-cards">🃏 Cards</button></li>
+      <li><button type="button" data-open-dialog="dlg-media">🎵 Media Player</button></li>
     </ul>
   </div>
 
@@ -626,6 +753,148 @@
     </div>
   </div>
 
+  <!-- GAMES / APPS -->
+  <div id="dlg-mines" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-mines-title">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar">
+        <span>💣</span><span id="dlg-mines-title">Minesweeper</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-mines" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body mine-app">
+        <img src="figure/app_minesweeper.png" alt="" class="win-dialog-banner" />
+        <div class="mine-hud">
+          <span id="mine-flags">010</span>
+          <button type="button" id="mine-face" class="mine-face" aria-label="New game">🙂</button>
+          <button type="button" id="mine-new" class="bevel-btn">New</button>
+        </div>
+        <div id="mine-grid" class="mine-grid" aria-label="Minesweeper board"></div>
+        <p class="mine-help">Left-click open · right-click flag</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-paint" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-paint-title">
+    <div class="win-dialog-panel win-dialog-wide">
+      <div class="hero-welcome-titlebar">
+        <span>🎨</span><span id="dlg-paint-title">Paint — untitled</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-paint" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body paint-app">
+        <div class="paint-toolbar">
+          <button type="button" class="paint-swatch is-active" data-paint-color="#000080" style="--c:#000080" aria-label="Navy"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#008080" style="--c:#008080" aria-label="Teal"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#000000" style="--c:#000" aria-label="Black"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#c00" style="--c:#c00" aria-label="Red"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#080" style="--c:#080" aria-label="Green"></button>
+          <button type="button" class="paint-swatch" data-paint-color="#fff" style="--c:#fff" aria-label="Eraser white"></button>
+          <label class="paint-size-label">Size <input id="paint-size" type="range" min="1" max="16" value="3" /></label>
+          <button type="button" class="bevel-btn" id="paint-clear">Clear</button>
+        </div>
+        <canvas id="paint-canvas" width="520" height="280" aria-label="Paint canvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-calc" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-calc-title">
+    <div class="win-dialog-panel" style="width:min(280px,100%)">
+      <div class="hero-welcome-titlebar">
+        <span>🔢</span><span id="dlg-calc-title">Calculator</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-calc" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body calc-app">
+        <img src="figure/app_calculator.png" alt="" class="win-dialog-icon" />
+        <div id="calc-display" class="calc-display">0</div>
+        <div class="calc-keys">
+          <button type="button" data-calc="C">C</button>
+          <button type="button" data-calc="/">/</button>
+          <button type="button" data-calc="*">*</button>
+          <button type="button" data-calc="-">-</button>
+          <button type="button" data-calc="7">7</button>
+          <button type="button" data-calc="8">8</button>
+          <button type="button" data-calc="9">9</button>
+          <button type="button" data-calc="+">+</button>
+          <button type="button" data-calc="4">4</button>
+          <button type="button" data-calc="5">5</button>
+          <button type="button" data-calc="6">6</button>
+          <button type="button" data-calc="=" class="calc-eq">=</button>
+          <button type="button" data-calc="1">1</button>
+          <button type="button" data-calc="2">2</button>
+          <button type="button" data-calc="3">3</button>
+          <button type="button" data-calc="0" class="calc-zero">0</button>
+          <button type="button" data-calc=".">.</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-notepad" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-notepad-title">
+    <div class="win-dialog-panel win-dialog-wide">
+      <div class="hero-welcome-titlebar">
+        <span>📝</span><span id="dlg-notepad-title">Notepad — ideas.txt</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-notepad" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body">
+        <img src="figure/app_notepad.png" alt="" class="win-dialog-banner" />
+        <textarea id="notepad-area" class="notepad-area" rows="10" placeholder="Type research notes here…">BoatOS 95 notes
+- Finish CRAM Digital Twin
+- Polish GSAT open-source README
+- Schedule JAMSTEC / RIKEN sync
+</textarea>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-cards" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-cards-title">
+    <div class="win-dialog-panel win-dialog-wide">
+      <div class="hero-welcome-titlebar">
+        <span>🃏</span><span id="dlg-cards-title">Cards — Match Pairs</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-cards" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body">
+        <img src="figure/app_solitaire.png" alt="" class="win-dialog-banner" />
+        <div class="cards-hud">
+          <span id="cards-status">Match the pairs</span>
+          <button type="button" class="bevel-btn" id="cards-new">New Game</button>
+        </div>
+        <div id="cards-board" class="cards-board" aria-label="Memory cards"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dlg-media" class="win-dialog" hidden role="dialog" aria-labelledby="dlg-media-title">
+    <div class="win-dialog-panel">
+      <div class="hero-welcome-titlebar">
+        <span>🎵</span><span id="dlg-media-title">Media Player</span>
+        <button type="button" class="win-dlg-x" data-close-dialog="dlg-media" aria-label="Close">×</button>
+      </div>
+      <div class="win-dialog-body media-app">
+        <img src="figure/app_media.png" alt="" class="win-dialog-banner" />
+        <p id="media-track" class="media-track">Ocean Graph Theme</p>
+        <div class="media-track-bar"><i id="media-bar"></i></div>
+        <div class="media-controls">
+          <button type="button" class="bevel-btn" id="media-play" data-song-play>▶ Play Theme</button>
+          <button type="button" class="bevel-btn" id="media-stop" data-song-stop>■ Stop</button>
+          <button type="button" class="bevel-btn" id="media-next">⏭ +12s</button>
+        </div>
+        <p class="mine-help" data-i18n="home.songDesc">Original study-story soundtrack for this site</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Song dock -->
+  <aside id="song-dock" class="song-dock" aria-label="Research theme music">
+    <img src="figure/app_media.png" alt="" class="song-dock-art" />
+    <div class="song-dock-meta">
+      <strong data-i18n="home.songTitle">Ocean Graph Theme</strong>
+      <span id="song-dock-status">Theme ready</span>
+      <div class="song-dock-track"><i id="song-dock-bar"></i></div>
+    </div>
+    <div class="song-dock-btns">
+      <button type="button" class="bevel-btn" data-song-play>▶ Play Theme</button>
+      <button type="button" class="bevel-btn" data-song-stop>■</button>
+    </div>
+  </aside>
+
   <!-- FOOTER -->
     <footer class="site-footer">
     <div class="footer-inner">
@@ -663,6 +932,11 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 Supaporn Klabklaydee &middot; Institute of Science Tokyo</p>
+      <nav class="lang-switch" aria-label="Language">
+        <a href="index.html" data-lang="en" hreflang="en">EN</a>
+        <a href="th/index.html" data-lang="th" hreflang="th">ไทย</a>
+        <a href="ja/index.html" data-lang="ja" hreflang="ja">日本語</a>
+      </nav>
       <div class="footer-social">
         <a href="https://github.com/Suppboat2544" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
@@ -676,9 +950,12 @@
       </div>
     </div>
   </footer>
+  <script src="i18n.js"></script>
 
 
   <script src="main.js"></script>
+  <script src="boatos-song.js"></script>
   <script src="boatos-home.js"></script>
+  <script src="boatos-games.js"></script>
 </body>
 </html>

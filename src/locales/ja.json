@@ -1,0 +1,45 @@
+{
+  "lang": "ja",
+  "langName": "日本語",
+  "nav": {
+    "home": "ホーム",
+    "about": "について",
+    "research": "研究",
+    "publications": "論文",
+    "talks": "講演",
+    "projects": "プロジェクト",
+    "cv": "履歴書",
+    "collaborate": "共同研究",
+    "cram": "CRAM",
+    "gsat": "GSAT",
+    "boatos": "BoatOS"
+  },
+  "home": {
+    "eyebrow": "Supaporn Klabklaydee · 東京科学大学",
+    "headline": "分子グラフ・生態毒性・水圏化学のための構造認識機械学習",
+    "journeyLabel": "研究の旅",
+    "journeyCap": "現場の水試料 → 東京の研究室 → 水圏化学のためのグラフAI",
+    "galleryLabel": "研究ギャラリー",
+    "galleryTitle": "マイピクチャ — 研究図",
+    "galleryHint": "研究図のみ",
+    "affilLabel": "所属・連携機関",
+    "affilNote": "所属マークは本ポートフォリオ用のオリジナル意匠です（公式商標ではありません）。",
+    "appsLabel": "BoatOS アプリとデスクトップアート",
+    "appsTitle": "Program Files — ゲームとツール",
+    "appsHint": ".exe をクリックして起動 · 画像はプレビュー",
+    "areasLabel": "研究分野",
+    "songTitle": "Ocean Graph Theme",
+    "songDesc": "本サイトのためのオリジナル研究ストーリー楽曲"
+  },
+  "footer": {
+    "blurb": "分子毒性・生物変換・PFAS動態・水圏化学空間のための構造認識機械学習。"
+  },
+  "page": {
+    "welcomeTitle": "Welcome.txt — BoatOS 95",
+    "currentWork": "現在の研究",
+    "pubs": "最近の論文",
+    "talks": "講演と受賞",
+    "seeAll": "すべて見る →",
+    "bootHint": "研究デスクトップを読み込み中"
+  }
+}
