@@ -1,0 +1,217 @@
+{
+  "title": "Graph of My Heart",
+  "bpm": 74,
+  "voice": "en-US-AriaNeural",
+  "rate": "-12%",
+  "duration_sec": 230.74,
+  "lines": [
+    {
+      "t": 0.81,
+      "text": "Mmm… soft tide"
+    },
+    {
+      "t": 4.7,
+      "text": "Calling my name from the other side"
+    },
+    {
+      "t": 9.06,
+      "text": "Boat on the water, heart open wide"
+    },
+    {
+      "t": 15.04,
+      "text": "Grew up where the coastline taught me to listen"
+    },
+    {
+      "t": 19.33,
+      "text": "Salt on the wind, every ripple a mission"
+    },
+    {
+      "t": 23.67,
+      "text": "Thailand sun on a curious mind"
+    },
+    {
+      "t": 27.72,
+      "text": "Following currents I couldn't define"
+    },
+    {
+      "t": 31.6,
+      "text": "Tokyo nights, new city, same ocean inside"
+    },
+    {
+      "t": 36.87,
+      "text": "Ph.D. dreams under Fujii Lab lights"
+    },
+    {
+      "t": 41.52,
+      "text": "Molecules dancing in patterns I draw"
+    },
+    {
+      "t": 45.91,
+      "text": "Edges and nodes — I learn what they are"
+    },
+    {
+      "t": 51.51,
+      "text": "There's a whisper in the water"
+    },
+    {
+      "t": 55.04,
+      "text": "Chemistry like a love letter"
+    },
+    {
+      "t": 58.72,
+      "text": "I read between the waves"
+    },
+    {
+      "t": 62.22,
+      "text": "Find the signal in the noise you made"
+    },
+    {
+      "t": 67.13,
+      "text": "You're the graph of my heart"
+    },
+    {
+      "t": 70.73,
+      "text": "Every bond, every start"
+    },
+    {
+      "t": 74.76,
+      "text": "Structure-aware, pulling me through the dark"
+    },
+    {
+      "t": 79.56,
+      "text": "From the shore to the stars"
+    },
+    {
+      "t": 83.26,
+      "text": "I can feel who you are"
+    },
+    {
+      "t": 86.77,
+      "text": "In the graph of my heart — oh, the graph of my heart"
+    },
+    {
+      "t": 93.64,
+      "text": "LC50 secrets on toxicity's thread"
+    },
+    {
+      "t": 98.34,
+      "text": "GSAT showing me what the molecules said"
+    },
+    {
+      "t": 102.92,
+      "text": "CRAM in the deep, DOM drifting slow"
+    },
+    {
+      "t": 107.45,
+      "text": "Ocean's old memory that only few know"
+    },
+    {
+      "t": 111.71,
+      "text": "PFAS transforming — we watch what remains"
+    },
+    {
+      "t": 116.62,
+      "text": "Water stays sacred; we carry that flame"
+    },
+    {
+      "t": 121.37,
+      "text": "JAMSTEC and RIKEN, enzymes that swim"
+    },
+    {
+      "t": 126.04,
+      "text": "LLNL summer — high compute, high hymn"
+    },
+    {
+      "t": 132.25,
+      "text": "There's a whisper in the water"
+    },
+    {
+      "t": 135.78,
+      "text": "Chemistry like a love letter"
+    },
+    {
+      "t": 139.45,
+      "text": "I read between the waves"
+    },
+    {
+      "t": 142.96,
+      "text": "Find the signal in the noise you made"
+    },
+    {
+      "t": 147.87,
+      "text": "You're the graph of my heart"
+    },
+    {
+      "t": 151.47,
+      "text": "Every bond, every start"
+    },
+    {
+      "t": 155.49,
+      "text": "Structure-aware, pulling me through the dark"
+    },
+    {
+      "t": 160.3,
+      "text": "From the shore to the stars"
+    },
+    {
+      "t": 164.0,
+      "text": "I can feel who you are"
+    },
+    {
+      "t": 167.5,
+      "text": "In the graph of my heart — oh, the graph of my heart"
+    },
+    {
+      "t": 174.38,
+      "text": "Soft now…"
+    },
+    {
+      "t": 177.7,
+      "text": "Boat still floating on what I believe"
+    },
+    {
+      "t": 182.13,
+      "text": "Neural nets humming a low melody"
+    },
+    {
+      "t": 186.4,
+      "text": "GNN holding my hand through the sea"
+    },
+    {
+      "t": 190.99,
+      "text": "Love is a molecule — structure sets free"
+    },
+    {
+      "t": 196.96,
+      "text": "You're the graph of my heart"
+    },
+    {
+      "t": 200.56,
+      "text": "Every bond, every start"
+    },
+    {
+      "t": 204.58,
+      "text": "Structure-aware, pulling me through the dark"
+    },
+    {
+      "t": 209.39,
+      "text": "From the shore to the stars"
+    },
+    {
+      "t": 213.09,
+      "text": "I can feel who you are"
+    },
+    {
+      "t": 216.59,
+      "text": "In the graph of my heart"
+    },
+    {
+      "t": 220.1,
+      "text": "Mmm… graph of my heart"
+    },
+    {
+      "t": 223.92,
+      "text": "Boat on the water… graph of my heart"
+    }
+  ]
+}
