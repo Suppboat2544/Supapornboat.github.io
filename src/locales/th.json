@@ -19,9 +19,6 @@
     "headline": "การเรียนรู้ของเครื่องที่รับรู้โครงสร้างสำหรับกราฟโมเลกุล ความเป็นพิษต่อระบบนิเวศ และเคมีทางน้ำ",
     "journeyLabel": "เส้นทางงานวิจัย",
     "journeyCap": "จากตัวอย่างน้ำภาคสนาม → ห้องแล็บโตเกียว → AI กราฟสำหรับเคมีทางน้ำ",
-    "galleryLabel": "แกลเลอรีงานวิจัย",
-    "galleryTitle": "รูปภาพของฉัน — ภาพงานวิจัย",
-    "galleryHint": "เฉพาะภาพงานวิจัย",
     "affilLabel": "สังกัดและพันธมิตร",
     "affilNote": "โลโก้หน่วยงานอย่างเป็นทางการเพื่อแสดงสังกัด",
     "appsLabel": "แอป BoatOS และศิลปะเดสก์ท็อป",
@@ -29,7 +26,17 @@
     "appsHint": "คลิก .exe เพื่อเปิด · ภาพเปิดพรีวิว",
     "areasLabel": "สาขางานวิจัย",
     "songTitle": "Soft Tide",
-    "songDesc": "R&B นุ่ม — ไทย → โตเกียว"
+    "songDesc": "R&B นุ่ม — ไทย → โตเกียว",
+    "profileLabel": "เกี่ยวกับฉัน & ทักษะ",
+    "aboutWinTitle": "About Me.txt — BoatOS",
+    "skillsWinTitle": "Skills.exe — System Properties",
+    "aboutRole": "นักวิจัยปริญญาเอก · Institute of Science Tokyo · Fujii Lab",
+    "aboutLead": "นักวิจัยชาวไทยที่สร้าง AI/ML สำหรับเคมีสิ่งแวดล้อม — จากกราฟโมเลกุลสู่ชะตากรรมในน้ำ",
+    "aboutFocus": "โฟกัส: GNN, generative molecular ML, cheminformatics, HPC",
+    "aboutEdu": "การศึกษา: Ph.D. (GPA 4.05/4.5) · M.Eng. จุฬาฯ · B.Sc. เคมี",
+    "aboutCollab": "ความร่วมมือ: JAMSTEC · RIKEN · LLNL DSSI 2025",
+    "aboutBase": "อยู่ที่: โยโกฮามะ / โตเกียว · เปิดรับความร่วมมือ",
+    "aboutLang": "ภาษา: ไทย (เจ้าของภาษา) · อังกฤษ (ใช้งานงาน) · ญี่ปุ่น (ระดับกลาง)"
   },
   "footer": {
     "blurb": "การเรียนรู้ของเครื่องที่รับรู้โครงสร้างสำหรับพิษวิทยาโมเลกุล การแปรสภาพทางชีวภาพ ชะตากรรมของ PFAS และปริภูมิเคมีทางน้ำ"

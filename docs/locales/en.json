@@ -19,9 +19,6 @@
     "headline": "Structure-aware ML for molecular graphs, ecotoxicity, and aquatic chemistry.",
     "journeyLabel": "Research Journey",
     "journeyCap": "From field water → Tokyo lab → graph AI for aquatic chemistry",
-    "galleryLabel": "Research Gallery",
-    "galleryTitle": "My Pictures — Research Figures",
-    "galleryHint": "Research figures only",
     "affilLabel": "Affiliations & Partners",
     "affilNote": "Official organization logos shown for affiliation identification.",
     "appsLabel": "BoatOS Apps & Desktop Art",
@@ -29,7 +26,17 @@
     "appsHint": "Click .exe to launch · art opens preview",
     "areasLabel": "Research Areas",
     "songTitle": "Soft Tide",
-    "songDesc": "Soft R&B — Thailand → Tokyo"
+    "songDesc": "Soft R&B — Thailand → Tokyo",
+    "profileLabel": "About Me & Skills",
+    "aboutWinTitle": "About Me.txt — BoatOS",
+    "skillsWinTitle": "Skills.exe — System Properties",
+    "aboutRole": "Ph.D. Researcher · Institute of Science Tokyo · Fujii Lab",
+    "aboutLead": "Thai researcher building scalable AI/ML for environmental chemistry — from molecular graphs to aquatic fate.",
+    "aboutFocus": "Focus: GNNs, generative molecular ML, cheminformatics, HPC",
+    "aboutEdu": "Education: Ph.D. (GPA 4.05/4.5) · M.Eng. Chulalongkorn · B.Sc. Chemistry",
+    "aboutCollab": "Collaborations: JAMSTEC · RIKEN · LLNL DSSI 2025",
+    "aboutBase": "Based in: Yokohama / Tokyo, Japan · open to collaborations",
+    "aboutLang": "Languages: Thai (native) · English (professional) · Japanese (intermediate)"
   },
   "footer": {
     "blurb": "Structure-aware machine learning for molecular toxicology, biotransformation, PFAS fate, and aquatic chemical space."

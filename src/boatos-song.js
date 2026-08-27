@@ -14,6 +14,7 @@
   let playing = false;
   let lyrics = null;
   let lyricIdx = -1;
+  let unlockBound = false;
 
   function prefix() {
     return /\/(th|ja)(\/|$)/.test(location.pathname) ? "../" : "";
@@ -22,14 +23,13 @@
   function ensureAudio() {
     if (audio) return audio;
     audio = new Audio(prefix() + TRACK.src);
-    audio.loop = false;
-    audio.preload = "metadata";
-    audio.volume = 0.7;
+    audio.loop = true;
+    audio.preload = "auto";
+    audio.volume = 0.65;
     audio.addEventListener("timeupdate", onTime);
-    audio.addEventListener("ended", () => {
-      setPlaying(false);
-      lyricIdx = -1;
-      renderLyric("— end —");
+    audio.addEventListener("play", () => setPlaying(true));
+    audio.addEventListener("pause", () => {
+      if (!audio.ended) setPlaying(false);
     });
     return audio;
   }
@@ -86,20 +86,22 @@
       btn.setAttribute("aria-pressed", on ? "true" : "false");
     });
     const label = document.getElementById("media-track");
-    if (label) label.textContent = on ? TRACK.title + " ▸ playing" : TRACK.title + " — " + TRACK.artist;
+    if (label) label.textContent = on ? TRACK.title + " ▸ looping" : TRACK.title + " — " + TRACK.artist;
     const dock = document.getElementById("song-dock-status");
-    if (dock) dock.textContent = on ? "Now playing · Soft Tide" : "Soft Tide";
+    if (dock) dock.textContent = on ? "Now playing · Soft Tide (loop)" : "Soft Tide";
   }
 
   async function play() {
     await loadLyrics();
     const a = ensureAudio();
+    a.loop = true;
     try {
       await a.play();
       setPlaying(true);
+      return true;
     } catch (err) {
       setPlaying(false);
-      console.warn("Audio play blocked until user gesture", err);
+      return false;
     }
   }
 
@@ -124,7 +126,22 @@
     syncBars();
   }
 
-  window.BoatOSSong = { play, pause, toggle, stop, TRACK };
+  /** Try autoplay; if blocked, start on first user gesture. */
+  function autoplayLoop() {
+    play().then((ok) => {
+      if (ok || unlockBound) return;
+      unlockBound = true;
+      const unlock = () => {
+        play();
+        document.removeEventListener("pointerdown", unlock, true);
+        document.removeEventListener("keydown", unlock, true);
+      };
+      document.addEventListener("pointerdown", unlock, true);
+      document.addEventListener("keydown", unlock, true);
+    });
+  }
+
+  window.BoatOSSong = { play, pause, toggle, stop, autoplayLoop, TRACK };
 
   document.addEventListener("DOMContentLoaded", () => {
     loadLyrics().then((data) => {

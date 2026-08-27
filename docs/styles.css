@@ -3308,3 +3308,71 @@ a:hover{color:#000060}
   display:block;font-size:10px;color:#202020;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px;
 }
 .affil-logo-card img{background:#fff}
+
+/* ——— Section load phase ——— */
+.section-load{
+  position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;
+  background:rgba(0,128,128,.55);backdrop-filter:none;
+}
+.section-load[hidden]{display:none !important}
+.section-load.is-open{display:flex}
+.section-load-panel{
+  width:min(360px,92vw);background:var(--win-gray);box-shadow:var(--bevel-out),4px 4px 0 rgba(0,0,0,.35);
+}
+.section-load-titlebar{
+  display:flex;align-items:center;gap:8px;padding:4px 8px;color:#fff;font-size:12px;font-weight:700;
+  background:var(--title-active);
+}
+.section-load-body{padding:16px 14px 14px}
+.section-load-body p{margin:0 0 12px;font-size:13px}
+.section-load-track{
+  height:18px;background:#fff;box-shadow:var(--bevel-in);padding:2px;
+}
+.section-load-track i{
+  display:block;height:100%;width:0%;
+  background:repeating-linear-gradient(90deg,#000080 0 8px,#1084d0 8px 16px);
+  transition:width .65s linear;
+}
+
+/* ——— Home About / Skills Win95 panels ——— */
+.home-profile-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:8px;
+}
+.home-win95-panel{
+  background:var(--win-gray);box-shadow:var(--bevel-out);display:flex;flex-direction:column;min-height:100%;
+}
+.home-win95-menubar{
+  display:flex;gap:12px;padding:2px 8px;font-size:11px;border-bottom:1px solid var(--win-gray-dk);
+}
+.home-win95-body{padding:12px 14px;background:#fff;box-shadow:var(--bevel-in);margin:4px;flex:1}
+.home-win95-list{margin:8px 0 12px;padding-left:18px;font-size:12px;line-height:1.45}
+.home-win95-list li{margin:4px 0}
+.home-win95-quote{
+  margin:0 0 12px;padding:8px 10px;font-size:12px;font-style:italic;background:#c0c0c0;
+  box-shadow:var(--bevel-in);color:#000080;
+}
+.home-win95-actions{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.home-win95-status{
+  display:flex;justify-content:space-between;gap:8px;padding:3px 8px;font-size:11px;
+  border-top:1px solid var(--win-gray-lt);background:var(--win-gray);
+}
+.home-about-head{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.home-about-head img{
+  width:72px;height:72px;object-fit:cover;background:#fff;box-shadow:var(--bevel-in);flex-shrink:0;
+}
+.home-about-name{margin:0;font-size:14px;font-weight:700}
+.home-about-role{margin:2px 0 0;font-size:11px;color:#404040}
+.home-skills-tabs{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.home-skills-tab{
+  border:0;cursor:pointer;padding:3px 8px;font-size:11px;font-weight:700;
+  background:var(--win-gray);box-shadow:var(--bevel-out);color:#000;
+}
+.home-skills-tab.is-active{box-shadow:var(--bevel-in);background:#ffffcc}
+.home-skills-panel[hidden]{display:none !important}
+.home-meter-row{display:grid;grid-template-columns:110px 1fr;gap:8px;align-items:center;margin:8px 0;font-size:11px}
+.home-meter{height:14px;background:#fff;box-shadow:var(--bevel-in);padding:2px}
+.home-meter i{display:block;height:100%;width:0%;background:linear-gradient(90deg,#000080,#1084d0);transition:width .8s ease}
+@media(max-width:900px){
+  .home-profile-grid{grid-template-columns:1fr}
+  .home-meter-row{grid-template-columns:1fr}
+}

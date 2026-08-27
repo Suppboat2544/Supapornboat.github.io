@@ -236,4 +236,102 @@ function initResearchPage() {
 document.addEventListener('DOMContentLoaded', () => {
   initAboutExpandables();
   initResearchPage();
+  initSectionLoadPhase();
 });
+
+/* ── SECTION LOAD PHASE (Win95-style) ── */
+function initSectionLoadPhase() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let overlay = document.getElementById('section-load');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'section-load';
+    overlay.className = 'section-load';
+    overlay.hidden = true;
+    overlay.setAttribute('aria-live', 'polite');
+    overlay.innerHTML =
+      '<div class="section-load-panel">' +
+      '  <div class="section-load-titlebar"><span>⏳</span><span id="section-load-title">Loading…</span></div>' +
+      '  <div class="section-load-body">' +
+      '    <p id="section-load-msg">Opening section…</p>' +
+      '    <div class="section-load-track"><i id="section-load-bar"></i></div>' +
+      '  </div>' +
+      '</div>';
+    document.body.appendChild(overlay);
+  }
+
+  const titleEl = () => document.getElementById('section-load-title');
+  const msgEl = () => document.getElementById('section-load-msg');
+  const barEl = () => document.getElementById('section-load-bar');
+
+  function labelFromHref(href) {
+    try {
+      const u = new URL(href, location.href);
+      const file = (u.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'home';
+      const map = {
+        index: 'Home',
+        about: 'About Me',
+        research: 'Research',
+        publications: 'Publications',
+        talks: 'Talks',
+        projects: 'Projects',
+        cv: 'Curriculum Vitae',
+        cram: 'CRAM-GTransformer',
+        gsat: 'GSAT Model',
+        win95: 'BoatOS Desktop',
+      };
+      return map[file] || file;
+    } catch (_) {
+      return 'section';
+    }
+  }
+
+  function showLoad(label) {
+    overlay.hidden = false;
+    overlay.classList.add('is-open');
+    if (titleEl()) titleEl().textContent = label + '.exe';
+    if (msgEl()) msgEl().textContent = 'Loading ' + label + '…';
+    if (barEl()) barEl().style.width = '0%';
+    requestAnimationFrame(() => {
+      if (barEl()) barEl().style.width = '100%';
+    });
+  }
+
+  function go(href) {
+    showLoad(labelFromHref(href));
+    const delay = 720;
+    setTimeout(() => { location.href = href; }, delay);
+  }
+
+  function shouldIntercept(a) {
+    if (!a || a.target === '_blank' || a.hasAttribute('download')) return false;
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return false;
+    if (href.startsWith('http') && !href.includes('Supapornboat.github.io') && !href.startsWith(location.origin)) {
+      return false;
+    }
+    // Same-page hash only
+    try {
+      const u = new URL(href, location.href);
+      if (u.pathname === location.pathname && u.hash) return false;
+      if (u.origin !== location.origin && !href.includes('/Supapornboat.github.io/')) return false;
+      // Only HTML pages / site sections
+      const path = u.pathname;
+      if (!/\.html?$/.test(path) && !/\/(th|ja)?\/?$/.test(path) && !path.endsWith('/')) return false;
+      return true;
+    } catch (_) {
+      return /\.html/.test(href);
+    }
+  }
+
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a || !shouldIntercept(a)) return;
+    // Skip language switcher (already fast absolute nav)
+    if (a.closest('.lang-switch')) return;
+    e.preventDefault();
+    closeMenu();
+    go(a.href);
+  }, true);
+}

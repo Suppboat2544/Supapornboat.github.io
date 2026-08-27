@@ -170,7 +170,28 @@
     }
   });
 
+  /* ——— Skills tabs on homepage ——— */
+  document.querySelectorAll("[data-skill-tab]").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const id = tab.getAttribute("data-skill-tab");
+      document.querySelectorAll("[data-skill-tab]").forEach((t) => {
+        const on = t === tab;
+        t.classList.toggle("is-active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      document.querySelectorAll("[data-skill-panel]").forEach((p) => {
+        const on = p.getAttribute("data-skill-panel") === id;
+        p.hidden = !on;
+        p.classList.toggle("is-active", on);
+      });
+    });
+  });
+
   tickClock();
   setInterval(tickClock, 1000);
-  runBoot();
+  runBoot().then(() => {
+    if (window.BoatOSSong && typeof window.BoatOSSong.autoplayLoop === "function") {
+      window.BoatOSSong.autoplayLoop();
+    }
+  });
 })();
