@@ -1,0 +1,42 @@
+Official organization logos — source documentation
+Downloaded: 2026-08-27 (UTC)
+Method: curl with User-Agent; SVG→PNG via rsvg-convert; PNG resize via Pillow (max dim 512px)
+
+logo_science_tokyo.png / logo_science_tokyo.svg
+  Organization: Institute of Science Tokyo (Science Tokyo)
+  Source: Wikimedia Commons — File:Institute of Science Tokyo logo, advanced.svg
+  URL: https://upload.wikimedia.org/wikipedia/commons/2/2e/Institute_of_Science_Tokyo_logo%2C_advanced.svg
+  Commons: https://commons.wikimedia.org/wiki/File:Institute_of_Science_Tokyo_logo,_advanced.svg
+  Notes: SVG converted to transparent PNG at width 512px
+
+logo_chulalongkorn.png / logo_chulalongkorn.svg
+  Organization: Chulalongkorn University
+  Source: Wikimedia Commons — File:Logo of Chulalongkorn University (2026).svg
+    (redirect target of File:Logo of Chulalongkorn University.svg)
+  URL: https://upload.wikimedia.org/wikipedia/commons/7/78/Logo_of_Chulalongkorn_University_%282026%29.svg
+  Commons: https://commons.wikimedia.org/wiki/File:Logo_of_Chulalongkorn_University_(2026).svg
+  Notes: Official university logo (SVG); converted to transparent PNG at height 512px
+
+logo_jamstec.png / logo_jamstec.svg
+  Organization: JAMSTEC (Japan Agency for Marine-Earth Science and Technology)
+  Source: Wikimedia Commons — File:JAMSTEC logo.svg
+    (attributed to https://www.jamstec.go.jp/j/about/logo/)
+  URL: https://upload.wikimedia.org/wikipedia/commons/d/dd/JAMSTEC_logo.svg
+  Commons: https://commons.wikimedia.org/wiki/File:JAMSTEC_logo.svg
+  Notes: Official logo SVG; converted to transparent PNG at width 512px
+  Alternate PNG on commons: https://upload.wikimedia.org/wikipedia/commons/9/90/JAMSTEC_logo.png
+
+logo_riken.png
+  Organization: RIKEN
+  Source: Wikimedia Commons — File:RIKEN logo.png
+  URL: https://upload.wikimedia.org/wikipedia/commons/0/00/RIKEN_logo.png
+  Commons: https://commons.wikimedia.org/wiki/File:RIKEN_logo.png
+  Notes: Official logo PNG resized to max dimension 512px (transparent RGBA)
+
+logo_llnl.png
+  Organization: Lawrence Livermore National Laboratory (LLNL)
+  Source: Wikimedia Commons — File:LLNL-logo.png
+  URL: https://upload.wikimedia.org/wikipedia/commons/a/ae/LLNL-logo.png
+  Commons: https://commons.wikimedia.org/wiki/File:LLNL-logo.png
+  Notes: Official CDN (cdn.llnl.gov) was unreachable; used Wikimedia Commons PNG.
+         Resized to max dimension 512px (transparent RGBA)
