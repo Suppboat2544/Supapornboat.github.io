@@ -54,6 +54,6 @@ Male lead vocal like HYBS / soft Thai indie R&B, natural human singing, not robo
 ```
 
 ## After download
-1. Save the best take as `src/audio/graph_of_my_heart.mp3` (replace existing)
+1. Save the best take as `src/audio/soft_tide.mp3` (canonical player file; no spaces in filename)
 2. Or drop the file here and ask the agent: “replace Soft Tide with this Suno MP3”
 3. Keep karaoke JSON in sync if structure timing changes a lot

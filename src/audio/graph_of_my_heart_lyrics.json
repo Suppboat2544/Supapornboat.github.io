@@ -2,115 +2,123 @@
   "title": "Soft Tide",
   "artist": "Boat (Supaporn Klabklaydee)",
   "bpm": 96,
+  "duration": 198.74,
   "genre": "neo city-pop / soft R&B",
-  "style": "HYBS-style chill neo-soul city-pop",
-  "voice": "en-US-AriaNeural",
-  "rate": "-10%",
-  "pitch": "-3Hz",
-  "duration_sec": 86.96,
+  "style": "HYBS-inspired · Suno male vocal",
+  "source": "Suno",
   "lines": [
     {
-      "t": 0.62,
+      "t": 0.35,
       "text": "Mmm… soft tide, soft light",
       "section": "Intro"
     },
     {
-      "t": 5.64,
+      "t": 12.35,
       "text": "Warm Thai morning on my window",
       "section": "Verse 1"
     },
     {
-      "t": 9.34,
+      "t": 19.85,
       "text": "Notebook full of little whys",
       "section": "Verse 1"
     },
     {
-      "t": 12.8,
+      "t": 27.35,
       "text": "Then the sky got bigger, suitcase lighter",
       "section": "Verse 1"
     },
     {
-      "t": 17.08,
+      "t": 34.85,
       "text": "Tokyo taught me how to try",
       "section": "Verse 1"
     },
     {
-      "t": 21.26,
+      "t": 42.35,
       "text": "If the water keeps a secret",
       "section": "Pre-Chorus"
     },
     {
-      "t": 24.79,
+      "t": 50.35,
       "text": "I can hold it for a while",
       "section": "Pre-Chorus"
     },
     {
-      "t": 28.53,
+      "t": 58.35,
       "text": "Soft tide, take me where the night feels kind",
       "section": "Chorus"
     },
     {
-      "t": 33.26,
+      "t": 65.85,
       "text": "Soft light, draw a line from heart to mind",
       "section": "Chorus"
     },
     {
-      "t": 37.61,
+      "t": 73.35,
       "text": "I'm just Boat on a quiet ride",
       "section": "Chorus"
     },
     {
-      "t": 41.25,
+      "t": 80.85,
       "text": "Finding home in the in-between",
       "section": "Chorus"
     },
     {
-      "t": 45.35,
+      "t": 88.35,
       "text": "Molecules like tiny cities",
       "section": "Verse 2"
     },
     {
-      "t": 49.13,
+      "t": 95.85,
       "text": "Talking soft beneath the sea",
       "section": "Verse 2"
     },
     {
-      "t": 52.73,
+      "t": 103.35,
       "text": "Late-night coffee, lab-coat daydreams",
       "section": "Verse 2"
     },
     {
-      "t": 57.13,
+      "t": 110.85,
       "text": "Making maps of you and me",
       "section": "Verse 2"
     },
     {
-      "t": 61.0,
+      "t": 118.35,
+      "text": "If the water keeps a secret",
+      "section": "Pre-Chorus"
+    },
+    {
+      "t": 126.35,
+      "text": "I can hold it for a while",
+      "section": "Pre-Chorus"
+    },
+    {
+      "t": 134.35,
       "text": "Soft tide, take me where the night feels kind",
       "section": "Chorus"
     },
     {
-      "t": 65.73,
+      "t": 142.85,
       "text": "Soft light, draw a line from heart to mind",
       "section": "Chorus"
     },
     {
-      "t": 70.08,
+      "t": 151.35,
       "text": "I'm just Boat on a quiet ride",
       "section": "Chorus"
     },
     {
-      "t": 73.72,
+      "t": 159.85,
       "text": "Finding home in the in-between",
       "section": "Chorus"
     },
     {
-      "t": 77.67,
+      "t": 168.35,
       "text": "Soft tide… keep me close tonight",
       "section": "Outro"
     },
     {
-      "t": 81.89,
+      "t": 183.72,
       "text": "Mmm… soft light",
       "section": "Outro"
     }

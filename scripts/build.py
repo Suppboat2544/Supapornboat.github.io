@@ -117,6 +117,25 @@ def nav_link(item_id, href, label, active_id, extra_class="", i18n_key=None):
     return f'<li><a href="{href}"{attrs}>{label}</a></li>'
 
 
+def build_lang_bar(filename: str, lang: str = "en") -> str:
+    """Fixed EN / JP / THA switcher above the main header."""
+    urls = lang_urls(filename, lang)
+    active = {
+        "en": ' class="is-active" aria-current="page"' if lang == "en" else "",
+        "ja": ' class="is-active" aria-current="page"' if lang == "ja" else "",
+        "th": ' class="is-active" aria-current="page"' if lang == "th" else "",
+    }
+    return (
+        '  <div class="lang-bar" role="navigation" aria-label="Language">\n'
+        '    <nav class="lang-switch lang-switch-top">\n'
+        f'      <a href="{urls["lang_en"]}" data-lang="en" hreflang="en"{active["en"]}>EN</a>\n'
+        f'      <a href="{urls["lang_ja"]}" data-lang="ja" hreflang="ja"{active["ja"]}>JP</a>\n'
+        f'      <a href="{urls["lang_th"]}" data-lang="th" hreflang="th"{active["th"]}>THA</a>\n'
+        "    </nav>\n"
+        "  </div>\n"
+    )
+
+
 def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
     meta = PAGE_META.get(filename, {})
     active = meta.get("active")
@@ -130,7 +149,8 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
     if meta.get("minimalNav"):
         home = page_href("index.html", "en")
         return (
-            '  <nav class="nav nav-cinematic nav-cinematic-bar" id="nav" aria-label="Main navigation">\n'
+            build_lang_bar(filename, lang)
+            + '  <nav class="nav nav-cinematic nav-cinematic-bar" id="nav" aria-label="Main navigation">\n'
             '    <div class="nav-cinematic-inner">\n'
             f'      <a href="{home}" class="nav-cinematic-logo">\n'
             '        <span class="nav-logo-mark">SK</span>\n'
@@ -138,10 +158,6 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
             '      </a>\n'
             '      <div class="nav-cinematic-actions">\n'
             f'        <a href="{home}" class="nav-cinematic-cta" data-i18n-nav="home">{label_for("home", "Home")}</a>\n'
-            '        <nav class="lang-switch lang-switch-nav" aria-label="Language">'
-            f'<a href="{lang_urls(filename, lang)["lang_en"]}" data-lang="en">EN</a>'
-            f'<a href="{lang_urls(filename, lang)["lang_th"]}" data-lang="th">ไทย</a>'
-            f'<a href="{lang_urls(filename, lang)["lang_ja"]}" data-lang="ja">日本語</a></nav>\n'
             '      </div>\n'
             '    </div>\n'
             '  </nav>'
@@ -171,17 +187,9 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
         '          <span></span><span></span><span></span>\n'
         '        </button>'
     )
-    urls = lang_urls(filename, lang)
-    lang_switch = (
-        '        <nav class="lang-switch lang-switch-nav" aria-label="Language">'
-        f'<a href="{urls["lang_en"]}" data-lang="en" hreflang="en">EN</a>'
-        f'<a href="{urls["lang_th"]}" data-lang="th" hreflang="th">ไทย</a>'
-        f'<a href="{urls["lang_ja"]}" data-lang="ja" hreflang="ja">日本語</a></nav>\n'
-    )
     collab = label_for("collaborate", "Collaborate") if False else nav_labels.get("collaborate", "Collaborate")
     actions = (
         f'        <a href="mailto:{COLLAB_EMAIL}" class="nav-cinematic-cta" data-i18n-nav="collaborate">{collab}</a>\n'
-        f'{lang_switch}'
         f'{burger}'
     )
     home_href = page_href("index.html", "en")
@@ -202,8 +210,15 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
         f'      </div>'
     )
 
+    lang_bar = build_lang_bar(filename, lang)
     if is_home:
+        # Indent to match home cinematic wrap nesting
+        home_bar = "\n".join(
+            ("      " + line.lstrip()) if line.strip() else line
+            for line in lang_bar.rstrip("\n").split("\n")
+        ) + "\n"
         return (
+            f'{home_bar}'
             f'      <nav class="{nav_class}" id="nav" aria-label="Main navigation">\n'
             f'        <div class="nav-cinematic-inner">\n'
             f'{inner}\n'
@@ -213,6 +228,7 @@ def build_nav(filename: str, lang: str = "en", asset_prefix: str = "") -> str:
 
     return (
         f'  <a class="skip-link" href="#main-content">Skip to content</a>\n'
+        f'{lang_bar}'
         f'  <nav class="{nav_class}" id="nav" aria-label="Main navigation">\n'
         f'    <div class="nav-cinematic-inner">\n'
         f'{inner}\n'

@@ -1,12 +1,12 @@
-/* BoatOS R&B single — "Graph of My Heart" */
+/* BoatOS R&B single — "Soft Tide" */
 (function () {
   "use strict";
 
   const TRACK = {
-    src: "audio/graph_of_my_heart.mp3",
-    lyricsSrc: "audio/graph_of_my_heart_lyrics.json",
+    src: "audio/soft_tide.mp3",
+    lyricsSrc: "audio/soft_tide_lyrics.json",
     title: "Soft Tide",
-    subtitle: "HYBS-inspired · soft R&B",
+    subtitle: "Suno · male vocal · soft R&B",
     artist: "Boat · BoatOS",
   };
 
